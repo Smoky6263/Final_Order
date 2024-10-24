@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Character : MonoBehaviour, IControlable
 {
-    [SerializeField] private LayerMask _layerMask;
     [SerializeField, Range(0, 1)] private float _inputInterpolation;
+    [SerializeField] private LayerMask _layerMask;
     [SerializeField] private float _playerSpeed;
     [SerializeField] private float _jumpForce;
     
@@ -20,7 +20,7 @@ public class Character : MonoBehaviour, IControlable
         _rb = GetComponent<Rigidbody2D>();
         _collider = GetComponent<BoxCollider2D>();
 
-        _groundRayDistance = (_collider.bounds.size.y / 2) + 0.02f;
+        _groundRayDistance = (_collider.bounds.size.y / 2) + 0.016f;
     }
 
     private void Update()
@@ -33,13 +33,9 @@ public class Character : MonoBehaviour, IControlable
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.down, _groundRayDistance, _layerMask);
 
         if (hitInfo.collider != null) 
-        {
-            Debug.Log(hitInfo.collider.name);
             _isGrounded = true;
-        }
         else
             _isGrounded = false;
-
     }
 
     public void DoMove(float x)
