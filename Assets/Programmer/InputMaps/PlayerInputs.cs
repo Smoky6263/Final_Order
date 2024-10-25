@@ -44,6 +44,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ImproveHealth"",
+                    ""type"": ""Button"",
+                    ""id"": ""9f35ad33-9d8a-4b22-857e-fb7e594e9554"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -112,6 +121,17 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""action"": ""DoJump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b27c216d-32b8-4000-9648-45fd0f53c837"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ImproveHealth"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -122,6 +142,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_Movement = m_Gameplay.FindAction("Movement", throwIfNotFound: true);
         m_Gameplay_DoJump = m_Gameplay.FindAction("DoJump", throwIfNotFound: true);
+        m_Gameplay_ImproveHealth = m_Gameplay.FindAction("ImproveHealth", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -185,12 +206,14 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
     private readonly InputAction m_Gameplay_Movement;
     private readonly InputAction m_Gameplay_DoJump;
+    private readonly InputAction m_Gameplay_ImproveHealth;
     public struct GameplayActions
     {
         private @PlayerInputs m_Wrapper;
         public GameplayActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Gameplay_Movement;
         public InputAction @DoJump => m_Wrapper.m_Gameplay_DoJump;
+        public InputAction @ImproveHealth => m_Wrapper.m_Gameplay_ImproveHealth;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -206,6 +229,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @DoJump.started += instance.OnDoJump;
             @DoJump.performed += instance.OnDoJump;
             @DoJump.canceled += instance.OnDoJump;
+            @ImproveHealth.started += instance.OnImproveHealth;
+            @ImproveHealth.performed += instance.OnImproveHealth;
+            @ImproveHealth.canceled += instance.OnImproveHealth;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -216,6 +242,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @DoJump.started -= instance.OnDoJump;
             @DoJump.performed -= instance.OnDoJump;
             @DoJump.canceled -= instance.OnDoJump;
+            @ImproveHealth.started -= instance.OnImproveHealth;
+            @ImproveHealth.performed -= instance.OnImproveHealth;
+            @ImproveHealth.canceled -= instance.OnImproveHealth;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -237,5 +266,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnDoJump(InputAction.CallbackContext context);
+        void OnImproveHealth(InputAction.CallbackContext context);
     }
 }

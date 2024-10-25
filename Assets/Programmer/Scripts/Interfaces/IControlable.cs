@@ -1,5 +1,5 @@
 public interface IControlable
 {
-    public void DoMove(float x);
-    public void DoJump();
+    public void MovePerformed(float x);
+    public void JumpPerformed();
 }
