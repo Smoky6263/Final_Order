@@ -20,10 +20,10 @@ public class CharacterController : MonoBehaviour
     protected virtual void ReadMovement()
     {
         Vector2 inputDirection = _playerInputs.Gameplay.Movement.ReadValue<Vector2>();
-        _iControlable.DoMove(inputDirection.x);
+        _iControlable.MovePerformed(inputDirection.x);
     }
 
-    protected virtual void OnJumpPerformed(InputAction.CallbackContext context) => _iControlable.DoJump();
+    protected virtual void OnJumpPerformed(InputAction.CallbackContext context) => _iControlable.JumpPerformed();
 
     protected void OnEnable() => _playerInputs.Gameplay.DoJump.performed += OnJumpPerformed;
     protected void OnDisable() => _playerInputs.Gameplay.DoJump.performed -= OnJumpPerformed;

@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class Character : MonoBehaviour, IControlable
+public class PlayerMovement : MonoBehaviour, IControlable
 {
-    [SerializeField] private LayerMask _layerMask;
     [SerializeField, Range(0, 1)] private float _inputInterpolation;
+    [SerializeField] private LayerMask _layerMask;
     [SerializeField] private float _playerSpeed;
     [SerializeField] private float _jumpForce;
     
@@ -20,10 +20,9 @@ public class Character : MonoBehaviour, IControlable
         _rb = GetComponent<Rigidbody2D>();
         _collider = GetComponent<BoxCollider2D>();
 
-        _groundRayDistance = (_collider.bounds.size.y / 2) + 0.02f;
+        _groundRayDistance = (_collider.bounds.size.y / 2) + 0.016f;
     }
-
-    private void Update()
+    private void FixedUpdate()
     {
         RaycastHit2D();
     }
@@ -32,23 +31,20 @@ public class Character : MonoBehaviour, IControlable
     {
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, Vector2.down, _groundRayDistance, _layerMask);
 
-        if (hitInfo.collider != null) 
-        {
-            Debug.Log(hitInfo.collider.name);
+        if (hitInfo.collider != null)
             _isGrounded = true;
-        }
-        else
+        else 
             _isGrounded = false;
-
     }
 
-    public void DoMove(float x)
+    public void MovePerformed(float x)
     {
         _moveInput = Mathf.Lerp(_moveInput, x, _inputInterpolation);
         Vector3 direction = new Vector3(_moveInput * _playerSpeed * Time.deltaTime, 0f, 0f);
         transform.position += direction;
     }
-    public void DoJump()
+
+    public void JumpPerformed()
     {
         if(_isGrounded == true)
             _rb.AddForce(transform.up * _jumpForce, ForceMode2D.Impulse);
