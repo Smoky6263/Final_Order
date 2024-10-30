@@ -37,7 +37,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""DoJump"",
+                    ""name"": ""JumpPerformed"",
                     ""type"": ""Button"",
                     ""id"": ""b4c70c25-9ddb-4e97-bb3e-00418c091653"",
                     ""expectedControlType"": ""Button"",
@@ -46,7 +46,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""ImproveHealth"",
+                    ""name"": ""MedKitPerformed"",
                     ""type"": ""Button"",
                     ""id"": ""9f35ad33-9d8a-4b22-857e-fb7e594e9554"",
                     ""expectedControlType"": ""Button"",
@@ -114,11 +114,11 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""405713b7-03ef-433e-932f-becb70dcf6af"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""DoJump"",
+                    ""action"": ""JumpPerformed"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -129,7 +129,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""ImproveHealth"",
+                    ""action"": ""MedKitPerformed"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -141,8 +141,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         // Gameplay
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_Movement = m_Gameplay.FindAction("Movement", throwIfNotFound: true);
-        m_Gameplay_DoJump = m_Gameplay.FindAction("DoJump", throwIfNotFound: true);
-        m_Gameplay_ImproveHealth = m_Gameplay.FindAction("ImproveHealth", throwIfNotFound: true);
+        m_Gameplay_JumpPerformed = m_Gameplay.FindAction("JumpPerformed", throwIfNotFound: true);
+        m_Gameplay_MedKitPerformed = m_Gameplay.FindAction("MedKitPerformed", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -205,15 +205,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Gameplay;
     private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
     private readonly InputAction m_Gameplay_Movement;
-    private readonly InputAction m_Gameplay_DoJump;
-    private readonly InputAction m_Gameplay_ImproveHealth;
+    private readonly InputAction m_Gameplay_JumpPerformed;
+    private readonly InputAction m_Gameplay_MedKitPerformed;
     public struct GameplayActions
     {
         private @PlayerInputs m_Wrapper;
         public GameplayActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Gameplay_Movement;
-        public InputAction @DoJump => m_Wrapper.m_Gameplay_DoJump;
-        public InputAction @ImproveHealth => m_Wrapper.m_Gameplay_ImproveHealth;
+        public InputAction @JumpPerformed => m_Wrapper.m_Gameplay_JumpPerformed;
+        public InputAction @MedKitPerformed => m_Wrapper.m_Gameplay_MedKitPerformed;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -226,12 +226,12 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
-            @DoJump.started += instance.OnDoJump;
-            @DoJump.performed += instance.OnDoJump;
-            @DoJump.canceled += instance.OnDoJump;
-            @ImproveHealth.started += instance.OnImproveHealth;
-            @ImproveHealth.performed += instance.OnImproveHealth;
-            @ImproveHealth.canceled += instance.OnImproveHealth;
+            @JumpPerformed.started += instance.OnJumpPerformed;
+            @JumpPerformed.performed += instance.OnJumpPerformed;
+            @JumpPerformed.canceled += instance.OnJumpPerformed;
+            @MedKitPerformed.started += instance.OnMedKitPerformed;
+            @MedKitPerformed.performed += instance.OnMedKitPerformed;
+            @MedKitPerformed.canceled += instance.OnMedKitPerformed;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -239,12 +239,12 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
             @Movement.canceled -= instance.OnMovement;
-            @DoJump.started -= instance.OnDoJump;
-            @DoJump.performed -= instance.OnDoJump;
-            @DoJump.canceled -= instance.OnDoJump;
-            @ImproveHealth.started -= instance.OnImproveHealth;
-            @ImproveHealth.performed -= instance.OnImproveHealth;
-            @ImproveHealth.canceled -= instance.OnImproveHealth;
+            @JumpPerformed.started -= instance.OnJumpPerformed;
+            @JumpPerformed.performed -= instance.OnJumpPerformed;
+            @JumpPerformed.canceled -= instance.OnJumpPerformed;
+            @MedKitPerformed.started -= instance.OnMedKitPerformed;
+            @MedKitPerformed.performed -= instance.OnMedKitPerformed;
+            @MedKitPerformed.canceled -= instance.OnMedKitPerformed;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -265,7 +265,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     public interface IGameplayActions
     {
         void OnMovement(InputAction.CallbackContext context);
-        void OnDoJump(InputAction.CallbackContext context);
-        void OnImproveHealth(InputAction.CallbackContext context);
+        void OnJumpPerformed(InputAction.CallbackContext context);
+        void OnMedKitPerformed(InputAction.CallbackContext context);
     }
 }

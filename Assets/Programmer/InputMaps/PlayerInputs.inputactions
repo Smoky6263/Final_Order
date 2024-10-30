@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "DoJump",
+                    "name": "JumpPerformed",
                     "type": "Button",
                     "id": "b4c70c25-9ddb-4e97-bb3e-00418c091653",
                     "expectedControlType": "Button",
@@ -24,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ImproveHealth",
+                    "name": "MedKitPerformed",
                     "type": "Button",
                     "id": "9f35ad33-9d8a-4b22-857e-fb7e594e9554",
                     "expectedControlType": "Button",
@@ -92,11 +92,11 @@
                 {
                     "name": "",
                     "id": "405713b7-03ef-433e-932f-becb70dcf6af",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "DoJump",
+                    "action": "JumpPerformed",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -107,7 +107,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ImproveHealth",
+                    "action": "MedKitPerformed",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

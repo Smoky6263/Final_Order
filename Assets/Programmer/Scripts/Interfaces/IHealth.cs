@@ -1,5 +1,7 @@
 ﻿public interface IHealth
 {
-    public void TakeDamage(sbyte value);
-    public void ImproveHealth(sbyte value);
+    public void TakeDamage(float value);
+    public void ImproveHealth();
+
+    public void OnMedKitPickUp();
 }
