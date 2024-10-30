@@ -10,7 +10,7 @@ public class MedKitPickUp : MonoBehaviour
 
     private void Awake()
     {
-        if (_eventBus == null)
+        if (_gameManager == null)
             Debug.LogWarning($"Ты забыл прокинуть ссылки в инспекторе на обьект {this.gameObject.name}!");
 
         _eventBus = _gameManager.EventBus;
