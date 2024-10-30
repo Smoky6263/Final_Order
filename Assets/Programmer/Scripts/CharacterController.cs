@@ -24,7 +24,16 @@ public class CharacterController : MonoBehaviour
     }
 
     protected virtual void OnJumpPerformed(InputAction.CallbackContext context) => _iControlable.JumpPerformed();
+    protected virtual void OnMedKitPerformed(InputAction.CallbackContext context) => _iControlable.MedKitPerformed();
 
-    protected void OnEnable() => _playerInputs.Gameplay.DoJump.performed += OnJumpPerformed;
-    protected void OnDisable() => _playerInputs.Gameplay.DoJump.performed -= OnJumpPerformed;
+    protected void OnEnable()
+    {
+        _playerInputs.Gameplay.MedKitPerformed.performed += OnMedKitPerformed;
+        _playerInputs.Gameplay.JumpPerformed.performed += OnJumpPerformed;
+    }
+    protected void OnDisable()
+    {
+        _playerInputs.Gameplay.MedKitPerformed.performed -= OnMedKitPerformed;
+        _playerInputs.Gameplay.JumpPerformed.performed -= OnJumpPerformed;
+    }
 }

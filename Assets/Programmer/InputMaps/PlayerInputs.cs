@@ -37,7 +37,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""DoJump"",
+                    ""name"": ""JumpPerformed"",
                     ""type"": ""Button"",
                     ""id"": ""b4c70c25-9ddb-4e97-bb3e-00418c091653"",
                     ""expectedControlType"": ""Button"",
@@ -46,7 +46,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""ImproveHealth"",
+                    ""name"": ""MedKitPerformed"",
                     ""type"": ""Button"",
                     ""id"": ""9f35ad33-9d8a-4b22-857e-fb7e594e9554"",
                     ""expectedControlType"": ""Button"",
@@ -57,7 +57,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": ""2D Vector"",
+                    ""name"": ""2D Vector Keyboard"",
                     ""id"": ""2636cbad-bdea-49d6-8ee0-30a1e3387857"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
@@ -112,13 +112,79 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""405713b7-03ef-433e-932f-becb70dcf6af"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""name"": ""2D Vector GamePad"",
+                    ""id"": ""a67cc5d7-29b2-4d25-93b6-8d7c5814c2e9"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""DoJump"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""31a2bc5d-050e-4cdf-a201-ec59343061f0"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""e210f4b6-6da9-45b6-aa61-c398f4dcc878"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""994d50e6-3c63-42ba-a573-73ea0e8f9f8b"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""024fcb1a-ddd0-4fdd-ad1c-5ae7f227e218"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""405713b7-03ef-433e-932f-becb70dcf6af"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""JumpPerformed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f2fce2e3-e179-4b57-b37a-1cd15f254f63"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""JumpPerformed"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -129,7 +195,18 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""ImproveHealth"",
+                    ""action"": ""MedKitPerformed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""30de83c8-1e0a-49cd-8974-b420bf9fc1e6"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MedKitPerformed"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -141,8 +218,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         // Gameplay
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_Movement = m_Gameplay.FindAction("Movement", throwIfNotFound: true);
-        m_Gameplay_DoJump = m_Gameplay.FindAction("DoJump", throwIfNotFound: true);
-        m_Gameplay_ImproveHealth = m_Gameplay.FindAction("ImproveHealth", throwIfNotFound: true);
+        m_Gameplay_JumpPerformed = m_Gameplay.FindAction("JumpPerformed", throwIfNotFound: true);
+        m_Gameplay_MedKitPerformed = m_Gameplay.FindAction("MedKitPerformed", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -205,15 +282,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Gameplay;
     private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
     private readonly InputAction m_Gameplay_Movement;
-    private readonly InputAction m_Gameplay_DoJump;
-    private readonly InputAction m_Gameplay_ImproveHealth;
+    private readonly InputAction m_Gameplay_JumpPerformed;
+    private readonly InputAction m_Gameplay_MedKitPerformed;
     public struct GameplayActions
     {
         private @PlayerInputs m_Wrapper;
         public GameplayActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Gameplay_Movement;
-        public InputAction @DoJump => m_Wrapper.m_Gameplay_DoJump;
-        public InputAction @ImproveHealth => m_Wrapper.m_Gameplay_ImproveHealth;
+        public InputAction @JumpPerformed => m_Wrapper.m_Gameplay_JumpPerformed;
+        public InputAction @MedKitPerformed => m_Wrapper.m_Gameplay_MedKitPerformed;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -226,12 +303,12 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
-            @DoJump.started += instance.OnDoJump;
-            @DoJump.performed += instance.OnDoJump;
-            @DoJump.canceled += instance.OnDoJump;
-            @ImproveHealth.started += instance.OnImproveHealth;
-            @ImproveHealth.performed += instance.OnImproveHealth;
-            @ImproveHealth.canceled += instance.OnImproveHealth;
+            @JumpPerformed.started += instance.OnJumpPerformed;
+            @JumpPerformed.performed += instance.OnJumpPerformed;
+            @JumpPerformed.canceled += instance.OnJumpPerformed;
+            @MedKitPerformed.started += instance.OnMedKitPerformed;
+            @MedKitPerformed.performed += instance.OnMedKitPerformed;
+            @MedKitPerformed.canceled += instance.OnMedKitPerformed;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -239,12 +316,12 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
             @Movement.canceled -= instance.OnMovement;
-            @DoJump.started -= instance.OnDoJump;
-            @DoJump.performed -= instance.OnDoJump;
-            @DoJump.canceled -= instance.OnDoJump;
-            @ImproveHealth.started -= instance.OnImproveHealth;
-            @ImproveHealth.performed -= instance.OnImproveHealth;
-            @ImproveHealth.canceled -= instance.OnImproveHealth;
+            @JumpPerformed.started -= instance.OnJumpPerformed;
+            @JumpPerformed.performed -= instance.OnJumpPerformed;
+            @JumpPerformed.canceled -= instance.OnJumpPerformed;
+            @MedKitPerformed.started -= instance.OnMedKitPerformed;
+            @MedKitPerformed.performed -= instance.OnMedKitPerformed;
+            @MedKitPerformed.canceled -= instance.OnMedKitPerformed;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -265,7 +342,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     public interface IGameplayActions
     {
         void OnMovement(InputAction.CallbackContext context);
-        void OnDoJump(InputAction.CallbackContext context);
-        void OnImproveHealth(InputAction.CallbackContext context);
+        void OnJumpPerformed(InputAction.CallbackContext context);
+        void OnMedKitPerformed(InputAction.CallbackContext context);
     }
 }

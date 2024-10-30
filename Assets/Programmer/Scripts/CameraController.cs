@@ -2,9 +2,11 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private Transform _player;
     [SerializeField] private float _heightOffsert;
     [SerializeField, Range(0f,1f)] private float _interpolation;
+    private Transform _player;
+
+    public void Init(Transform player) => _player = player;
 
     private void FixedUpdate()
     {

@@ -1,10 +1,11 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour, IControlable
+public class Player : MonoBehaviour, IControlable
 {
-    [SerializeField, Range(0, 1)] private float _inputInterpolation;
+    [SerializeField, Range(0f, 1f)] private float _inputInterpolation;
     [SerializeField] private LayerMask _layerMask;
     [SerializeField] private float _playerSpeed;
+    [SerializeField, Range(0f, 0.1f)] private float _groundRayOffset;
     [SerializeField] private float _jumpForce;
     
     private Rigidbody2D _rb;
@@ -20,7 +21,7 @@ public class PlayerMovement : MonoBehaviour, IControlable
         _rb = GetComponent<Rigidbody2D>();
         _collider = GetComponent<BoxCollider2D>();
 
-        _groundRayDistance = (_collider.bounds.size.y / 2) + 0.016f;
+        _groundRayDistance = (_collider.bounds.size.y / 2) + _groundRayOffset;
     }
     private void FixedUpdate()
     {
@@ -54,5 +55,10 @@ public class PlayerMovement : MonoBehaviour, IControlable
     {
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position, transform.position - new Vector3(0f, _groundRayDistance, 0f));
+    }
+
+    public void MedKitPerformed()
+    {
+        GetComponent<PlayerHealth>().ImproveHealth();
     }
 }
