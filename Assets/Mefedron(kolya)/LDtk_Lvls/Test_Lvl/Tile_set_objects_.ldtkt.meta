@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3cc6b4ad9f87cc444ae227437951c642
+guid: 27b07801ebf10e34e81bca3205abe887
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -12,7 +12,7 @@ ScriptedImporter:
   _pixelsPerUnit: 32
   _overrideTexture: {instanceID: 0}
   _sprites:
-  - name: Tileet_Lvl_0_Kolya_LDtk__0
+  - name: Tile_set_objects__0
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -23,16 +23,10 @@ ScriptedImporter:
       y: 288
       width: 32
       height: 32
-    spriteID: 77f23a5db3fb7b640a8c2a3a456350e4
-    spriteOutline:
-    - shape:
-      - {x: -11, y: 16}
-      - {x: -16, y: 11}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: c4bb513e87275c0409f750aff60e6182
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__1
+  - name: Tile_set_objects__1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -43,15 +37,10 @@ ScriptedImporter:
       y: 288
       width: 32
       height: 32
-    spriteID: 34f1b43e10178a143a2248e8e7c1674d
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: 70cc4cc2c0032d1428ac135569ad3097
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__2
+  - name: Tile_set_objects__2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -62,16 +51,10 @@ ScriptedImporter:
       y: 288
       width: 32
       height: 32
-    spriteID: 2bb8c0db2bebfad4fb9bae57498ebe50
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 11}
-      - {x: 11, y: 16}
+    spriteID: 331e14c360d6a6245b5b7b8c4fcd0fa7
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__3
+  - name: Tile_set_objects__3
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -82,10 +65,10 @@ ScriptedImporter:
       y: 288
       width: 32
       height: 32
-    spriteID: 7a5dc4d7738d9764c967fd4efc6f4646
+    spriteID: 6491ab02f3ebefb4fa8bdb4e1615813f
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__4
+  - name: Tile_set_objects__4
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -96,10 +79,10 @@ ScriptedImporter:
       y: 288
       width: 32
       height: 32
-    spriteID: bcb3f87b00e2f334691bcabdf0be3475
+    spriteID: 6f807d3ad7c0d604c864dc57ad52ae1e
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__5
+  - name: Tile_set_objects__5
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -110,10 +93,10 @@ ScriptedImporter:
       y: 288
       width: 32
       height: 32
-    spriteID: 262d77fbf8712b345a9371f016583a65
+    spriteID: 477012db7a794b042a84517e3be6956b
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__6
+  - name: Tile_set_objects__6
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -124,10 +107,10 @@ ScriptedImporter:
       y: 288
       width: 32
       height: 32
-    spriteID: e65d9a4a632610b46ae14871265807c7
+    spriteID: 444714bd1c8f2a64db2b71e0fe038688
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__7
+  - name: Tile_set_objects__7
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -138,10 +121,10 @@ ScriptedImporter:
       y: 288
       width: 32
       height: 32
-    spriteID: e524017f0d89e47418a7b9c610ff7449
+    spriteID: 375d03ecd9bc6c749bda55f4403b42c8
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__8
+  - name: Tile_set_objects__8
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -152,10 +135,10 @@ ScriptedImporter:
       y: 288
       width: 32
       height: 32
-    spriteID: 7974dc3a63f56d240bc0f3fe50be15df
+    spriteID: 53d0c2a0a1b87aa4ba4d6e8e744ff5e6
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__9
+  - name: Tile_set_objects__9
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -166,10 +149,10 @@ ScriptedImporter:
       y: 288
       width: 32
       height: 32
-    spriteID: 72a6e17aff2861d46b6c21d9be54c9e7
+    spriteID: d01114817da2e8345a322ea5b7f51435
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__10
+  - name: Tile_set_objects__10
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -180,15 +163,10 @@ ScriptedImporter:
       y: 256
       width: 32
       height: 32
-    spriteID: a03f3b8992684564a85ef0e47cc43498
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: 317ee0f85f82f354da2117870507647d
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__11
+  - name: Tile_set_objects__11
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -199,15 +177,10 @@ ScriptedImporter:
       y: 256
       width: 32
       height: 32
-    spriteID: e5a25c249ffa3d64eb0e4ec83ce2ca67
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: 2b8365c100d465a4fa4867d45358231d
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__12
+  - name: Tile_set_objects__12
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -218,15 +191,10 @@ ScriptedImporter:
       y: 256
       width: 32
       height: 32
-    spriteID: d01e29abb7dd2d1408d41cf180cbf0bc
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: f23ef8391707d1f43bf49f28013dfe81
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__13
+  - name: Tile_set_objects__13
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -237,10 +205,10 @@ ScriptedImporter:
       y: 256
       width: 32
       height: 32
-    spriteID: e7ec236adbbd6d448b2f15011949a188
+    spriteID: 88150bb6b3cdf9947b6cca211bb17fd2
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__14
+  - name: Tile_set_objects__14
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -251,10 +219,10 @@ ScriptedImporter:
       y: 256
       width: 32
       height: 32
-    spriteID: 26c16cf092421e24683ba756d7b36b41
+    spriteID: c9601138e90ff0e4d8df728a499b78e8
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__15
+  - name: Tile_set_objects__15
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -265,10 +233,10 @@ ScriptedImporter:
       y: 256
       width: 32
       height: 32
-    spriteID: dfcbc322530798049897e0714d4d0429
+    spriteID: e2f82ac9fedf2dc4bb33e905d783402c
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__16
+  - name: Tile_set_objects__16
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -279,10 +247,10 @@ ScriptedImporter:
       y: 256
       width: 32
       height: 32
-    spriteID: 583e96dfd14eff445a8f678b81f02ef3
+    spriteID: 8bef66f832e969b4cad57281ce3e93a6
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__17
+  - name: Tile_set_objects__17
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -293,10 +261,10 @@ ScriptedImporter:
       y: 256
       width: 32
       height: 32
-    spriteID: 13b310c9bfa3c3d4ca4f64fa6044896b
+    spriteID: e8d95f625c32b484989f8bac7f04598c
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__18
+  - name: Tile_set_objects__18
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -307,10 +275,10 @@ ScriptedImporter:
       y: 256
       width: 32
       height: 32
-    spriteID: 8287e7d373e1c634fbb6fdd6d2b6b0ba
+    spriteID: fe1a404367d50c4499767e18b7d46753
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__19
+  - name: Tile_set_objects__19
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -321,10 +289,10 @@ ScriptedImporter:
       y: 256
       width: 32
       height: 32
-    spriteID: 7d8dced7396ad5f40885f254abbf7922
+    spriteID: c67c68fea1b1345458d35bb672e169a4
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__20
+  - name: Tile_set_objects__20
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -335,16 +303,10 @@ ScriptedImporter:
       y: 224
       width: 32
       height: 32
-    spriteID: 23f6b70c3193d644b994d0eb519893f8
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -11}
-      - {x: -10, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: 8052001c68f4a584c9abfed67ddcf86a
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__21
+  - name: Tile_set_objects__21
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -355,15 +317,10 @@ ScriptedImporter:
       y: 224
       width: 32
       height: 32
-    spriteID: e54237a7acbb86f438f014cb30b138d6
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: 491fa4bc30495814da9c83948af31371
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__22
+  - name: Tile_set_objects__22
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -374,16 +331,10 @@ ScriptedImporter:
       y: 224
       width: 32
       height: 32
-    spriteID: 5e24069597dd39b44850610e24bcfe2e
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 11, y: -16}
-      - {x: 16, y: -11}
-      - {x: 16, y: 16}
+    spriteID: e133987fdeb84fa4eb6f07b50034a107
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__23
+  - name: Tile_set_objects__23
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -394,10 +345,10 @@ ScriptedImporter:
       y: 224
       width: 32
       height: 32
-    spriteID: c7fd782e0b981494c9522bb2c098b48b
+    spriteID: d44ae00205f8cb44183bd1bf8a774efa
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__24
+  - name: Tile_set_objects__24
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -408,10 +359,10 @@ ScriptedImporter:
       y: 224
       width: 32
       height: 32
-    spriteID: 223681ae3ad534f46859d4de4a01d75c
+    spriteID: 1ac16b12ef717a94faca6289e85b9b01
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__25
+  - name: Tile_set_objects__25
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -422,10 +373,10 @@ ScriptedImporter:
       y: 224
       width: 32
       height: 32
-    spriteID: d607ea7c796d3d04c81c5eae1a3d3d1b
+    spriteID: 6f611ad88c7a3b749a1f532116ee2e69
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__26
+  - name: Tile_set_objects__26
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -436,10 +387,10 @@ ScriptedImporter:
       y: 224
       width: 32
       height: 32
-    spriteID: e3d7cd2239ab745469eb8a35dcd77f1d
+    spriteID: 86550fffc0756e649888d5137c93c881
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__27
+  - name: Tile_set_objects__27
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -450,10 +401,10 @@ ScriptedImporter:
       y: 224
       width: 32
       height: 32
-    spriteID: dc4fbb201f281764c83920fcb59a5617
+    spriteID: 2b926052b172c0f43a55e6b7048c45fa
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__28
+  - name: Tile_set_objects__28
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -464,10 +415,10 @@ ScriptedImporter:
       y: 224
       width: 32
       height: 32
-    spriteID: 48400d941fd8eee4e8730736299dea23
+    spriteID: a44bf5974513c0d4485e46beedfa7afb
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__29
+  - name: Tile_set_objects__29
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -478,10 +429,10 @@ ScriptedImporter:
       y: 224
       width: 32
       height: 32
-    spriteID: 8ad82a4fabfe9c04e84451b0b42dc95e
+    spriteID: 44e5d5234c51b414489288248bbc92c7
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__30
+  - name: Tile_set_objects__30
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -492,16 +443,10 @@ ScriptedImporter:
       y: 192
       width: 32
       height: 32
-    spriteID: 1f783ae2b1daa634a82276b66bf97840
-    spriteOutline:
-    - shape:
-      - {x: -11, y: 16}
-      - {x: -16, y: 11}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: 79c85715a08f22d4ba5e8170381e27a7
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__31
+  - name: Tile_set_objects__31
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -512,15 +457,10 @@ ScriptedImporter:
       y: 192
       width: 32
       height: 32
-    spriteID: cefcf72d57c641c4aadafbb082668fae
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: a20975362eded9c4dbffe9fab9288210
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__32
+  - name: Tile_set_objects__32
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -531,16 +471,10 @@ ScriptedImporter:
       y: 192
       width: 32
       height: 32
-    spriteID: e3ff801c4133a344ebb0d44c2449ca08
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 11}
-      - {x: 11, y: 16}
+    spriteID: 89ff25d59d4a7fc40b9e92e4151fc602
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__33
+  - name: Tile_set_objects__33
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -551,10 +485,10 @@ ScriptedImporter:
       y: 192
       width: 32
       height: 32
-    spriteID: be1e1b08f2b0de748a616f8854daf803
+    spriteID: aba31c7acec32584384d4e264ab49bf1
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__34
+  - name: Tile_set_objects__34
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -565,10 +499,10 @@ ScriptedImporter:
       y: 192
       width: 32
       height: 32
-    spriteID: 78a399a5ce9178a48b7db28810e68209
+    spriteID: 54d57a0085818a9478fa180fd51567b1
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__35
+  - name: Tile_set_objects__35
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -579,10 +513,10 @@ ScriptedImporter:
       y: 192
       width: 32
       height: 32
-    spriteID: 1555ce4631fbfea449766f9beb993f3e
+    spriteID: 87863d7d7261d2f40b9fd7fa37e5a9bb
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__36
+  - name: Tile_set_objects__36
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -593,10 +527,10 @@ ScriptedImporter:
       y: 192
       width: 32
       height: 32
-    spriteID: cfafc21cdc98cfb4eaed7aca0f2de651
+    spriteID: 9946b02c359a7e74f9ff47c2943e40b3
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__37
+  - name: Tile_set_objects__37
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -607,10 +541,10 @@ ScriptedImporter:
       y: 192
       width: 32
       height: 32
-    spriteID: 385eded6c57c6734c8d9b0b4f1288dae
+    spriteID: 0850ded1d23110948a1fb8ead91447ea
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__38
+  - name: Tile_set_objects__38
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -621,10 +555,10 @@ ScriptedImporter:
       y: 192
       width: 32
       height: 32
-    spriteID: d94e1c56a0573df4bb431fd886dad8fb
+    spriteID: 369f11a1907bdaa49977e48ecf75bc6b
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__39
+  - name: Tile_set_objects__39
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -635,10 +569,10 @@ ScriptedImporter:
       y: 192
       width: 32
       height: 32
-    spriteID: c1f065775b4209e4e81f01be987b477c
+    spriteID: da9cbdd1b55712d428984265e2770eb2
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__40
+  - name: Tile_set_objects__40
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -649,10 +583,10 @@ ScriptedImporter:
       y: 160
       width: 32
       height: 32
-    spriteID: dc9ee6b3ec816ea458597d399cf3250c
+    spriteID: 4c989f5451002254b9e337be1216cd13
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__41
+  - name: Tile_set_objects__41
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -663,10 +597,10 @@ ScriptedImporter:
       y: 160
       width: 32
       height: 32
-    spriteID: 705fd97091a93d34d9d73a3f90b3af78
+    spriteID: 4590cdbdb1b37534cbb21625b90cab4d
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__42
+  - name: Tile_set_objects__42
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -677,10 +611,10 @@ ScriptedImporter:
       y: 160
       width: 32
       height: 32
-    spriteID: 85389f893733c1645bda1383bfb7767d
+    spriteID: 6e79b1b1b6368b849b271e4d6bc0e888
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__43
+  - name: Tile_set_objects__43
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -691,10 +625,10 @@ ScriptedImporter:
       y: 160
       width: 32
       height: 32
-    spriteID: 08142a4883fee1b438c635ae8afbf663
+    spriteID: 029c28b0674b97649a85c048b5bf566d
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__44
+  - name: Tile_set_objects__44
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -705,15 +639,10 @@ ScriptedImporter:
       y: 160
       width: 32
       height: 32
-    spriteID: c01a71adb47b11d438fbb2980e21aa8e
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: d4c49677b85e352469b2352bae227d79
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__45
+  - name: Tile_set_objects__45
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -724,15 +653,10 @@ ScriptedImporter:
       y: 160
       width: 32
       height: 32
-    spriteID: be93c34284b35f94c9766c3438fe2a5d
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: 624004234160a334ab4b11ee3362f171
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__46
+  - name: Tile_set_objects__46
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -743,15 +667,10 @@ ScriptedImporter:
       y: 160
       width: 32
       height: 32
-    spriteID: 4999d3323a54cb641939ca1b65ebe94f
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: 4340807bdf6982140ac8e2f48b5d3da8
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__47
+  - name: Tile_set_objects__47
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -762,10 +681,10 @@ ScriptedImporter:
       y: 160
       width: 32
       height: 32
-    spriteID: 5a05785261d7fc94bb7a162b28e3ed74
+    spriteID: efa3bbb5aeefabc4c9fcd69cdb2991bd
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__48
+  - name: Tile_set_objects__48
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -776,10 +695,10 @@ ScriptedImporter:
       y: 160
       width: 32
       height: 32
-    spriteID: 3a836b9d37ebadd468a45da9c3eedac5
+    spriteID: f30cc2aaf6c0438408856000485bd644
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__49
+  - name: Tile_set_objects__49
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -790,10 +709,10 @@ ScriptedImporter:
       y: 160
       width: 32
       height: 32
-    spriteID: 2fdd342b6d74fd5439e1b44d757c8d1c
+    spriteID: 53e09d73e4697da4091e3790a5bc4758
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__50
+  - name: Tile_set_objects__50
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -804,15 +723,10 @@ ScriptedImporter:
       y: 128
       width: 32
       height: 32
-    spriteID: 7a27d083906a4f041a64d617433c22d2
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: 11bae5c8b8e194848b8e4fd8e84d8ff8
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__51
+  - name: Tile_set_objects__51
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -823,15 +737,10 @@ ScriptedImporter:
       y: 128
       width: 32
       height: 32
-    spriteID: 7aa2f9bf81ce33244a134a1e9d9dca41
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: 70034f75404634b4eb6804e5f124224e
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__52
+  - name: Tile_set_objects__52
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -842,15 +751,10 @@ ScriptedImporter:
       y: 128
       width: 32
       height: 32
-    spriteID: d0d8ce96d1be9f8448c58c13b89bf6d8
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: 6dc7d0a18e058e34c83e739cfc5fc9be
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__53
+  - name: Tile_set_objects__53
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -861,10 +765,10 @@ ScriptedImporter:
       y: 128
       width: 32
       height: 32
-    spriteID: 7c48acd39a6079f44b789005a48cb977
+    spriteID: 6ca0cb439de4cb545af678b16a43ffc0
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__54
+  - name: Tile_set_objects__54
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -875,15 +779,10 @@ ScriptedImporter:
       y: 128
       width: 32
       height: 32
-    spriteID: 0fcf5f9ab3f556d41ac940d2ccfd7216
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: 1038b89ca5fb92e4583d39e4f6d3d412
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__55
+  - name: Tile_set_objects__55
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -894,10 +793,10 @@ ScriptedImporter:
       y: 128
       width: 32
       height: 32
-    spriteID: 52d7aa0bb0d22474ca0dec1dc2fae5bc
+    spriteID: 2bd7bef6e017391408062fe80f3ebd1b
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__56
+  - name: Tile_set_objects__56
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -908,10 +807,10 @@ ScriptedImporter:
       y: 128
       width: 32
       height: 32
-    spriteID: 73b9232f745d3284286ec98de9c96b0e
+    spriteID: db1079afdec2a354cb22a2dc792385dc
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__57
+  - name: Tile_set_objects__57
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -922,15 +821,10 @@ ScriptedImporter:
       y: 128
       width: 32
       height: 32
-    spriteID: 6c5072af61729f5478ad4e89bd0484d2
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: a91f26dbb322ec14db1324f80237b3b1
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__58
+  - name: Tile_set_objects__58
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -941,10 +835,10 @@ ScriptedImporter:
       y: 128
       width: 32
       height: 32
-    spriteID: 6ed6aec012f96c443976adffc099bb91
+    spriteID: 2c6acaa051948fe489ae1d0d71fb907c
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__59
+  - name: Tile_set_objects__59
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -955,10 +849,10 @@ ScriptedImporter:
       y: 128
       width: 32
       height: 32
-    spriteID: 83aaaec11da6bee4fa2da222feaa1aaa
+    spriteID: 77de1bd0c6ba2f046994aea64fd34f99
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__60
+  - name: Tile_set_objects__60
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -969,10 +863,10 @@ ScriptedImporter:
       y: 96
       width: 32
       height: 32
-    spriteID: b82157c55254bd04d86520f1eb518926
+    spriteID: 33080c36420232449810466df6b0ebbc
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__61
+  - name: Tile_set_objects__61
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -983,10 +877,10 @@ ScriptedImporter:
       y: 96
       width: 32
       height: 32
-    spriteID: e6930c02eef94bd4d95b4d51d58b8a3f
+    spriteID: 746a088f85191c9459d50d896954a4ce
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__62
+  - name: Tile_set_objects__62
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -997,10 +891,10 @@ ScriptedImporter:
       y: 96
       width: 32
       height: 32
-    spriteID: 5a1335251946489478cac190961bd313
+    spriteID: e890dacbdd94a62428d40b5f8a3d7deb
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__63
+  - name: Tile_set_objects__63
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1011,10 +905,10 @@ ScriptedImporter:
       y: 96
       width: 32
       height: 32
-    spriteID: ca4d8051917dcb045b5e3c537a35397c
+    spriteID: 90e6876e650cb57448b5b24bc3fa6e5d
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__64
+  - name: Tile_set_objects__64
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1025,10 +919,10 @@ ScriptedImporter:
       y: 96
       width: 32
       height: 32
-    spriteID: c588d3476c464824399b83d63a960c0d
+    spriteID: 3c1cf6382a6c3d44ab57b3981acfae11
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__65
+  - name: Tile_set_objects__65
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1039,10 +933,10 @@ ScriptedImporter:
       y: 96
       width: 32
       height: 32
-    spriteID: d300a08dc25018f4890c690d5e07f892
+    spriteID: 06639f2217f92ea429788366cb271190
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__66
+  - name: Tile_set_objects__66
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1053,15 +947,10 @@ ScriptedImporter:
       y: 96
       width: 32
       height: 32
-    spriteID: 0de86339c5b0cb14f850a611fb824ddc
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: 187101c887d9e534aa31889e81074586
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__67
+  - name: Tile_set_objects__67
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1072,15 +961,10 @@ ScriptedImporter:
       y: 96
       width: 32
       height: 32
-    spriteID: 7218abb44cc691840a2cb1606d6c6e4e
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: 13fcc029fa288d34786f025b5e613e03
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__68
+  - name: Tile_set_objects__68
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1091,10 +975,10 @@ ScriptedImporter:
       y: 96
       width: 32
       height: 32
-    spriteID: 8a3710960a57146409e8ab49d16f339c
+    spriteID: e757417f9d444dc4a8a5ad3a2b0eb6a1
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__69
+  - name: Tile_set_objects__69
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1105,10 +989,10 @@ ScriptedImporter:
       y: 96
       width: 32
       height: 32
-    spriteID: b0e167ed24ff68a4293481c66935c97e
+    spriteID: 0449e350309f4814993ab99c9f54d511
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__70
+  - name: Tile_set_objects__70
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1119,15 +1003,10 @@ ScriptedImporter:
       y: 64
       width: 32
       height: 32
-    spriteID: a573969d6c5976640aad4faff9910542
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: 5716ad248669eda4f95ccc888616541f
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__71
+  - name: Tile_set_objects__71
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1138,15 +1017,10 @@ ScriptedImporter:
       y: 64
       width: 32
       height: 32
-    spriteID: c7ad81b0f4b392943942bbe28eab271c
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: adb5c42ee77d1ee40adf2f117668cebe
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__72
+  - name: Tile_set_objects__72
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1157,10 +1031,10 @@ ScriptedImporter:
       y: 64
       width: 32
       height: 32
-    spriteID: 5d9e0bfa1e7793e48863bcb844722149
+    spriteID: 67edfc7f9d0e5394da9d87c3cf7bcfba
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__73
+  - name: Tile_set_objects__73
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1171,10 +1045,10 @@ ScriptedImporter:
       y: 64
       width: 32
       height: 32
-    spriteID: 0fad7875a286afa43a6741d13cfe7682
+    spriteID: b5697f15fe4de5c4290031df974b2dfa
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__74
+  - name: Tile_set_objects__74
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1185,10 +1059,10 @@ ScriptedImporter:
       y: 64
       width: 32
       height: 32
-    spriteID: 4e58491c02bed924296d87b29cc32763
+    spriteID: 6fb33499511ec8a468b5873287c96589
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__75
+  - name: Tile_set_objects__75
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1199,10 +1073,10 @@ ScriptedImporter:
       y: 64
       width: 32
       height: 32
-    spriteID: dcebf658aa384334aad6ae4ab4de61c2
+    spriteID: 5cca4495383445e439ff47da92cdf7b7
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__76
+  - name: Tile_set_objects__76
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1213,10 +1087,10 @@ ScriptedImporter:
       y: 64
       width: 32
       height: 32
-    spriteID: a07ba1a0c51df144f9e6a6405332f4ee
+    spriteID: 47d1ba1ff26cbdf4d863340b9ce7be34
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__77
+  - name: Tile_set_objects__77
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1227,10 +1101,10 @@ ScriptedImporter:
       y: 64
       width: 32
       height: 32
-    spriteID: d41cdcef8fe14ff478ee6cd7a782fa1c
+    spriteID: 767ac5748191cf8438abf925aa941d3d
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__78
+  - name: Tile_set_objects__78
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1241,10 +1115,10 @@ ScriptedImporter:
       y: 64
       width: 32
       height: 32
-    spriteID: abe9cea2f37c62c4099ed6837108fdad
+    spriteID: 1922824ff07b5c04d96aa12cbafee52a
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__79
+  - name: Tile_set_objects__79
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1255,10 +1129,10 @@ ScriptedImporter:
       y: 64
       width: 32
       height: 32
-    spriteID: 43ea2f963c84661479eba698f2caf82d
+    spriteID: 3dac507aa596c0b4aa4f5b2018cc7a8c
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__80
+  - name: Tile_set_objects__80
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1269,10 +1143,10 @@ ScriptedImporter:
       y: 32
       width: 32
       height: 32
-    spriteID: 2116a71ba68b1a94cbf7d1d004d89406
+    spriteID: baae360025c41f042996099b71adfb04
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__81
+  - name: Tile_set_objects__81
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1283,10 +1157,10 @@ ScriptedImporter:
       y: 32
       width: 32
       height: 32
-    spriteID: e7495f46b46f3944b8a5fd0ad5840dfe
+    spriteID: 1781f4ef6aadaab4293f956ea8e9a1e7
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__82
+  - name: Tile_set_objects__82
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1297,10 +1171,10 @@ ScriptedImporter:
       y: 32
       width: 32
       height: 32
-    spriteID: 55477b5a5060dbc428c34c0c1e69c13d
+    spriteID: 168af84bb33e86641b71767f420aaaf0
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__83
+  - name: Tile_set_objects__83
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1311,15 +1185,10 @@ ScriptedImporter:
       y: 32
       width: 32
       height: 32
-    spriteID: 40b671bafc906a2448655f6d1ee223fa
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: 429aedfc2ecf8884681b2abcfc601244
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__84
+  - name: Tile_set_objects__84
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1330,15 +1199,10 @@ ScriptedImporter:
       y: 32
       width: 32
       height: 32
-    spriteID: fedeff2c7040a8e4e9de38f4855a1ddc
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: b6afa6ffa60f077408d76951332c4f36
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__85
+  - name: Tile_set_objects__85
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1349,15 +1213,10 @@ ScriptedImporter:
       y: 32
       width: 32
       height: 32
-    spriteID: 2b82492edd78b624388066e794adf74c
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: 77b8175e740cbe648bc2c3a8c3604568
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__86
+  - name: Tile_set_objects__86
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1368,10 +1227,10 @@ ScriptedImporter:
       y: 32
       width: 32
       height: 32
-    spriteID: 94b9619878063484c8d6e3fa5adc8c5a
+    spriteID: 83049c7e039f2574f839cbf98e9fc503
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__87
+  - name: Tile_set_objects__87
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1382,15 +1241,10 @@ ScriptedImporter:
       y: 32
       width: 32
       height: 32
-    spriteID: 03aa18f31ba04b142b4239a46090cab9
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: 0f34a2dc065fcfe4dba0f981dea64a41
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__88
+  - name: Tile_set_objects__88
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1401,15 +1255,10 @@ ScriptedImporter:
       y: 32
       width: 32
       height: 32
-    spriteID: 302db661492e46345a0797364ba2f310
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: 36048023a64739f4d8bfba05b59a202f
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__89
+  - name: Tile_set_objects__89
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1420,10 +1269,10 @@ ScriptedImporter:
       y: 32
       width: 32
       height: 32
-    spriteID: ee3b730d99a8a0642b8cbf2e1c11f870
+    spriteID: 09d97e3ab46db134190476398980a49d
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__90
+  - name: Tile_set_objects__90
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1434,15 +1283,10 @@ ScriptedImporter:
       y: 0
       width: 32
       height: 32
-    spriteID: 2973977173eb6b94ca4cc3d93fe99fa9
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: 3c04065d633026b4d8a3e32a83130709
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__91
+  - name: Tile_set_objects__91
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1453,15 +1297,10 @@ ScriptedImporter:
       y: 0
       width: 32
       height: 32
-    spriteID: dda15ab5e282d3449b241d8e58930ac9
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: 4da36ef8fadb3894686da8d690dd8253
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__92
+  - name: Tile_set_objects__92
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1472,10 +1311,10 @@ ScriptedImporter:
       y: 0
       width: 32
       height: 32
-    spriteID: c4ba98283971e954495b91a1abec2ce1
+    spriteID: 4cf35a488a7d1c941919846f6d100def
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__93
+  - name: Tile_set_objects__93
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1486,10 +1325,10 @@ ScriptedImporter:
       y: 0
       width: 32
       height: 32
-    spriteID: b85336404e436b64c9818dd8a546a399
+    spriteID: 57bf9f64618b51f4dbf48e12b460a38b
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__94
+  - name: Tile_set_objects__94
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1500,15 +1339,10 @@ ScriptedImporter:
       y: 0
       width: 32
       height: 32
-    spriteID: 0be0d7250132ec44a9a6dcfdb4c92bf1
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: 7b5f50f68b4a06741bbae7ea62dc0522
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__95
+  - name: Tile_set_objects__95
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1519,10 +1353,10 @@ ScriptedImporter:
       y: 0
       width: 32
       height: 32
-    spriteID: 111495f6e355be746addfb09b0d2700e
+    spriteID: 2adad73641c503941bd471a54d45a73c
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__96
+  - name: Tile_set_objects__96
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1533,10 +1367,10 @@ ScriptedImporter:
       y: 0
       width: 32
       height: 32
-    spriteID: feb5ed47d08e2914f990e74dc820a105
+    spriteID: 38da17c7568d4b144a21069b0e7ddabd
     spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__97
+  - name: Tile_set_objects__97
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1547,15 +1381,10 @@ ScriptedImporter:
       y: 0
       width: 32
       height: 32
-    spriteID: 657f83ba4b57a0f409813c5594108c14
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: f72a0ecb5954fc742898bbb7781b03bf
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__98
+  - name: Tile_set_objects__98
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1566,15 +1395,10 @@ ScriptedImporter:
       y: 0
       width: 32
       height: 32
-    spriteID: eafc493f1bbdf524b818af7c1d4bc2dc
-    spriteOutline:
-    - shape:
-      - {x: -16, y: 16}
-      - {x: -16, y: -16}
-      - {x: 16, y: -16}
-      - {x: 16, y: 16}
+    spriteID: dccd99284dc5a2543bbb89ff33f970b9
+    spriteOutline: []
     tessellationDetail: 0
-  - name: Tileet_Lvl_0_Kolya_LDtk__99
+  - name: Tile_set_objects__99
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -1585,8 +1409,8 @@ ScriptedImporter:
       y: 0
       width: 32
       height: 32
-    spriteID: 49a3a3f02dda65240abf473925c261ff
+    spriteID: 5a8caea7233c3f149ab08d2cc736bcfa
     spriteOutline: []
     tessellationDetail: 0
   _secondaryTextures: []
-  _artifacts: {fileID: -2988177865379244337, guid: 3cc6b4ad9f87cc444ae227437951c642, type: 3}
+  _artifacts: {instanceID: 0}

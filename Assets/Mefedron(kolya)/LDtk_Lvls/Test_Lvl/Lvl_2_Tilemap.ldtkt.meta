@@ -1,0 +1,576 @@
+fileFormatVersion: 2
+guid: 3148d4c304575f14d8897f5891174332
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: f3268c876daf4890b6af6cd462063137, type: 3}
+  _reimportOnDependencyChange: 1
+  _pixelsPerUnit: 32
+  _overrideTexture: {instanceID: 0}
+  _sprites:
+  - name: Lvl_2_Tilemap_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 96
+      width: 32
+      height: 32
+    spriteID: ed67519022ad3fd4b806df16a94f67a1
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 96
+      width: 32
+      height: 32
+    spriteID: c65ffb83d12a4ca449a5f7e6b5a938ce
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 502ea9660c11ac6489478ecd83533612
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 7e903e9c2f37c3541b0bcb98486aab33
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 4a2aae8b58b93c6439ed4fbe213f2fe1
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 96
+      width: 32
+      height: 32
+    spriteID: d64f17b26204650429b90ad725aeae19
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 86d2b77d272d1a041bc69e88ffa45af4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 1b01227ccb5c11f44a083d9dff161715
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 3719d604e1aca2a4c8abea17882d6feb
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 1f01ae8961e263343922a472c4b584fd
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 1396fcc71a328db46b8d6e35c4ed7727
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 64
+      width: 32
+      height: 32
+    spriteID: eb59d8ae770b7274786e7ee3e07df0a9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 64
+      width: 32
+      height: 32
+    spriteID: ad2aa58f83542f247b2696f120e3a70d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_13
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 1252b0cebc4251e418854046b752d5bd
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_14
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 64
+      width: 32
+      height: 32
+    spriteID: edaf9cd39f3076e4da958efcefe1c99c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 2f335b28a53e7f84eb297fcd1160911b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_16
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 2f00be809602aee458ebb234e30e3385
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_17
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 1902ecc0b76fa6246a4092edd1cf442c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_18
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 0598a8edcb1eb6e4a9695743fa71fcd5
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_19
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 4ab6c17a519059040a80aa581f32bd41
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_20
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 0212114f38c3d3c4a9db514acc32fee9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_21
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 26318527758da9d46ba18593084a7819
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_22
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 1616b57fde10f5f459bbb03ac0350fbb
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_23
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 32
+      width: 32
+      height: 32
+    spriteID: d21b687ddfcc45a41b80a95be94acfd1
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_24
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 5c8d5dd4c66db0c49ba55a96e078fa92
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_25
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 018eadb322ace104696b06a3b8699080
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_26
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 2bcf863879a2e5f49a6872d3a6bf0fed
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_27
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 32
+      width: 32
+      height: 32
+    spriteID: e7f72cfd27f58594485088ce470f62c8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_28
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 32
+      width: 32
+      height: 32
+    spriteID: b1c36e422f08ee541ba2dcaca82296ee
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_29
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 453097bec47ce21418b011aa078dc518
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_30
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 32
+      height: 32
+    spriteID: d6c401485a861744ea597a7e7a033ee9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_31
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 9f6402c4523a4724a9b752d7f10b5ab7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_32
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 23375161be351bc4797e085b4538876f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_33
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 0
+      width: 32
+      height: 32
+    spriteID: fb5fb31f6c167824f874b6dce895b90c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_34
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 0
+      width: 32
+      height: 32
+    spriteID: e3b00621b94eded4ea94ad310c539634
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_35
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 0
+      width: 32
+      height: 32
+    spriteID: b979286128d98fe4faa7023e7e959d7b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_36
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 914d36573e5a71941a98d8a4a2fdfe1b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_37
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 12a3b1c6849f6b44296a93bee94e4c07
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_38
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 50dbd5da95ad2914bbfb95ae2362fac8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Tilemap_39
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 0549905d3e3efa64e8cc9ed8a1c6d7ff
+    spriteOutline: []
+    tessellationDetail: 0
+  _secondaryTextures: []
+  _artifacts: {instanceID: 0}
