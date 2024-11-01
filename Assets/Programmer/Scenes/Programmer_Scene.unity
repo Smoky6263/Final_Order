@@ -393,7 +393,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15, y: 1, z: -1}
+  m_LocalPosition: {x: -18, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -412,7 +412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _heightOffsert: 0
-  _interpolation: 0.1
+  _interpolation: 5
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,7 +506,7 @@ GameObject:
   - component: {fileID: 681679293}
   - component: {fileID: 681679292}
   - component: {fileID: 681679291}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -639,36 +639,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4802465207403008627, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
-      propertyPath: _maxHealth
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4802465207403008627, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 999669410}
-    - target: {fileID: 6186362768093650412, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
-      propertyPath: m_Size.x
-      value: 0.49
-      objectReference: {fileID: 0}
-    - target: {fileID: 6186362768093650412, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
-      propertyPath: m_Size.y
-      value: 0.87
-      objectReference: {fileID: 0}
-    - target: {fileID: 6186362768093650412, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 1b88a345eda5b33429406c8f4f38bf2f, type: 3}
-    - target: {fileID: 6186362768093650412, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7053303436558850811, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18
+      value: -34
       objectReference: {fileID: 0}
     - target: {fileID: 7053303436558850811, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 7053303436558850811, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
       propertyPath: m_LocalPosition.z
@@ -841,7 +821,7 @@ GameObject:
   - component: {fileID: 1134877759}
   - component: {fileID: 1134877758}
   - component: {fileID: 1134877757}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1288,7 +1268,7 @@ GameObject:
   - component: {fileID: 1405360006}
   - component: {fileID: 1405360005}
   - component: {fileID: 1405360003}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1418,7 +1398,7 @@ GameObject:
   - component: {fileID: 1494906411}
   - component: {fileID: 1494906410}
   - component: {fileID: 1494906409}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
