@@ -37,18 +37,27 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""JumpPerformed"",
+                    ""name"": ""JumpIsPressed"",
                     ""type"": ""Button"",
                     ""id"": ""b4c70c25-9ddb-4e97-bb3e-00418c091653"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""JumpIsReleased"",
+                    ""type"": ""Button"",
+                    ""id"": ""0036cac9-22b2-4cc9-b94d-7d9f59ff5b15"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=1)"",
                     ""initialStateCheck"": false
                 },
                 {
                     ""name"": ""MedKitPerformed"",
                     ""type"": ""Button"",
-                    ""id"": ""9f35ad33-9d8a-4b22-857e-fb7e594e9554"",
+                    ""id"": ""f85b3fa8-2b4b-46ad-a10b-7a4c6a3297ab"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -173,7 +182,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""JumpPerformed"",
+                    ""action"": ""JumpIsPressed"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -184,13 +193,13 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""JumpPerformed"",
+                    ""action"": ""JumpIsPressed"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""b27c216d-32b8-4000-9648-45fd0f53c837"",
+                    ""id"": ""45c94cd2-a986-4447-bff9-a5f30a1a037f"",
                     ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -201,12 +210,34 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""30de83c8-1e0a-49cd-8974-b420bf9fc1e6"",
+                    ""id"": ""c11cfc45-36a1-4754-84ab-77846fe51972"",
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""MedKitPerformed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a5299a38-869a-46b0-b548-d6a9b8cf984e"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""JumpIsReleased"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eedcd1ed-f40c-4bea-abf7-2920d7296798"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""JumpIsReleased"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -218,7 +249,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         // Gameplay
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_Movement = m_Gameplay.FindAction("Movement", throwIfNotFound: true);
-        m_Gameplay_JumpPerformed = m_Gameplay.FindAction("JumpPerformed", throwIfNotFound: true);
+        m_Gameplay_JumpIsPressed = m_Gameplay.FindAction("JumpIsPressed", throwIfNotFound: true);
+        m_Gameplay_JumpIsReleased = m_Gameplay.FindAction("JumpIsReleased", throwIfNotFound: true);
         m_Gameplay_MedKitPerformed = m_Gameplay.FindAction("MedKitPerformed", throwIfNotFound: true);
     }
 
@@ -282,14 +314,16 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Gameplay;
     private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
     private readonly InputAction m_Gameplay_Movement;
-    private readonly InputAction m_Gameplay_JumpPerformed;
+    private readonly InputAction m_Gameplay_JumpIsPressed;
+    private readonly InputAction m_Gameplay_JumpIsReleased;
     private readonly InputAction m_Gameplay_MedKitPerformed;
     public struct GameplayActions
     {
         private @PlayerInputs m_Wrapper;
         public GameplayActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Gameplay_Movement;
-        public InputAction @JumpPerformed => m_Wrapper.m_Gameplay_JumpPerformed;
+        public InputAction @JumpIsPressed => m_Wrapper.m_Gameplay_JumpIsPressed;
+        public InputAction @JumpIsReleased => m_Wrapper.m_Gameplay_JumpIsReleased;
         public InputAction @MedKitPerformed => m_Wrapper.m_Gameplay_MedKitPerformed;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
@@ -303,9 +337,12 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
-            @JumpPerformed.started += instance.OnJumpPerformed;
-            @JumpPerformed.performed += instance.OnJumpPerformed;
-            @JumpPerformed.canceled += instance.OnJumpPerformed;
+            @JumpIsPressed.started += instance.OnJumpIsPressed;
+            @JumpIsPressed.performed += instance.OnJumpIsPressed;
+            @JumpIsPressed.canceled += instance.OnJumpIsPressed;
+            @JumpIsReleased.started += instance.OnJumpIsReleased;
+            @JumpIsReleased.performed += instance.OnJumpIsReleased;
+            @JumpIsReleased.canceled += instance.OnJumpIsReleased;
             @MedKitPerformed.started += instance.OnMedKitPerformed;
             @MedKitPerformed.performed += instance.OnMedKitPerformed;
             @MedKitPerformed.canceled += instance.OnMedKitPerformed;
@@ -316,9 +353,12 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
             @Movement.canceled -= instance.OnMovement;
-            @JumpPerformed.started -= instance.OnJumpPerformed;
-            @JumpPerformed.performed -= instance.OnJumpPerformed;
-            @JumpPerformed.canceled -= instance.OnJumpPerformed;
+            @JumpIsPressed.started -= instance.OnJumpIsPressed;
+            @JumpIsPressed.performed -= instance.OnJumpIsPressed;
+            @JumpIsPressed.canceled -= instance.OnJumpIsPressed;
+            @JumpIsReleased.started -= instance.OnJumpIsReleased;
+            @JumpIsReleased.performed -= instance.OnJumpIsReleased;
+            @JumpIsReleased.canceled -= instance.OnJumpIsReleased;
             @MedKitPerformed.started -= instance.OnMedKitPerformed;
             @MedKitPerformed.performed -= instance.OnMedKitPerformed;
             @MedKitPerformed.canceled -= instance.OnMedKitPerformed;
@@ -342,7 +382,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     public interface IGameplayActions
     {
         void OnMovement(InputAction.CallbackContext context);
-        void OnJumpPerformed(InputAction.CallbackContext context);
+        void OnJumpIsPressed(InputAction.CallbackContext context);
+        void OnJumpIsReleased(InputAction.CallbackContext context);
         void OnMedKitPerformed(InputAction.CallbackContext context);
     }
 }

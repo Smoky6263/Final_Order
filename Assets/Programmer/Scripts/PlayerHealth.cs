@@ -39,8 +39,5 @@ public class PlayerHealth : MonoBehaviour, IHealth
         }
     }
 
-    public void OnMedKitPickUp()
-    {
-        _medKitsCount++;
-    }
+    public void OnMedKitPickUp() => _medKitsCount++;
 }

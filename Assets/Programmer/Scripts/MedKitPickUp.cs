@@ -18,9 +18,9 @@ public class MedKitPickUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == _playerTag && collision.transform.GetComponent<IHealth>() != null)
+        if (collision.gameObject.tag == _playerTag && collision.transform.GetComponentInParent<IHealth>() != null)
         {
-            collision.transform.GetComponent<IHealth>().OnMedKitPickUp();
+            collision.transform.GetComponentInParent<IHealth>().OnMedKitPickUp();
             _eventBus.Invoke(new PickUpMedKitSignal());
             Destroy(this.gameObject);
         }
