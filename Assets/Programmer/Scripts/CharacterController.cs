@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class CharacterController : MonoBehaviour
 {
-    private IMoveInputs _iMoveInpits;
+    private IControlable _iMoveInpits;
     private IHealth _iHealth;
     protected PlayerInputs _playerInputs;
 
@@ -13,8 +13,8 @@ public class CharacterController : MonoBehaviour
         _playerInputs = new PlayerInputs();
         _playerInputs.Enable();
 
-        _iMoveInpits = GetComponent<IMoveInputs>();
-        _iHealth = GetComponent<IHealth>();
+        _iMoveInpits = GetComponent<IControlable>();
+        _iHealth = GetComponent<PlayerStateMachine>().PayerHealth;
     }
 
     protected void Update() => ReadMovement();

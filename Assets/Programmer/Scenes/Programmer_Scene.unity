@@ -1597,6 +1597,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Damage_Trigger
       objectReference: {fileID: 0}
+    - target: {fileID: 262673540101758539, guid: 35e6c23c1ee54814ca1a30210ec50af1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2614934163516875892, guid: 35e6c23c1ee54814ca1a30210ec50af1, type: 3}
       propertyPath: m_Camera
       value: 

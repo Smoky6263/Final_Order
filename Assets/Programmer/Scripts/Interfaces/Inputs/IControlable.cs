@@ -1,4 +1,4 @@
-public interface IMoveInputs
+public interface IControlable
 {
     public void MoveInput(float x);
     public void JumpIsPressed();
