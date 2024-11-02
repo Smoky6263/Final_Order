@@ -6,7 +6,11 @@ public class CameraController : MonoBehaviour
     [SerializeField, Range(0f,5f)] private float _interpolation;
     private Transform _player;
 
-    public void Init(Transform player) => _player = player;
+    public void Init(Transform player)
+    {
+        _player = player;
+        transform.position = new Vector3(transform.position.x, transform.position.y, -1);
+    }
 
     private void Update()
     {

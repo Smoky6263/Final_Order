@@ -1,10 +1,9 @@
-using Unity.VisualScripting;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour, IMoveInputs
 {
     [SerializeField] private PlayerMovementStats _moveStats;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Collider2D _bodyColl;
     [SerializeField] private Collider2D _feetColl;
 
@@ -181,12 +180,12 @@ public class PlayerMovement : MonoBehaviour, IMoveInputs
         if (turnRight)
         {
             _isFacingRight = true;
-            transform.Rotate(0f, 180f, 0f);
+            _spriteRenderer.flipX = false;
         }
         else
         {
             _isFacingRight = false;
-            transform.Rotate(0f, -180f, 0f);
+            _spriteRenderer.flipX = true;
         }
     }
     #endregion
@@ -238,10 +237,10 @@ public class PlayerMovement : MonoBehaviour, IMoveInputs
         }
 
         //AIR JUMP AFTER COYOTE TIME LAPSED
-        //else if (_jumpBufferTimer > 0f && _isFalling)
-        //{
-        //    _isFalling = false;
-        //}
+        else if (_jumpBufferTimer > 0f && _isFalling)
+        {
+            _isFalling = false;
+        }
 
         //LANDED
         if((_isJumping || _isFalling) && _isGrounded && VerticalVelocity <= 0f)
@@ -251,6 +250,7 @@ public class PlayerMovement : MonoBehaviour, IMoveInputs
             _isFastFalling = false;
 
             _fastFallTime = 0f;
+            _jumpBufferTimer = 0f;
             _isPastApexThreshold = false;
 
             _jumpButtonPressed = false;
