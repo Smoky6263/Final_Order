@@ -339,6 +339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveStats: {fileID: 11400000, guid: 35bd3661d12ec264e9c881e2dcbdb28c, type: 2}
+  _spriteRenderer: {fileID: 6186362768093650412}
   _bodyColl: {fileID: 3690836998169861347}
   _feetColl: {fileID: 8138136447846235484}
 --- !u!114 &5382735734540963196

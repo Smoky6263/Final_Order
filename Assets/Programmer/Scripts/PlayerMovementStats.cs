@@ -22,7 +22,6 @@ public class PlayerMovementStats : ScriptableObject
     public float TimeTillJumpApex = 0.35f;
     [Range(.01f, 5f)] public float GravityOnReleaseMultiplier = 2f;
     public float MaxFallSpeed = 26f;
-    [Range(1, 5)] public int NumberOfJumpsAllowed = 2;
 
     [Header("Jump Cut")]
     [Range(0.02f, 0.3f)] public float TimeForUpwardsCancel = 0.027f;
