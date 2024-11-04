@@ -8,9 +8,9 @@ public class Spikes : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == _playerTag && collision.transform.GetComponent<IHealth>() != null)
+        if (collision.gameObject.tag == _playerTag)
         {
-            collision.gameObject.GetComponent<IHealth>().TakeDamage(_damageValue);
+            collision.gameObject.GetComponentInParent<PlayerStateMachine>().PayerHealth.TakeDamage(_damageValue);
         }
     }
 }

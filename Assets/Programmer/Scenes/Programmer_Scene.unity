@@ -496,17 +496,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4802465207403008627, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
+    - target: {fileID: 2126968548058270708, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 999669410}
     - target: {fileID: 7053303436558850811, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -34
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7053303436558850811, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7053303436558850811, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
       propertyPath: m_LocalPosition.z
@@ -560,7 +560,7 @@ GameObject:
   - component: {fileID: 999669411}
   - component: {fileID: 999669410}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: ----------GameManager----------
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1727,9 +1727,9 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 999669411}
   - {fileID: 1310733438}
   - {fileID: 619394802}
-  - {fileID: 999669411}
   - {fileID: 23170382}
   - {fileID: 1781167751}
   - {fileID: 4381919266913247136}

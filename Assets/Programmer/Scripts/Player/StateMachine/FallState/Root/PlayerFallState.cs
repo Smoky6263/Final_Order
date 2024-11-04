@@ -1,0 +1,62 @@
+﻿using UnityEngine;
+
+class PlayerFallState : PlayerBaseState
+{
+    public PlayerFallState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
+    {
+        IsRootState = true;
+        InitializeSubState();
+    }
+
+    public override void CheckSwitchStates()
+    {
+        //IF LANDED
+        //IF LANDED
+        if ((Context.IsJumping || Context.IsFalling) && Context.IsGrounded && Context.VerticalVelocity <= 0f)
+            SwitchState(Factory.Grounded());
+    }
+
+    public override void EnterState()
+    {
+        if (Context.IsFalling == false && Context.IsJumping == false)
+            Context.IsFalling = true;
+
+    }
+
+    public override void ExitState()
+    {
+        //LANDED
+        Context.IsJumping = false;
+        Context.IsFalling = false;
+        Context.IsFastFalling = false;
+
+        Context.FastFallTime = 0f;
+        Context.JumpBufferTimer = 0f;
+        Context.IsPastApexThreshold = false;
+
+        Context.JumpButtonPressed = false;
+        Context.VerticalVelocity = Physics2D.gravity.y;
+
+        Debug.Log("Exit FallState");
+    }
+
+    public override void InitializeSubState()
+    {
+        SetSubState(Factory.Run());
+    }
+
+    public override void UpdateState()
+    {
+        Debug.Log("Update FallState");
+        Context.VerticalVelocity += Context.MoveStats.Gravity * Time.deltaTime;
+        Fall();
+        CheckSwitchStates();
+    }
+
+    private void Fall()
+    {
+        //CLAMP FALLS SPEED
+        Context.VerticalVelocity = Mathf.Clamp(Context.VerticalVelocity, -Context.MoveStats.MaxFallSpeed, 50f);
+        Context.RigidBody.velocity = new Vector2(Context.RigidBody.velocity.x, Context.VerticalVelocity);
+    }
+}

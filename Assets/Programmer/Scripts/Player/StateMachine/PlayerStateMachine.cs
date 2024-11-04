@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerStateMachine : MonoBehaviour, IControlable
@@ -177,4 +176,11 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
             _coyoteTimer = _moveStats.JumpCoyoteTime;
     }
     #endregion
+
+    void OnGUI()
+    {
+        GUIStyle textSTyle = new GUIStyle();
+        textSTyle.fontSize = 24;
+        GUI.Label(new Rect(10, 10, 400, 26), _currentState.ToString(), textSTyle);
+    }
 }

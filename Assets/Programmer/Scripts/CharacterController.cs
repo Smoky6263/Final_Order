@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,6 +13,10 @@ public class CharacterController : MonoBehaviour
         _playerInputs.Enable();
 
         _iMoveInpits = GetComponent<IControlable>();
+    }
+
+    private void Start()
+    {
         _iHealth = GetComponent<PlayerStateMachine>().PayerHealth;
     }
 

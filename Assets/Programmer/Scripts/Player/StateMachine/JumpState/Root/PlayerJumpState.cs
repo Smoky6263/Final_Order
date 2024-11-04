@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class PlayerJumpState : PlayerBaseState
 {
-    public PlayerJumpState(PlayerStateMachine currenrContext, PlayerStateFactory playerStateFactory) : base(currenrContext, playerStateFactory)
+    public PlayerJumpState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
     {
         IsRootState = true;
         InitializeSubState();
     }
 
-    public override void CheckSwitchStatesState()
+    public override void CheckSwitchStates()
     {
         //IF LANDED
         if ((Context.IsJumping || Context.IsFalling) && Context.IsGrounded && Context.VerticalVelocity <= 0f)
@@ -17,11 +17,14 @@ public class PlayerJumpState : PlayerBaseState
 
     public override void EnterState()
     {
-        
+        InitiateJump();
+        Debug.Log("Enter JumpState");
     }
 
     public override void ExitState()
     {
+        Debug.Log("Exit JumpState");
+
         //LANDED
         Context.IsJumping = false;
         Context.IsFalling = false;
@@ -37,7 +40,7 @@ public class PlayerJumpState : PlayerBaseState
 
     public override void InitializeSubState()
     {
-        InitiateJump();
+        SetSubState(Factory.Run());
     }
 
     public override void UpdateState()
@@ -45,7 +48,7 @@ public class PlayerJumpState : PlayerBaseState
         JumpChecks();
         Jump();
         BumpHead();
-        CheckSwitchStatesState();
+        CheckSwitchStates();
     }
 
     private void InitiateJump()
@@ -55,19 +58,14 @@ public class PlayerJumpState : PlayerBaseState
 
         if (Context.IsJumping == false)
             Context.IsJumping = true;
-
+        
         Context.JumpBufferTimer = 0f;
         Context.VerticalVelocity = Context.MoveStats.InitialJumpVelocity;
     }
 
     private void JumpChecks()
     {
-        //WHEN WE PRESS THE JUMP BUTTON
-        if (Context.JumpButtonPressed)
-        {
-            Context.JumpBufferTimer = Context.MoveStats.JumpBufferTime;
-            Context.JumpReleasedDuringBuffer = false;
-        }
+        
         //WHEN WE RELEASE THE JUMP BUTTON
         if (Context.JumpButtonPressed == false)
         {
@@ -92,7 +90,7 @@ public class PlayerJumpState : PlayerBaseState
         }
 
         //INITIATE JUMP WITH BUFFERING AND COYOTE TIME
-        if (Context.JumpBufferTimer > 0 && Context.IsJumping && (Context.IsGrounded || Context.CoyoteTimer > 0f))
+        if (Context.JumpBufferTimer > 0 && Context.IsJumping && Context.IsGrounded)
         {
             InitiateJump();
 

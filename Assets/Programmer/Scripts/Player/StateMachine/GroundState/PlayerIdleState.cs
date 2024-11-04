@@ -7,11 +7,8 @@ public class PlayerIdleState : PlayerBaseState
         InitializeSubState();
     }
 
-    public override void CheckSwitchStatesState()
+    public override void CheckSwitchStates()
     {
-        //IF PLAYER PRESS JUMP
-        if (Context.IsGrounded && Context.JumpButtonPressed)
-            SwitchState(Factory.Jump());
         //IF PLAYER PRESS MOVE INPUT
         if(Context.IsGrounded && Context.MovementInput.x != 0f)
             SwitchState(Factory.Run());
@@ -19,12 +16,14 @@ public class PlayerIdleState : PlayerBaseState
 
     public override void EnterState()
     {
-        Debug.Log("Hello From Idle State");
-        CheckSwitchStatesState();
+        Debug.Log("Enter IdleState");
+        Context.MovementVelocity = new Vector2(0f, Context.MovementVelocity.y);
+        Context.RigidBody.velocity = new Vector2(Context.MovementVelocity.x, Context.MovementVelocity.y);
     }
 
     public override void ExitState()
     {
+        Debug.Log("Exit IdleState");
     }
 
     public override void InitializeSubState()
@@ -34,6 +33,6 @@ public class PlayerIdleState : PlayerBaseState
 
     public override void UpdateState()
     {
-        CheckSwitchStatesState();
+        CheckSwitchStates();
     }
 }
