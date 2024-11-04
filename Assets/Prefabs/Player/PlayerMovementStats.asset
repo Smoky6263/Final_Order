@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponDamage: 0
   MaxRunSpeed: 7
-  GroundAcceleration: 8
-  GroundDeceleration: 10
+  GroundAcceleration: 6
+  GroundDeceleration: 0.3
   AirAcceleration: 5
   AirDeceleration: 5
   GroundLayer:
@@ -24,14 +24,14 @@ MonoBehaviour:
   GroundDetectionRayLength: 0.14
   HeadDetectionRayLength: 0.02
   HeadWidth: 0.75
-  JumpHeight: 4
+  JumpHeight: 3
   JumpHeightCompensationFactor: 1.1
-  TimeTillJumpApex: 0.4
+  TimeTillJumpApex: 0.3
   GravityOnReleaseMultiplier: 1.5
-  MaxFallSpeed: 12
+  MaxFallSpeed: 16
   TimeForUpwardsCancel: 0.027
-  ApexThreshold: 0.965
-  ApexHangTime: 0.5
+  ApexThreshold: 0.984
+  ApexHangTime: 0.1
   JumpBufferTime: 0.125
   JumpCoyoteTime: 0.125
   DebugShowIsGroundedBox: 0
