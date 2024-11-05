@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class MedKitPickUp : MonoBehaviour
@@ -18,9 +17,9 @@ public class MedKitPickUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == _playerTag && collision.transform.GetComponentInParent<IHealth>() != null)
+        if (collision.gameObject.tag == _playerTag)
         {
-            collision.transform.GetComponentInParent<IHealth>().OnMedKitPickUp();
+            collision.transform.GetComponentInParent<PlayerStateMachine>().PayerHealth.OnMedKitPickUp();
             _eventBus.Invoke(new PickUpMedKitSignal());
             Destroy(this.gameObject);
         }

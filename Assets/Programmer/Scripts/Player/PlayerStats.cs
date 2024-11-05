@@ -1,8 +1,12 @@
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "PlayerMovementStats")]
-public class PlayerMovementStats : ScriptableObject
+public class PlayerStats : ScriptableObject
 {
+
+    [Header("Weapon")]
+    [SerializeField, Range(0f,100f)] public float _weaponDamage;
+
     [Header("Run")]
     [Range(1f, 100f)] public float MaxRunSpeed = 12.5f;
     [Range(0.25f, 50f)] public float GroundAcceleration = 5f;
@@ -11,7 +15,7 @@ public class PlayerMovementStats : ScriptableObject
     [Range(0.25f, 50f)] public float AirDeceleration = 5f;
 
     [Header("Grounded/Collision Checks")]
-    public LayerMask GroundLayer;
+    public LayerMask GroundLayer, OnStairsLayer;
     public float GroundDetectionRayLength = 0.02f;
     public float HeadDetectionRayLength = 0.02f;
     [Range(0f, 1f)] public float HeadWidth = 0.75f;

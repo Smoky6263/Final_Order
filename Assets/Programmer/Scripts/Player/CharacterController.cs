@@ -1,10 +1,9 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class CharacterController : MonoBehaviour
 {
-    private IMoveInputs _iMoveInpits;
+    private IControlable _iMoveInpits;
     private IHealth _iHealth;
     protected PlayerInputs _playerInputs;
 
@@ -13,16 +12,21 @@ public class CharacterController : MonoBehaviour
         _playerInputs = new PlayerInputs();
         _playerInputs.Enable();
 
-        _iMoveInpits = GetComponent<IMoveInputs>();
-        _iHealth = GetComponent<IHealth>();
+        _iMoveInpits = GetComponent<IControlable>();
+    }
+
+    private void Start()
+    {
+        _iHealth = GetComponent<PlayerStateMachine>().PayerHealth;
     }
 
     protected void Update() => ReadMovement();
 
     protected virtual void ReadMovement()
     {
+
         Vector2 inputDirection = _playerInputs.Gameplay.Movement.ReadValue<Vector2>();
-        _iMoveInpits.MoveInput(inputDirection.x);
+        _iMoveInpits.MoveInput(inputDirection.x, inputDirection.y);
     }
 
     protected virtual void OnMedKitPerformed(InputAction.CallbackContext context) => _iHealth.ImproveHealth();
