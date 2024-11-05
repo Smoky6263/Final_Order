@@ -11,7 +11,6 @@ class PlayerFallState : PlayerBaseState
     public override void CheckSwitchStates()
     {
         //IF LANDED
-        //IF LANDED
         if ((Context.IsJumping || Context.IsFalling) && Context.IsGrounded && Context.VerticalVelocity <= 0f)
             SwitchState(Factory.Grounded());
     }
@@ -42,7 +41,8 @@ class PlayerFallState : PlayerBaseState
 
     public override void InitializeSubState()
     {
-        SetSubState(Factory.Run());
+        //IF PLAYER FALLING AND RUN
+            SetSubState(Factory.FallingRun());
     }
 
     public override void UpdateState()

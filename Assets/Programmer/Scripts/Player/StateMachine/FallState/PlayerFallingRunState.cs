@@ -1,35 +1,27 @@
-using System.Runtime.CompilerServices;
-using UnityEngine;
-
-public class PlayerRunState : PlayerBaseState
+﻿using UnityEngine;
+public class PlayerFallingRunState : PlayerBaseState
 {
-    public PlayerRunState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
+    public PlayerFallingRunState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
     {
         InitializeSubState();
     }
 
-    protected float _accelerationSpeed { get { return Context.MoveStats.GroundAcceleration; } }
-    protected float _decelerationSpeed { get { return Context.MoveStats.GroundDeceleration; } }
+    protected float _accelerationSpeed { get { return Context.MoveStats.AirAcceleration; } }
+    protected float _decelerationSpeed { get { return Context.MoveStats.AirDeceleration; } }
 
     public override void CheckSwitchStates()
     {
-        //IF IDLE
-        if(Context.IsGrounded && Context.MovementVelocity.x == 0)
-            SwitchState(Factory.Idle());
-        
-        //IF PLAYER FALL FROM PLATFORM
-        if (Context.IsGrounded == false && Context.JumpButtonPressed == false)
-            SwitchState(Factory.Fall());
+
     }
 
     public override void EnterState()
     {
-        Debug.Log("Enter RunState");
+        Debug.Log("Enter FallingRunState");
     }
 
     public override void ExitState()
     {
-        Debug.Log("Exit RunState");
+        Debug.Log("Exit FallingRunState");
     }
 
     public override void InitializeSubState()
@@ -52,7 +44,7 @@ public class PlayerRunState : PlayerBaseState
 
         Context.MovementVelocity = Vector2.Lerp(Context.MovementVelocity, targetVelocity, _accelerationSpeed * Time.fixedDeltaTime);
         Context.RigidBody.velocity = new Vector2(Context.MovementVelocity.x, Context.RigidBody.velocity.y);
-        
+
         //IF MoveInput == 0 => SwitchState to BRING TO IDLE
         if (Context.MovementInput == Vector2.zero)
         {

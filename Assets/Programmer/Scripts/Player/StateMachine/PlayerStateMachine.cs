@@ -68,8 +68,6 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
 
     //movement vars
     public Vector2 MovementVelocity { get { return _movementVelocity; } set { _movementVelocity = value; } }
-    public float GroundAcceleration { get { return _moveStats.GroundAcceleration; } }
-    public float GroundDeceleration { get { return _moveStats.GroundDeceleration; } }
     public bool IsFacingRight {  get { return _isFacingRight; } set { _isFacingRight = value; } }
 
     //collision check vars

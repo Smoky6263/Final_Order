@@ -40,7 +40,8 @@ public class PlayerJumpState : PlayerBaseState
 
     public override void InitializeSubState()
     {
-        SetSubState(Factory.Run());
+        //IF PLAYER FALLING AND RUN
+            SetSubState(Factory.FallingRun());
     }
 
     public override void UpdateState()
