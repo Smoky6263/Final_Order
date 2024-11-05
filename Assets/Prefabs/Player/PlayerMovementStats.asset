@@ -21,6 +21,9 @@ MonoBehaviour:
   GroundLayer:
     serializedVersion: 2
     m_Bits: 64
+  OnStairsLayer:
+    serializedVersion: 2
+    m_Bits: 128
   GroundDetectionRayLength: 0.14
   HeadDetectionRayLength: 0.02
   HeadWidth: 0.75
@@ -34,8 +37,8 @@ MonoBehaviour:
   ApexHangTime: 0.1
   JumpBufferTime: 0.125
   JumpCoyoteTime: 0.125
-  DebugShowIsGroundedBox: 0
-  DebugShowHeadBumpBox: 0
+  DebugShowIsGroundedBox: 1
+  DebugShowHeadBumpBox: 1
   ShowWalkJumpArc: 0
   ShowRunJumpArc: 0
   StopOnCollision: 0

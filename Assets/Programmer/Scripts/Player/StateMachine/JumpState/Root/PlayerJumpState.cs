@@ -13,17 +13,23 @@ public class PlayerJumpState : PlayerBaseState
         //IF LANDED
         if ((Context.IsJumping || Context.IsFalling) && Context.IsGrounded && Context.VerticalVelocity <= 0f)
             SwitchState(Factory.Grounded());
+
+        //IF ON STAIRS
+        if ((Context.IsJumping || Context.IsFalling) && Context.OnStairs && Context.MovementInput.y != 0f)
+            SwitchState(Factory.Grounded());
     }
 
     public override void EnterState()
     {
+        //------------------------------------------------------
+        //DO JUMP ANIMATION
+        //------------------------------------------------------
+
         InitiateJump();
-        Debug.Log("Enter JumpState");
     }
 
     public override void ExitState()
     {
-        Debug.Log("Exit JumpState");
 
         //LANDED
         Context.IsJumping = false;
@@ -41,7 +47,7 @@ public class PlayerJumpState : PlayerBaseState
     public override void InitializeSubState()
     {
         //IF PLAYER FALLING AND RUN
-            SetSubState(Factory.FallingRun());
+        SetSubState(Factory.FallingRun());
     }
 
     public override void UpdateState()

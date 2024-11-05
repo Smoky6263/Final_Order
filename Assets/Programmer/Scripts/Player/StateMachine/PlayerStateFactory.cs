@@ -1,6 +1,3 @@
-using TMPro.EditorUtilities;
-using Unity.VisualScripting;
-
 public class PlayerStateFactory
 {
     private PlayerStateMachine _context;
@@ -34,5 +31,9 @@ public class PlayerStateFactory
     public PlayerBaseState FallingRun()
     {
         return new PlayerFallingRunState(_context, this);
+    }
+    public PlayerBaseState OnStairs()
+    {
+        return new PlayerOnStairsState(_context, this);
     }
 }

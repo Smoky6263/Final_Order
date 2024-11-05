@@ -21,33 +21,34 @@ public class PlayerGroundedState : PlayerBaseState
         }
 
         //IF PLAYER FALL FROM PLATFORM
-        if (Context.IsGrounded == false && Context.JumpButtonPressed == false && Context.CoyoteTimer <= 0)
+        if (Context.OnStairs == false && Context.IsGrounded == false && Context.JumpButtonPressed == false && Context.CoyoteTimer <= 0)
             SwitchState(Factory.Fall());
     }
 
     public override void EnterState()
     {
-        Debug.Log($"Enter GroundedState; SuperState: {CurrentSuperState}; SubState: {CurrentSubState};");
+
     }
 
     public override void ExitState()
     {
-        Debug.Log("Exit GroundedState");
+
     }
 
     public override void InitializeSubState()
     {
-        if(Context.MovementVelocity.x != 0)
+        if(Context.IsGrounded && Context.MovementVelocity.x != 0)
             SetSubState(Factory.Run());
         
-        if (Context.MovementVelocity.x == 0)
+        if (Context.IsGrounded && Context.MovementVelocity.x == 0)
             SetSubState(Factory.Idle());
+
+        if(Context.OnStairs && Context.MovementInput != Vector2.zero)
+            SetSubState(Factory.OnStairs());
     }
 
     public override void UpdateState()
     {
-        Debug.Log("Update GroundedState");
-
         CheckSwitchStates();
     }
 

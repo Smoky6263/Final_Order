@@ -13,10 +13,18 @@ class PlayerFallState : PlayerBaseState
         //IF LANDED
         if ((Context.IsJumping || Context.IsFalling) && Context.IsGrounded && Context.VerticalVelocity <= 0f)
             SwitchState(Factory.Grounded());
+
+        //IF GROUND ON STAIRS
+        if ((Context.IsJumping || Context.IsFalling) && Context.OnStairs && Context.MovementInput.y != 0f)
+            SwitchState(Factory.Grounded());
     }
 
     public override void EnterState()
     {
+        //------------------------------------------------------
+        //DO JUMP ANIMATION
+        //------------------------------------------------------
+
         if (Context.IsFalling == false && Context.IsJumping == false)
             Context.IsFalling = true;
 
@@ -36,18 +44,16 @@ class PlayerFallState : PlayerBaseState
         Context.JumpButtonPressed = false;
         Context.VerticalVelocity = Physics2D.gravity.y;
 
-        Debug.Log("Exit FallState");
     }
 
     public override void InitializeSubState()
     {
         //IF PLAYER FALLING AND RUN
-            SetSubState(Factory.FallingRun());
+        SetSubState(Factory.FallingRun());
     }
 
     public override void UpdateState()
     {
-        Debug.Log("Update FallState");
         Context.VerticalVelocity += Context.MoveStats.Gravity * Time.deltaTime;
         Fall();
         CheckSwitchStates();

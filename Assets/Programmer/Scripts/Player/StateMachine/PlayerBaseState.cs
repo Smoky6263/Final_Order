@@ -10,8 +10,8 @@ public abstract class PlayerBaseState
     protected bool IsRootState { set { _isRootState = value; } }
     protected PlayerStateMachine Context { get { return _context; } }
     protected PlayerStateFactory Factory { get { return _factory; } }
-    protected PlayerBaseState CurrentSuperState { get { return _currentSuperState; } }
-    protected PlayerBaseState CurrentSubState { get { return _currentSubState; } }
+    public PlayerBaseState CurrentSuperState { get { return _currentSuperState; } }
+    public  PlayerBaseState CurrentSubState { get { return _currentSubState; } }
 
     public PlayerBaseState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory)
     {

@@ -1,7 +1,9 @@
-﻿using UnityEngine;
-public class PlayerFallingRunState : PlayerBaseState
+using System;
+using UnityEngine;
+
+public class PlayerOnStairsState : PlayerBaseState
 {
-    public PlayerFallingRunState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
+    public PlayerOnStairsState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
     {
         InitializeSubState();
     }
@@ -11,14 +13,21 @@ public class PlayerFallingRunState : PlayerBaseState
 
     public override void CheckSwitchStates()
     {
+        //IF PLAYER PRESS MOVE INPUT AND EXIT FROM STAIRS
+        if (Context.IsGrounded && Context.OnStairs == false && Context.MovementInput.x != 0f)
+            SwitchState(Factory.Run());
 
+        //IF PRESS JUMP
+        if(Context.JumpButtonPressed == true)
+            SwitchState(Factory.Jump());
     }
 
     public override void EnterState()
     {
         //------------------------------------------------------
-        //DO RUN ANIMATION
+        //DO STAIRS ANIMATION
         //------------------------------------------------------
+        
     }
 
     public override void ExitState()
@@ -40,39 +49,16 @@ public class PlayerFallingRunState : PlayerBaseState
     private void Move()
     {
         Vector2 targetVelocity = Vector2.zero;
-        targetVelocity = new Vector2(Context.MovementInput.x, 0f) * Context.MoveStats.MaxRunSpeed;
-
-        TurnCheck(Context.MovementInput);
+        targetVelocity = new Vector2(Context.MovementInput.x, Context.MovementInput.y) * Context.MoveStats.MaxRunSpeed;
 
         Context.MovementVelocity = Vector2.Lerp(Context.MovementVelocity, targetVelocity, _accelerationSpeed * Time.fixedDeltaTime);
-        Context.RigidBody.velocity = new Vector2(Context.MovementVelocity.x, Context.RigidBody.velocity.y);
+        Context.RigidBody.velocity = Context.MovementVelocity;
 
         //IF MoveInput == 0 => SwitchState to BRING TO IDLE
         if (Context.MovementInput == Vector2.zero)
         {
             Context.MovementVelocity = Vector2.Lerp(Context.MovementVelocity, Vector2.zero, _decelerationSpeed * Time.fixedDeltaTime);
-            Context.RigidBody.velocity = new Vector2(Context.MovementVelocity.x, Context.RigidBody.velocity.y);
-        }
-    }
-    private void TurnCheck(Vector2 moveInput)
-    {
-        if (Context.IsFacingRight && moveInput.x < 0)
-            Turn(false);
-
-        else if (Context.IsFacingRight == false && moveInput.x > 0)
-            Turn(true);
-    }
-    private void Turn(bool turnRight)
-    {
-        if (turnRight)
-        {
-            Context.IsFacingRight = true;
-            Context.SpriteRenderer.flipX = false;
-        }
-        else
-        {
-            Context.IsFacingRight = false;
-            Context.SpriteRenderer.flipX = true;
+            Context.RigidBody.velocity = Context.MovementVelocity;
         }
     }
 }

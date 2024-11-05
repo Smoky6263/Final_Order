@@ -24,8 +24,9 @@ public class CharacterController : MonoBehaviour
 
     protected virtual void ReadMovement()
     {
+
         Vector2 inputDirection = _playerInputs.Gameplay.Movement.ReadValue<Vector2>();
-        _iMoveInpits.MoveInput(inputDirection.x);
+        _iMoveInpits.MoveInput(inputDirection.x, inputDirection.y);
     }
 
     protected virtual void OnMedKitPerformed(InputAction.CallbackContext context) => _iHealth.ImproveHealth();
