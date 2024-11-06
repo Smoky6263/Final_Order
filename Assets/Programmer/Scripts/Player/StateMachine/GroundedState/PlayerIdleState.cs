@@ -24,8 +24,7 @@ public class PlayerIdleState : PlayerBaseState
         //DO IDLE ANIMATION
         //------------------------------------------------------
 
-        Context.MovementVelocity = new Vector2(0f, Context.MovementVelocity.y);
-        Context.RigidBody.velocity = new Vector2(Context.MovementVelocity.x, Context.MovementVelocity.y);
+        Context.RigidBody.velocity = new Vector2(Context.RigidBody.velocity.x, 0f);
     }
 
     public override void ExitState()

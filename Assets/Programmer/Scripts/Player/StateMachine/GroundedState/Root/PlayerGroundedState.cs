@@ -27,7 +27,7 @@ public class PlayerGroundedState : PlayerBaseState
 
     public override void EnterState()
     {
-
+        Context.VerticalVelocity = Physics2D.gravity.y;
     }
 
     public override void ExitState()
@@ -49,9 +49,16 @@ public class PlayerGroundedState : PlayerBaseState
 
     public override void UpdateState()
     {
+        Fall();
         CheckSwitchStates();
     }
 
-    
-    
+    private void Fall()
+    {
+        if (Context.OnStairs) return;
+        //CLAMP FALLS SPEED
+        Context.VerticalVelocity = Mathf.Clamp(Context.VerticalVelocity, -Context.MoveStats.MaxFallSpeed, 50f);
+        Context.RigidBody.velocity = new Vector2(Context.RigidBody.velocity.x, Context.VerticalVelocity);
+    }
+
 }
