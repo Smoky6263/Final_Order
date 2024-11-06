@@ -25,7 +25,9 @@ public class PlayerRunState : PlayerBaseState
     {
         //------------------------------------------------------
         //DO RUN ANIMATION
-        //------------------------------------------------------
+        //------------------------------------------------------\
+        Context.RigidBody.velocity = new Vector2(Context.RigidBody.velocity.x, 0f);
+
     }
 
     public override void ExitState()

@@ -20,6 +20,10 @@ public class PlayerOnStairsState : PlayerBaseState
         //IF PRESS JUMP
         if(Context.JumpButtonPressed == true)
             SwitchState(Factory.Jump());
+
+        //IF ON TOP OF STAIRS
+        if (Context.OnStairs == false && Context.MovementInput.y > 0f)
+            SwitchState(Factory.Jump());
     }
 
     public override void EnterState()
