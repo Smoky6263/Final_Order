@@ -13,6 +13,10 @@ public class PlayerIdleState : PlayerBaseState
         if(Context.IsGrounded && Context.MovementInput.x != 0f)
             SwitchState(Factory.Run());
         
+        //IF PLAYER PRESS "CROUCH" BUTTON
+        if(Context.IsGrounded && Context.MovementInput.x == 0 && Context.MovementInput.y < 0)
+            SwitchState(Factory.Crouch());
+
         //IF ON STAIRS
         if (Context.IsGrounded && Context.OnStairs && Context.MovementInput.y != 0)
             SwitchState(Factory.OnStairs());
@@ -20,15 +24,13 @@ public class PlayerIdleState : PlayerBaseState
 
     public override void EnterState()
     {
-        //------------------------------------------------------
-        //DO IDLE ANIMATION
-        //------------------------------------------------------
-
-        Context.RigidBody.velocity = new Vector2(Context.RigidBody.velocity.x, 0f);
+        Context.PlayerAnimatorController.OnIdle(true);
     }
 
     public override void ExitState()
     {
+        Context.PlayerAnimatorController.OnIdle(false);
+
     }
 
     public override void InitializeSubState()

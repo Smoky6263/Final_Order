@@ -1,11 +1,16 @@
 using UnityEngine;
 
+[RequireComponent (typeof(Animator))]
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(PlayerAnimatorController))]
+[RequireComponent(typeof(CharacterController))]
 public class PlayerStateMachine : MonoBehaviour, IControlable
 {
     private EventBus _eventBus;
     private PlayerHealth _playerHealth;
     private Rigidbody2D _rigidBody;
 
+    private PlayerAnimatorController _playerAnimatorController;
     private PlayerBaseState _currentState;
     private PlayerStateFactory _states;
     public PlayerBaseState CurrentState { get { return _currentState; } set { _currentState = value; } }
@@ -22,9 +27,8 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     [SerializeField, Range(0f, 100f)] public float _maxHealth;
     [SerializeField, Range(0f, 100f)] public float _health;
 
-    [Header("OnStairs")]
     private bool _onStairs;
-
+    private bool _onPassTroughPlatform;
 
     #endregion
 
@@ -71,6 +75,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     public Collider2D BodyColl { get { return _bodyColl; } }
     public Collider2D FeetColl { get { return _feetColl; } }
     public Rigidbody2D RigidBody { get { return _rigidBody; } }
+    public PlayerAnimatorController PlayerAnimatorController { get { return _playerAnimatorController; } }
     public EventBus EventBus { get { return _eventBus; } }
     public PlayerHealth PayerHealth { get { return _playerHealth; } }
     
@@ -84,11 +89,12 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     public RaycastHit2D HeadHit { get { return _headHit; } set { _headHit = value; } }
     public bool IsGrounded { get { return _isGrounded; } set { _isGrounded = value; } }
     public bool BumpedHead {  get { return _bumpedHead; } set { _bumpedHead = value; } }
+    public bool OnStairs { get { return _onStairs; } set { _onStairs = value; } }
+    public bool OnPassTroughPlatform { get { return _onPassTroughPlatform; } set { _onPassTroughPlatform = value; } }
 
     #region Movement and Jump Felids
 
     //on stairs bool
-    public bool OnStairs { get { return _onStairs; } set { _onStairs = value; } }
 
     //movement vars
     public Vector2 MovementVelocity { get { return _movementVelocity; } set { _movementVelocity = value; } }
@@ -124,6 +130,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         _eventBus = _gameManager.EventBus;
         _playerHealth = new PlayerHealth(this);
         _rigidBody = GetComponent<Rigidbody2D>();
+        _playerAnimatorController = GetComponent<PlayerAnimatorController>();
         _isFacingRight = true;
     }
 

@@ -19,20 +19,21 @@ public class PlayerRunState : PlayerBaseState
         //IF GROUNDED AND ON STAIRS AND VERTICAL INPUT PRESS
         if (Context.OnStairs && Context.MovementInput.y != 0)
             SwitchState(Factory.OnStairs());
+
+        //IF PRESSED "CROUCH BUTTON" AND RUN BUTTONS RELEASED
+        if(Context.IsGrounded && Context.OnStairs == false && Context.MovementInput.x == 0f && Context.MovementInput.y < 0)
+            SwitchState(Factory.Crouch());
     }
 
     public override void EnterState()
     {
-        //------------------------------------------------------
-        //DO RUN ANIMATION
-        //------------------------------------------------------\
-        Context.RigidBody.velocity = new Vector2(Context.RigidBody.velocity.x, 0f);
+        Context.PlayerAnimatorController.OnRun(true);
 
     }
 
     public override void ExitState()
     {
-
+        Context.PlayerAnimatorController.OnRun(false);
     }
 
     public override void InitializeSubState()
