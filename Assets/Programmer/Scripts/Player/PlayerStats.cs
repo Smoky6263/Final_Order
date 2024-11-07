@@ -15,7 +15,7 @@ public class PlayerStats : ScriptableObject
     [Range(0.25f, 50f)] public float AirDeceleration = 5f;
 
     [Header("Grounded/Collision Checks")]
-    public LayerMask GroundLayer, OnStairsLayer;
+    public LayerMask GroundLayer, OnStairsLayer, PassTroughPlatform;
     public float GroundDetectionRayLength = 0.02f;
     public float HeadDetectionRayLength = 0.02f;
     [Range(0f, 1f)] public float HeadWidth = 0.75f;
