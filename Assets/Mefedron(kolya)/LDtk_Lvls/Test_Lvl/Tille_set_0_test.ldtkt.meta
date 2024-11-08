@@ -26,8 +26,8 @@ ScriptedImporter:
     spriteID: 1d7eeac8d5f6c3c4d802426e9d126e05
     spriteOutline:
     - shape:
-      - {x: -11, y: 16}
-      - {x: -16, y: 11}
+      - {x: -16, y: 16}
+      - {x: -16, y: 16}
       - {x: -16, y: -16}
       - {x: 16, y: -16}
       - {x: 16, y: 16}
@@ -68,8 +68,8 @@ ScriptedImporter:
       - {x: -16, y: 16}
       - {x: -16, y: -16}
       - {x: 16, y: -16}
-      - {x: 16, y: 11}
-      - {x: 11, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: 16}
     tessellationDetail: 0
   - name: Tille_set_0_test_3
     originalName: 
@@ -339,8 +339,8 @@ ScriptedImporter:
     spriteOutline:
     - shape:
       - {x: -16, y: 16}
-      - {x: -16, y: -11}
-      - {x: -11, y: -16}
+      - {x: -16, y: -16}
+      - {x: -16, y: -16}
       - {x: 16, y: -16}
       - {x: 16, y: 16}
     tessellationDetail: 0
@@ -379,8 +379,8 @@ ScriptedImporter:
     - shape:
       - {x: -16, y: 16}
       - {x: -16, y: -16}
-      - {x: 11, y: -16}
-      - {x: 16, y: -11}
+      - {x: 16, y: -16}
+      - {x: 16, y: -16}
       - {x: 16, y: 16}
     tessellationDetail: 0
   - name: Tille_set_0_test_23
