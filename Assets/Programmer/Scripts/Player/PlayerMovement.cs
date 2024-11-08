@@ -102,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (_moveStats.StopOnCollision)
             {
-                RaycastHit2D hit = Physics2D.Raycast(previousPosition, drawPoint - previousPosition, Vector2.Distance(previousPosition, drawPoint), _moveStats.GroundLayer);
+                RaycastHit2D hit = Physics2D.Raycast(previousPosition, drawPoint - previousPosition, Vector2.Distance(previousPosition, drawPoint), _moveStats.JumpSurfaceLayer);
                 if (hit.collider != null)
                 {
                     // If a hit is detected, stop drawing the arc at the hit point

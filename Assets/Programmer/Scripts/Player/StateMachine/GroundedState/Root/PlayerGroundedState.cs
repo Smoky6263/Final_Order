@@ -11,7 +11,7 @@ public class PlayerGroundedState : PlayerBaseState
     public override void CheckSwitchStates()
     {
         //WHEN WE PRESS THE JUMP BUTTON
-        if (Context.JumpButtonPressed && Context.CoyoteTimer >= 0)
+        if (Context.JumpButtonPressed && Context.CoyoteTimer >= 0 && (Context.OnCrouch == false && Context.CurrentPTP != null  || Context.CurrentPTP == null))
         {
             Context.JumpBufferTimer = Context.MoveStats.JumpBufferTime;
             Context.JumpReleasedDuringBuffer = false;
@@ -20,13 +20,16 @@ public class PlayerGroundedState : PlayerBaseState
                 SwitchState(Factory.Jump());
         }
 
-        //IF PLAYER FALL FROM PLATFORM
+        //IF PLAYER FALL
         if (Context.OnStairs == false && Context.IsGrounded == false && Context.JumpButtonPressed == false && Context.CoyoteTimer <= 0)
             SwitchState(Factory.Fall());
+
+        
     }
 
     public override void EnterState()
     {
+        Context.CoyoteTimer = Context.MoveStats.JumpCoyoteTime;
         Context.VerticalVelocity = Physics2D.gravity.y;
     }
 
@@ -50,15 +53,23 @@ public class PlayerGroundedState : PlayerBaseState
     public override void UpdateState()
     {
         Fall();
+        CountTimers();
         CheckSwitchStates();
     }
 
     private void Fall()
     {
         if (Context.OnStairs) return;
+
         //CLAMP FALLS SPEED
         Context.VerticalVelocity = Mathf.Clamp(Context.VerticalVelocity, -Context.MoveStats.MaxFallSpeed, 50f);
         Context.RigidBody.velocity = new Vector2(Context.RigidBody.velocity.x, Context.VerticalVelocity);
+    }
+
+    private void CountTimers()
+    {
+        if (!Context.IsGrounded)
+            Context.CoyoteTimer -= Time.deltaTime;
     }
 
 }

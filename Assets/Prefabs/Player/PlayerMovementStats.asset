@@ -18,15 +18,15 @@ MonoBehaviour:
   GroundDeceleration: 0.3
   AirAcceleration: 4
   AirDeceleration: 4
-  GroundLayer:
+  JumpSurfaceLayer:
     serializedVersion: 2
     m_Bits: 320
+  HeadBumpSurfaceLayer:
+    serializedVersion: 2
+    m_Bits: 64
   OnStairsLayer:
     serializedVersion: 2
     m_Bits: 128
-  PassTroughPlatform:
-    serializedVersion: 2
-    m_Bits: 0
   GroundDetectionRayLength: 0.14
   HeadDetectionRayLength: 0.02
   HeadWidth: 0.75

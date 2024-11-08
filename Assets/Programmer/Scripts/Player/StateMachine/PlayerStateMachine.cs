@@ -27,8 +27,10 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     [SerializeField, Range(0f, 100f)] public float _maxHealth;
     [SerializeField, Range(0f, 100f)] public float _health;
 
+    #region Collision Fiekds
     private bool _onStairs;
-    private bool _onPassTroughPlatform;
+    private GameObject _currentPTP; /* PTP = PassTroughPlatform*/
+    #endregion
 
     #endregion
 
@@ -40,6 +42,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     //movement vars
     private Vector2 _movementVelocity;
     private bool _isFacingRight;
+    private bool _onCrouch;
 
     //collision check vars
     private RaycastHit2D _groundHit;
@@ -70,12 +73,12 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     #endregion
 
     #region Player Properties
+    public PlayerAnimatorController PlayerAnimatorController { get { return _playerAnimatorController; } }
     public SpriteRenderer SpriteRenderer { get { return _spriteRenderer; } }
     public PlayerStats MoveStats { get { return _moveStats; } }
     public Collider2D BodyColl { get { return _bodyColl; } }
     public Collider2D FeetColl { get { return _feetColl; } }
     public Rigidbody2D RigidBody { get { return _rigidBody; } }
-    public PlayerAnimatorController PlayerAnimatorController { get { return _playerAnimatorController; } }
     public EventBus EventBus { get { return _eventBus; } }
     public PlayerHealth PayerHealth { get { return _playerHealth; } }
     
@@ -84,21 +87,22 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     public Vector2 MovementInput { get { return _movementInput; } }
     public bool JumpButtonPressed { get { return _jumpButtonPressed; } set { _jumpButtonPressed = value; } }
 
-    //collision check vars
+    #region Ccollision check vars
     public RaycastHit2D GroundHit { get { return _groundHit; } set { _groundHit = value; } }
     public RaycastHit2D HeadHit { get { return _headHit; } set { _headHit = value; } }
+    public GameObject CurrentPTP { get { return _currentPTP; } set { _currentPTP = value; } }
     public bool IsGrounded { get { return _isGrounded; } set { _isGrounded = value; } }
     public bool BumpedHead {  get { return _bumpedHead; } set { _bumpedHead = value; } }
     public bool OnStairs { get { return _onStairs; } set { _onStairs = value; } }
-    public bool OnPassTroughPlatform { get { return _onPassTroughPlatform; } set { _onPassTroughPlatform = value; } }
 
-    #region Movement and Jump Felids
+    #endregion
 
-    //on stairs bool
-
+    #region Movement and Jump Properties
+    
     //movement vars
     public Vector2 MovementVelocity { get { return _movementVelocity; } set { _movementVelocity = value; } }
     public bool IsFacingRight {  get { return _isFacingRight; } set { _isFacingRight = value; } }
+    public bool OnCrouch {  get { return _onCrouch; } set { _onCrouch= value; } }
 
     //jump vars
     public bool IsJumping { get { return _isJumping; } set { _isJumping = value; } }
@@ -137,7 +141,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     private void Start()
     {
         _states = new PlayerStateFactory(this);
-        _currentState = _states.Grounded();
+        _currentState = _states.Fall();
         _currentState.EnterState(); 
     }
 
@@ -164,7 +168,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         Vector2 boxCastOrigin = new Vector2(_feetColl.bounds.center.x, _feetColl.bounds.center.y);
         Vector2 boxCastSize = new Vector2(_feetColl.bounds.size.x, _moveStats.GroundDetectionRayLength);
 
-        _groundHit = Physics2D.BoxCast(boxCastOrigin, boxCastSize, 0f, Vector2.down, _moveStats.GroundDetectionRayLength, _moveStats.GroundLayer);
+        _groundHit = Physics2D.BoxCast(boxCastOrigin, boxCastSize, 0f, Vector2.down, _moveStats.GroundDetectionRayLength, _moveStats.JumpSurfaceLayer);
         //_groundHit = Physics2D.OverlapBox()
         if (_groundHit.collider != null)
             _isGrounded = true;
@@ -195,11 +199,6 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     private void CountTimers()
     {
         _jumpBufferTimer -= Time.deltaTime;
-
-        if (!_isGrounded)
-            _coyoteTimer -= Time.deltaTime;
-        else
-            _coyoteTimer = _moveStats.JumpCoyoteTime;
     }
     #endregion
 
@@ -215,6 +214,18 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         if (collision.tag == "Stairs")
             _onStairs = false;
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.GetComponent<PlatformEffector2D>() != null)
+            _currentPTP = collision.gameObject;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.GetComponent<PlatformEffector2D>() != null)
+            _currentPTP = null;
     }
 
     private void OnGUI()
