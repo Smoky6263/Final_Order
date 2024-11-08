@@ -58,13 +58,13 @@ public abstract class PlayerBaseState
             _currentSuperState.SetSubState(newState);
         }
     }
-    protected void SetSuperState(PlayerBaseState newSuperState)
-    {
-        _currentSuperState = newSuperState; 
-    }
     protected void SetSubState(PlayerBaseState newSubState)
     {
         _currentSubState = newSubState;
         newSubState.SetSuperState(this);
+    }
+    protected void SetSuperState(PlayerBaseState newSuperState)
+    {
+        _currentSuperState = newSuperState; 
     }
 }

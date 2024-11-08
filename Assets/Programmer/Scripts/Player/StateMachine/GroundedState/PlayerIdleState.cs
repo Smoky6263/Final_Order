@@ -24,12 +24,12 @@ public class PlayerIdleState : PlayerBaseState
 
     public override void EnterState()
     {
-        Context.PlayerAnimatorController.OnIdle(true);
+        Context.AnimatorController.OnIdle(true);
     }
 
     public override void ExitState()
     {
-        Context.PlayerAnimatorController.OnIdle(false);
+        Context.AnimatorController.OnIdle(false);
 
     }
 

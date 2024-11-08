@@ -10,7 +10,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     private PlayerHealth _playerHealth;
     private Rigidbody2D _rigidBody;
 
-    private PlayerAnimatorController _playerAnimatorController;
+    private PlayerAnimatorController _animatorController;
     private PlayerBaseState _currentState;
     private PlayerStateFactory _states;
     public PlayerBaseState CurrentState { get { return _currentState; } set { _currentState = value; } }
@@ -73,7 +73,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     #endregion
 
     #region Player Properties
-    public PlayerAnimatorController PlayerAnimatorController { get { return _playerAnimatorController; } }
+    public PlayerAnimatorController AnimatorController { get { return _animatorController; } }
     public SpriteRenderer SpriteRenderer { get { return _spriteRenderer; } }
     public PlayerStats MoveStats { get { return _moveStats; } }
     public Collider2D BodyColl { get { return _bodyColl; } }
@@ -101,6 +101,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     
     //movement vars
     public Vector2 MovementVelocity { get { return _movementVelocity; } set { _movementVelocity = value; } }
+    public float RollDuration { get { return _moveStats.RollDuration; } }
     public bool IsFacingRight {  get { return _isFacingRight; } set { _isFacingRight = value; } }
     public bool OnCrouch {  get { return _onCrouch; } set { _onCrouch= value; } }
 
@@ -134,7 +135,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         _eventBus = _gameManager.EventBus;
         _playerHealth = new PlayerHealth(this);
         _rigidBody = GetComponent<Rigidbody2D>();
-        _playerAnimatorController = GetComponent<PlayerAnimatorController>();
+        _animatorController = GetComponent<PlayerAnimatorController>();
         _isFacingRight = true;
     }
 

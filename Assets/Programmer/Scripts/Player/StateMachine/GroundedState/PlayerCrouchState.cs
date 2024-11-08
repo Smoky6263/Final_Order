@@ -29,7 +29,7 @@ public class PlayerCrouchState : PlayerBaseState
 
     public override void EnterState()
     {
-        Context.PlayerAnimatorController.OnCrouch(true);
+        Context.AnimatorController.OnCrouch(true);
         Context.OnCrouch = true;
 
         Context.MovementVelocity = Vector2.zero;
@@ -39,7 +39,7 @@ public class PlayerCrouchState : PlayerBaseState
     public override void ExitState()
     {
         Context.OnCrouch = false;
-        Context.PlayerAnimatorController.OnCrouch(false);
+        Context.AnimatorController.OnCrouch(false);
     }
 
     public override void InitializeSubState()
