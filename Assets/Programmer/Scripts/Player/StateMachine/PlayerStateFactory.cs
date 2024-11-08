@@ -24,6 +24,10 @@ public class PlayerStateFactory
     {
         return new PlayerCrouchState(_context, this);
     }
+    public PlayerBaseState Roll()
+    {
+        return new PlayerRollState(_context, this);
+    }
     public PlayerBaseState Fall()
     {
         return new PlayerFallState(_context, this);

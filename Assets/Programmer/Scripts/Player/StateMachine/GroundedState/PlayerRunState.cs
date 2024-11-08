@@ -23,17 +23,21 @@ public class PlayerRunState : PlayerBaseState
         //IF PRESSED "CROUCH BUTTON" AND RUN BUTTONS RELEASED
         if(Context.IsGrounded && Context.OnStairs == false && Context.MovementInput.x == 0f && Context.MovementInput.y < 0)
             SwitchState(Factory.Crouch());
+
+        //DO ROLL WHEN PRESS RUN AND CROUCH BUTTON
+        if (Context.IsGrounded && Context.OnStairs == false && Context.MovementInput.x != 0f && Context.MovementInput.y < 0)
+            SwitchState(Factory.Roll());
     }
 
     public override void EnterState()
     {
-        Context.PlayerAnimatorController.OnRun(true);
+        Context.AnimatorController.OnRun(true);
 
     }
 
     public override void ExitState()
     {
-        Context.PlayerAnimatorController.OnRun(false);
+        Context.AnimatorController.OnRun(false);
     }
 
     public override void InitializeSubState()
