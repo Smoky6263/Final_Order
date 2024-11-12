@@ -10,16 +10,16 @@ public class PlayerIdleState : PlayerBaseState
     public override void CheckSwitchStates()
     {
         //IF PLAYER PRESS MOVE INPUT
-        if(Context.IsGrounded && Context.MovementInput.x != 0f)
+        if((Context.IsGrounded || Context.OnStairs) && Context.MovementInput.x != 0f)
             SwitchState(Factory.Run());
         
         //IF PLAYER PRESS "CROUCH" BUTTON
-        if(Context.IsGrounded && Context.MovementInput.x == 0 && Context.MovementInput.y < 0)
+        if(Context.IsGrounded && Context.OnStairs == false && Context.MovementInput.x == 0 && Context.MovementInput.y < 0)
             SwitchState(Factory.Crouch());
 
-        //IF ON STAIRS
-        if (Context.IsGrounded && Context.OnStairs && Context.MovementInput.y != 0)
-            SwitchState(Factory.OnStairs());
+        //DO ROLL WHEN PRESS ROLL BUTTON
+        if ((Context.IsGrounded || Context.OnStairs) && Context.MovementInput.x == 0f && Context.RollInput == true)
+            SwitchState(Factory.Roll());
     }
 
     public override void EnterState()

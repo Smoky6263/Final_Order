@@ -1,10 +1,10 @@
-using System;
 using UnityEngine;
 
 public class PlayerOnStairsState : PlayerBaseState
 {
     public PlayerOnStairsState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
     {
+        IsRootState = true;
         InitializeSubState();
     }
 
@@ -14,16 +14,21 @@ public class PlayerOnStairsState : PlayerBaseState
     public override void CheckSwitchStates()
     {
         //IF PLAYER PRESS MOVE INPUT AND EXIT FROM STAIRS
-        if (Context.IsGrounded && Context.OnStairs == false && Context.MovementInput.x != 0f)
-            SwitchState(Factory.Run());
+        if (Context.IsGrounded && Context.OnStairs == false)
+            SwitchState(Factory.Grounded());
 
         //IF PRESS JUMP
-        if(Context.JumpButtonPressed == true)
+        if(Context.JumpInput == true)
             SwitchState(Factory.Jump());
 
+
         //IF ON TOP OF STAIRS
-        if (Context.OnStairs == false && Context.MovementInput.y > 0f)
-            SwitchState(Factory.Jump());
+        if (Context.OnStairs == false && Context.MovementInput.y > 0f && Context.JumpInput == false)
+            SwitchState(Factory.JumpFromStairs());
+
+        //IF PLAYER FALL
+        if (Context.OnStairs == false && Context.IsGrounded == false && Context.JumpInput == false && Context.CoyoteTimer <= 0)
+            SwitchState(Factory.Fall());
     }
 
     public override void EnterState()
@@ -31,7 +36,11 @@ public class PlayerOnStairsState : PlayerBaseState
         //------------------------------------------------------
         //DO STAIRS ANIMATION
         //------------------------------------------------------
+        if(Context.OnCrouch)
+            Context.OnCrouch = false;
         
+        Context.CoyoteTimer = 0f;
+        Context.VerticalVelocity = Physics2D.gravity.y;
     }
 
     public override void ExitState()

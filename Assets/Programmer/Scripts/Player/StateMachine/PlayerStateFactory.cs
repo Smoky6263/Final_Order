@@ -16,6 +16,10 @@ public class PlayerStateFactory
     {
         return new PlayerJumpState(_context, this);
     }
+    public PlayerBaseState JumpFromStairs()
+    {
+        return new PlayerJumpFromStairsState(_context, this);
+    }
     public PlayerBaseState Idle()
     {
         return new PlayerIdleState(_context, this);

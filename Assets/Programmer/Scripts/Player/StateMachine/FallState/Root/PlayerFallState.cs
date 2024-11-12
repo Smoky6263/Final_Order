@@ -15,8 +15,8 @@ class PlayerFallState : PlayerBaseState
             SwitchState(Factory.Grounded());
 
         //IF GROUND ON STAIRS
-        if ((Context.IsJumping || Context.IsFalling) && Context.OnStairs && Context.MovementInput.y != 0f)
-            SwitchState(Factory.Grounded());
+        if (Context.IsFalling && Context.OnStairs)
+            SwitchState(Factory.OnStairs());
     }
 
     public override void EnterState()
@@ -27,6 +27,12 @@ class PlayerFallState : PlayerBaseState
 
         if (Context.IsFalling == false && Context.IsJumping == false)
             Context.IsFalling = true;
+
+        if (Context.IsFastFalling)
+        {
+            Context.FastFallTime = Context.MoveStats.TimeForUpwardsCancel;
+            Context.VerticalVelocity = 0f;
+        }
 
     }
 
@@ -41,7 +47,7 @@ class PlayerFallState : PlayerBaseState
         Context.JumpBufferTimer = 0f;
         Context.IsPastApexThreshold = false;
 
-        Context.JumpButtonPressed = false;
+        Context.JumpInput = false;
         Context.VerticalVelocity = Physics2D.gravity.y;
 
     }
@@ -54,15 +60,36 @@ class PlayerFallState : PlayerBaseState
 
     public override void UpdateState()
     {
-        Context.VerticalVelocity += Context.MoveStats.Gravity * Time.deltaTime;
-        Fall();
+        if(Context.IsFastFalling == false)
+            Fall();
+
+        if (Context.IsFastFalling == true)
+            FastFall();
+
+        //CLAMP FALLS SPEED
+        Context.VerticalVelocity = Mathf.Clamp(Context.VerticalVelocity, -Context.MoveStats.MaxFallSpeed, 50f);
+        Context.RigidBody.velocity = new Vector2(Context.RigidBody.velocity.x, Context.VerticalVelocity);
+
         CheckSwitchStates();
     }
 
     private void Fall()
     {
-        //CLAMP FALLS SPEED
-        Context.VerticalVelocity = Mathf.Clamp(Context.VerticalVelocity, -Context.MoveStats.MaxFallSpeed, 50f);
-        Context.RigidBody.velocity = new Vector2(Context.RigidBody.velocity.x, Context.VerticalVelocity);
+        Context.VerticalVelocity += Context.MoveStats.Gravity * Time.deltaTime;
+    }
+
+    private void FastFall()
+    {
+        //JUMP CUT
+        if (Context.FastFallTime >= Context.MoveStats.TimeForUpwardsCancel)
+        {
+            Context.VerticalVelocity += Context.MoveStats.Gravity * Context.MoveStats.GravityOnReleaseMultiplier * Time.deltaTime;
+        }
+        else if (Context.FastFallTime < Context.MoveStats.TimeForUpwardsCancel)
+        {
+            Context.VerticalVelocity = Mathf.Lerp(Context.FastFallReleaseSpeed, 0f, (Context.FastFallTime / Context.MoveStats.TimeForUpwardsCancel));
+        }
+
+        Context.FastFallTime += Time.deltaTime;
     }
 }

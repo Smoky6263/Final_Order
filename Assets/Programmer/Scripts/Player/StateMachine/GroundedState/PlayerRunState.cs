@@ -13,19 +13,15 @@ public class PlayerRunState : PlayerBaseState
     public override void CheckSwitchStates()
     {
         //IF IDLE
-        if(Context.IsGrounded && Context.RigidBody.velocity.x == 0f)
+        if((Context.IsGrounded || Context.OnStairs) && Context.RigidBody.velocity.x == 0f)
             SwitchState(Factory.Idle());
-
-        //IF GROUNDED AND ON STAIRS AND VERTICAL INPUT PRESS
-        if (Context.OnStairs && Context.MovementInput.y != 0)
-            SwitchState(Factory.OnStairs());
 
         //IF PRESSED "CROUCH BUTTON" AND RUN BUTTONS RELEASED
         if(Context.IsGrounded && Context.OnStairs == false && Context.MovementInput.x == 0f && Context.MovementInput.y < 0)
             SwitchState(Factory.Crouch());
 
-        //DO ROLL WHEN PRESS RUN AND CROUCH BUTTON
-        if (Context.IsGrounded && Context.OnStairs == false && Context.MovementInput.x != 0f && Context.MovementInput.y < 0)
+        //DO ROLL WHEN PRESS RUN AND ROLL BUTTON
+        if (Context.IsGrounded && Context.RollInput == true)
             SwitchState(Factory.Roll());
     }
 

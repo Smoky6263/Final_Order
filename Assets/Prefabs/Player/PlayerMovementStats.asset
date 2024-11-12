@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PlayerMovementStats
   m_EditorClassIdentifier: 
   _weaponDamage: 0
+  RollDuration: 1
   MaxRunSpeed: 7
   GroundAcceleration: 6
   GroundDeceleration: 0.3
@@ -35,6 +36,8 @@ MonoBehaviour:
   TimeTillJumpApex: 0.3
   GravityOnReleaseMultiplier: 1.5
   MaxFallSpeed: 16
+  InitialJumpFromStairsVelocity: 20
+  JumpfAfterStairsDuration: 0.5
   TimeForUpwardsCancel: 0.027
   ApexThreshold: 0.984
   ApexHangTime: 0.1

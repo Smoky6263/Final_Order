@@ -17,6 +17,8 @@ public class PlayerJumpState : PlayerBaseState
         //IF ON STAIRS
         if ((Context.IsJumping || Context.IsFalling) && Context.OnStairs && Context.MovementInput.y != 0f)
             SwitchState(Factory.Grounded());
+
+
     }
 
     public override void EnterState()
@@ -40,7 +42,7 @@ public class PlayerJumpState : PlayerBaseState
         Context.JumpBufferTimer = 0f;
         Context.IsPastApexThreshold = false;
 
-        Context.JumpButtonPressed = false;
+        Context.JumpInput = false;
         Context.VerticalVelocity = Physics2D.gravity.y;
     }
 
@@ -74,7 +76,7 @@ public class PlayerJumpState : PlayerBaseState
     {
         
         //WHEN WE RELEASE THE JUMP BUTTON
-        if (Context.JumpButtonPressed == false)
+        if (Context.JumpInput == false)
         {
             if (Context.JumpBufferTimer > 0f)
                 Context.JumpReleasedDuringBuffer = true;
@@ -222,23 +224,5 @@ public class PlayerJumpState : PlayerBaseState
             Context.BumpedHead = true;
 
         else { Context.BumpedHead = false; }
-
-        #region DebugVisualization
-
-        if (Context.MoveStats.DebugShowHeadBumpBox)
-        {
-            Color rayColor;
-
-            if (Context.BumpedHead)
-                rayColor = Color.green;
-
-            else { rayColor = Color.red; }
-
-            Debug.DrawRay(new Vector2(boxCastOrigin.x - boxCastSize.x / 2 * Context.MoveStats.HeadWidth, boxCastOrigin.y), Vector2.up * Context.MoveStats.HeadDetectionRayLength, rayColor);
-            Debug.DrawRay(new Vector2(boxCastOrigin.x + (boxCastSize.x / 2) * Context.MoveStats.HeadWidth, boxCastOrigin.y), Vector2.up * Context.MoveStats.HeadDetectionRayLength, rayColor);
-            Debug.DrawRay(new Vector2(boxCastOrigin.x - boxCastSize.x / 2 * Context.MoveStats.HeadWidth, boxCastOrigin.y + Context.MoveStats.HeadDetectionRayLength), Vector2.right * boxCastSize.x * Context.MoveStats.HeadWidth, rayColor);
-
-            #endregion
-        }
     }
 }
