@@ -57,6 +57,6 @@ Material:
     - _FogSize: 1
     - _WorldSpace: 1
     m_Colors:
-    - _FogColor: {r: 1, g: 1, b: 1, a: 0.1568628}
+    - _FogColor: {r: 0.4235294, g: 0.4313725, b: 0.33725485, a: 0.39215687}
     - _FogSpeed: {r: 0.5, g: 0.01, b: 0, a: 0}
   m_BuildTextureStacks: []
