@@ -29,6 +29,7 @@ public class PlayerRollState : PlayerBaseState
     public override void EnterState()
     {
         Context.AnimatorController.OnCrouch(true);
+        Context.VFXManager.SpawnDustParticles();
         _elapsedTime = Context.RollDuration;
         _speed = Context.IsFacingRight ? Context.MoveStats.MaxRunSpeed : -Context.MoveStats.MaxRunSpeed;
     }

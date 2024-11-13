@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "PlayerMovementStats")]
+[CreateAssetMenu(menuName = "Player/PlayerMovementStats")]
 public class PlayerStats : ScriptableObject
 {
 

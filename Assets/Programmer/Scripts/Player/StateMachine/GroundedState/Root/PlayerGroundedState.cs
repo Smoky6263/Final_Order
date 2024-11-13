@@ -25,7 +25,7 @@ public class PlayerGroundedState : PlayerBaseState
             SwitchState(Factory.OnStairs());
 
         //IF PLAYER FALL
-        if (Context.OnStairs == false && Context.IsGrounded == false && Context.JumpInput == false && Context.CoyoteTimer <= 0)
+        if (Context.OnStairs == false && Context.IsGrounded == false && Context.CoyoteTimer <= 0)
             SwitchState(Factory.Fall());
 
         
@@ -35,7 +35,8 @@ public class PlayerGroundedState : PlayerBaseState
     {
         Context.CoyoteTimer = Context.MoveStats.JumpCoyoteTime;
         Context.VerticalVelocity = Physics2D.gravity.y;
-        
+        Context.VFXManager.SpawnDustParticles();
+
         if (Context.OnCrouch)
             Context.OnCrouch = false;
     }

@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerStateMachine : MonoBehaviour, IControlable
 {
     private EventBus _eventBus;
+    private VFXManager _vfxManager;
     private PlayerHealth _playerHealth;
     private Rigidbody2D _rigidBody;
 
@@ -77,6 +78,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     public PlayerAnimatorController AnimatorController { get { return _animatorController; } }
     public SpriteRenderer SpriteRenderer { get { return _spriteRenderer; } }
     public PlayerStats MoveStats { get { return _moveStats; } }
+    public VFXManager VFXManager { get { return _vfxManager; } }
     public Collider2D BodyColl { get { return _bodyColl; } }
     public Collider2D FeetColl { get { return _feetColl; } }
     public Rigidbody2D RigidBody { get { return _rigidBody; } }
@@ -137,6 +139,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     {
         _eventBus = _gameManager.EventBus;
         _playerHealth = new PlayerHealth(this);
+        _vfxManager = GetComponent<VFXManager>();
         _rigidBody = GetComponent<Rigidbody2D>();
         _animatorController = GetComponent<PlayerAnimatorController>();
         _isFacingRight = true;

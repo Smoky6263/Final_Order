@@ -26,6 +26,10 @@ public class PlayerJumpState : PlayerBaseState
         //------------------------------------------------------
         //DO JUMP ANIMATION
         //------------------------------------------------------
+        Context.RollInput = false;
+
+        if (Context.OnStairs == false)
+            Context.VFXManager.SpawnDustParticles();
 
         InitiateJump();
     }

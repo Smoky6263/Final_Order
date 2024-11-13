@@ -83,11 +83,13 @@ public class PlayerRunState : PlayerBaseState
         {
             Context.IsFacingRight = true;
             Context.SpriteRenderer.flipX = false;
+            Context.VFXManager.SpawnDustParticles();
         }
         else
         {
             Context.IsFacingRight = false;
             Context.SpriteRenderer.flipX = true;
+            Context.VFXManager.SpawnDustParticles();
         }
     }
 }

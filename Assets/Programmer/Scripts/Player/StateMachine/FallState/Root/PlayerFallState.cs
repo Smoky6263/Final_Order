@@ -24,6 +24,7 @@ class PlayerFallState : PlayerBaseState
         //------------------------------------------------------
         //DO JUMP ANIMATION
         //------------------------------------------------------
+        Context.RollInput = false;
 
         if (Context.IsFalling == false && Context.IsJumping == false)
             Context.IsFalling = true;
