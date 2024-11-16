@@ -1,4 +1,3 @@
-using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 
 public class PlayerRollState : PlayerBaseState
@@ -9,30 +8,37 @@ public class PlayerRollState : PlayerBaseState
     }
     
     private float _elapsedTime; // Прошедшее время
+    private float _speed;
 
     public override void CheckSwitchStates()
     {
 
-        if (_elapsedTime <= 0 && Context.RigidBody.velocity.x == 0 && Context.IsGrounded)
+        if (_elapsedTime <= 0 && Context.MovementInput.x == 0 && Context.MovementInput.y >= 0 && (Context.IsGrounded || Context.OnStairs))
             SwitchState(Factory.Idle());
 
-        if(_elapsedTime >= Context.MoveStats.RollDuration &&  Context.RigidBody.velocity.x != 0 && Context.IsGrounded)
+        if(_elapsedTime <= 0 &&  Context.MovementInput.x != 0 && (Context.IsGrounded || Context.OnStairs))
             SwitchState(Factory.Run());
 
-        if (_elapsedTime >= Context.MoveStats.RollDuration &&  Context.IsGrounded == false)
+        if (_elapsedTime <= 0 && Context.MovementInput.x == 0 && Context.MovementInput.y < 0 && (Context.IsGrounded || Context.OnStairs))
+            SwitchState(Factory.Crouch());
+
+        if (_elapsedTime <= 0 &&  Context.IsGrounded == false && Context.OnStairs == false)
             SwitchState(Factory.Fall());
     }
 
     public override void EnterState()
     {
         Context.AnimatorController.OnCrouch(true);
+        Context.VFXManager.SpawnDustParticles();
         _elapsedTime = Context.RollDuration;
+        _speed = Context.IsFacingRight ? Context.MoveStats.MaxRunSpeed : -Context.MoveStats.MaxRunSpeed;
     }
 
     public override void ExitState()
     {
         Context.MovementVelocity = new Vector2(0f, Context.MovementVelocity.y);
         Context.AnimatorController.OnCrouch(false);
+        Context.RollInput = false;
     }
 
     public override void InitializeSubState()
@@ -66,7 +72,7 @@ public class PlayerRollState : PlayerBaseState
             _elapsedTime = 0; // Обеспечиваем, что значение не выйдет за пределы продолжительности
 
         // Вычисляем новое значение с использованием функции EaseOutCubic
-        float rollSpeed = EaseOutCubic(_elapsedTime, Context.MoveStats.RollDuration, Context.MovementVelocity.x);
+        float rollSpeed = EaseOutCubic(_elapsedTime, Context.MoveStats.RollDuration, _speed);
 
         Debug.Log("Value: " + rollSpeed);
 

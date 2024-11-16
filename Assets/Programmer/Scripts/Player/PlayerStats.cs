@@ -1,13 +1,13 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "PlayerMovementStats")]
+[CreateAssetMenu(menuName = "Player/PlayerMovementStats")]
 public class PlayerStats : ScriptableObject
 {
 
     [Header("Weapon")]
     [SerializeField, Range(0f,100f)] public float _weaponDamage;
 
-    [Header("Roll Duration")]
+    [Header("Duration Stats")]
     [Range(0f, 5f)] public float RollDuration = 1f;
 
     [Header("Run")]
@@ -31,6 +31,10 @@ public class PlayerStats : ScriptableObject
     public float TimeTillJumpApex = 0.35f;
     [Range(.01f, 5f)] public float GravityOnReleaseMultiplier = 2f;
     public float MaxFallSpeed = 26f;
+
+    [Header("jump after stairs")]
+    [Range(0f, 30f)] public float InitialJumpFromStairsVelocity = 5f;
+    [Range(0f, 5f)] public float JumpfAfterStairsDuration = 1f;
 
     [Header("Jump Cut")]
     [Range(0.02f, 0.3f)] public float TimeForUpwardsCancel = 0.027f;

@@ -18,13 +18,17 @@ public class PlayerCrouchState : PlayerBaseState
             SwitchState(Factory.Run());
         
         //IF JUMP PRESS AND CROUCH PRESS DO DROP FROM PLATFORM
-        if (Context.JumpButtonPressed && Context.MovementInput.y < 0 && Context.CurrentPTP != null)
+        if (Context.JumpInput && Context.MovementInput.y < 0 && Context.CurrentPTP != null)
         {
             Context.CurrentPTP.GetComponent<PassTroughPlatform>().TurnOffCollision(Context.BodyColl, Context.FeetColl);
             Context.CurrentPTP = null;
             Context.CoyoteTimer = -1f;
             SwitchState(Factory.Fall());
         }
+
+        //DO ROLL WHEN PRESS ROLL BUTTON
+        if (Context.IsGrounded  && Context.RollInput == true)
+            SwitchState(Factory.Roll());
     }
 
     public override void EnterState()

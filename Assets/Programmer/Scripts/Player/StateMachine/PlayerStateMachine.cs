@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerStateMachine : MonoBehaviour, IControlable
 {
     private EventBus _eventBus;
+    private VFXManager _vfxManager;
     private PlayerHealth _playerHealth;
     private Rigidbody2D _rigidBody;
 
@@ -34,10 +35,11 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
 
     #endregion
 
-    #region Move Fields
-    //player inputs
+    #region Input Fields
+    //player inputs fields
     private Vector2 _movementInput;
-    private bool _jumpButtonPressed;
+    private bool _jumpButtonInput;
+    private bool _rollInput;
 
     //movement vars
     private Vector2 _movementVelocity;
@@ -76,6 +78,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     public PlayerAnimatorController AnimatorController { get { return _animatorController; } }
     public SpriteRenderer SpriteRenderer { get { return _spriteRenderer; } }
     public PlayerStats MoveStats { get { return _moveStats; } }
+    public VFXManager VFXManager { get { return _vfxManager; } }
     public Collider2D BodyColl { get { return _bodyColl; } }
     public Collider2D FeetColl { get { return _feetColl; } }
     public Rigidbody2D RigidBody { get { return _rigidBody; } }
@@ -83,9 +86,10 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     public PlayerHealth PayerHealth { get { return _playerHealth; } }
     
     //player inputs
-
     public Vector2 MovementInput { get { return _movementInput; } }
-    public bool JumpButtonPressed { get { return _jumpButtonPressed; } set { _jumpButtonPressed = value; } }
+    public bool JumpInput { get { return _jumpButtonInput; } set { _jumpButtonInput = value; } }
+    public bool RollInput { get { return _rollInput; } set { _rollInput = value; } }
+
 
     #region Ccollision check vars
     public RaycastHit2D GroundHit { get { return _groundHit; } set { _groundHit = value; } }
@@ -101,9 +105,10 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     
     //movement vars
     public Vector2 MovementVelocity { get { return _movementVelocity; } set { _movementVelocity = value; } }
-    public float RollDuration { get { return _moveStats.RollDuration; } }
     public bool IsFacingRight {  get { return _isFacingRight; } set { _isFacingRight = value; } }
-    public bool OnCrouch {  get { return _onCrouch; } set { _onCrouch= value; } }
+    public bool OnCrouch {  get { return _onCrouch; } set { _onCrouch = value; } }
+    public float RollDuration { get { return _moveStats.RollDuration; } }
+    public float JumpfAfterStairsDuration { get { return _moveStats.JumpfAfterStairsDuration; } }
 
     //jump vars
     public bool IsJumping { get { return _isJumping; } set { _isJumping = value; } }
@@ -134,6 +139,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     {
         _eventBus = _gameManager.EventBus;
         _playerHealth = new PlayerHealth(this);
+        _vfxManager = GetComponent<VFXManager>();
         _rigidBody = GetComponent<Rigidbody2D>();
         _animatorController = GetComponent<PlayerAnimatorController>();
         _isFacingRight = true;
@@ -159,8 +165,13 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
 
     #region PlayerInputs
     public void MoveInput(float x, float y) => _movementInput = new Vector2(x , y);
-    public void JumpIsPressed() => _jumpButtonPressed = true;
-    public void JumpIsReleased() => _jumpButtonPressed = false;
+    public void JumpIsPressed() => _jumpButtonInput = true;
+    public void JumpIsReleased() => _jumpButtonInput = false;
+    public void RollPressed()
+    {
+        if(IsGrounded == true)
+            _rollInput = true;
+    }
     #endregion
 
 #region Collision Checks

@@ -11,7 +11,7 @@ public class PlayerGroundedState : PlayerBaseState
     public override void CheckSwitchStates()
     {
         //WHEN WE PRESS THE JUMP BUTTON
-        if (Context.JumpButtonPressed && Context.CoyoteTimer >= 0 && (Context.OnCrouch == false && Context.CurrentPTP != null  || Context.CurrentPTP == null))
+        if (Context.JumpInput && Context.CoyoteTimer >= 0 && (Context.OnStairs || Context.IsGrounded) && (Context.OnCrouch == false && Context.CurrentPTP != null  || Context.CurrentPTP == null))
         {
             Context.JumpBufferTimer = Context.MoveStats.JumpBufferTime;
             Context.JumpReleasedDuringBuffer = false;
@@ -20,8 +20,12 @@ public class PlayerGroundedState : PlayerBaseState
                 SwitchState(Factory.Jump());
         }
 
+        //IF ON STAIRS
+        if (Context.OnStairs && Context.MovementInput.y != 0)
+            SwitchState(Factory.OnStairs());
+
         //IF PLAYER FALL
-        if (Context.OnStairs == false && Context.IsGrounded == false && Context.JumpButtonPressed == false && Context.CoyoteTimer <= 0)
+        if (Context.OnStairs == false && Context.IsGrounded == false && Context.CoyoteTimer <= 0)
             SwitchState(Factory.Fall());
 
         
@@ -31,6 +35,10 @@ public class PlayerGroundedState : PlayerBaseState
     {
         Context.CoyoteTimer = Context.MoveStats.JumpCoyoteTime;
         Context.VerticalVelocity = Physics2D.gravity.y;
+        Context.VFXManager.SpawnDustParticles();
+
+        if (Context.OnCrouch)
+            Context.OnCrouch = false;
     }
 
     public override void ExitState()
@@ -46,7 +54,7 @@ public class PlayerGroundedState : PlayerBaseState
         if (Context.IsGrounded && Context.MovementVelocity.x == 0)
             SetSubState(Factory.Idle());
 
-        if(Context.OnStairs && Context.MovementInput != Vector2.zero)
+        if(Context.OnStairs && Context.MovementInput.y != 0f)
             SetSubState(Factory.OnStairs());
     }
 
@@ -55,6 +63,9 @@ public class PlayerGroundedState : PlayerBaseState
         Fall();
         CountTimers();
         CheckSwitchStates();
+
+        //if (Context.IsGrounded)
+        //    Context.CoyoteTimer = Context.MoveStats.JumpCoyoteTime;
     }
 
     private void Fall()
@@ -68,7 +79,7 @@ public class PlayerGroundedState : PlayerBaseState
 
     private void CountTimers()
     {
-        if (!Context.IsGrounded)
+        if (Context.IsGrounded == false && Context.OnStairs == false)
             Context.CoyoteTimer -= Time.deltaTime;
     }
 

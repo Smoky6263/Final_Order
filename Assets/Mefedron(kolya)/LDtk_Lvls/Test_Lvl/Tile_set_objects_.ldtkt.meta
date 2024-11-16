@@ -14,7 +14,7 @@ ScriptedImporter:
   _sprites:
   - name: Tile_set_objects__0
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -28,7 +28,7 @@ ScriptedImporter:
     tessellationDetail: 0
   - name: Tile_set_objects__1
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -42,7 +42,7 @@ ScriptedImporter:
     tessellationDetail: 0
   - name: Tile_set_objects__2
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -56,7 +56,7 @@ ScriptedImporter:
     tessellationDetail: 0
   - name: Tile_set_objects__3
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -70,7 +70,7 @@ ScriptedImporter:
     tessellationDetail: 0
   - name: Tile_set_objects__4
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -84,7 +84,7 @@ ScriptedImporter:
     tessellationDetail: 0
   - name: Tile_set_objects__5
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -98,7 +98,7 @@ ScriptedImporter:
     tessellationDetail: 0
   - name: Tile_set_objects__6
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -112,7 +112,7 @@ ScriptedImporter:
     tessellationDetail: 0
   - name: Tile_set_objects__7
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -126,7 +126,7 @@ ScriptedImporter:
     tessellationDetail: 0
   - name: Tile_set_objects__8
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -140,7 +140,7 @@ ScriptedImporter:
     tessellationDetail: 0
   - name: Tile_set_objects__9
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -1413,4 +1413,4 @@ ScriptedImporter:
     spriteOutline: []
     tessellationDetail: 0
   _secondaryTextures: []
-  _artifacts: {instanceID: 0}
+  _artifacts: {fileID: -2988177865379244337, guid: 27b07801ebf10e34e81bca3205abe887, type: 3}
