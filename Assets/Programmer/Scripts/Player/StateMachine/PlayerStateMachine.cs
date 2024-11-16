@@ -24,10 +24,11 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
 
     #region Player Fields
 
-    [Header("Health")]
+    [Header("Health Variables")]
     [SerializeField, Range(0f, 100f)] public float _maxHealth;
     [SerializeField, Range(0f, 100f)] public float _health;
-
+    [Header("После получения урона, игрок не может получить пока не пройдет секунд:")]
+    [SerializeField, Range(0f, 3f)] private int _damageDelayTime;
     #region Collision Fiekds
     private bool _onStairs;
     private GameObject _currentPTP; /* PTP = PassTroughPlatform*/
@@ -84,7 +85,9 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     public Rigidbody2D RigidBody { get { return _rigidBody; } }
     public EventBus EventBus { get { return _eventBus; } }
     public PlayerHealth PayerHealth { get { return _playerHealth; } }
-    
+    public int DamageDelayTime { get { return _damageDelayTime; } }
+
+
     //player inputs
     public Vector2 MovementInput { get { return _movementInput; } }
     public bool JumpInput { get { return _jumpButtonInput; } set { _jumpButtonInput = value; } }

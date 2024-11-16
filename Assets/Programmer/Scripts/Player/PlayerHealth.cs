@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 
 public class PlayerHealth : IHealth
 {
@@ -14,16 +15,27 @@ public class PlayerHealth : IHealth
     
     private float _maxHealth;
     private int _medKitsCount;
+    public bool _onDamageDelay { get; private set; } = false;
 
 
-    public void TakeDamage(float value)
+    public async void TakeDamage(float value)
     {
+        if (_onDamageDelay == true)
+            return;
+
+        _onDamageDelay = true;
         _playerStats._health -= value;
 
         if(_playerStats._health < 0 )
             _playerStats._health = 0;
 
         _eventBus.Invoke(new PlayerHealthChangeSignal(_playerStats._health));
+        await DamageDelayTask();
+    }
+    private async UniTask DamageDelayTask()
+    {
+        await UniTask.Delay(_playerStats.DamageDelayTime * 1000);
+        _onDamageDelay = false;
     }
     public void ImproveHealth()
     {
@@ -35,6 +47,5 @@ public class PlayerHealth : IHealth
             _medKitsCount--;
         }
     }
-
     public void OnMedKitPickUp() => _medKitsCount++;
 }
