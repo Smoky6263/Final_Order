@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 21561d10f70aec84aa6ee18b74173b18
+guid: 4aab40adf8b1a2c4fa36a3c4dc63133e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,12 +110,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Died_0
+      name: Died_Torso_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 38
+        width: 61
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c418aa6b1576d241833139a3232f985
-      internalID: -162173197
+      spriteID: b79fe07886283c945bc20596a5c7ec38
+      internalID: 1517914652
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Died_1
+      name: Died_Torso_1
       rect:
         serializedVersion: 2
         x: 61
         y: 0
-        width: 38
-        height: 62
+        width: 61
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f86d90f3b154b9048b4cfb022a8c5283
-      internalID: 655055842
+      spriteID: abdc20d78baef894383ca58ac70f308b
+      internalID: -93412815
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Died_2
+      name: Died_Torso_2
       rect:
         serializedVersion: 2
         x: 122
         y: 0
-        width: 43
-        height: 52
+        width: 61
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29b774ceebe71b74db028894a1595e76
-      internalID: -170676289
+      spriteID: a2b45cdd483280c468f4e050fff6c7b6
+      internalID: -1966621385
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Died_3
+      name: Died_Torso_3
       rect:
         serializedVersion: 2
         x: 183
         y: 0
-        width: 43
-        height: 49
+        width: 61
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73195a6c1bbd6dc45bcf4a41935c6da4
-      internalID: -2052121630
+      spriteID: 9b2ae4de43b49b844b946ce965027c5b
+      internalID: 660631619
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Died_4
+      name: Died_Torso_4
       rect:
         serializedVersion: 2
         x: 244
         y: 0
-        width: 43
-        height: 44
+        width: 61
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91f8951d3a5fd0f448b35c3a22dd9218
-      internalID: -706291328
+      spriteID: d39296b200e0f264aa5e38d3a6db7dce
+      internalID: 1750762697
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Died_5
+      name: Died_Torso_5
       rect:
         serializedVersion: 2
         x: 305
         y: 0
         width: 61
-        height: 23
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea83a690c05436e4080a6ced62088a53
-      internalID: 713493580
+      spriteID: c4d5237b895ac5240ad3754edaf66fa2
+      internalID: 1935812201
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Died_6
+      name: Died_Torso_6
       rect:
         serializedVersion: 2
         x: 366
         y: 0
         width: 61
-        height: 23
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,8 +250,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7dec044b6457a7b4db786dc30c2337ea
-      internalID: 1026282788
+      spriteID: 46284fecb872c474484ff54a2e0e38de
+      internalID: -690501815
       vertices: []
       indices: 
       edges: []
@@ -267,13 +267,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Died_0: -162173197
-      Died_1: 655055842
-      Died_2: -170676289
-      Died_3: -2052121630
-      Died_4: -706291328
-      Died_5: 713493580
-      Died_6: 1026282788
+      Died_Torso_0: 1517914652
+      Died_Torso_1: -93412815
+      Died_Torso_2: -1966621385
+      Died_Torso_3: 660631619
+      Died_Torso_4: 1750762697
+      Died_Torso_5: 1935812201
+      Died_Torso_6: -690501815
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
