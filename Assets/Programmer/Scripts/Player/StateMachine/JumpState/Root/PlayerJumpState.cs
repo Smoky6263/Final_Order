@@ -15,7 +15,7 @@ public class PlayerJumpState : PlayerBaseState
             SwitchState(Factory.Grounded());
 
         //IF ON STAIRS
-        if ((Context.IsJumping || Context.IsFalling) && Context.OnStairs && Context.MovementInput.y != 0f)
+        if ((Context.IsJumping || Context.IsFalling) && Context.OnStairs && Context.MovementInput.y != 0f && Context.JumpInput == false)
             SwitchState(Factory.Grounded());
 
 
@@ -43,10 +43,8 @@ public class PlayerJumpState : PlayerBaseState
         Context.IsFastFalling = false;
 
         Context.FastFallTime = 0f;
-        Context.JumpBufferTimer = 0f;
         Context.IsPastApexThreshold = false;
 
-        Context.JumpInput = false;
         Context.VerticalVelocity = Physics2D.gravity.y;
     }
 
@@ -61,6 +59,8 @@ public class PlayerJumpState : PlayerBaseState
         JumpChecks();
         Jump();
         BumpHead();
+        CountTimers();
+        TurnCheck(Context.MovementInput);
         CheckSwitchStates();
     }
 
@@ -68,7 +68,7 @@ public class PlayerJumpState : PlayerBaseState
     {
         Context.JumpBufferTimer = Context.MoveStats.JumpBufferTime;
         Context.JumpReleasedDuringBuffer = false;
-
+        
         if (Context.IsJumping == false)
             Context.IsJumping = true;
         
@@ -82,8 +82,7 @@ public class PlayerJumpState : PlayerBaseState
         //WHEN WE RELEASE THE JUMP BUTTON
         if (Context.JumpInput == false)
         {
-            if (Context.JumpBufferTimer > 0f)
-                Context.JumpReleasedDuringBuffer = true;
+            Context.JumpReleasedDuringBuffer = true;
 
             if (Context.IsJumping && Context.VerticalVelocity > 0f)
             {
@@ -105,7 +104,6 @@ public class PlayerJumpState : PlayerBaseState
         //INITIATE JUMP WITH BUFFERING AND COYOTE TIME
         if (Context.JumpBufferTimer > 0 && Context.IsJumping && Context.IsGrounded)
         {
-            InitiateJump();
 
             if (Context.JumpReleasedDuringBuffer)
             {
@@ -114,11 +112,11 @@ public class PlayerJumpState : PlayerBaseState
             }
         }
 
-        //AIR JUMP AFTER COYOTE TIME LAPSED
-        else if (Context.JumpBufferTimer > 0f && Context.IsFalling)
-        {
-            Context.IsFalling = false;
-        }
+        ////AIR JUMP AFTER COYOTE TIME LAPSED
+        //else if (Context.JumpBufferTimer >= 0f && Context.IsFalling)
+        //{
+        //    Context.IsFalling = false;
+        //}
     }
     private void Jump()
     {
@@ -229,4 +227,38 @@ public class PlayerJumpState : PlayerBaseState
 
         else { Context.BumpedHead = false; }
     }
+
+    private void TurnCheck(Vector2 moveInput)
+    {
+        if (Context.IsFacingRight && moveInput.x < 0)
+            Turn(false);
+
+        else if (Context.IsFacingRight == false && moveInput.x > 0)
+            Turn(true);
+    }
+
+    private void Turn(bool turnRight)
+    {
+        if (turnRight)
+        {
+            Context.IsFacingRight = true;
+            Context.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            Context.WeaponController.BoxOffset = new Vector3(Context.WeaponController.Box_X_value, Context.WeaponController.BoxOffset.y, Context.WeaponController.BoxOffset.z);
+            Context.VFXManager.SpawnDustParticles();
+        }
+        else
+        {
+            Context.IsFacingRight = false;
+            Context.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+            Context.WeaponController.BoxOffset = new Vector3(-Context.WeaponController.Box_X_value, Context.WeaponController.BoxOffset.y, Context.WeaponController.BoxOffset.z);
+            Context.VFXManager.SpawnDustParticles();
+        }
+    }
+
+    #region Timers
+    private void CountTimers()
+    {
+        Context.JumpBufferTimer -= Time.deltaTime;
+    }
+    #endregion
 }

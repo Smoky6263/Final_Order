@@ -16,9 +16,9 @@ MonoBehaviour:
   RollDuration: 1
   MaxRunSpeed: 7
   GroundAcceleration: 6
-  GroundDeceleration: 0.3
+  GroundDeceleration: 4
   AirAcceleration: 4
-  AirDeceleration: 4
+  AirDeceleration: 3
   JumpSurfaceLayer:
     serializedVersion: 2
     m_Bits: 320

@@ -15,15 +15,15 @@ public class PlayerHealth : IHealth
     
     private float _maxHealth;
     private int _medKitsCount;
-    public bool _onDamageDelay { get; private set; } = false;
+    public bool OnDamageDelay { get; private set; } = false;
 
 
     public async void TakeDamage(float value)
     {
-        if (_onDamageDelay == true)
+        if (OnDamageDelay == true && _playerStats.RollInput == false)
             return;
 
-        _onDamageDelay = true;
+        OnDamageDelay = true;
         _playerStats._health -= value;
 
         if(_playerStats._health < 0 )
@@ -34,8 +34,8 @@ public class PlayerHealth : IHealth
     }
     private async UniTask DamageDelayTask()
     {
-        await UniTask.Delay(_playerStats.DamageDelayTime * 1000);
-        _onDamageDelay = false;
+        await UniTask.Delay(_playerStats.DamageDelayTime);
+        OnDamageDelay = false;
     }
     public void ImproveHealth()
     {
