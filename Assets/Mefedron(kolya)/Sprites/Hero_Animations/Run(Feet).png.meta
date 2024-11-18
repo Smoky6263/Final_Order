@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b45b155e4a6523444bc6ebab3c48506c
+guid: 84b698c4c9dd6964bbfd77f8820f3348
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -113,19 +113,19 @@ TextureImporter:
       name: Run(Feet)_0
       rect:
         serializedVersion: 2
-        x: 34
+        x: 0
         y: 0
-        width: 16
-        height: 22
+        width: 75
+        height: 75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aadbc1d4620680b4087a98c2807e9ed5
-      internalID: -1277847380
+      spriteID: f72ba53e99d43714799eff9d7107fc09
+      internalID: 217204198
       vertices: []
       indices: 
       edges: []
@@ -134,19 +134,19 @@ TextureImporter:
       name: Run(Feet)_1
       rect:
         serializedVersion: 2
-        x: 112
+        x: 75
         y: 0
-        width: 14
-        height: 22
+        width: 75
+        height: 75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dee5b16eb40ad07409865675d16cba10
-      internalID: 1803650527
+      spriteID: 77ff6b3a6a1e62944ac5fd16b216dc3f
+      internalID: 754657570
       vertices: []
       indices: 
       edges: []
@@ -155,19 +155,19 @@ TextureImporter:
       name: Run(Feet)_2
       rect:
         serializedVersion: 2
-        x: 188
+        x: 150
         y: 0
-        width: 13
-        height: 22
+        width: 75
+        height: 75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c38c876c9919d942a352db055022873
-      internalID: -449238915
+      spriteID: 29af0b104c09b2b4993de13186b2fd4f
+      internalID: 713674731
       vertices: []
       indices: 
       edges: []
@@ -176,19 +176,19 @@ TextureImporter:
       name: Run(Feet)_3
       rect:
         serializedVersion: 2
-        x: 259
+        x: 225
         y: 0
-        width: 16
-        height: 22
+        width: 75
+        height: 75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35f32ba8947fadc4a9d52a09c7472e78
-      internalID: 1358500912
+      spriteID: ba27ab512c2b22940b12874b290d4a31
+      internalID: -1836031497
       vertices: []
       indices: 
       edges: []
@@ -197,19 +197,19 @@ TextureImporter:
       name: Run(Feet)_4
       rect:
         serializedVersion: 2
-        x: 329
-        y: 1
-        width: 26
-        height: 21
+        x: 300
+        y: 0
+        width: 75
+        height: 75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be84aa2a4cfa8be4bb035f972d8ffee6
-      internalID: -1195555498
+      spriteID: e7b07bdbeb8924045bad79d48add9c94
+      internalID: -1123326783
       vertices: []
       indices: 
       edges: []
@@ -218,19 +218,19 @@ TextureImporter:
       name: Run(Feet)_5
       rect:
         serializedVersion: 2
-        x: 403
+        x: 375
         y: 0
-        width: 26
-        height: 22
+        width: 75
+        height: 75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6cd81f6adb407ef468d8e5d4f2ec251c
-      internalID: 1156404338
+      spriteID: 40b33b35b23761a4196a2d68b30fc6ed
+      internalID: 655933857
       vertices: []
       indices: 
       edges: []
@@ -239,19 +239,19 @@ TextureImporter:
       name: Run(Feet)_6
       rect:
         serializedVersion: 2
-        x: 482
+        x: 450
         y: 0
-        width: 21
-        height: 22
+        width: 75
+        height: 75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac354a5c876de5b46ae4f2c19b7a4ea1
-      internalID: 80466173
+      spriteID: 54f91092261bb16409bf6b227b872cbc
+      internalID: -1251662308
       vertices: []
       indices: 
       edges: []
@@ -260,19 +260,19 @@ TextureImporter:
       name: Run(Feet)_7
       rect:
         serializedVersion: 2
-        x: 557
+        x: 525
         y: 0
-        width: 19
-        height: 22
+        width: 75
+        height: 75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9ea3810b988a004c930024986fe426c
-      internalID: 1797788867
+      spriteID: 9f9fb2053a446b846980b0b115d69fdf
+      internalID: -1550671063
       vertices: []
       indices: 
       edges: []
@@ -288,14 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Run(Feet)_0: -1277847380
-      Run(Feet)_1: 1803650527
-      Run(Feet)_2: -449238915
-      Run(Feet)_3: 1358500912
-      Run(Feet)_4: -1195555498
-      Run(Feet)_5: 1156404338
-      Run(Feet)_6: 80466173
-      Run(Feet)_7: 1797788867
+      Run(Feet)_0: 217204198
+      Run(Feet)_1: 754657570
+      Run(Feet)_2: 713674731
+      Run(Feet)_3: -1836031497
+      Run(Feet)_4: -1123326783
+      Run(Feet)_5: 655933857
+      Run(Feet)_6: -1251662308
+      Run(Feet)_7: -1550671063
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
