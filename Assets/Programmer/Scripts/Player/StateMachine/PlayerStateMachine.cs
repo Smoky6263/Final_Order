@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent (typeof(Animator))]
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(PlayerAnimatorController))]
 [RequireComponent(typeof(CharacterController))]
@@ -27,8 +26,11 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     [Header("Health Variables")]
     [SerializeField, Range(0f, 100f)] public float _maxHealth;
     [SerializeField, Range(0f, 100f)] public float _health;
-    [Header("ѕосле получени€ урона, игрок не может получить пока не пройдет секунд:")]
-    [SerializeField, Range(0f, 3f)] private int _damageDelayTime;
+    [Header("ѕосле получени€ урона, игрок не может получить\nпока не пройдет мсек:")]
+    [SerializeField, Range(0f, 10000f)] private int _damageDelayTime;
+
+    [Header("Weapon Variables")]
+    [SerializeField] private PlayerWeaponController _weaponController;
     #region Collision Fiekds
     private bool _onStairs;
     private GameObject _currentPTP; /* PTP = PassTroughPlatform*/
@@ -85,6 +87,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     public Rigidbody2D RigidBody { get { return _rigidBody; } }
     public EventBus EventBus { get { return _eventBus; } }
     public PlayerHealth PayerHealth { get { return _playerHealth; } }
+    public PlayerWeaponController WeaponController { get { return _weaponController; } }
     public int DamageDelayTime { get { return _damageDelayTime; } }
 
 
@@ -99,17 +102,17 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     public RaycastHit2D HeadHit { get { return _headHit; } set { _headHit = value; } }
     public GameObject CurrentPTP { get { return _currentPTP; } set { _currentPTP = value; } }
     public bool IsGrounded { get { return _isGrounded; } set { _isGrounded = value; } }
-    public bool BumpedHead {  get { return _bumpedHead; } set { _bumpedHead = value; } }
+    public bool BumpedHead { get { return _bumpedHead; } set { _bumpedHead = value; } }
     public bool OnStairs { get { return _onStairs; } set { _onStairs = value; } }
 
     #endregion
 
     #region Movement and Jump Properties
-    
+
     //movement vars
     public Vector2 MovementVelocity { get { return _movementVelocity; } set { _movementVelocity = value; } }
-    public bool IsFacingRight {  get { return _isFacingRight; } set { _isFacingRight = value; } }
-    public bool OnCrouch {  get { return _onCrouch; } set { _onCrouch = value; } }
+    public bool IsFacingRight { get { return _isFacingRight; } set { _isFacingRight = value; } }
+    public bool OnCrouch { get { return _onCrouch; } set { _onCrouch = value; } }
     public float RollDuration { get { return _moveStats.RollDuration; } }
     public float JumpfAfterStairsDuration { get { return _moveStats.JumpfAfterStairsDuration; } }
 
@@ -122,7 +125,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
 
     //apex vars
     public float ApexPoint { get { return _apexPoint; } set { _apexPoint = value; } }
-    public float TimePastApexThreshold { get {  return _timePastApexThreshold; } set { _timePastApexThreshold = value; } }
+    public float TimePastApexThreshold { get { return _timePastApexThreshold; } set { _timePastApexThreshold = value; } }
     public bool IsPastApexThreshold { get { return _isPastApexThreshold; } set { _isPastApexThreshold = value; } }
 
     //jump buffer vars
@@ -152,23 +155,26 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     {
         _states = new PlayerStateFactory(this);
         _currentState = _states.Fall();
-        _currentState.EnterState(); 
+        _currentState.EnterState();
     }
 
     private void Update()
     {
-        CountTimers();
         IsGroundedCheck();
     }
 
     private void FixedUpdate()
     {
-        _currentState.UpdateStates(); 
+        _currentState.UpdateStates();
     }
 
     #region PlayerInputs
-    public void MoveInput(float x, float y) => _movementInput = new Vector2(x , y);
-    public void JumpIsPressed() => _jumpButtonInput = true;
+    public void MoveInput(float x, float y) => _movementInput = new Vector2(x, y);
+    public void JumpIsPressed()
+    {
+        _jumpButtonInput = true;
+        _jumpBufferTimer = _moveStats.JumpBufferTime;
+    }
     public void JumpIsReleased() => _jumpButtonInput = false;
     public void RollPressed()
     {
@@ -177,7 +183,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     }
     #endregion
 
-#region Collision Checks
+    #region Collision Checks
     private void IsGroundedCheck()
     {
         Vector2 boxCastOrigin = new Vector2(_feetColl.bounds.center.x, _feetColl.bounds.center.y);
@@ -208,13 +214,6 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         }
     }
 
-    #endregion
-
-    #region Timers
-    private void CountTimers()
-    {
-        _jumpBufferTimer -= Time.deltaTime;
-    }
     #endregion
 
     private void OnTriggerEnter2D(Collider2D collision)

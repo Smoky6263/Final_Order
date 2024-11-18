@@ -27,13 +27,11 @@ public class PlayerRunState : PlayerBaseState
 
     public override void EnterState()
     {
-        Context.AnimatorController.OnRun(true);
-
+        Context.AnimatorController.OnRun();
     }
 
     public override void ExitState()
     {
-        Context.AnimatorController.OnRun(false);
     }
 
     public override void InitializeSubState()
@@ -82,13 +80,15 @@ public class PlayerRunState : PlayerBaseState
         if (turnRight)
         {
             Context.IsFacingRight = true;
-            Context.SpriteRenderer.flipX = false;
+            Context.transform.rotation = Quaternion.Euler(0f,0f,0f);
+            Context.WeaponController.BoxOffset = new Vector3(Context.WeaponController.Box_X_value, Context.WeaponController.BoxOffset.y, Context.WeaponController.BoxOffset.z);
             Context.VFXManager.SpawnDustParticles();
         }
         else
         {
             Context.IsFacingRight = false;
-            Context.SpriteRenderer.flipX = true;
+            Context.transform.rotation = Quaternion.Euler(0f,180f,0f);
+            Context.WeaponController.BoxOffset = new Vector3(-Context.WeaponController.Box_X_value, Context.WeaponController.BoxOffset.y, Context.WeaponController.BoxOffset.z);
             Context.VFXManager.SpawnDustParticles();
         }
     }

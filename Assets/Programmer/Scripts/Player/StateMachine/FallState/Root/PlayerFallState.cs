@@ -11,7 +11,7 @@ class PlayerFallState : PlayerBaseState
     public override void CheckSwitchStates()
     {
         //IF LANDED
-        if ((Context.IsJumping || Context.IsFalling) && Context.IsGrounded && Context.VerticalVelocity <= 0f)
+        if (Context.IsFalling && Context.IsGrounded && Context.VerticalVelocity <= 0f)
             SwitchState(Factory.Grounded());
 
         //IF GROUND ON STAIRS
@@ -25,6 +25,8 @@ class PlayerFallState : PlayerBaseState
         //DO JUMP ANIMATION
         //------------------------------------------------------
         Context.RollInput = false;
+        Context.JumpBufferTimer = -1f;
+
 
         if (Context.IsFalling == false && Context.IsJumping == false)
             Context.IsFalling = true;
@@ -40,15 +42,12 @@ class PlayerFallState : PlayerBaseState
     public override void ExitState()
     {
         //LANDED
-        Context.IsJumping = false;
         Context.IsFalling = false;
         Context.IsFastFalling = false;
 
         Context.FastFallTime = 0f;
-        Context.JumpBufferTimer = 0f;
         Context.IsPastApexThreshold = false;
 
-        Context.JumpInput = false;
         Context.VerticalVelocity = Physics2D.gravity.y;
 
     }
@@ -71,6 +70,7 @@ class PlayerFallState : PlayerBaseState
         Context.VerticalVelocity = Mathf.Clamp(Context.VerticalVelocity, -Context.MoveStats.MaxFallSpeed, 50f);
         Context.RigidBody.velocity = new Vector2(Context.RigidBody.velocity.x, Context.VerticalVelocity);
 
+        CountTimers();
         CheckSwitchStates();
     }
 
@@ -93,4 +93,11 @@ class PlayerFallState : PlayerBaseState
 
         Context.FastFallTime += Time.deltaTime;
     }
+
+    #region Timers
+    private void CountTimers()
+    {
+        Context.JumpBufferTimer -= Time.deltaTime;
+    }
+    #endregion
 }

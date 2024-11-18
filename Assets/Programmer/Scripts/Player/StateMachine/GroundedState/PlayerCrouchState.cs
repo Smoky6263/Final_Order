@@ -10,12 +10,18 @@ public class PlayerCrouchState : PlayerBaseState
     public override void CheckSwitchStates()
     {
         //IF GROUNDED AND UNPRESS "CROUCH" BUTTON
-        if(Context.IsGrounded && Context.MovementInput.y >= 0 && Context.MovementInput.x == 0)
+        if (Context.IsGrounded && Context.MovementInput.y >= 0 && Context.MovementInput.x == 0)
+        {
+            Context.AnimatorController.OnIdle();
             SwitchState(Factory.Idle());
+        }
 
         //IF GROUNDED AND UNPRESS "CROUCH", AND PRESS "RUN" BUTTONS
         if (Context.IsGrounded && Context.MovementInput.y >= 0 && Context.MovementInput.x != 0)
+        {
+            Context.AnimatorController.OnRun();
             SwitchState(Factory.Run());
+        }
         
         //IF JUMP PRESS AND CROUCH PRESS DO DROP FROM PLATFORM
         if (Context.JumpInput && Context.MovementInput.y < 0 && Context.CurrentPTP != null)
@@ -29,12 +35,17 @@ public class PlayerCrouchState : PlayerBaseState
         //DO ROLL WHEN PRESS ROLL BUTTON
         if (Context.IsGrounded  && Context.RollInput == true)
             SwitchState(Factory.Roll());
+        
+        //WHEN WE PRESS THE JUMP BUTTON
+        if (Context.JumpInput && (Context.CoyoteTimer >= 0 && Context.JumpBufferTimer >= 0) && Context.IsGrounded)
+            SwitchState(Factory.Jump());
     }
 
     public override void EnterState()
     {
-        Context.AnimatorController.OnCrouch(true);
+        Context.AnimatorController.OnCrouch();
         Context.OnCrouch = true;
+        Context.JumpInput = false;
 
         Context.MovementVelocity = Vector2.zero;
         Context.RigidBody.velocity = new Vector2(0f, Context.RigidBody.velocity.y);
@@ -43,7 +54,6 @@ public class PlayerCrouchState : PlayerBaseState
     public override void ExitState()
     {
         Context.OnCrouch = false;
-        Context.AnimatorController.OnCrouch(false);
     }
 
     public override void InitializeSubState()

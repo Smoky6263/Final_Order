@@ -12,7 +12,7 @@ public class EnemyWithShieldFSM : StateManager<EnemyWithShieldFSM.EnemyWithShiel
     [Header("Время, которое моб проводит в состоянии Idle\n(например когда игрок убежал от него)")]
     [SerializeField, Range(0f, 10f)] private float _idleTime = 3f;
 
-    [Header("Параметры скорости моба:\n- скорость при патрулировании\n- скорость при приследовании игрока")]
+    [Header("Параметры скорости моба:\n- скорость при патрулировании\n- скорость при преследовании игрока")]
     [SerializeField, Range(0f, 10f)] private float _patrollingSpeed = 2f;
     [SerializeField, Range(0f, 10f)] private float _palyerFollowSpeed = 4f;
 
