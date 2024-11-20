@@ -59,7 +59,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: LeggsCrouch
+    m_ConditionEvent: LegsCrouch
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6445800250640028668}
@@ -82,8 +82,8 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: LeggsRun
-  m_Speed: 1
+  m_Name: LegsRun
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -7907175537748042910}
@@ -97,7 +97,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 68a4b15ae96fabb438fb24f11a427f5c, type: 2}
+  m_Motion: {fileID: 7400000, guid: 8403d5183063091499ad84c5027495bd, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -191,7 +191,7 @@ AnimatorController:
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: LegsAttack
-    m_Type: 4
+    m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -208,7 +208,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: LeggsCrouch
+  - m_Name: LegsCrouch
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -247,7 +247,7 @@ AnimatorStateMachine:
     m_Position: {x: 0, y: 100, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -950719918408430643}
-    m_Position: {x: -320, y: 340, z: 0}
+    m_Position: {x: -200, y: 340, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -294,10 +294,7 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: LegsAttack
-    m_EventTreshold: 0
+  m_Conditions: []
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5083128016970331492}
   m_Solo: 0
@@ -305,7 +302,7 @@ AnimatorStateTransition:
   m_IsExit: 0
   serializedVersion: 3
   m_TransitionDuration: 0
-  m_TransitionOffset: 1
+  m_TransitionOffset: 0
   m_ExitTime: 1
   m_HasExitTime: 1
   m_HasFixedDuration: 1
@@ -349,7 +346,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: LeggsCrouch
+    m_ConditionEvent: LegsCrouch
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6445800250640028668}
@@ -398,9 +395,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: LegsAttack
-    m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: LegsRun
     m_EventTreshold: 0

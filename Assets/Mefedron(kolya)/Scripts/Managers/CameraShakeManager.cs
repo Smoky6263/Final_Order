@@ -3,20 +3,20 @@ using Cinemachine;
 
 public class CameraShakeManager : MonoBehaviour
 {
-    public static CameraShakeManager instance;
+    //public static CameraShakeManager instance;
 
     [SerializeField] private float globalShakeForce = 1f;
     [SerializeField] private CinemachineImpulseListener _impulseListener;
 
     private CinemachineImpulseDefinition _impulseDefinition;
 
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-    }
+    //private void Awake()
+    //{
+    //    if (instance == null)
+    //    {
+    //        instance = this;
+    //    }
+    //}
 
     public void CameraShake(CinemachineImpulseSource impulseSource)
     {

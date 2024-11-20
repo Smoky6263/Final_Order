@@ -6,5 +6,16 @@ public class VFXManager : MonoBehaviour
 
     private Vector3 _offset = new Vector3(0f, 0f, 1f);
 
-    public void SpawnDustParticles() => Instantiate(_vfxPrefabs.DustParticlesPrefab, transform.position + _offset, Quaternion.identity);
+
+    #region Particles
+    public void SpawnDustParticles(Vector3 position) => Instantiate(_vfxPrefabs.p_DustParticlesPrefab, position + _offset, Quaternion.identity);
+    public void SpawnBloodParticles(Vector3 position) => Instantiate(_vfxPrefabs.p_BloodtParticlesPrefab, position + _offset, Quaternion.identity);
+    #endregion
+
+    #region Materials
+    public Material GetDamageMaterial()
+    {
+        return _vfxPrefabs.m_EnemyGetDamage;
+    }
+    #endregion
 }

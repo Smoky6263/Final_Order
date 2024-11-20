@@ -3,17 +3,17 @@ using UnityEngine.UI;
 
 public class PlayerHealthBar : MonoBehaviour
 {
-    [SerializeField] private GameManager _gameManager;
+    [SerializeField] private EventBusManager _eventBusManager;
     
     private EventBus _eventBus;
     private Slider _slider;
 
     private void Awake()
     {
-        if (_gameManager == null)
+        if (_eventBusManager == null)
             Debug.LogWarning($"Ты забыл прокинуть ссылки в инспекторе на обьект {this.gameObject.name}!");
 
-        _eventBus = _gameManager.EventBus;
+        _eventBus = _eventBusManager.EventBus;
         _eventBus.Subscribe<PlayerHealthChangeSignal>(OnHealthChanged);
         _slider = GetComponent<Slider>();
     }

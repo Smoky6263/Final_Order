@@ -19,10 +19,9 @@ public class Spikes : MonoBehaviour
     {
         if (collision.gameObject.tag == _playerTag)
         {
-            collision.gameObject.GetComponentInParent<PlayerStateMachine>().PayerHealth.TakeDamage(_damageValue);
+            collision.gameObject.GetComponentInParent<PlayerStateMachine>().PayerHealth.GetDamage(_damageValue);
 
             //ScreenShake
-            CameraShakeManager.instance.ScreenShakeFromProfile(_shakeProfile, _source);
         }
     }
 }

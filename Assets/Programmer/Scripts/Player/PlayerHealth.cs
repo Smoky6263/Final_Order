@@ -1,5 +1,4 @@
 using Cysharp.Threading.Tasks;
-
 public class PlayerHealth : IHealth
 {
     public PlayerHealth(PlayerStateMachine stateMachine)
@@ -12,13 +11,13 @@ public class PlayerHealth : IHealth
 
     private EventBus _eventBus;
     private PlayerStateMachine _playerStats;
-    
+
     private float _maxHealth;
     private int _medKitsCount;
     public bool OnDamageDelay { get; private set; } = false;
 
 
-    public async void TakeDamage(float value)
+    public async void GetDamage(float value)
     {
         if (OnDamageDelay == true && _playerStats.RollInput == false)
             return;
@@ -32,11 +31,13 @@ public class PlayerHealth : IHealth
         _eventBus.Invoke(new PlayerHealthChangeSignal(_playerStats._health));
         await DamageDelayTask();
     }
+
     private async UniTask DamageDelayTask()
     {
         await UniTask.Delay(_playerStats.DamageDelayTime);
         OnDamageDelay = false;
     }
+
     public void ImproveHealth()
     {
         if(_medKitsCount > 0 && _playerStats._health < _maxHealth)

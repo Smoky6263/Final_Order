@@ -35,6 +35,7 @@ public class PlayerFallingRunState : PlayerBaseState
     public override void UpdateState()
     {
         Move();
+        CheckAtack();
         CheckSwitchStates();
     }
 
@@ -70,14 +71,20 @@ public class PlayerFallingRunState : PlayerBaseState
             Context.IsFacingRight = true;
             Context.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             Context.WeaponController.BoxOffset = new Vector3(Context.WeaponController.Box_X_value, Context.WeaponController.BoxOffset.y, Context.WeaponController.BoxOffset.z);
-            Context.VFXManager.SpawnDustParticles();
         }
         else
         {
             Context.IsFacingRight = false;
             Context.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
             Context.WeaponController.BoxOffset = new Vector3(-Context.WeaponController.Box_X_value, Context.WeaponController.BoxOffset.y, Context.WeaponController.BoxOffset.z);
-            Context.VFXManager.SpawnDustParticles();
+        }
+    }
+    private void CheckAtack()
+    {
+        if (Context.AttackInput == true)
+        {
+            Context.AnimatorController.DoAttack(false);
+            Context.AttackInput = false;
         }
     }
 }

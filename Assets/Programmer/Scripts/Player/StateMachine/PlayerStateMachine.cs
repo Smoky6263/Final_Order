@@ -6,7 +6,6 @@ using UnityEngine;
 public class PlayerStateMachine : MonoBehaviour, IControlable
 {
     private EventBus _eventBus;
-    private VFXManager _vfxManager;
     private PlayerHealth _playerHealth;
     private Rigidbody2D _rigidBody;
 
@@ -15,12 +14,12 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     private PlayerStateFactory _states;
     public PlayerBaseState CurrentState { get { return _currentState; } set { _currentState = value; } }
 
-    [SerializeField] private GameManager _gameManager;
+    [SerializeField] private EventBusManager _gameManager;
+    [SerializeField] private VFXManager _vfxManager;
     [SerializeField] private PlayerStats _moveStats;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Collider2D _bodyColl;
     [SerializeField] private Collider2D _feetColl;
-
     #region Player Fields
 
     [Header("Health Variables")]
@@ -43,6 +42,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     private Vector2 _movementInput;
     private bool _jumpButtonInput;
     private bool _rollInput;
+    private bool _attackInput;
 
     //movement vars
     private Vector2 _movementVelocity;
@@ -95,6 +95,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     public Vector2 MovementInput { get { return _movementInput; } }
     public bool JumpInput { get { return _jumpButtonInput; } set { _jumpButtonInput = value; } }
     public bool RollInput { get { return _rollInput; } set { _rollInput = value; } }
+    public bool AttackInput { get { return _attackInput; } set { _attackInput = value; } }
 
 
     #region Ccollision check vars
@@ -145,7 +146,6 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     {
         _eventBus = _gameManager.EventBus;
         _playerHealth = new PlayerHealth(this);
-        _vfxManager = GetComponent<VFXManager>();
         _rigidBody = GetComponent<Rigidbody2D>();
         _animatorController = GetComponent<PlayerAnimatorController>();
         _isFacingRight = true;
@@ -181,6 +181,8 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         if(IsGrounded == true)
             _rollInput = true;
     }
+
+    public void AttackPressed() => _attackInput = true;
     #endregion
 
     #region Collision Checks

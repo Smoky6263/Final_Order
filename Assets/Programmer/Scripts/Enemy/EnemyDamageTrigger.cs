@@ -12,8 +12,7 @@ public class EnemyDamageTrigger : MonoBehaviour
 
         if (hitPlayer != null && hitPlayer.gameObject.GetComponentInParent<PlayerStateMachine>().PayerHealth.OnDamageDelay == false)
         {
-            hitPlayer.gameObject.GetComponentInParent<PlayerStateMachine>().PayerHealth.TakeDamage(_damageValue);
-
+            hitPlayer.gameObject.GetComponentInParent<PlayerStateMachine>().PayerHealth.GetDamage(_damageValue);
         }
     }
 

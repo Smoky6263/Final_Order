@@ -11,7 +11,8 @@ public class PlayerAnimatorController : MonoBehaviour
     public string TorsoRun { get; private set; } = "TorsoRun";
 
     //ANIMATOR LEGS VARS
-    public string LegsCrouch { get; private set; } = "LeggsCrouch";
+    public string LegsAttack { get; private set; } = "LegsAttack";
+    public string LegsCrouch { get; private set; } = "LegsCrouch";
     public string LegsIdle { get; private set; } = "LegsIdle";
     public string LegsRun { get; private set; } = "LegsRun";
 
@@ -23,12 +24,25 @@ public class PlayerAnimatorController : MonoBehaviour
     }
     public void OnIdle()
     {
-        _torsoAnimator.SetTrigger(TorsoIdle);
+        _torsoAnimator.SetBool(TorsoIdle, true);
         _legsAimator.SetTrigger(LegsIdle);
     }
     public void OnRun()
     {
-        _torsoAnimator.SetTrigger(TorsoRun);
+        _torsoAnimator.SetBool(TorsoRun, true);
         _legsAimator.SetTrigger(LegsRun);
+    }
+    public void DoAttack(bool isIdle)
+    {
+        _torsoAnimator.SetTrigger(TorsoAttack);
+
+        if(isIdle )
+            _legsAimator.SetTrigger(LegsAttack);
+    }
+
+    public void ResetTorso()
+    {
+        _torsoAnimator.SetBool(TorsoRun, false);
+        _torsoAnimator.SetBool(TorsoIdle, false);
     }
 }

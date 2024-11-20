@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "Press",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "AttackPressed",
+                    "type": "Button",
+                    "id": "5c17f533-90fc-4cb5-841a-31a541ba1297",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -247,6 +256,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "RollPerformed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "40934b1c-2e14-4164-80ec-49a8414db5f4",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AttackPressed",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
