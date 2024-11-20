@@ -35,7 +35,6 @@ public class CharacterController : MonoBehaviour
     protected virtual void OnRollPerformed(InputAction.CallbackContext context) => _iControlable.RollPressed();
     protected virtual void OnAttackPerforrmed(InputAction.CallbackContext context) => _iControlable.AttackPressed();
 
-
     protected void OnEnable()
     {
         _playerInputs.Gameplay.MedKitPerformed.performed += OnMedKitPerformed;
