@@ -1,37 +1,31 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-public class EnemyWithShieldIdle : BaseState<EnemyWithShieldFSM.EnemyWithShieldStates>
+public class EnemyWithShieldDie : BaseState<EnemyWithShieldFSM.EnemyWithShieldStates>
 {
-    public EnemyWithShieldIdle(EnemyWithShieldFSM.EnemyWithShieldStates key, object context) : base(key, context)
+    public EnemyWithShieldDie(EnemyWithShieldFSM.EnemyWithShieldStates key, object context) : base(key, context)
     {
         Context = (EnemyWithShieldFSM)context;
     }
 
     private EnemyWithShieldFSM Context;
-    private float _time;
-
 
     public override void EnterState()
     {
-        _time = 0f;
     }
 
     public override void ExitState()
     {
-        _time = 0f;
+        
     }
 
     public override void FixedUpdateState()
     {
-        Context.AnimatorController.DoIdle();
-        _time += Time.fixedDeltaTime;
+        
     }
 
     public override EnemyWithShieldFSM.EnemyWithShieldStates GetNextState()
     {
-        if (_time > Context.IdleTime) return EnemyWithShieldFSM.EnemyWithShieldStates.Walk;
-
-        return EnemyWithShieldFSM.EnemyWithShieldStates.Idle;
+        return EnemyWithShieldFSM.EnemyWithShieldStates.Die;
     }
 
     public override void OnTriggerEnter(Collider2D collision)

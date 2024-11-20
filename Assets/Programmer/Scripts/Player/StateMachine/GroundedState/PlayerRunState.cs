@@ -32,6 +32,7 @@ public class PlayerRunState : PlayerBaseState
 
     public override void ExitState()
     {
+        Context.AnimatorController.ResetTorso();
     }
 
     public override void InitializeSubState()
@@ -42,6 +43,7 @@ public class PlayerRunState : PlayerBaseState
     public override void UpdateState()
     {
         Move();
+        CheckAtack();
         CheckSwitchStates();
     }
 
@@ -65,6 +67,14 @@ public class PlayerRunState : PlayerBaseState
                 Context.RigidBody.velocity = new Vector2(0f, Context.RigidBody.velocity.y);
         }
     }
+    private void CheckAtack()
+    {
+        if (Context.AttackInput == true)
+        {
+            Context.AnimatorController.DoAttack(false);
+            Context.AttackInput = false;
+        }
+    }
 
     private void TurnCheck(Vector2 moveInput)
     {
@@ -82,14 +92,14 @@ public class PlayerRunState : PlayerBaseState
             Context.IsFacingRight = true;
             Context.transform.rotation = Quaternion.Euler(0f,0f,0f);
             Context.WeaponController.BoxOffset = new Vector3(Context.WeaponController.Box_X_value, Context.WeaponController.BoxOffset.y, Context.WeaponController.BoxOffset.z);
-            Context.VFXManager.SpawnDustParticles();
+            Context.VFXManager.SpawnDustParticles(Context.transform.position);
         }
         else
         {
             Context.IsFacingRight = false;
             Context.transform.rotation = Quaternion.Euler(0f,180f,0f);
             Context.WeaponController.BoxOffset = new Vector3(-Context.WeaponController.Box_X_value, Context.WeaponController.BoxOffset.y, Context.WeaponController.BoxOffset.z);
-            Context.VFXManager.SpawnDustParticles();
+            Context.VFXManager.SpawnDustParticles(Context.transform.position);
         }
     }
 }

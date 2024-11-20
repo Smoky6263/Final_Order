@@ -3,7 +3,7 @@ using System;
 
 public abstract class BaseState<EState> where EState : Enum
 {
-    public BaseState(EState key, StateManager<EState> context)
+    public BaseState(EState key, object context)
     {
         StateKey = key;
     }

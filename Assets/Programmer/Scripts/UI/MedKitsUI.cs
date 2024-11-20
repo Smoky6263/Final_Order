@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MedKitsUI : MonoBehaviour
 {
-    [SerializeField] private GameManager _gameManager;
+    [SerializeField] private EventBusManager _gameManager;
     [SerializeField] private GameObject _healPrefab;
 
     private EventBus _eventBus;

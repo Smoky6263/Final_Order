@@ -71,6 +71,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Press"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AttackPressed"",
+                    ""type"": ""Button"",
+                    ""id"": ""5c17f533-90fc-4cb5-841a-31a541ba1297"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -271,6 +280,17 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""action"": ""RollPerformed"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""40934b1c-2e14-4164-80ec-49a8414db5f4"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AttackPressed"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -284,6 +304,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_Gameplay_JumpIsReleased = m_Gameplay.FindAction("JumpIsReleased", throwIfNotFound: true);
         m_Gameplay_MedKitPerformed = m_Gameplay.FindAction("MedKitPerformed", throwIfNotFound: true);
         m_Gameplay_RollPerformed = m_Gameplay.FindAction("RollPerformed", throwIfNotFound: true);
+        m_Gameplay_AttackPressed = m_Gameplay.FindAction("AttackPressed", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -350,6 +371,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_JumpIsReleased;
     private readonly InputAction m_Gameplay_MedKitPerformed;
     private readonly InputAction m_Gameplay_RollPerformed;
+    private readonly InputAction m_Gameplay_AttackPressed;
     public struct GameplayActions
     {
         private @PlayerInputs m_Wrapper;
@@ -359,6 +381,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @JumpIsReleased => m_Wrapper.m_Gameplay_JumpIsReleased;
         public InputAction @MedKitPerformed => m_Wrapper.m_Gameplay_MedKitPerformed;
         public InputAction @RollPerformed => m_Wrapper.m_Gameplay_RollPerformed;
+        public InputAction @AttackPressed => m_Wrapper.m_Gameplay_AttackPressed;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -383,6 +406,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @RollPerformed.started += instance.OnRollPerformed;
             @RollPerformed.performed += instance.OnRollPerformed;
             @RollPerformed.canceled += instance.OnRollPerformed;
+            @AttackPressed.started += instance.OnAttackPressed;
+            @AttackPressed.performed += instance.OnAttackPressed;
+            @AttackPressed.canceled += instance.OnAttackPressed;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -402,6 +428,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @RollPerformed.started -= instance.OnRollPerformed;
             @RollPerformed.performed -= instance.OnRollPerformed;
             @RollPerformed.canceled -= instance.OnRollPerformed;
+            @AttackPressed.started -= instance.OnAttackPressed;
+            @AttackPressed.performed -= instance.OnAttackPressed;
+            @AttackPressed.canceled -= instance.OnAttackPressed;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -426,5 +455,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnJumpIsReleased(InputAction.CallbackContext context);
         void OnMedKitPerformed(InputAction.CallbackContext context);
         void OnRollPerformed(InputAction.CallbackContext context);
+        void OnAttackPressed(InputAction.CallbackContext context);
     }
 }

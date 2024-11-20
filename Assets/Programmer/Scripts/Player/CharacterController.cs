@@ -33,6 +33,7 @@ public class CharacterController : MonoBehaviour
     protected virtual void OnJumpPressed(InputAction.CallbackContext context) => _iControlable.JumpIsPressed();
     protected virtual void OnJumpReleased(InputAction.CallbackContext context) => _iControlable.JumpIsReleased();
     protected virtual void OnRollPerformed(InputAction.CallbackContext context) => _iControlable.RollPressed();
+    protected virtual void OnAttackPerforrmed(InputAction.CallbackContext context) => _iControlable.AttackPressed();
 
 
     protected void OnEnable()
@@ -41,6 +42,7 @@ public class CharacterController : MonoBehaviour
         _playerInputs.Gameplay.JumpIsPressed.performed += OnJumpPressed;
         _playerInputs.Gameplay.JumpIsReleased.performed += OnJumpReleased;
         _playerInputs.Gameplay.RollPerformed.performed += OnRollPerformed;
+        _playerInputs.Gameplay.AttackPressed.performed += OnAttackPerforrmed;
     }
     protected void OnDisable()
     {
@@ -48,5 +50,6 @@ public class CharacterController : MonoBehaviour
         _playerInputs.Gameplay.JumpIsPressed.performed -= OnJumpPressed;
         _playerInputs.Gameplay.JumpIsReleased.performed -= OnJumpReleased;
         _playerInputs.Gameplay.RollPerformed.performed -= OnRollPerformed;
+        _playerInputs.Gameplay.AttackPressed.performed -= OnAttackPerforrmed;
     }
 }

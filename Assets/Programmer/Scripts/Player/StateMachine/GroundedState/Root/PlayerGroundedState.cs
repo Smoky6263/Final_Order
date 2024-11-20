@@ -32,7 +32,7 @@ public class PlayerGroundedState : PlayerBaseState
         Context.VerticalVelocity = Physics2D.gravity.y;
         
         if(Context.OnStairs == false)
-            Context.VFXManager.SpawnDustParticles();
+            Context.VFXManager.SpawnDustParticles(Context.transform.position);
 
         if (Context.OnCrouch)
             Context.OnCrouch = false;

@@ -30,7 +30,7 @@ public class PlayerRollState : PlayerBaseState
     {
         Context.BodyColl.enabled = false;
         Context.AnimatorController.OnCrouch();
-        Context.VFXManager.SpawnDustParticles();
+        Context.VFXManager.SpawnDustParticles(Context.transform.position);
         _elapsedTime = Context.RollDuration;
         _speed = Context.IsFacingRight ? Context.MoveStats.MaxRunSpeed : -Context.MoveStats.MaxRunSpeed;
     }

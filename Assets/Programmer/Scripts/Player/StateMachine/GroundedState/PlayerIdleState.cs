@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerIdleState : PlayerBaseState
@@ -29,7 +30,7 @@ public class PlayerIdleState : PlayerBaseState
 
     public override void ExitState()
     {
-
+        Context.AnimatorController.ResetTorso();
     }
 
     public override void InitializeSubState()
@@ -39,6 +40,16 @@ public class PlayerIdleState : PlayerBaseState
 
     public override void UpdateState()
     {
+        CheckAtack();
         CheckSwitchStates();
+    }
+
+    private void CheckAtack()
+    {
+        if (Context.AttackInput == true)
+        {
+            Context.AnimatorController.DoAttack(true);
+            Context.AttackInput = false;
+        }
     }
 }

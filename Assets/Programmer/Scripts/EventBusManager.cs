@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class EventBusManager : MonoBehaviour
 {
     public EventBus EventBus { get; } = new();
 }

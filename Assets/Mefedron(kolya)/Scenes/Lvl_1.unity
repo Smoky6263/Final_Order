@@ -76962,6 +76962,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1061658082}
   - component: {fileID: 1061658081}
+  - component: {fileID: 1061658083}
   m_Layer: 0
   m_Name: ----------GameManager----------
   m_TagString: Untagged
@@ -76978,7 +76979,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1061658080}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b2d6bd81975c60499445b4ff25c1503, type: 3}
+  m_Script: {fileID: 11500000, guid: d491e723f776b6b478836bf93ec8a462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1061658082
@@ -76996,6 +76997,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1061658083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061658080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7d96901fa14e644bb34733f6b7ec8e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _vfxPrefabs: {fileID: 11400000, guid: 1241b26a6005b664dadfeb4d080fa8e4, type: 2}
 --- !u!1 &1091110285
 GameObject:
   m_ObjectHideFlags: 0
@@ -79300,11 +79314,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60a6e7756a3203449868656cbc9e1889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameManager: {fileID: 0}
+  _eventBus: {fileID: 0}
+  _vFXManager: {fileID: 0}
   _animator: {fileID: 1448825043}
+  _spriteRenderer: {fileID: 0}
+  _maxHealth: 100
+  _health: 0
   _idleTime: 3
   _patrollingSpeed: 0.1
   _palyerFollowSpeed: 0.2
+  _damageFlashTime: 200
 --- !u!61 &1886024353
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -80279,6 +80298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a34f903ee2a7ff04cb64b2b716448bdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _torsoAnimator: {fileID: 0}
+  _legsAimator: {fileID: 0}
 --- !u!1 &1920896577094028470
 GameObject:
   m_ObjectHideFlags: 0
@@ -80563,6 +80584,10 @@ PrefabInstance:
       propertyPath: impulseListener
       value: 
       objectReference: {fileID: 8538706414325885634}
+    - target: {fileID: 9213673301214704006, guid: ca17bd0b5e05a1a479f7147f630fea03, type: 3}
+      propertyPath: _impulseListener
+      value: 
+      objectReference: {fileID: 8538706414325885634}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -80743,6 +80768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameManager: {fileID: 1061658081}
+  _vfxManager: {fileID: 0}
   _moveStats: {fileID: 11400000, guid: 64e7691f71b06b940a153c0aae956a2f, type: 2}
   _spriteRenderer: {fileID: 7190328064690112103}
   _bodyColl: {fileID: 4441766421449963893}
@@ -80750,6 +80776,7 @@ MonoBehaviour:
   _maxHealth: 100
   _health: 100
   _damageDelayTime: 0
+  _weaponController: {fileID: 0}
 --- !u!81 &7091541910108253778
 AudioListener:
   m_ObjectHideFlags: 0

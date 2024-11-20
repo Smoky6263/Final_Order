@@ -25,7 +25,7 @@ public class PlayerWeaponController : MonoBehaviour
 
         if (hitEnemy != null)
         {
-            Debug.Log($"Player Hit: {hitEnemy.gameObject.name}");
+            hitEnemy.GetComponent<IEnemy>().HealthManager.GetDamage(_damageValue);
         }
     }
 
