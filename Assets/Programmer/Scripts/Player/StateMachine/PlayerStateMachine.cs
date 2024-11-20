@@ -183,6 +183,14 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     }
 
     public void AttackPressed() => _attackInput = true;
+
+    public void ResetInputs()
+    {
+        _movementInput = Vector2.zero;
+        _jumpButtonInput = false;
+        _rollInput = false;
+        _attackInput = false;
+    }
     #endregion
 
     #region Collision Checks

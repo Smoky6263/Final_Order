@@ -1,42 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using FMODUnity;
+using TMPro;
 
 public class SliderManager : MonoBehaviour
 {
     [SerializeField]
-    private InputField field = null;
+    private TextMeshProUGUI text;
 
     [SerializeField]
-    private Slider slider = null;
+    private Slider slider;
 
     [SerializeField]
-    private string busPath = "";
+    private string busPath;
 
     private FMOD.Studio.Bus bus;
 
-
     private void Start()
     {
-        if (busPath != "")
+        if (!string.IsNullOrEmpty(busPath))
         {
             bus = RuntimeManager.GetBus(busPath);
+            bus.getVolume(out float volume);
+            slider.value = volume * slider.maxValue;
+            UpdateSliderOutput();
         }
-
-        bus.getVolume(out float volume);
-        slider.value = volume * slider.maxValue;
-
-        UpdateSliderOutput();
     }
 
     public void UpdateSliderOutput()
     {
-        if (field != null && slider != null) 
+        if (text != null && slider != null)
         {
-            field.text = slider.value.ToString();
-
+            float percentage = (slider.value / slider.maxValue) * 100f;
+            text.text = $"{percentage:0}%";
             bus.setVolume(slider.value / slider.maxValue);
         }
     }
