@@ -22,7 +22,6 @@ public class Spikes : MonoBehaviour
             collision.gameObject.GetComponentInParent<PlayerStateMachine>().PayerHealth.GetDamage(_damageValue);
 
             //ScreenShake
-            CameraShakeManager.instance.ScreenShakeFromProfile(_shakeProfile, _source);
         }
     }
 }

@@ -694,6 +694,58 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 460652817566381771, guid: 80b064c110948fc48a97c3fd976c9924, type: 3}
   m_PrefabInstance: {fileID: 4381919266913247136}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &546851863 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6143592718349142411, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
+  m_PrefabInstance: {fileID: 4069456211188766156}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &546851867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546851863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67e11c415030d684199e0733692fa86e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dodgeEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  jumpStartEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  groundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  footstepsEvent:
+    Guid:
+      Data1: 833138281
+      Data2: 1206922166
+      Data3: 1272112052
+      Data4: -541546017
+    Path: event:/Character footsteps
+  _soundBanks:
+  - Guid:
+      Data1: 833138281
+      Data2: 1206922166
+      Data3: 1272112052
+      Data4: -541546017
+    Path: event:/Character footsteps
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -2501,7 +2553,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6143592718349142411, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 546851867}
   m_SourcePrefab: {fileID: 100100000, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
 --- !u!1001 &4381919266913247136
 PrefabInstance:
