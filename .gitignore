@@ -394,3 +394,6 @@ crashlytics-build.properties
 /Assets/TextMesh Pro/Sprites/EmojiOne.json.meta
 /Assets/TextMesh Pro/Sprites/EmojiOne.png
 /Assets/TextMesh Pro/Sprites/EmojiOne.png.meta
+/fmod_editor.log
+/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
+/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset.meta
