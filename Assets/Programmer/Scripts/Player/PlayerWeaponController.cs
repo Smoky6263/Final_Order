@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerWeaponController : MonoBehaviour
 {
     [SerializeField] private PlayerStats _playerStats;
-    [SerializeField] private LayerMask _enemyLayer;
+    [SerializeField] private LayerMask _enemyLayer, _brakebleWallLayer;
     
     [SerializeField] private Vector2 _boxSize;
     [SerializeField] private Vector3 _boxOffset;
@@ -22,11 +22,14 @@ public class PlayerWeaponController : MonoBehaviour
     public void DoAttack()
     {
         Collider2D hitEnemy = Physics2D.OverlapBox(transform.position + _boxOffset, _boxSize, 0f, _enemyLayer);
+        Collider2D hitWall = Physics2D.OverlapBox(transform.position + _boxOffset, _boxSize, 0f, _brakebleWallLayer);
 
         if (hitEnemy != null)
-        {
             hitEnemy.GetComponent<IEnemy>().HealthManager.GetDamage(_damageValue);
-        }
+
+        if (hitWall != null)
+            hitWall.GetComponent<BreakebleWallController>().GetDamage(_damageValue);
+
     }
 
 #if UNITY_EDITOR
