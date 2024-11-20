@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7276565398416182414}
   - component: {fileID: 9122461630593910128}
   - component: {fileID: 1152977775852885791}
-  - component: {fileID: 6249460537086825573}
+  - component: {fileID: 2054857808690531011}
   m_Layer: 0
   m_Name: Camera(Cinemachine)
   m_TagString: Untagged
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6249460537086825573
+--- !u!114 &2054857808690531011
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,18 +195,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1920896575252656023}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ComponentVersion: 1
-  m_AssetsPPU: 32
-  m_RefResolutionX: 320
-  m_RefResolutionY: 180
-  m_CropFrame: 0
-  m_GridSnapping: 0
-  m_FilterMode: 0
-  m_UpscaleRT: 0
-  m_PixelSnapping: 0
-  m_CropFrameX: 0
-  m_CropFrameY: 0
-  m_StretchFill: 0
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
