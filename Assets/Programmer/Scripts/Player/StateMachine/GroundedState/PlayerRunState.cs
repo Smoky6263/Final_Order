@@ -4,7 +4,6 @@ public class PlayerRunState : PlayerBaseState
 {
     public PlayerRunState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
     {
-        Context.EventBus.Subscribe<PlayerAttackAnimationCompleteSignal>(PlayerOnAttackAnimationComplete);
 
     }
 
@@ -119,7 +118,7 @@ public class PlayerRunState : PlayerBaseState
             Context.VFXManager.SpawnDustParticles(Context.transform.position);
         }
     }
-    private void PlayerOnAttackAnimationComplete(PlayerAttackAnimationCompleteSignal signal)
+    public override void OnPlayerOnAttackAnimationComplete()
     {
         Context.AnimatorController.OnRun();
         //Animator legs = Context.AnimatorController.LegsAnimator;

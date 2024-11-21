@@ -27,7 +27,7 @@ public abstract class PlayerBaseState
     public abstract void CheckSwitchStates();
     public abstract void InitializeSubState();
 
-
+    public abstract void OnPlayerOnAttackAnimationComplete();
     public void UpdateStates() 
     {
         UpdateState();

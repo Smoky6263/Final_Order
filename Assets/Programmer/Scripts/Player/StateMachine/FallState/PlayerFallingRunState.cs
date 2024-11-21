@@ -3,7 +3,6 @@ public class PlayerFallingRunState : PlayerBaseState
 {
     public PlayerFallingRunState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
     {
-        Context.EventBus.Subscribe<PlayerAttackAnimationCompleteSignal>(PlayerOnAttackAnimationComplete);
 
     }
 
@@ -86,7 +85,7 @@ public class PlayerFallingRunState : PlayerBaseState
         }
     }
 
-    private void PlayerOnAttackAnimationComplete(PlayerAttackAnimationCompleteSignal signal)
+    public override void OnPlayerOnAttackAnimationComplete()
     {
         Context.AnimatorController.DoJump();
         //Animator legs = Context.AnimatorController.LegsAnimator;

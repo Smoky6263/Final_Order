@@ -55,6 +55,11 @@ public class PlayerOnStairsState : PlayerBaseState
 
     }
 
+    public override void OnPlayerOnAttackAnimationComplete()
+    {
+        
+    }
+
     public override void UpdateState()
     {
         Move();

@@ -80,4 +80,9 @@ public class PlayerRollState : PlayerBaseState
         Context.RigidBody.velocity = new Vector2(rollSpeed, Context.MovementVelocity.y);
 
     }
+
+    public override void OnPlayerOnAttackAnimationComplete()
+    {
+        
+    }
 }

@@ -30,10 +30,23 @@ internal class PlayerOnDeathState : PlayerBaseState
         
     }
 
+    public override void OnPlayerOnAttackAnimationComplete()
+    {
+        
+    }
 
     public override void UpdateState()
     {
-        if(Context.MovementVelocity.x != 0)
+        DoPhysics();
+    }
+
+    private void DoPhysics()
+    {
+        //CLAMP FALLS SPEED
+        Context.VerticalVelocity = Mathf.Clamp(Context.VerticalVelocity, -Context.MoveStats.MaxFallSpeed, 50f);
+        Context.RigidBody.velocity = new Vector2(Context.RigidBody.velocity.x, Context.VerticalVelocity);
+
+        if (Context.MovementVelocity.x != 0)
         {
             Context.MovementVelocity = Vector2.Lerp(Context.MovementVelocity, Vector2.zero, Context.MoveStats.GroundDeceleration * Time.fixedDeltaTime);
             Context.RigidBody.velocity = new Vector2(Context.MovementVelocity.x, Context.RigidBody.velocity.y);

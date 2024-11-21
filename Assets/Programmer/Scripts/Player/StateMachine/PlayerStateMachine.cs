@@ -148,6 +148,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     {
         _eventBus = _gameManager.EventBus;
         _eventBus.Subscribe<PlayerOnDeathSignal>(OnDeath);
+        _eventBus.Subscribe<PlayerAttackAnimationCompleteSignal>(OnPlayerAttackAnimationComplete);
         GetComponentInChildren<PlayerWeaponController>().Init(_eventBus);
         _characterController = GetComponent<CharacterController>();
         _playerHealth = new PlayerHealth(this);
@@ -278,5 +279,10 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     {
         _currentState = _states.OnDeath();
         _currentState.EnterState();
+    }
+
+    private void OnPlayerAttackAnimationComplete(PlayerAttackAnimationCompleteSignal signal)
+    {
+        _currentState.CurrentSubState.OnPlayerOnAttackAnimationComplete();
     }
 }

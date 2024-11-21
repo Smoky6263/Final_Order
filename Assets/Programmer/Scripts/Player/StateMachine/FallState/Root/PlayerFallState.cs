@@ -101,5 +101,10 @@ class PlayerFallState : PlayerBaseState
     {
         Context.JumpBufferTimer -= Time.deltaTime;
     }
+
+    public override void OnPlayerOnAttackAnimationComplete()
+    {
+        
+    }
     #endregion
 }

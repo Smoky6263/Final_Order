@@ -4,7 +4,6 @@ public class PlayerIdleState : PlayerBaseState
 {
     public PlayerIdleState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) 
     {
-        Context.EventBus.Subscribe<PlayerAttackAnimationCompleteSignal>(PlayerOnAttackAnimationComplete);
 
     }
 
@@ -70,7 +69,7 @@ public class PlayerIdleState : PlayerBaseState
         }
     }
 
-    private void PlayerOnAttackAnimationComplete(PlayerAttackAnimationCompleteSignal signal)
+    public override void OnPlayerOnAttackAnimationComplete()
     {
         Animator legs = Context.AnimatorController.LegsAnimator;
         Animator torso = Context.AnimatorController.TorsoAnimator;

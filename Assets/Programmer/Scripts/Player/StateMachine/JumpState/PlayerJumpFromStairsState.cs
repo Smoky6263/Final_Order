@@ -129,5 +129,10 @@ public class PlayerJumpFromStairsState : PlayerBaseState
         if(Context.JumpInput)
             Context.JumpBufferTimer -= Time.deltaTime;
     }
+
+    public override void OnPlayerOnAttackAnimationComplete()
+    {
+        
+    }
     #endregion
 }

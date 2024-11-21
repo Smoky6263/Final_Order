@@ -87,4 +87,9 @@ public class PlayerGroundedState : PlayerBaseState
         if (Context.IsGrounded == false && Context.OnStairs == false)
             Context.CoyoteTimer -= Time.deltaTime;
     }
+
+    public override void OnPlayerOnAttackAnimationComplete()
+    {
+        
+    }
 }
