@@ -1,11 +1,11 @@
-using System;
 using UnityEngine;
 
 public class PlayerIdleState : PlayerBaseState
 {
     public PlayerIdleState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) 
     {
-        InitializeSubState();
+        Context.EventBus.Subscribe<PlayerAttackAnimationCompleteSignal>(PlayerOnAttackAnimationComplete);
+
     }
 
     public override void CheckSwitchStates()
@@ -25,12 +25,27 @@ public class PlayerIdleState : PlayerBaseState
 
     public override void EnterState()
     {
-        Context.AnimatorController.OnIdle();
+        InitializeSubState();
+
+        Context.BodyColl.enabled = true;
+
+        AnimatorStateInfo stateInfo = Context.AnimatorController.TorsoAnimator.GetCurrentAnimatorStateInfo(0);
+
+        if (stateInfo.IsName(Context.AnimatorController.TorsoAttack))
+        {
+            Animator legs = Context.AnimatorController.LegsAnimator;
+            string LegsIdle = Context.AnimatorController.LegsIdle;
+
+            Context.AnimatorController.ResetCurrentAnimationTime(legs, LegsIdle);
+        }
+        else
+            Context.AnimatorController.OnIdle();
+
     }
 
     public override void ExitState()
     {
-        Context.AnimatorController.ResetTorso();
+
     }
 
     public override void InitializeSubState()
@@ -40,6 +55,7 @@ public class PlayerIdleState : PlayerBaseState
 
     public override void UpdateState()
     {
+
         CheckAtack();
         CheckSwitchStates();
     }
@@ -48,8 +64,21 @@ public class PlayerIdleState : PlayerBaseState
     {
         if (Context.AttackInput == true)
         {
-            Context.AnimatorController.DoAttack(true);
+            Context.AnimatorController.DoAttack();
+            Context.AnimatorController.LegsAnimator.Play(Context.AnimatorController.LegsAttack);
             Context.AttackInput = false;
         }
+    }
+
+    private void PlayerOnAttackAnimationComplete(PlayerAttackAnimationCompleteSignal signal)
+    {
+        Animator legs = Context.AnimatorController.LegsAnimator;
+        Animator torso = Context.AnimatorController.TorsoAnimator;
+
+        string legsIdle = Context.AnimatorController.LegsIdle;
+        string torsoIdle = Context.AnimatorController.TorsoIdle;
+
+        Context.AnimatorController.ResetCurrentAnimationTime(legs, legsIdle);
+        Context.AnimatorController.ResetCurrentAnimationTime(torso, torsoIdle);
     }
 }

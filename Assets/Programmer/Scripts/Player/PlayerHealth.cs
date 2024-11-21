@@ -1,5 +1,5 @@
 using Cysharp.Threading.Tasks;
-public class PlayerHealth : IHealth
+public class PlayerHealth : IPlayerHealth
 {
     public PlayerHealth(PlayerStateMachine stateMachine)
     {
@@ -25,8 +25,11 @@ public class PlayerHealth : IHealth
         OnDamageDelay = true;
         _playerStats._health -= value;
 
-        if(_playerStats._health < 0 )
+        if(_playerStats._health < 0)
+        {
             _playerStats._health = 0;
+            _eventBus.Invoke(new PlayerOnDeathSignal());
+        }
 
         _eventBus.Invoke(new PlayerHealthChangeSignal(_playerStats._health));
         await DamageDelayTask();

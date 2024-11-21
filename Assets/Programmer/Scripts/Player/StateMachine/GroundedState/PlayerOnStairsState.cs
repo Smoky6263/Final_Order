@@ -5,7 +5,6 @@ public class PlayerOnStairsState : PlayerBaseState
     public PlayerOnStairsState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
     {
         IsRootState = true;
-        InitializeSubState();
     }
 
     protected float _accelerationSpeed { get { return Context.MoveStats.AirAcceleration; } }
@@ -33,10 +32,12 @@ public class PlayerOnStairsState : PlayerBaseState
 
     public override void EnterState()
     {
-        //------------------------------------------------------
-        //DO STAIRS ANIMATION
-        //------------------------------------------------------
-        if(Context.OnCrouch)
+        InitializeSubState();
+
+        Context.AnimatorController.DoJump();
+        Context.BodyColl.enabled = true;
+
+        if (Context.OnCrouch)
             Context.OnCrouch = false;
         
         Context.CoyoteTimer = 0f;
@@ -45,6 +46,7 @@ public class PlayerOnStairsState : PlayerBaseState
 
     public override void ExitState()
     {
+        Context.AttackInput = false;
 
     }
 

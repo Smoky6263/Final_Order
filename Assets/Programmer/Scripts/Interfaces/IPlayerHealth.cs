@@ -1,4 +1,4 @@
-﻿public interface IHealth
+﻿public interface IPlayerHealth
 {
     public void GetDamage(float value);
     public void ImproveHealth();

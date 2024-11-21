@@ -7,6 +7,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
 {
     private EventBus _eventBus;
     private PlayerHealth _playerHealth;
+    private CharacterController _characterController;
     private Rigidbody2D _rigidBody;
 
     private PlayerAnimatorController _animatorController;
@@ -82,6 +83,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     public SpriteRenderer SpriteRenderer { get { return _spriteRenderer; } }
     public PlayerStats MoveStats { get { return _moveStats; } }
     public VFXManager VFXManager { get { return _vfxManager; } }
+    public CharacterController CharacterController{ get { return _characterController; } }
     public Collider2D BodyColl { get { return _bodyColl; } }
     public Collider2D FeetColl { get { return _feetColl; } }
     public Rigidbody2D RigidBody { get { return _rigidBody; } }
@@ -145,6 +147,9 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     private void Awake()
     {
         _eventBus = _gameManager.EventBus;
+        _eventBus.Subscribe<PlayerOnDeathSignal>(OnDeath);
+        GetComponentInChildren<PlayerWeaponController>().Init(_eventBus);
+        _characterController = GetComponent<CharacterController>();
         _playerHealth = new PlayerHealth(this);
         _rigidBody = GetComponent<Rigidbody2D>();
         _animatorController = GetComponent<PlayerAnimatorController>();
@@ -182,7 +187,11 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
             _rollInput = true;
     }
 
-    public void AttackPressed() => _attackInput = true;
+    public void AttackPressed()
+    {
+        if(_rollInput == false)
+            _attackInput = true;
+    }
 
     public void ResetInputs()
     {
@@ -263,5 +272,11 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         
         if (_currentState.CurrentSubState != null)
             GUI.Label(new Rect((Screen.width / 2) - (width / 2), 10, width, 31), $"Current Sub State: {_currentState.CurrentSubState.ToString()}", textSTyle);
+    }
+
+    private void OnDeath(PlayerOnDeathSignal signal)
+    {
+        _currentState = _states.OnDeath();
+        _currentState.EnterState();
     }
 }

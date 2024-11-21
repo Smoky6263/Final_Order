@@ -4,7 +4,6 @@ public class PlayerCrouchState : PlayerBaseState
 {
     public PlayerCrouchState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
     {
-        InitializeSubState();
     }
 
     public override void CheckSwitchStates()
@@ -12,7 +11,6 @@ public class PlayerCrouchState : PlayerBaseState
         //IF GROUNDED AND UNPRESS "CROUCH" BUTTON
         if (Context.IsGrounded && Context.MovementInput.y >= 0 && Context.MovementInput.x == 0)
         {
-            Context.AnimatorController.OnIdle();
             SwitchState(Factory.Idle());
         }
 
@@ -43,6 +41,9 @@ public class PlayerCrouchState : PlayerBaseState
 
     public override void EnterState()
     {
+        InitializeSubState();
+
+        Context.BodyColl.enabled = true;
         Context.AnimatorController.OnCrouch();
         Context.OnCrouch = true;
         Context.JumpInput = false;

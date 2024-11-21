@@ -4,7 +4,6 @@ public class PlayerJumpFromStairsState : PlayerBaseState
     public PlayerJumpFromStairsState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
     {
         IsRootState = true;
-        InitializeSubState();
     }
 
     float _elapsedTime;
@@ -27,9 +26,9 @@ public class PlayerJumpFromStairsState : PlayerBaseState
 
     public override void EnterState()
     {
-        //------------------------------------------------------
-        //DO JUMP ANIMATION
-        //------------------------------------------------------
+        InitializeSubState();
+        
+        Context.AnimatorController.DoJump();
         Context.RollInput = false;
 
         Context.VerticalVelocity = Context.MoveStats.InitialJumpFromStairsVelocity;
@@ -39,6 +38,7 @@ public class PlayerJumpFromStairsState : PlayerBaseState
     public override void ExitState()
     {
         Context.BumpedHead = false;
+
     }
 
     public override void InitializeSubState()
@@ -77,8 +77,6 @@ public class PlayerJumpFromStairsState : PlayerBaseState
 
         // Вычисляем новое значение с использованием функции EaseOutCubic
         Context.VerticalVelocity = EaseOutCubic(_elapsedTime, Context.MoveStats.RollDuration, Context.VerticalVelocity);
-
-
         Context.RigidBody.velocity = new Vector2(Context.RigidBody.velocity.x, Context.VerticalVelocity);
     }
 
