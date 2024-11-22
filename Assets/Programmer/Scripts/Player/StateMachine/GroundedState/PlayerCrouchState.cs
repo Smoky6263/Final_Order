@@ -62,7 +62,7 @@ public class PlayerCrouchState : PlayerBaseState
         
     }
 
-    public override void OnPlayerOnAttackAnimationComplete()
+    public override void PlayerOnAttackAnimationComplete()
     {
 
     }

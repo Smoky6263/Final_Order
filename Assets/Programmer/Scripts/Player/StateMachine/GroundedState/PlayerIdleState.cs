@@ -28,17 +28,20 @@ public class PlayerIdleState : PlayerBaseState
 
         Context.BodyColl.enabled = true;
 
-        AnimatorStateInfo stateInfo = Context.AnimatorController.TorsoAnimator.GetCurrentAnimatorStateInfo(0);
 
-        if (stateInfo.IsName(Context.AnimatorController.TorsoAttack))
+        // Если анимация АТАКИ у торса еще не закончена, тогда только ноги должны проиграть LegsAtack анимацию
+        // Иначе целиком проигрываем Idle анимацию на двух слоях
+        int currentTorsoStateHash = Context.AnimatorController.GetCurrentAnimationStateHash(Context.AnimatorController.TorsoAnimator);
+
+
+        if (currentTorsoStateHash == Context.AnimatorController.TorsoAttackHash)
         {
-            Animator legs = Context.AnimatorController.LegsAnimator;
-            string LegsIdle = Context.AnimatorController.LegsIdle;
-
-            Context.AnimatorController.ResetCurrentAnimationTime(legs, LegsIdle);
+            Context.AnimatorController.LegsAnimator.Play(Context.AnimatorController.LegsAttack, 0, 0f);
         }
-        else
+        else 
+        {
             Context.AnimatorController.OnIdle();
+        }
 
     }
 
@@ -69,7 +72,7 @@ public class PlayerIdleState : PlayerBaseState
         }
     }
 
-    public override void OnPlayerOnAttackAnimationComplete()
+    public override void PlayerOnAttackAnimationComplete()
     {
         Animator legs = Context.AnimatorController.LegsAnimator;
         Animator torso = Context.AnimatorController.TorsoAnimator;

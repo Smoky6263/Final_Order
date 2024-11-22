@@ -28,7 +28,6 @@ public class PlayerJumpFromStairsState : PlayerBaseState
     {
         InitializeSubState();
         
-        Context.AnimatorController.DoJump();
         Context.RollInput = false;
 
         Context.VerticalVelocity = Context.MoveStats.InitialJumpFromStairsVelocity;
@@ -45,6 +44,8 @@ public class PlayerJumpFromStairsState : PlayerBaseState
     {
         //IF PLAYER FALLING AND RUN
         SetSubState(Factory.FallingRun());
+        CurrentSubState.EnterState();
+
     }
 
     public override void UpdateState()
@@ -123,16 +124,16 @@ public class PlayerJumpFromStairsState : PlayerBaseState
         }
     }
 
+    public override void PlayerOnAttackAnimationComplete()
+    {
+        
+    }
+
     #region Timers
     private void CountTimers()
     {
         if(Context.JumpInput)
             Context.JumpBufferTimer -= Time.deltaTime;
-    }
-
-    public override void OnPlayerOnAttackAnimationComplete()
-    {
-        
     }
     #endregion
 }

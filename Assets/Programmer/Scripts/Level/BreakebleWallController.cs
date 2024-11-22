@@ -1,15 +1,17 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BreakebleWallController : MonoBehaviour
 {
     [SerializeField] private float _health = 100f;
     [SerializeField] private VFXManager _vFXManager;
+    
+    [SerializeField] private Transform _sprite;
 
     [Header("Статы для тряски стены")]
     [SerializeField] private float _duration = 0.5f;
     [SerializeField, Range(0f, 1f)] float _intensity = 0.5f;
-
 
     public void GetDamage(float value)
     {
@@ -23,8 +25,8 @@ public class BreakebleWallController : MonoBehaviour
 
     private IEnumerator ShakeWallCoroutine(float duration, float intensity)
     {
-        Material currentMaterial = GetComponent<SpriteRenderer>().material;
-        Vector3 originalPosition = transform.position;
+        Material currentMaterial = GetComponentInChildren<SpriteRenderer>().material;
+        Vector3 originalPosition = _sprite.transform.position;
         float elapsedTime = 0f;
 
         while (elapsedTime < duration)
@@ -32,16 +34,16 @@ public class BreakebleWallController : MonoBehaviour
             float offsetX = Random.Range(-1f, 1f) * intensity;
             float offsetY = Random.Range(-1f, 1f) * intensity;
 
-            transform.position = originalPosition + new Vector3(offsetX, offsetY, 0f);
+            _sprite.transform.position = originalPosition + new Vector3(offsetX, offsetY, 0f);
             elapsedTime += Time.deltaTime;
 
-            GetComponent<SpriteRenderer>().material = _vFXManager.GetDamageMaterial();
+            GetComponentInChildren<SpriteRenderer>().material = _vFXManager.GetDamageMaterial();
 
             yield return new WaitForFixedUpdate();
         }
         
-        transform.position = originalPosition;
-        GetComponent<SpriteRenderer>().material = currentMaterial;
+        _sprite.transform.position = originalPosition;
+        GetComponentInChildren<SpriteRenderer>().material = currentMaterial;
 
         yield break;
     }

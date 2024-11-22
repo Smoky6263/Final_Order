@@ -5,6 +5,9 @@ public class EnemyDamageTrigger : MonoBehaviour
     [SerializeField] private LayerMask _playerLayer;
     [SerializeField, Range(0f, 100f)] private float _damageValue;
     
+    [SerializeField] private Vector2 _boxSize;
+    [SerializeField] private Vector3 _offset;
+    
 
     private void FixedUpdate()
     {
@@ -18,9 +21,6 @@ public class EnemyDamageTrigger : MonoBehaviour
 
 #if UNITY_EDITOR
     #region Debug Vars
-    [Header("Визуализация триггера для получения урока игроком")]
-    [SerializeField] private Vector2 _boxSize;
-    [SerializeField] private Vector3 _offset;
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;

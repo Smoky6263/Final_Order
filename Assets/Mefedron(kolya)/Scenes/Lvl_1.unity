@@ -10584,7 +10584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00bc4e2f93e3676429d4c6e8b5441dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameManager: {fileID: 1061658081}
+  _eventBusManager: {fileID: 0}
 --- !u!114 &690992232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29629,6 +29629,9 @@ MonoBehaviour:
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 512
+  _breakableWallLayer:
+    serializedVersion: 2
+    m_Bits: 0
   _boxSize: {x: 1.5, y: 1.4}
   _boxOffset: {x: 0.7, y: 0.9, z: 0}
   _color: {r: 1, g: 0, b: 0.83895683, a: 1}
@@ -30493,6 +30496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameManager: {fileID: 1061658081}
+  _vfxManager: {fileID: 0}
   _moveStats: {fileID: 11400000, guid: 64e7691f71b06b940a153c0aae956a2f, type: 2}
   _spriteRenderer: {fileID: 1273449112}
   _bodyColl: {fileID: 1900919462}
@@ -30694,6 +30698,7 @@ MonoBehaviour:
       Data3: 1272112052
       Data4: -541546017
     Path: event:/Character footsteps
+  _soundBanks: []
 --- !u!1 &1773524155
 GameObject:
   m_ObjectHideFlags: 0
@@ -31333,7 +31338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3d9bcb4386d4f4cb0549242cd32051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameManager: {fileID: 1061658081}
+  _eventBusManager: {fileID: 0}
   _healPrefab: {fileID: 4285973637285908052, guid: 8fa58d08e1dd5dc46af4d429ce42f94b, type: 3}
 --- !u!114 &2065818631
 MonoBehaviour:
