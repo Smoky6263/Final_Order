@@ -12,7 +12,7 @@ class PlayerFallState : PlayerBaseState
     public override void CheckSwitchStates()
     {
         //IF LANDED
-        if (Context.IsFalling && Context.IsGrounded && Context.VerticalVelocity <= 0f)
+        if (Context.IsGrounded && Context.VerticalVelocity <= 0f)
             SwitchState(Factory.Grounded());
 
         //IF LANDED ON STAIRS
@@ -25,7 +25,6 @@ class PlayerFallState : PlayerBaseState
         InitializeSubState();
 
         Context.BodyColl.enabled = true;
-        Context.AnimatorController.DoJump();
 
         Context.RollInput = false;
         Context.JumpBufferTimer = -1f;
@@ -58,6 +57,7 @@ class PlayerFallState : PlayerBaseState
     {
         //IF PLAYER FALLING AND RUN
         SetSubState(Factory.FallingRun());
+        CurrentSubState.EnterState();
     }
 
     public override void UpdateState()
@@ -95,16 +95,15 @@ class PlayerFallState : PlayerBaseState
 
         Context.FastFallTime += Time.deltaTime;
     }
+    public override void PlayerOnAttackAnimationComplete()
+    {
+        
+    }
 
     #region Timers
     private void CountTimers()
     {
         Context.JumpBufferTimer -= Time.deltaTime;
-    }
-
-    public override void OnPlayerOnAttackAnimationComplete()
-    {
-        
     }
     #endregion
 }

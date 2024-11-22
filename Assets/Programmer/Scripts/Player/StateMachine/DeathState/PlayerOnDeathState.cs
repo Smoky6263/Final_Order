@@ -30,7 +30,7 @@ internal class PlayerOnDeathState : PlayerBaseState
         
     }
 
-    public override void OnPlayerOnAttackAnimationComplete()
+    public override void PlayerOnAttackAnimationComplete()
     {
         
     }

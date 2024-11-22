@@ -26,6 +26,25 @@ public class PlayerAnimatorController : MonoBehaviour
     public readonly string LegsJump = "LegsJump";
     public readonly string LegsDeath = "LegsDeath";
 
+    public int TorsoAttackHash { get; private set; }
+    public int TorsoCrouchHash { get; private set; }
+    public int TorsoIdleHash { get; private set; }
+    public int TorsoRunHash { get; private set; }
+    public int TorsoRollHash { get; private set; }
+    public int TorsoJumpHash { get; private set; }
+    public int TorsoDeathHash { get; private set; }
+
+
+    private void Awake()
+    {
+        TorsoAttackHash = Animator.StringToHash(TorsoAttack);
+        TorsoCrouchHash = Animator.StringToHash(TorsoCrouch);
+        TorsoIdleHash = Animator.StringToHash(TorsoIdle);
+        TorsoRunHash = Animator.StringToHash(TorsoRun);
+        TorsoRollHash = Animator.StringToHash(TorsoRoll);
+        TorsoJumpHash = Animator.StringToHash(TorsoJump);
+        TorsoDeathHash = Animator.StringToHash(TorsoDeath);
+    }
 
     public void OnCrouch()
     {
@@ -69,4 +88,18 @@ public class PlayerAnimatorController : MonoBehaviour
     {
         animator.Play(animationName, 0, 0f);
     }
+
+    /// <summary>
+    /// ¬ качестве параметра передайте Animator, у которого хотите узнать Hash текущей проигрываемой анимации.
+    /// </summary>
+    /// <param name="animator"></param>
+    /// <returns>
+    /// ¬озвращает int со значением хэш кода анимации, котора€ проигрываетс€ в данный момент.
+    /// </returns>
+    public int GetCurrentAnimationStateHash(Animator animator)
+    {
+        return animator.GetCurrentAnimatorStateInfo(0).shortNameHash;
+    }
+
+
 }

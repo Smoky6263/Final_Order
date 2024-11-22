@@ -17,6 +17,16 @@ public class PlayerFallingRunState : PlayerBaseState
     public override void EnterState()
     {
         InitializeSubState();
+
+
+        // Если анимация АТАКИ у торса еще не закончена, тогда только ноги должны проиграть LegsJump анимацию
+        // Иначе целиком проигрываем Jump анимацию на двух слоях
+        int currentTorsoStateHash = Context.AnimatorController.GetCurrentAnimationStateHash(Context.AnimatorController.TorsoAnimator);
+
+        if (currentTorsoStateHash == Context.AnimatorController.TorsoAttackHash)
+            Context.AnimatorController.LegsAnimator.Play(Context.AnimatorController.LegsJump, 0, 0f);
+        else
+            Context.AnimatorController.DoJump();
     }
 
     public override void ExitState()
@@ -33,6 +43,7 @@ public class PlayerFallingRunState : PlayerBaseState
     {
         Move();
         CheckAtack();
+        TurnCheck(Context.MovementInput);
         CheckSwitchStates();
     }
 
@@ -85,16 +96,8 @@ public class PlayerFallingRunState : PlayerBaseState
         }
     }
 
-    public override void OnPlayerOnAttackAnimationComplete()
+    public override void PlayerOnAttackAnimationComplete()
     {
         Context.AnimatorController.DoJump();
-        //Animator legs = Context.AnimatorController.LegsAnimator;
-        //Animator torso = Context.AnimatorController.TorsoAnimator;
-
-        //string torsoIdle = Context.AnimatorController.TorsoIdle;
-        //string legsJump = Context.AnimatorController.LegsJump;
-
-        //Context.AnimatorController.ResetCurrentAnimationTime(legs, legsJump);
-        //Context.AnimatorController.ResetCurrentAnimationTime(torso, torsoIdle);
     }
 }

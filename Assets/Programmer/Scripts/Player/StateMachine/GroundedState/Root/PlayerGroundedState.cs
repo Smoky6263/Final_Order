@@ -11,9 +11,7 @@ public class PlayerGroundedState : PlayerBaseState
     {
         //WHEN WE PRESS THE JUMP BUTTON
         if (Context.JumpInput && ( Context.CoyoteTimer >= 0 && Context.JumpBufferTimer >= 0 ) && Context.OnCrouch == false)
-        {
             SwitchState(Factory.Jump());
-        }
 
         //IF ON STAIRS
         if (Context.OnStairs && Context.MovementInput.y != 0 && Context.RollInput == false)
@@ -41,29 +39,22 @@ public class PlayerGroundedState : PlayerBaseState
 
     public override void ExitState()
     {
-        Debug.Log("Exit Grounded State");
 
     }
 
     public override void InitializeSubState()
     {
         if (Context.IsGrounded && Context.MovementVelocity.x != 0) 
-        {
             SetSubState(Factory.Run());
-            Context.AnimatorController.OnRun();
-        }
 
         if (Context.IsGrounded && Context.MovementVelocity.x == 0) 
-        {
             SetSubState(Factory.Idle());
-            Context.AnimatorController.OnIdle();
-        }
 
         if (Context.OnStairs && Context.MovementInput.y != 0f) 
-        {
             SetSubState(Factory.OnStairs());
-            Context.AnimatorController.OnCrouch();
-        }
+
+        CurrentSubState.EnterState();
+
     }
 
     public override void UpdateState()
@@ -88,7 +79,7 @@ public class PlayerGroundedState : PlayerBaseState
             Context.CoyoteTimer -= Time.deltaTime;
     }
 
-    public override void OnPlayerOnAttackAnimationComplete()
+    public override void PlayerOnAttackAnimationComplete()
     {
         
     }

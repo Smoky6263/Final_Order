@@ -37,11 +37,12 @@ public class PlayerWeaponController : MonoBehaviour
             hitWall.GetComponent<BreakebleWallController>().GetDamage(_damageValue);
 
         _eventBus.Invoke(new PlayerAttackAnimationCompleteSignal());
-    }
+
+}
 
 #if UNITY_EDITOR
 
-    [SerializeField] private Color _color;
+[SerializeField] private Color _color;
 
     private void OnDrawGizmos()
     {

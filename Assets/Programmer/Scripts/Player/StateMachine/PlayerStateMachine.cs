@@ -268,8 +268,8 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         float width = 400;
         textSTyle.fontSize = 30;
 
-        if(_currentState.CurrentSuperState != null)
-            GUI.Label(new Rect(10, 10, 400, 50), $"Current Super State: {_currentState.CurrentSuperState.ToString()}", textSTyle);
+        if(_currentState.CurrentRootState != null)
+            GUI.Label(new Rect(10, 10, 400, 50), $"Current Super State: {_currentState.CurrentRootState.ToString()}", textSTyle);
         
         if (_currentState.CurrentSubState != null)
             GUI.Label(new Rect((Screen.width / 2) - (width / 2), 10, width, 31), $"Current Sub State: {_currentState.CurrentSubState.ToString()}", textSTyle);
@@ -283,6 +283,6 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
 
     private void OnPlayerAttackAnimationComplete(PlayerAttackAnimationCompleteSignal signal)
     {
-        _currentState.CurrentSubState.OnPlayerOnAttackAnimationComplete();
+        _currentState.CurrentSubState.PlayerOnAttackAnimationComplete();
     }
 }

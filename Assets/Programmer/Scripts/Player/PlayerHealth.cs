@@ -25,7 +25,7 @@ public class PlayerHealth : IPlayerHealth
         OnDamageDelay = true;
         _playerStats._health -= value;
 
-        if(_playerStats._health < 0)
+        if(_playerStats._health <= 0)
         {
             _playerStats._health = 0;
             _eventBus.Invoke(new PlayerOnDeathSignal());
