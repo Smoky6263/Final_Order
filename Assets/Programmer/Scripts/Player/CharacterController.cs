@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 public class CharacterController : MonoBehaviour
 {
     private IControlable _iControlable;
-    private IHealth _iHealth;
+    private IPlayerHealth _iHealth;
     protected PlayerInputs _playerInputs;
 
     protected virtual void Awake()

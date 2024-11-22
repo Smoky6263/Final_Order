@@ -3,15 +3,21 @@ using UnityEngine;
 public class PlayerWeaponController : MonoBehaviour
 {
     [SerializeField] private PlayerStats _playerStats;
-    [SerializeField] private LayerMask _enemyLayer, _brakebleWallLayer;
+    [SerializeField] private LayerMask _enemyLayer, _breakableWallLayer;
     
     [SerializeField] private Vector2 _boxSize;
     [SerializeField] private Vector3 _boxOffset;
 
+    private EventBus _eventBus;
     private float _damageValue;
 
     public float Box_X_value {  get; private set; }
     public Vector3 BoxOffset { get { return _boxOffset; } set { _boxOffset = value; } }
+
+    public void Init(EventBus eventBus)
+    {
+        _eventBus = eventBus;
+    }
 
     private void Awake()
     {
@@ -22,7 +28,7 @@ public class PlayerWeaponController : MonoBehaviour
     public void DoAttack()
     {
         Collider2D hitEnemy = Physics2D.OverlapBox(transform.position + _boxOffset, _boxSize, 0f, _enemyLayer);
-        Collider2D hitWall = Physics2D.OverlapBox(transform.position + _boxOffset, _boxSize, 0f, _brakebleWallLayer);
+        Collider2D hitWall = Physics2D.OverlapBox(transform.position + _boxOffset, _boxSize, 0f, _breakableWallLayer);
 
         if (hitEnemy != null)
             hitEnemy.GetComponent<IEnemy>().HealthManager.GetDamage(_damageValue);
@@ -30,6 +36,7 @@ public class PlayerWeaponController : MonoBehaviour
         if (hitWall != null)
             hitWall.GetComponent<BreakebleWallController>().GetDamage(_damageValue);
 
+        _eventBus.Invoke(new PlayerAttackAnimationCompleteSignal());
     }
 
 #if UNITY_EDITOR

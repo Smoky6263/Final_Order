@@ -4,7 +4,7 @@ public class PlayerRunState : PlayerBaseState
 {
     public PlayerRunState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
     {
-        InitializeSubState();
+
     }
 
     protected float _accelerationSpeed { get { return Context.MoveStats.GroundAcceleration; } }
@@ -13,7 +13,7 @@ public class PlayerRunState : PlayerBaseState
     public override void CheckSwitchStates()
     {
         //IF IDLE
-        if((Context.IsGrounded || Context.OnStairs) && Context.RigidBody.velocity.x == 0f)
+        if ((Context.IsGrounded || Context.OnStairs) && Context.RigidBody.velocity.x == 0f)
             SwitchState(Factory.Idle());
 
         //IF PRESSED "CROUCH BUTTON" AND RUN BUTTONS RELEASED
@@ -27,12 +27,27 @@ public class PlayerRunState : PlayerBaseState
 
     public override void EnterState()
     {
-        Context.AnimatorController.OnRun();
+        InitializeSubState();
+
+        Context.BodyColl.enabled = true;
+
+        AnimatorStateInfo stateInfo = Context.AnimatorController.TorsoAnimator.GetCurrentAnimatorStateInfo(0);
+
+        if (stateInfo.IsName(Context.AnimatorController.TorsoAttack))
+        {
+            Animator legs = Context.AnimatorController.LegsAnimator;
+            string LegsRun = Context.AnimatorController.LegsRun;
+
+            Context.AnimatorController.ResetCurrentAnimationTime(legs, LegsRun);
+        }
+        else
+            Context.AnimatorController.OnRun();
+
     }
 
     public override void ExitState()
     {
-        Context.AnimatorController.ResetTorso();
+
     }
 
     public override void InitializeSubState()
@@ -42,6 +57,7 @@ public class PlayerRunState : PlayerBaseState
 
     public override void UpdateState()
     {
+
         Move();
         CheckAtack();
         CheckSwitchStates();
@@ -71,7 +87,7 @@ public class PlayerRunState : PlayerBaseState
     {
         if (Context.AttackInput == true)
         {
-            Context.AnimatorController.DoAttack(false);
+            Context.AnimatorController.DoAttack();
             Context.AttackInput = false;
         }
     }
@@ -101,5 +117,17 @@ public class PlayerRunState : PlayerBaseState
             Context.WeaponController.BoxOffset = new Vector3(-Context.WeaponController.Box_X_value, Context.WeaponController.BoxOffset.y, Context.WeaponController.BoxOffset.z);
             Context.VFXManager.SpawnDustParticles(Context.transform.position);
         }
+    }
+    public override void OnPlayerOnAttackAnimationComplete()
+    {
+        Context.AnimatorController.OnRun();
+        //Animator legs = Context.AnimatorController.LegsAnimator;
+        //Animator torso = Context.AnimatorController.TorsoAnimator;
+
+        //string torsoIdle = Context.AnimatorController.TorsoIdle;
+        //string legsRun = Context.AnimatorController.LegsRun;
+
+        //Context.AnimatorController.ResetCurrentAnimationTime(legs, legsRun);
+        //Context.AnimatorController.ResetCurrentAnimationTime(torso, torsoIdle);
     }
 }

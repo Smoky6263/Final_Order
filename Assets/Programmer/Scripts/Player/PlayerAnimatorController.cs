@@ -4,45 +4,69 @@ public class PlayerAnimatorController : MonoBehaviour
 {
     [SerializeField] private Animator _torsoAnimator, _legsAimator;
 
+    public Animator TorsoAnimator { get { return _torsoAnimator; } }
+    public Animator LegsAnimator { get { return _legsAimator; } }
+
     //ANIMATOR TORSO VARS
-    public string TorsoAttack { get; private set; } = "TorsoAttack";
-    public string TorsoCrouch { get; private set; } = "TorsoCrouch";
-    public string TorsoIdle { get; private set; } = "TorsoIdle";
-    public string TorsoRun { get; private set; } = "TorsoRun";
+    public readonly string TorsoAttack = "TorsoAttack";
+    public readonly string TorsoCrouch = "TorsoCrouch";
+    public readonly string TorsoIdle = "TorsoIdle";
+    public readonly string TorsoRun = "TorsoRun";
+    public readonly string TorsoRoll = "TorsoRoll";
+    public readonly string TorsoJump = "TorsoJump";
+    public readonly string TorsoDeath = "TorsoDeath";
+
 
     //ANIMATOR LEGS VARS
-    public string LegsAttack { get; private set; } = "LegsAttack";
-    public string LegsCrouch { get; private set; } = "LegsCrouch";
-    public string LegsIdle { get; private set; } = "LegsIdle";
-    public string LegsRun { get; private set; } = "LegsRun";
+    public readonly string LegsAttack = "LegsAttack";
+    public readonly string LegsCrouch = "LegsCrouch";
+    public readonly string LegsIdle = "LegsIdle";
+    public readonly string LegsRun = "LegsRun";
+    public readonly string LegsRoll = "LegsRoll";
+    public readonly string LegsJump = "LegsJump";
+    public readonly string LegsDeath = "LegsDeath";
 
 
     public void OnCrouch()
     {
-        _torsoAnimator.SetTrigger(TorsoCrouch);
-        _legsAimator.SetTrigger(LegsCrouch);
+        _torsoAnimator.Play(TorsoCrouch);
+        _legsAimator.Play(LegsCrouch);
     }
     public void OnIdle()
     {
-        _torsoAnimator.SetBool(TorsoIdle, true);
-        _legsAimator.SetTrigger(LegsIdle);
+        _torsoAnimator.Play(TorsoIdle, 0 ,0f);
+        _legsAimator.Play(LegsIdle, 0, 0f);
     }
     public void OnRun()
     {
-        _torsoAnimator.SetBool(TorsoRun, true);
-        _legsAimator.SetTrigger(LegsRun);
+        _torsoAnimator.Play(TorsoRun);
+        _legsAimator.Play(LegsRun);
     }
-    public void DoAttack(bool isIdle)
+    public void DoAttack()
     {
-        _torsoAnimator.SetTrigger(TorsoAttack);
-
-        if(isIdle )
-            _legsAimator.SetTrigger(LegsAttack);
+        _torsoAnimator.Play(TorsoAttack);
     }
 
-    public void ResetTorso()
+    public void DoRoll()
     {
-        _torsoAnimator.SetBool(TorsoRun, false);
-        _torsoAnimator.SetBool(TorsoIdle, false);
+        _torsoAnimator.Play(TorsoRoll);
+        _legsAimator.Play(LegsRoll);
+    }
+
+    public void DoJump()
+    {
+        _torsoAnimator.Play(TorsoJump);
+        _legsAimator.Play(LegsJump);
+    }
+
+    public void OnDeath()
+    {
+        _torsoAnimator.Play(TorsoDeath);
+        _legsAimator.Play(LegsDeath);
+    }
+
+    public void ResetCurrentAnimationTime(Animator animator, string animationName)
+    {
+        animator.Play(animationName, 0, 0f);
     }
 }

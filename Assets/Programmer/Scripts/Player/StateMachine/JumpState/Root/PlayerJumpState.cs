@@ -5,7 +5,6 @@ public class PlayerJumpState : PlayerBaseState
     public PlayerJumpState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
     {
         IsRootState = true;
-        InitializeSubState();
     }
 
     public override void CheckSwitchStates()
@@ -17,15 +16,20 @@ public class PlayerJumpState : PlayerBaseState
         //IF ON STAIRS
         if ((Context.IsJumping || Context.IsFalling) && Context.OnStairs && Context.MovementInput.y != 0f && Context.JumpInput == false)
             SwitchState(Factory.Grounded());
-
+        
+        //IF LANDED ON STAIRS
+        if (Context.IsFalling && Context.OnStairs)
+            SwitchState(Factory.OnStairs());
 
     }
 
     public override void EnterState()
     {
-        //------------------------------------------------------
-        //DO JUMP ANIMATION
-        //------------------------------------------------------
+        InitializeSubState();
+
+        Context.BodyColl.enabled = true;
+        Context.AnimatorController.DoJump();
+
         Context.RollInput = false;
 
         if (Context.OnStairs == false)
@@ -46,6 +50,7 @@ public class PlayerJumpState : PlayerBaseState
         Context.IsPastApexThreshold = false;
 
         Context.VerticalVelocity = Physics2D.gravity.y;
+
     }
 
     public override void InitializeSubState()
@@ -258,5 +263,10 @@ public class PlayerJumpState : PlayerBaseState
     {
         Context.JumpBufferTimer -= Time.deltaTime;
     }
+
     #endregion
+    public override void OnPlayerOnAttackAnimationComplete()
+    {
+
+    }
 }

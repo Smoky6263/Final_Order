@@ -3,7 +3,7 @@ public class PlayerFallingRunState : PlayerBaseState
 {
     public PlayerFallingRunState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
     {
-        InitializeSubState();
+
     }
 
     protected float _accelerationSpeed { get { return Context.MoveStats.AirAcceleration; } }
@@ -16,10 +16,7 @@ public class PlayerFallingRunState : PlayerBaseState
 
     public override void EnterState()
     {
-        //------------------------------------------------------
-        //DO RUN ANIMATION
-        //------------------------------------------------------
-        
+        InitializeSubState();
     }
 
     public override void ExitState()
@@ -83,8 +80,21 @@ public class PlayerFallingRunState : PlayerBaseState
     {
         if (Context.AttackInput == true)
         {
-            Context.AnimatorController.DoAttack(false);
+            Context.AnimatorController.DoAttack();
             Context.AttackInput = false;
         }
+    }
+
+    public override void OnPlayerOnAttackAnimationComplete()
+    {
+        Context.AnimatorController.DoJump();
+        //Animator legs = Context.AnimatorController.LegsAnimator;
+        //Animator torso = Context.AnimatorController.TorsoAnimator;
+
+        //string torsoIdle = Context.AnimatorController.TorsoIdle;
+        //string legsJump = Context.AnimatorController.LegsJump;
+
+        //Context.AnimatorController.ResetCurrentAnimationTime(legs, legsJump);
+        //Context.AnimatorController.ResetCurrentAnimationTime(torso, torsoIdle);
     }
 }

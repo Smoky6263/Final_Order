@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 class PlayerFallState : PlayerBaseState
 {
     public PlayerFallState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
     {
         IsRootState = true;
-        InitializeSubState();
+
     }
 
     public override void CheckSwitchStates()
@@ -14,16 +15,18 @@ class PlayerFallState : PlayerBaseState
         if (Context.IsFalling && Context.IsGrounded && Context.VerticalVelocity <= 0f)
             SwitchState(Factory.Grounded());
 
-        //IF GROUND ON STAIRS
+        //IF LANDED ON STAIRS
         if (Context.IsFalling && Context.OnStairs)
             SwitchState(Factory.OnStairs());
     }
 
     public override void EnterState()
     {
-        //------------------------------------------------------
-        //DO JUMP ANIMATION
-        //------------------------------------------------------
+        InitializeSubState();
+
+        Context.BodyColl.enabled = true;
+        Context.AnimatorController.DoJump();
+
         Context.RollInput = false;
         Context.JumpBufferTimer = -1f;
 
@@ -36,7 +39,6 @@ class PlayerFallState : PlayerBaseState
             Context.FastFallTime = Context.MoveStats.TimeForUpwardsCancel;
             Context.VerticalVelocity = 0f;
         }
-
     }
 
     public override void ExitState()
@@ -98,6 +100,11 @@ class PlayerFallState : PlayerBaseState
     private void CountTimers()
     {
         Context.JumpBufferTimer -= Time.deltaTime;
+    }
+
+    public override void OnPlayerOnAttackAnimationComplete()
+    {
+        
     }
     #endregion
 }
