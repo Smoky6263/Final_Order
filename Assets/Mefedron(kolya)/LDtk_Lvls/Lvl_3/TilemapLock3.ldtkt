@@ -1,0 +1,33 @@
+{
+  "Rects": null,
+  "Def": {
+    "__cHei": 4,
+    "__cWid": 6,
+    "cachedPixelData": {
+      "opaqueTiles": "111111111111000011000011",
+      "averageColors": "f251f251f251f261f121f121f121f111f121f131f121f121f131f121f131f131f131f231f261f261f261f261f141f141"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "TilemapLock3",
+    "padding": 0,
+    "pxHei": 128,
+    "pxWid": 192,
+    "relPath": "../Sprites/TilemapLock3.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 32,
+    "uid": 1
+  }
+}

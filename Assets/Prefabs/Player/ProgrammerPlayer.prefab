@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8010080292317880572}
   - component: {fileID: 3966485107059238089}
   - component: {fileID: 2774926343881191906}
+  - component: {fileID: 8982720844760361791}
   m_Layer: 0
   m_Name: Torso
   m_TagString: Untagged
@@ -123,9 +124,25 @@ MonoBehaviour:
   _enemyLayer:
     serializedVersion: 2
     m_Bits: 512
+  _breakableWallLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   _boxSize: {x: 1.5, y: 1.4}
   _boxOffset: {x: 0.7, y: 0.9, z: 0}
   _color: {r: 1, g: 0, b: 0.83895683, a: 1}
+--- !u!114 &8982720844760361791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911343770489730538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db8b0bb4f6914c14cae976b088e0e91d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundsManager: {fileID: 0}
 --- !u!1 &4394575555294773434
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,10 +274,9 @@ GameObject:
   - component: {fileID: 2879987066415813741}
   - component: {fileID: 3235927246549236186}
   - component: {fileID: 4060814228750945820}
-  - component: {fileID: 5592923081451217000}
   m_Layer: 3
   m_Name: ProgrammerPlayer
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -374,18 +390,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _torsoAnimator: {fileID: 3966485107059238089}
   _legsAimator: {fileID: 8568428097194674577}
---- !u!114 &5592923081451217000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5362743383600061665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64b8e2b107197db498eac00829c7ed9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5862789358829779379
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,7 +402,7 @@ GameObject:
   - component: {fileID: 1305856148158797422}
   m_Layer: 3
   m_Name: Body
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -497,7 +501,7 @@ GameObject:
   - component: {fileID: 7388641759800157186}
   m_Layer: 3
   m_Name: Feet
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -573,9 +577,10 @@ GameObject:
   - component: {fileID: 5149522083413743712}
   - component: {fileID: 8542107105486101164}
   - component: {fileID: 8568428097194674577}
+  - component: {fileID: 9068495465379653668}
   m_Layer: 0
   m_Name: Legs
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -668,3 +673,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9068495465379653668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6143592718349142411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db8b0bb4f6914c14cae976b088e0e91d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundsManager: {fileID: 0}
