@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Mefedron(kolya)/Scripts/SoundSripts/ParameterTrigger.cs.meta
 guid: 43935cdc7596d74488befa2919c6aec4
+========
+guid: da65e5abe257fbe408a58a07e877d57b
+>>>>>>>> 6c2674d7080111cc2dbf3ae41441e4f1fe919242:Assets/Programmer/Scripts/Level/ParallaxLayer.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

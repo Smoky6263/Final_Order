@@ -1,16 +1,10 @@
+using Cinemachine;
 using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
-    [SerializeField] private GameObject _camera;
-    [SerializeField] private float _parallaxEffect;
-    private float _startPosition;
+    [SerializeField] private Camera _camera;
+    public Camera Camera { get { return _camera; } set { _camera = value; } }
 
-    private void Start() => _startPosition = transform.position.x;
-
-    private void LateUpdate()
-    {
-        float distance = _camera.transform.position.x * _parallaxEffect;
-        transform.position = new Vector3(_startPosition + distance, transform.position.y, transform.position.z);
-    }
+    private void LateUpdate() => transform.position = new Vector3(transform.position.x, _camera.transform.position.y, transform.position.z);
 }
