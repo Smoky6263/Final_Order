@@ -1,33 +1,40 @@
 using UnityEngine;
 
-[RequireComponent (typeof(Animator))]
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(PlayerAnimatorController))]
 [RequireComponent(typeof(CharacterController))]
+[RequireComponent (typeof(PlayerPauseHandler))]
 public class PlayerStateMachine : MonoBehaviour, IControlable
 {
     private EventBus _eventBus;
-    private VFXManager _vfxManager;
     private PlayerHealth _playerHealth;
+    private CharacterController _characterController;
     private Rigidbody2D _rigidBody;
 
     private PlayerAnimatorController _animatorController;
     private PlayerBaseState _currentState;
     private PlayerStateFactory _states;
+
+    public bool OnPause { get; set; } = false;
     public PlayerBaseState CurrentState { get { return _currentState; } set { _currentState = value; } }
 
-    [SerializeField] private GameManager _gameManager;
+    [SerializeField] private EventBusManager _gameManager;
+    [SerializeField] private VFXManager _vfxManager;
+    [SerializeField] private PauseManager _pauseManager;
     [SerializeField] private PlayerStats _moveStats;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Collider2D _bodyColl;
     [SerializeField] private Collider2D _feetColl;
-
     #region Player Fields
 
-    [Header("Health")]
+    [Header("Health Variables")]
     [SerializeField, Range(0f, 100f)] public float _maxHealth;
     [SerializeField, Range(0f, 100f)] public float _health;
+    [Header("После получения урона, игрок не может получить\nпока не пройдет мсек:")]
+    [SerializeField, Range(0f, 10000f)] private int _damageDelayTime;
 
+    [Header("Weapon Variables")]
+    [SerializeField] private PlayerWeaponController _weaponController;
     #region Collision Fiekds
     private bool _onStairs;
     private GameObject _currentPTP; /* PTP = PassTroughPlatform*/
@@ -40,6 +47,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     private Vector2 _movementInput;
     private bool _jumpButtonInput;
     private bool _rollInput;
+    private bool _attackInput;
 
     //movement vars
     private Vector2 _movementVelocity;
@@ -75,20 +83,26 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     #endregion
 
     #region Player Properties
-    public PlayerAnimatorController AnimatorController { get { return _animatorController; } }
     public SpriteRenderer SpriteRenderer { get { return _spriteRenderer; } }
-    public PlayerStats MoveStats { get { return _moveStats; } }
+    public EventBus EventBus { get { return _eventBus; } }
     public VFXManager VFXManager { get { return _vfxManager; } }
+    public PauseManager PauseManager { get { return _pauseManager; } }
+    public PlayerStats MoveStats { get { return _moveStats; } }
+    public CharacterController CharacterController{ get { return _characterController; } }
+    public PlayerAnimatorController AnimatorController { get { return _animatorController; } }
     public Collider2D BodyColl { get { return _bodyColl; } }
     public Collider2D FeetColl { get { return _feetColl; } }
     public Rigidbody2D RigidBody { get { return _rigidBody; } }
-    public EventBus EventBus { get { return _eventBus; } }
     public PlayerHealth PayerHealth { get { return _playerHealth; } }
-    
+    public PlayerWeaponController WeaponController { get { return _weaponController; } }
+    public int DamageDelayTime { get { return _damageDelayTime; } }
+
+
     //player inputs
     public Vector2 MovementInput { get { return _movementInput; } }
     public bool JumpInput { get { return _jumpButtonInput; } set { _jumpButtonInput = value; } }
     public bool RollInput { get { return _rollInput; } set { _rollInput = value; } }
+    public bool AttackInput { get { return _attackInput; } set { _attackInput = value; } }
 
 
     #region Ccollision check vars
@@ -96,17 +110,17 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     public RaycastHit2D HeadHit { get { return _headHit; } set { _headHit = value; } }
     public GameObject CurrentPTP { get { return _currentPTP; } set { _currentPTP = value; } }
     public bool IsGrounded { get { return _isGrounded; } set { _isGrounded = value; } }
-    public bool BumpedHead {  get { return _bumpedHead; } set { _bumpedHead = value; } }
+    public bool BumpedHead { get { return _bumpedHead; } set { _bumpedHead = value; } }
     public bool OnStairs { get { return _onStairs; } set { _onStairs = value; } }
 
     #endregion
 
     #region Movement and Jump Properties
-    
+
     //movement vars
     public Vector2 MovementVelocity { get { return _movementVelocity; } set { _movementVelocity = value; } }
-    public bool IsFacingRight {  get { return _isFacingRight; } set { _isFacingRight = value; } }
-    public bool OnCrouch {  get { return _onCrouch; } set { _onCrouch = value; } }
+    public bool IsFacingRight { get { return _isFacingRight; } set { _isFacingRight = value; } }
+    public bool OnCrouch { get { return _onCrouch; } set { _onCrouch = value; } }
     public float RollDuration { get { return _moveStats.RollDuration; } }
     public float JumpfAfterStairsDuration { get { return _moveStats.JumpfAfterStairsDuration; } }
 
@@ -119,7 +133,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
 
     //apex vars
     public float ApexPoint { get { return _apexPoint; } set { _apexPoint = value; } }
-    public float TimePastApexThreshold { get {  return _timePastApexThreshold; } set { _timePastApexThreshold = value; } }
+    public float TimePastApexThreshold { get { return _timePastApexThreshold; } set { _timePastApexThreshold = value; } }
     public bool IsPastApexThreshold { get { return _isPastApexThreshold; } set { _isPastApexThreshold = value; } }
 
     //jump buffer vars
@@ -138,8 +152,11 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     private void Awake()
     {
         _eventBus = _gameManager.EventBus;
+        _eventBus.Subscribe<PlayerOnDeathSignal>(OnDeath);
+        _eventBus.Subscribe<PlayerAttackAnimationCompleteSignal>(OnPlayerAttackAnimationComplete);
+        GetComponentInChildren<PlayerWeaponController>().Init(_eventBus);
+        _characterController = GetComponent<CharacterController>();
         _playerHealth = new PlayerHealth(this);
-        _vfxManager = GetComponent<VFXManager>();
         _rigidBody = GetComponent<Rigidbody2D>();
         _animatorController = GetComponent<PlayerAnimatorController>();
         _isFacingRight = true;
@@ -149,32 +166,53 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     {
         _states = new PlayerStateFactory(this);
         _currentState = _states.Fall();
-        _currentState.EnterState(); 
+        _currentState.EnterState();
     }
 
     private void Update()
     {
-        CountTimers();
+        if (OnPause) return;
+
         IsGroundedCheck();
     }
 
     private void FixedUpdate()
     {
-        _currentState.UpdateStates(); 
+        if (OnPause) return;
+
+        _currentState.UpdateStates();
     }
 
     #region PlayerInputs
-    public void MoveInput(float x, float y) => _movementInput = new Vector2(x , y);
-    public void JumpIsPressed() => _jumpButtonInput = true;
+    public void MoveInput(float x, float y) => _movementInput = new Vector2(x, y);
+    public void JumpIsPressed()
+    {
+        _jumpButtonInput = true;
+        _jumpBufferTimer = _moveStats.JumpBufferTime;
+    }
     public void JumpIsReleased() => _jumpButtonInput = false;
     public void RollPressed()
     {
         if(IsGrounded == true)
             _rollInput = true;
     }
+
+    public void AttackPressed()
+    {
+        if(_rollInput == false)
+            _attackInput = true;
+    }
+
+    public void ResetInputs()
+    {
+        _movementInput = Vector2.zero;
+        _jumpButtonInput = false;
+        _rollInput = false;
+        _attackInput = false;
+    }
     #endregion
 
-#region Collision Checks
+    #region Collision Checks
     private void IsGroundedCheck()
     {
         Vector2 boxCastOrigin = new Vector2(_feetColl.bounds.center.x, _feetColl.bounds.center.y);
@@ -207,15 +245,10 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
 
     #endregion
 
-    #region Timers
-    private void CountTimers()
-    {
-        _jumpBufferTimer -= Time.deltaTime;
-    }
-    #endregion
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (OnPause) return;
+
         if (collision.tag == "Stairs")
             _onStairs = true;
 
@@ -223,6 +256,8 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (OnPause) return;
+
         if (collision.tag == "Stairs")
             _onStairs = false;
 
@@ -230,12 +265,16 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.GetComponent<PlatformEffector2D>() != null)
+        if (OnPause) return;
+
+        if (collision.gameObject.GetComponent<PlatformEffector2D>() != null)
             _currentPTP = collision.gameObject;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        if (OnPause) return;
+
         if (collision.gameObject.GetComponent<PlatformEffector2D>() != null)
             _currentPTP = null;
     }
@@ -246,10 +285,21 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         float width = 400;
         textSTyle.fontSize = 30;
 
-        if(_currentState.CurrentSuperState != null)
-            GUI.Label(new Rect(10, 10, 400, 50), $"Current Super State: {_currentState.CurrentSuperState.ToString()}", textSTyle);
+        if(_currentState.CurrentRootState != null)
+            GUI.Label(new Rect(10, 10, 400, 50), $"Current Super State: {_currentState.CurrentRootState.ToString()}", textSTyle);
         
         if (_currentState.CurrentSubState != null)
             GUI.Label(new Rect((Screen.width / 2) - (width / 2), 10, width, 31), $"Current Sub State: {_currentState.CurrentSubState.ToString()}", textSTyle);
+    }
+
+    private void OnDeath(PlayerOnDeathSignal signal)
+    {
+        _currentState = _states.OnDeath();
+        _currentState.EnterState();
+    }
+
+    private void OnPlayerAttackAnimationComplete(PlayerAttackAnimationCompleteSignal signal)
+    {
+        _currentState.CurrentSubState.PlayerOnAttackAnimationComplete();
     }
 }

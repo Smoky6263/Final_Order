@@ -4,7 +4,7 @@ public class PlayerIdleState : PlayerBaseState
 {
     public PlayerIdleState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory) 
     {
-        InitializeSubState();
+
     }
 
     public override void CheckSwitchStates()
@@ -24,12 +24,29 @@ public class PlayerIdleState : PlayerBaseState
 
     public override void EnterState()
     {
-        Context.AnimatorController.OnIdle(true);
+        InitializeSubState();
+
+        Context.BodyColl.enabled = true;
+
+
+        // Если анимация АТАКИ у торса еще не закончена, тогда только ноги должны проиграть LegsAtack анимацию
+        // Иначе целиком проигрываем Idle анимацию на двух слоях
+        int currentTorsoStateHash = Context.AnimatorController.GetCurrentAnimationStateHash(Context.AnimatorController.TorsoAnimator);
+
+
+        if (currentTorsoStateHash == Context.AnimatorController.TorsoAttackHash)
+        {
+            Context.AnimatorController.LegsAnimator.Play(Context.AnimatorController.LegsAttack, 0, 0f);
+        }
+        else 
+        {
+            Context.AnimatorController.OnIdle();
+        }
+
     }
 
     public override void ExitState()
     {
-        Context.AnimatorController.OnIdle(false);
 
     }
 
@@ -40,6 +57,30 @@ public class PlayerIdleState : PlayerBaseState
 
     public override void UpdateState()
     {
+
+        CheckAtack();
         CheckSwitchStates();
+    }
+
+    private void CheckAtack()
+    {
+        if (Context.AttackInput == true)
+        {
+            Context.AnimatorController.DoAttack();
+            Context.AnimatorController.LegsAnimator.Play(Context.AnimatorController.LegsAttack);
+            Context.AttackInput = false;
+        }
+    }
+
+    public override void PlayerOnAttackAnimationComplete()
+    {
+        Animator legs = Context.AnimatorController.LegsAnimator;
+        Animator torso = Context.AnimatorController.TorsoAnimator;
+
+        string legsIdle = Context.AnimatorController.LegsIdle;
+        string torsoIdle = Context.AnimatorController.TorsoIdle;
+
+        Context.AnimatorController.ResetCurrentAnimationTime(legs, legsIdle);
+        Context.AnimatorController.ResetCurrentAnimationTime(torso, torsoIdle);
     }
 }

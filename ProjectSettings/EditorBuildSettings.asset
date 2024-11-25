@@ -5,10 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Programmer/Scenes/Programmer_Scene.unity
+    guid: 86aca81f82e63a4468a2b4521774f733
+  - enabled: 1
+    path: Assets/Mefedron(kolya)/Scenes/Menu(Test).unity
+    guid: 854a7cabb20f9924697450881e38a49e
   - enabled: 1
     path: Assets/Mefedron(kolya)/Scenes/Lvl_1.unity
     guid: ab385f27ee81e354586c6fc7cf93ec46
+  - enabled: 1
+    path: Assets/Mefedron(kolya)/Scenes/Lvl_2.unity
+    guid: efd185ab3ac21bc45a17350178d752e5
   m_configObjects: {}

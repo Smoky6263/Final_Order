@@ -2,7 +2,7 @@
     "name": "PlayerInputs",
     "maps": [
         {
-            "name": "Gameplay",
+            "name": "PlayerActions",
             "id": "bfef8e77-e8fe-4186-956c-73d51172705b",
             "actions": [
                 {
@@ -45,6 +45,15 @@
                     "name": "RollPerformed",
                     "type": "Button",
                     "id": "14b2eba1-4f39-4b29-87c7-a9b4257a75bf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "AttackPressed",
+                    "type": "Button",
+                    "id": "5c17f533-90fc-4cb5-841a-31a541ba1297",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press",
@@ -108,59 +117,15 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "2D Vector GamePad",
-                    "id": "a67cc5d7-29b2-4d25-93b6-8d7c5814c2e9",
-                    "path": "2DVector(mode=1)",
+                    "name": "2D Vector Gamepad",
+                    "id": "95300e84-4630-43d5-b154-9d04b533ff08",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Movement",
                     "isComposite": true,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "31a2bc5d-050e-4cdf-a201-ec59343061f0",
-                    "path": "<Gamepad>/leftStick/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "e210f4b6-6da9-45b6-aa61-c398f4dcc878",
-                    "path": "<Gamepad>/leftStick/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "994d50e6-3c63-42ba-a573-73ea0e8f9f8b",
-                    "path": "<Gamepad>/leftStick/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "024fcb1a-ddd0-4fdd-ad1c-5ae7f227e218",
-                    "path": "<Gamepad>/leftStick/right",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 },
                 {
                     "name": "",
@@ -247,6 +212,45 @@
                     "processors": "",
                     "groups": "",
                     "action": "RollPerformed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "40934b1c-2e14-4164-80ec-49a8414db5f4",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AttackPressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UIActions",
+            "id": "c03e7971-0a23-416b-a539-281a650c1012",
+            "actions": [
+                {
+                    "name": "CallPauseMenu",
+                    "type": "Button",
+                    "id": "67a6b83e-5268-4615-88f7-c765341715ad",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e81ca76b-8075-4159-9974-433bdaf8618a",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CallPauseMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

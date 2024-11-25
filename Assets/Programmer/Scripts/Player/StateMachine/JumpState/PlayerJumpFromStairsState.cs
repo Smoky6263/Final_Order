@@ -4,7 +4,6 @@ public class PlayerJumpFromStairsState : PlayerBaseState
     public PlayerJumpFromStairsState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
     {
         IsRootState = true;
-        InitializeSubState();
     }
 
     float _elapsedTime;
@@ -27,30 +26,34 @@ public class PlayerJumpFromStairsState : PlayerBaseState
 
     public override void EnterState()
     {
-        //------------------------------------------------------
-        //DO JUMP ANIMATION
-        //------------------------------------------------------
+        InitializeSubState();
+        
+        Context.RollInput = false;
+
         Context.VerticalVelocity = Context.MoveStats.InitialJumpFromStairsVelocity;
         _elapsedTime = Context.MoveStats.JumpfAfterStairsDuration;
-
-        Debug.Log("Jump From Stairs");
     }
 
     public override void ExitState()
     {
         Context.BumpedHead = false;
+
     }
 
     public override void InitializeSubState()
     {
         //IF PLAYER FALLING AND RUN
         SetSubState(Factory.FallingRun());
+        CurrentSubState.EnterState();
+
     }
 
     public override void UpdateState()
     {
         BumpHead();
         DoJump();
+        TurnCheck(Context.MovementInput);
+        CountTimers();
         CheckSwitchStates();
     }
 
@@ -75,11 +78,7 @@ public class PlayerJumpFromStairsState : PlayerBaseState
 
         // Вычисляем новое значение с использованием функции EaseOutCubic
         Context.VerticalVelocity = EaseOutCubic(_elapsedTime, Context.MoveStats.RollDuration, Context.VerticalVelocity);
-
-
         Context.RigidBody.velocity = new Vector2(Context.RigidBody.velocity.x, Context.VerticalVelocity);
-
-        Debug.Log("Value: " + Context.VerticalVelocity);
     }
 
     private void BumpHead()
@@ -97,4 +96,44 @@ public class PlayerJumpFromStairsState : PlayerBaseState
 
         else { Context.BumpedHead = false; }
     }
+
+    private void TurnCheck(Vector2 moveInput)
+    {
+        if (Context.IsFacingRight && moveInput.x < 0)
+            Turn(false);
+
+        else if (Context.IsFacingRight == false && moveInput.x > 0)
+            Turn(true);
+    }
+
+    private void Turn(bool turnRight)
+    {
+        if (turnRight)
+        {
+            Context.IsFacingRight = true;
+            Context.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            Context.WeaponController.BoxOffset = new Vector3(Context.WeaponController.Box_X_value, Context.WeaponController.BoxOffset.y, Context.WeaponController.BoxOffset.z);
+            Context.VFXManager.SpawnDustParticles(Context.transform.position);
+        }
+        else
+        {
+            Context.IsFacingRight = false;
+            Context.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+            Context.WeaponController.BoxOffset = new Vector3(-Context.WeaponController.Box_X_value, Context.WeaponController.BoxOffset.y, Context.WeaponController.BoxOffset.z);
+            Context.VFXManager.SpawnDustParticles(Context.transform.position);
+        }
+    }
+
+    public override void PlayerOnAttackAnimationComplete()
+    {
+        
+    }
+
+    #region Timers
+    private void CountTimers()
+    {
+        if(Context.JumpInput)
+            Context.JumpBufferTimer -= Time.deltaTime;
+    }
+    #endregion
 }

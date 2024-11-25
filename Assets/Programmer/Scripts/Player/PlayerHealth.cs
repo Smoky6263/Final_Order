@@ -1,5 +1,5 @@
-
-public class PlayerHealth : IHealth
+using Cysharp.Threading.Tasks;
+public class PlayerHealth : IPlayerHealth
 {
     public PlayerHealth(PlayerStateMachine stateMachine)
     {
@@ -11,20 +11,36 @@ public class PlayerHealth : IHealth
 
     private EventBus _eventBus;
     private PlayerStateMachine _playerStats;
-    
+
     private float _maxHealth;
     private int _medKitsCount;
+    public bool OnDamageDelay { get; private set; } = false;
 
 
-    public void TakeDamage(float value)
+    public async void GetDamage(float value)
     {
+        if (OnDamageDelay == true && _playerStats.RollInput == false)
+            return;
+
+        OnDamageDelay = true;
         _playerStats._health -= value;
 
-        if(_playerStats._health < 0 )
+        if(_playerStats._health <= 0)
+        {
             _playerStats._health = 0;
+            _eventBus.Invoke(new PlayerOnDeathSignal());
+        }
 
         _eventBus.Invoke(new PlayerHealthChangeSignal(_playerStats._health));
+        await DamageDelayTask();
     }
+
+    private async UniTask DamageDelayTask()
+    {
+        await UniTask.Delay(_playerStats.DamageDelayTime);
+        OnDamageDelay = false;
+    }
+
     public void ImproveHealth()
     {
         if(_medKitsCount > 0 && _playerStats._health < _maxHealth)
@@ -35,6 +51,5 @@ public class PlayerHealth : IHealth
             _medKitsCount--;
         }
     }
-
     public void OnMedKitPickUp() => _medKitsCount++;
 }

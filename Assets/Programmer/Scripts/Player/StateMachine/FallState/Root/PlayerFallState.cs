@@ -1,30 +1,34 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 class PlayerFallState : PlayerBaseState
 {
     public PlayerFallState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
     {
         IsRootState = true;
-        InitializeSubState();
+
     }
 
     public override void CheckSwitchStates()
     {
         //IF LANDED
-        if ((Context.IsJumping || Context.IsFalling) && Context.IsGrounded && Context.VerticalVelocity <= 0f)
+        if (Context.IsGrounded && Context.VerticalVelocity <= 0f)
             SwitchState(Factory.Grounded());
 
-        //IF GROUND ON STAIRS
+        //IF LANDED ON STAIRS
         if (Context.IsFalling && Context.OnStairs)
             SwitchState(Factory.OnStairs());
     }
 
     public override void EnterState()
     {
-        //------------------------------------------------------
-        //DO JUMP ANIMATION
-        //------------------------------------------------------
+        InitializeSubState();
+
+        Context.BodyColl.enabled = true;
+
         Context.RollInput = false;
+        Context.JumpBufferTimer = -1f;
+
 
         if (Context.IsFalling == false && Context.IsJumping == false)
             Context.IsFalling = true;
@@ -34,21 +38,17 @@ class PlayerFallState : PlayerBaseState
             Context.FastFallTime = Context.MoveStats.TimeForUpwardsCancel;
             Context.VerticalVelocity = 0f;
         }
-
     }
 
     public override void ExitState()
     {
         //LANDED
-        Context.IsJumping = false;
         Context.IsFalling = false;
         Context.IsFastFalling = false;
 
         Context.FastFallTime = 0f;
-        Context.JumpBufferTimer = 0f;
         Context.IsPastApexThreshold = false;
 
-        Context.JumpInput = false;
         Context.VerticalVelocity = Physics2D.gravity.y;
 
     }
@@ -57,6 +57,7 @@ class PlayerFallState : PlayerBaseState
     {
         //IF PLAYER FALLING AND RUN
         SetSubState(Factory.FallingRun());
+        CurrentSubState.EnterState();
     }
 
     public override void UpdateState()
@@ -71,6 +72,7 @@ class PlayerFallState : PlayerBaseState
         Context.VerticalVelocity = Mathf.Clamp(Context.VerticalVelocity, -Context.MoveStats.MaxFallSpeed, 50f);
         Context.RigidBody.velocity = new Vector2(Context.RigidBody.velocity.x, Context.VerticalVelocity);
 
+        CountTimers();
         CheckSwitchStates();
     }
 
@@ -93,4 +95,15 @@ class PlayerFallState : PlayerBaseState
 
         Context.FastFallTime += Time.deltaTime;
     }
+    public override void PlayerOnAttackAnimationComplete()
+    {
+        
+    }
+
+    #region Timers
+    private void CountTimers()
+    {
+        Context.JumpBufferTimer -= Time.deltaTime;
+    }
+    #endregion
 }

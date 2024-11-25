@@ -3,7 +3,7 @@ public class PlayerFallingRunState : PlayerBaseState
 {
     public PlayerFallingRunState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory) : base(currentContext, playerStateFactory)
     {
-        InitializeSubState();
+
     }
 
     protected float _accelerationSpeed { get { return Context.MoveStats.AirAcceleration; } }
@@ -16,10 +16,17 @@ public class PlayerFallingRunState : PlayerBaseState
 
     public override void EnterState()
     {
-        //------------------------------------------------------
-        //DO RUN ANIMATION
-        //------------------------------------------------------
-        
+        InitializeSubState();
+
+
+        // Если анимация АТАКИ у торса еще не закончена, тогда только ноги должны проиграть LegsJump анимацию
+        // Иначе целиком проигрываем Jump анимацию на двух слоях
+        int currentTorsoStateHash = Context.AnimatorController.GetCurrentAnimationStateHash(Context.AnimatorController.TorsoAnimator);
+
+        if (currentTorsoStateHash == Context.AnimatorController.TorsoAttackHash)
+            Context.AnimatorController.LegsAnimator.Play(Context.AnimatorController.LegsJump, 0, 0f);
+        else
+            Context.AnimatorController.DoJump();
     }
 
     public override void ExitState()
@@ -35,6 +42,8 @@ public class PlayerFallingRunState : PlayerBaseState
     public override void UpdateState()
     {
         Move();
+        CheckAtack();
+        TurnCheck(Context.MovementInput);
         CheckSwitchStates();
     }
 
@@ -68,12 +77,27 @@ public class PlayerFallingRunState : PlayerBaseState
         if (turnRight)
         {
             Context.IsFacingRight = true;
-            Context.SpriteRenderer.flipX = false;
+            Context.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            Context.WeaponController.BoxOffset = new Vector3(Context.WeaponController.Box_X_value, Context.WeaponController.BoxOffset.y, Context.WeaponController.BoxOffset.z);
         }
         else
         {
             Context.IsFacingRight = false;
-            Context.SpriteRenderer.flipX = true;
+            Context.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+            Context.WeaponController.BoxOffset = new Vector3(-Context.WeaponController.Box_X_value, Context.WeaponController.BoxOffset.y, Context.WeaponController.BoxOffset.z);
         }
+    }
+    private void CheckAtack()
+    {
+        if (Context.AttackInput == true)
+        {
+            Context.AnimatorController.DoAttack();
+            Context.AttackInput = false;
+        }
+    }
+
+    public override void PlayerOnAttackAnimationComplete()
+    {
+        Context.AnimatorController.DoJump();
     }
 }

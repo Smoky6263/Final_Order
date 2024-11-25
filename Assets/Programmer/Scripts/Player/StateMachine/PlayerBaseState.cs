@@ -1,16 +1,18 @@
+using System;
+
 public abstract class PlayerBaseState
 {
 
     private PlayerStateMachine _context;
     private PlayerStateFactory _factory;
-    private PlayerBaseState _currentSuperState;
+    private PlayerBaseState _currentRootState;
     private PlayerBaseState _currentSubState;
     
     private bool _isRootState = false;
     protected bool IsRootState { set { _isRootState = value; } }
     protected PlayerStateMachine Context { get { return _context; } }
     protected PlayerStateFactory Factory { get { return _factory; } }
-    public PlayerBaseState CurrentSuperState { get { return _currentSuperState; } }
+    public PlayerBaseState CurrentRootState { get { return _currentRootState; } }
     public  PlayerBaseState CurrentSubState { get { return _currentSubState; } }
 
     public PlayerBaseState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory)
@@ -24,6 +26,8 @@ public abstract class PlayerBaseState
     public abstract void ExitState();
     public abstract void CheckSwitchStates();
     public abstract void InitializeSubState();
+
+    public abstract void PlayerOnAttackAnimationComplete();
 
     public void UpdateStates() 
     {
@@ -52,19 +56,20 @@ public abstract class PlayerBaseState
             //switch current state of context
             _context.CurrentState = newState;
         }
-        else if(_currentSuperState != null)
+        else if(_currentRootState != null)
         {
-            //set the current super states sub state to the new state
-            _currentSuperState.SetSubState(newState);
+            //set the current root states sub state to the new state
+            _currentRootState.SetSubState(newState);
         }
+
     }
     protected void SetSubState(PlayerBaseState newSubState)
     {
         _currentSubState = newSubState;
-        newSubState.SetSuperState(this);
+        newSubState.SetRootState(this);
     }
-    protected void SetSuperState(PlayerBaseState newSuperState)
+    protected void SetRootState(PlayerBaseState newSuperState)
     {
-        _currentSuperState = newSuperState; 
+        _currentRootState = newSuperState; 
     }
 }

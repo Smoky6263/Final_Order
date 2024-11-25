@@ -1,16 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RoomCameraFolow : MonoBehaviour
 {
-    public GameObject virtualCam;
+    private GameObject _virtualCam;
+
+    private void Awake() => _virtualCam = transform.GetChild(0).gameObject;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !other.isTrigger)
         {
-            virtualCam.SetActive(true);
+            _virtualCam.gameObject.SetActive(true);
         }
     }
 
@@ -18,7 +18,7 @@ public class RoomCameraFolow : MonoBehaviour
     {
         if (other.CompareTag("Player") && !other.isTrigger)
         {
-            virtualCam.SetActive(false);
+            _virtualCam.gameObject.SetActive(false);
         }
     }
 }

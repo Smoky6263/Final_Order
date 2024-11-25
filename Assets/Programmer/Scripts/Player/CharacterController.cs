@@ -1,10 +1,10 @@
-using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
     private IControlable _iControlable;
-    private IHealth _iHealth;
+    private IPlayerHealth _iHealth;
     protected PlayerInputs _playerInputs;
 
     protected virtual void Awake()
@@ -20,33 +20,35 @@ public class CharacterController : MonoBehaviour
         _iHealth = GetComponent<PlayerStateMachine>().PayerHealth;
     }
 
-    protected void Update() => ReadMovement();
+    private void Update() => ReadMovement();
 
-    protected virtual void ReadMovement()
+    private void ReadMovement()
     {
 
-        Vector2 inputDirection = _playerInputs.Gameplay.Movement.ReadValue<Vector2>();
+        Vector2 inputDirection = _playerInputs.PlayerActions.Movement.ReadValue<Vector2>();
         _iControlable.MoveInput(inputDirection.x, inputDirection.y);
     }
 
-    protected virtual void OnMedKitPerformed(InputAction.CallbackContext context) => _iHealth.ImproveHealth();
-    protected virtual void OnJumpPressed(InputAction.CallbackContext context) => _iControlable.JumpIsPressed();
-    protected virtual void OnJumpReleased(InputAction.CallbackContext context) => _iControlable.JumpIsReleased();
-    protected virtual void OnRollPerformed(InputAction.CallbackContext context) => _iControlable.RollPressed();
-
+    private void OnMedKitPerformed(InputAction.CallbackContext context) => _iHealth.ImproveHealth();
+    private void OnJumpPressed(InputAction.CallbackContext context) => _iControlable.JumpIsPressed();
+    private void OnJumpReleased(InputAction.CallbackContext context) => _iControlable.JumpIsReleased();
+    private void OnRollPerformed(InputAction.CallbackContext context) => _iControlable.RollPressed();
+    private void OnAttackPerforrmed(InputAction.CallbackContext context) => _iControlable.AttackPressed();
 
     protected void OnEnable()
     {
-        _playerInputs.Gameplay.MedKitPerformed.performed += OnMedKitPerformed;
-        _playerInputs.Gameplay.JumpIsPressed.performed += OnJumpPressed;
-        _playerInputs.Gameplay.JumpIsReleased.performed += OnJumpReleased;
-        _playerInputs.Gameplay.RollPerformed.performed += OnRollPerformed;
+        _playerInputs.PlayerActions.MedKitPerformed.performed += OnMedKitPerformed;
+        _playerInputs.PlayerActions.JumpIsPressed.performed += OnJumpPressed;
+        _playerInputs.PlayerActions.JumpIsReleased.performed += OnJumpReleased;
+        _playerInputs.PlayerActions.RollPerformed.performed += OnRollPerformed;
+        _playerInputs.PlayerActions.AttackPressed.performed += OnAttackPerforrmed;
     }
-    protected void OnDisable()
+    private void OnDisable()
     {
-        _playerInputs.Gameplay.MedKitPerformed.performed -= OnMedKitPerformed;
-        _playerInputs.Gameplay.JumpIsPressed.performed -= OnJumpPressed;
-        _playerInputs.Gameplay.JumpIsReleased.performed -= OnJumpReleased;
-        _playerInputs.Gameplay.RollPerformed.performed -= OnRollPerformed;
+        _playerInputs.PlayerActions.MedKitPerformed.performed -= OnMedKitPerformed;
+        _playerInputs.PlayerActions.JumpIsPressed.performed -= OnJumpPressed;
+        _playerInputs.PlayerActions.JumpIsReleased.performed -= OnJumpReleased;
+        _playerInputs.PlayerActions.RollPerformed.performed -= OnRollPerformed;
+        _playerInputs.PlayerActions.AttackPressed.performed -= OnAttackPerforrmed;
     }
 }

@@ -4,7 +4,8 @@ using System.Collections.Generic;
 
 public class EventBus
 {
-    private Dictionary<string, List<object>> _signalCallbacks = new Dictionary<string, List<object>>();
+    public readonly Dictionary<string, List<object>> _signalCallbacks = new Dictionary<string, List<object>>();
+    
     public void Subscribe<T>(Action<T> callback)
     {
         string key = typeof(T).Name;
@@ -22,11 +23,11 @@ public class EventBus
         else
             Debug.LogError($"ѕопытка описатьс€ от {typeof(T).Name}, который не зарегистрирован!");
     }
-    
+
     public void Invoke<T>(T signal)
     {
         string key = typeof(T).Name;
-        if(_signalCallbacks.ContainsKey(key))
+        if (_signalCallbacks.ContainsKey(key))
         {
             foreach (var obj in _signalCallbacks[key])
             {
