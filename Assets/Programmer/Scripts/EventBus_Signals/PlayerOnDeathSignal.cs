@@ -1,3 +1,1 @@
-﻿class PlayerOnDeathSignal
-{
-}
+﻿class PlayerOnDeathSignal { }

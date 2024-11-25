@@ -1,7 +1,6 @@
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
 using FMODUnity;
-using System;
 
 public enum FMOD_SoundBanks
 {

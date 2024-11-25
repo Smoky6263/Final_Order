@@ -1,4 +1,1 @@
-public class PickUpMedKitSignal
-{
-
-}
+public class PickUpMedKitSignal { }

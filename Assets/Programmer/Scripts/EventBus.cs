@@ -2,7 +2,6 @@ using System;
 using UnityEngine;
 using System.Collections.Generic;
 
-[System.Serializable]
 public class EventBus
 {
     public readonly Dictionary<string, List<object>> _signalCallbacks = new Dictionary<string, List<object>>();

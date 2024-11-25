@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
+[RequireComponent(typeof(EnemyPauseHandler))]
+
 public class EnemyWithShieldFSM : StateManager<EnemyWithShieldFSM.EnemyWithShieldStates>, IEnemy
 {
     [SerializeField] private EventBusManager _eventBus;
+    [SerializeField] private PauseManager _pauseManager;
     [SerializeField] private VFXManager _vFXManager;
     [SerializeField] private EnemyWithShieldAnimatorController _animator;
     [SerializeField] private SpriteRenderer _spriteRenderer;
@@ -31,6 +34,7 @@ public class EnemyWithShieldFSM : StateManager<EnemyWithShieldFSM.EnemyWithShiel
 
     public Rigidbody2D RigidBody2D { get { return _rigidBody2D; } }
     public VFXManager VFXManager { get { return _vFXManager; } }
+    public PauseManager PauseManager { get { return _pauseManager; } }
     public EnemyHealth HealthManager { get { return _healthManager; } }
     public EnemyWithShieldAnimatorController AnimatorController { get { return _animator; } }
     public float IdleTime { get { return _idleTime; } }
@@ -78,6 +82,8 @@ public class EnemyWithShieldFSM : StateManager<EnemyWithShieldFSM.EnemyWithShiel
     private CancellationTokenSource _onDestroyToken;
     public async UniTask ChangeMaterial()
     {
+        if (OnPause) return;
+
         _onDestroyToken = new CancellationTokenSource();
 
         Material currentMaterial = _spriteRenderer.material;

@@ -4,11 +4,11 @@ public class EnemyWithShieldAnimatorController : MonoBehaviour
 {
     private Animator animator;
 
-    private readonly string _idle = "Idle";
-    private readonly string _walk = "Walk";
+    private readonly string Idle = "MobWithShield_Idle";
+    private readonly string Walk = "MobWithShield_Walk";
 
     private void Awake() => animator = GetComponent<Animator>();
 
-    public void DoIdle() => animator.SetTrigger(_idle);
-    public void DoWalk() => animator.SetTrigger(_walk);
+    public void DoIdle() => animator.Play(Idle);
+    public void DoWalk() => animator.Play(Walk);
 }

@@ -2,10 +2,17 @@ using UnityEngine;
 
 public class MainCanvasManager : MonoBehaviour
 {
-    [SerializeField] private VFXPrefabs _prefabs;
+    [SerializeField] private EventBusManager _eventBusManager;
 
-    public void SpawnUIElement(GameObject gameObject)
+    public EventBus _eventBus { get; private set; }
+
+    private void Awake()
     {
-        Instantiate(gameObject, transform);
+        _eventBus = GetComponent<EventBusManager>().EventBus;
+    }
+
+    public void SpawnUIElement(GameObject uiElement)
+    {
+        Instantiate(uiElement, transform);
     }
 }
