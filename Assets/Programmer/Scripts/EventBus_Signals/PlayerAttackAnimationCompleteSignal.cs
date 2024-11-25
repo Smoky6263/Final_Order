@@ -1,3 +1,1 @@
-﻿class PlayerAttackAnimationCompleteSignal
-{
-}
+﻿class PlayerAttackAnimationCompleteSignal { }

@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BreakebleWallController : MonoBehaviour
 {
@@ -48,8 +47,5 @@ public class BreakebleWallController : MonoBehaviour
         yield break;
     }
 
-    private void OnDestroy()
-    {
-        StopAllCoroutines();
-    }
+    private void OnDestroy() => StopAllCoroutines();
 }

@@ -3,6 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(PlayerAnimatorController))]
 [RequireComponent(typeof(CharacterController))]
+[RequireComponent (typeof(PlayerPauseHandler))]
 public class PlayerStateMachine : MonoBehaviour, IControlable
 {
     private EventBus _eventBus;
@@ -13,10 +14,13 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     private PlayerAnimatorController _animatorController;
     private PlayerBaseState _currentState;
     private PlayerStateFactory _states;
+
+    public bool OnPause { get; set; } = false;
     public PlayerBaseState CurrentState { get { return _currentState; } set { _currentState = value; } }
 
     [SerializeField] private EventBusManager _gameManager;
     [SerializeField] private VFXManager _vfxManager;
+    [SerializeField] private PauseManager _pauseManager;
     [SerializeField] private PlayerStats _moveStats;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Collider2D _bodyColl;
@@ -79,15 +83,16 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     #endregion
 
     #region Player Properties
-    public PlayerAnimatorController AnimatorController { get { return _animatorController; } }
     public SpriteRenderer SpriteRenderer { get { return _spriteRenderer; } }
-    public PlayerStats MoveStats { get { return _moveStats; } }
+    public EventBus EventBus { get { return _eventBus; } }
     public VFXManager VFXManager { get { return _vfxManager; } }
+    public PauseManager PauseManager { get { return _pauseManager; } }
+    public PlayerStats MoveStats { get { return _moveStats; } }
     public CharacterController CharacterController{ get { return _characterController; } }
+    public PlayerAnimatorController AnimatorController { get { return _animatorController; } }
     public Collider2D BodyColl { get { return _bodyColl; } }
     public Collider2D FeetColl { get { return _feetColl; } }
     public Rigidbody2D RigidBody { get { return _rigidBody; } }
-    public EventBus EventBus { get { return _eventBus; } }
     public PlayerHealth PayerHealth { get { return _playerHealth; } }
     public PlayerWeaponController WeaponController { get { return _weaponController; } }
     public int DamageDelayTime { get { return _damageDelayTime; } }
@@ -166,11 +171,15 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
 
     private void Update()
     {
+        if (OnPause) return;
+
         IsGroundedCheck();
     }
 
     private void FixedUpdate()
     {
+        if (OnPause) return;
+
         _currentState.UpdateStates();
     }
 
@@ -238,6 +247,8 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (OnPause) return;
+
         if (collision.tag == "Stairs")
             _onStairs = true;
 
@@ -245,6 +256,8 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (OnPause) return;
+
         if (collision.tag == "Stairs")
             _onStairs = false;
 
@@ -252,12 +265,16 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.GetComponent<PlatformEffector2D>() != null)
+        if (OnPause) return;
+
+        if (collision.gameObject.GetComponent<PlatformEffector2D>() != null)
             _currentPTP = collision.gameObject;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        if (OnPause) return;
+
         if (collision.gameObject.GetComponent<PlatformEffector2D>() != null)
             _currentPTP = null;
     }

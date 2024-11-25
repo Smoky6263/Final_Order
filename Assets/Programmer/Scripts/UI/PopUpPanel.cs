@@ -1,15 +1,15 @@
 using UnityEngine.UI;
 using UnityEngine;
 using DG.Tweening;
-public class LevelCompleteUI : MonoBehaviour
+public class PopUpPanel : MonoBehaviour
 {
     [Header("Настройки продолжительности анимации")]
-    [SerializeField, Range(0f, 20f)] private float _duration;
-    [SerializeField, Range(0f, 2f)] private float _overshoot;
+    [SerializeField, Range(0f, 20f)] private float _duration = 1f;
+    [SerializeField, Range(0f, 2f)] private float _overshoot = 2f;
 
     [Header("Бэкгроунд поля")]
     [SerializeField] private Image _bg;
-    [SerializeField] private float _bgTargetAlpha;
+    [SerializeField] private float _bgTargetAlpha = 192f;
 
     [Header("PopUp поля")]
     [SerializeField] private Image _popUpWindow;
@@ -17,7 +17,7 @@ public class LevelCompleteUI : MonoBehaviour
     [SerializeField] private Vector3 _popUpWindowTargetPosition;
 
     [Header("PopUp поля")]
-    [SerializeField] private Button _nextLevelButton;
+    [SerializeField] private Button _button;
 
     private void Awake()
     {
@@ -27,18 +27,21 @@ public class LevelCompleteUI : MonoBehaviour
         _bgTargetAlpha /= 255f;
 
         _popUpWindow.transform.localPosition = _popUpWindowStartPosition;
-        _nextLevelButton.interactable = false;
+        _button.interactable = false;
     }
 
     private void OnEnable()
     {
         _bg.DOFade(_bgTargetAlpha, _duration).SetEase(Ease.OutCubic);
-        _popUpWindow.rectTransform.DOLocalMove(_popUpWindowTargetPosition, _duration).SetEase(Ease.OutBack, _overshoot).OnComplete( () => _nextLevelButton.interactable = true);
+        _popUpWindow.rectTransform.DOLocalMove(_popUpWindowTargetPosition, _duration).SetEase(Ease.OutBack, _overshoot).OnComplete( () => _button.interactable = true);
     }
 
     public void OnExit()
     {
         _bg.DOFade(0, _duration).SetEase(Ease.InExpo);
-        _popUpWindow.rectTransform.DOLocalMove(_popUpWindowStartPosition, _duration).SetEase(Ease.InBack, _overshoot).OnComplete( () => Destroy(gameObject));
+        _popUpWindow.rectTransform.DOLocalMove(_popUpWindowStartPosition, _duration).SetEase(Ease.InBack, _overshoot).OnComplete( () =>
+        {
+            Destroy(gameObject);
+        });
     }
 }

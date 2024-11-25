@@ -24,7 +24,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     ""name"": ""PlayerInputs"",
     ""maps"": [
         {
-            ""name"": ""Gameplay"",
+            ""name"": ""PlayerActions"",
             ""id"": ""bfef8e77-e8fe-4186-956c-73d51172705b"",
             ""actions"": [
                 {
@@ -139,59 +139,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""2D Vector GamePad"",
-                    ""id"": ""a67cc5d7-29b2-4d25-93b6-8d7c5814c2e9"",
-                    ""path"": ""2DVector(mode=1)"",
+                    ""name"": ""2D Vector Gamepad"",
+                    ""id"": ""95300e84-4630-43d5-b154-9d04b533ff08"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""31a2bc5d-050e-4cdf-a201-ec59343061f0"",
-                    ""path"": ""<Gamepad>/leftStick/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""e210f4b6-6da9-45b6-aa61-c398f4dcc878"",
-                    ""path"": ""<Gamepad>/leftStick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""994d50e6-3c63-42ba-a573-73ea0e8f9f8b"",
-                    ""path"": ""<Gamepad>/leftStick/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""024fcb1a-ddd0-4fdd-ad1c-5ae7f227e218"",
-                    ""path"": ""<Gamepad>/leftStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
@@ -293,18 +249,49 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""UIActions"",
+            ""id"": ""c03e7971-0a23-416b-a539-281a650c1012"",
+            ""actions"": [
+                {
+                    ""name"": ""CallPauseMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""67a6b83e-5268-4615-88f7-c765341715ad"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""e81ca76b-8075-4159-9974-433bdaf8618a"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CallPauseMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
 }");
-        // Gameplay
-        m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
-        m_Gameplay_Movement = m_Gameplay.FindAction("Movement", throwIfNotFound: true);
-        m_Gameplay_JumpIsPressed = m_Gameplay.FindAction("JumpIsPressed", throwIfNotFound: true);
-        m_Gameplay_JumpIsReleased = m_Gameplay.FindAction("JumpIsReleased", throwIfNotFound: true);
-        m_Gameplay_MedKitPerformed = m_Gameplay.FindAction("MedKitPerformed", throwIfNotFound: true);
-        m_Gameplay_RollPerformed = m_Gameplay.FindAction("RollPerformed", throwIfNotFound: true);
-        m_Gameplay_AttackPressed = m_Gameplay.FindAction("AttackPressed", throwIfNotFound: true);
+        // PlayerActions
+        m_PlayerActions = asset.FindActionMap("PlayerActions", throwIfNotFound: true);
+        m_PlayerActions_Movement = m_PlayerActions.FindAction("Movement", throwIfNotFound: true);
+        m_PlayerActions_JumpIsPressed = m_PlayerActions.FindAction("JumpIsPressed", throwIfNotFound: true);
+        m_PlayerActions_JumpIsReleased = m_PlayerActions.FindAction("JumpIsReleased", throwIfNotFound: true);
+        m_PlayerActions_MedKitPerformed = m_PlayerActions.FindAction("MedKitPerformed", throwIfNotFound: true);
+        m_PlayerActions_RollPerformed = m_PlayerActions.FindAction("RollPerformed", throwIfNotFound: true);
+        m_PlayerActions_AttackPressed = m_PlayerActions.FindAction("AttackPressed", throwIfNotFound: true);
+        // UIActions
+        m_UIActions = asset.FindActionMap("UIActions", throwIfNotFound: true);
+        m_UIActions_CallPauseMenu = m_UIActions.FindAction("CallPauseMenu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -363,34 +350,34 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // Gameplay
-    private readonly InputActionMap m_Gameplay;
-    private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
-    private readonly InputAction m_Gameplay_Movement;
-    private readonly InputAction m_Gameplay_JumpIsPressed;
-    private readonly InputAction m_Gameplay_JumpIsReleased;
-    private readonly InputAction m_Gameplay_MedKitPerformed;
-    private readonly InputAction m_Gameplay_RollPerformed;
-    private readonly InputAction m_Gameplay_AttackPressed;
-    public struct GameplayActions
+    // PlayerActions
+    private readonly InputActionMap m_PlayerActions;
+    private List<IPlayerActionsActions> m_PlayerActionsActionsCallbackInterfaces = new List<IPlayerActionsActions>();
+    private readonly InputAction m_PlayerActions_Movement;
+    private readonly InputAction m_PlayerActions_JumpIsPressed;
+    private readonly InputAction m_PlayerActions_JumpIsReleased;
+    private readonly InputAction m_PlayerActions_MedKitPerformed;
+    private readonly InputAction m_PlayerActions_RollPerformed;
+    private readonly InputAction m_PlayerActions_AttackPressed;
+    public struct PlayerActionsActions
     {
         private @PlayerInputs m_Wrapper;
-        public GameplayActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Movement => m_Wrapper.m_Gameplay_Movement;
-        public InputAction @JumpIsPressed => m_Wrapper.m_Gameplay_JumpIsPressed;
-        public InputAction @JumpIsReleased => m_Wrapper.m_Gameplay_JumpIsReleased;
-        public InputAction @MedKitPerformed => m_Wrapper.m_Gameplay_MedKitPerformed;
-        public InputAction @RollPerformed => m_Wrapper.m_Gameplay_RollPerformed;
-        public InputAction @AttackPressed => m_Wrapper.m_Gameplay_AttackPressed;
-        public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
+        public PlayerActionsActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_PlayerActions_Movement;
+        public InputAction @JumpIsPressed => m_Wrapper.m_PlayerActions_JumpIsPressed;
+        public InputAction @JumpIsReleased => m_Wrapper.m_PlayerActions_JumpIsReleased;
+        public InputAction @MedKitPerformed => m_Wrapper.m_PlayerActions_MedKitPerformed;
+        public InputAction @RollPerformed => m_Wrapper.m_PlayerActions_RollPerformed;
+        public InputAction @AttackPressed => m_Wrapper.m_PlayerActions_AttackPressed;
+        public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(GameplayActions set) { return set.Get(); }
-        public void AddCallbacks(IGameplayActions instance)
+        public static implicit operator InputActionMap(PlayerActionsActions set) { return set.Get(); }
+        public void AddCallbacks(IPlayerActionsActions instance)
         {
-            if (instance == null || m_Wrapper.m_GameplayActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_GameplayActionsCallbackInterfaces.Add(instance);
+            if (instance == null || m_Wrapper.m_PlayerActionsActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PlayerActionsActionsCallbackInterfaces.Add(instance);
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
@@ -411,7 +398,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @AttackPressed.canceled += instance.OnAttackPressed;
         }
 
-        private void UnregisterCallbacks(IGameplayActions instance)
+        private void UnregisterCallbacks(IPlayerActionsActions instance)
         {
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
@@ -433,22 +420,68 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @AttackPressed.canceled -= instance.OnAttackPressed;
         }
 
-        public void RemoveCallbacks(IGameplayActions instance)
+        public void RemoveCallbacks(IPlayerActionsActions instance)
         {
-            if (m_Wrapper.m_GameplayActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_PlayerActionsActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
-        public void SetCallbacks(IGameplayActions instance)
+        public void SetCallbacks(IPlayerActionsActions instance)
         {
-            foreach (var item in m_Wrapper.m_GameplayActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_PlayerActionsActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_GameplayActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_PlayerActionsActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
-    public GameplayActions @Gameplay => new GameplayActions(this);
-    public interface IGameplayActions
+    public PlayerActionsActions @PlayerActions => new PlayerActionsActions(this);
+
+    // UIActions
+    private readonly InputActionMap m_UIActions;
+    private List<IUIActionsActions> m_UIActionsActionsCallbackInterfaces = new List<IUIActionsActions>();
+    private readonly InputAction m_UIActions_CallPauseMenu;
+    public struct UIActionsActions
+    {
+        private @PlayerInputs m_Wrapper;
+        public UIActionsActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @CallPauseMenu => m_Wrapper.m_UIActions_CallPauseMenu;
+        public InputActionMap Get() { return m_Wrapper.m_UIActions; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(UIActionsActions set) { return set.Get(); }
+        public void AddCallbacks(IUIActionsActions instance)
+        {
+            if (instance == null || m_Wrapper.m_UIActionsActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_UIActionsActionsCallbackInterfaces.Add(instance);
+            @CallPauseMenu.started += instance.OnCallPauseMenu;
+            @CallPauseMenu.performed += instance.OnCallPauseMenu;
+            @CallPauseMenu.canceled += instance.OnCallPauseMenu;
+        }
+
+        private void UnregisterCallbacks(IUIActionsActions instance)
+        {
+            @CallPauseMenu.started -= instance.OnCallPauseMenu;
+            @CallPauseMenu.performed -= instance.OnCallPauseMenu;
+            @CallPauseMenu.canceled -= instance.OnCallPauseMenu;
+        }
+
+        public void RemoveCallbacks(IUIActionsActions instance)
+        {
+            if (m_Wrapper.m_UIActionsActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IUIActionsActions instance)
+        {
+            foreach (var item in m_Wrapper.m_UIActionsActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_UIActionsActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public UIActionsActions @UIActions => new UIActionsActions(this);
+    public interface IPlayerActionsActions
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnJumpIsPressed(InputAction.CallbackContext context);
@@ -456,5 +489,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnMedKitPerformed(InputAction.CallbackContext context);
         void OnRollPerformed(InputAction.CallbackContext context);
         void OnAttackPressed(InputAction.CallbackContext context);
+    }
+    public interface IUIActionsActions
+    {
+        void OnCallPauseMenu(InputAction.CallbackContext context);
     }
 }

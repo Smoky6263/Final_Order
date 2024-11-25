@@ -133,6 +133,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LevelCompleteUI, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3154139330417771064
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,7 +466,7 @@ MonoBehaviour:
   _popUpWindow: {fileID: 7223872258436122558}
   _popUpWindowStartPosition: {x: 0, y: 800, z: 0}
   _popUpWindowTargetPosition: {x: 0, y: 0, z: 0}
-  _nextLevelButton: {fileID: 5353897741105136016}
+  _button: {fileID: 5353897741105136016}
 --- !u!1 &8652216277830865126
 GameObject:
   m_ObjectHideFlags: 0

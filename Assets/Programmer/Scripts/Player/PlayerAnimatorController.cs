@@ -4,6 +4,8 @@ public class PlayerAnimatorController : MonoBehaviour
 {
     [SerializeField] private Animator _torsoAnimator, _legsAimator;
 
+    private EventBus _eventBus;
+
     public Animator TorsoAnimator { get { return _torsoAnimator; } }
     public Animator LegsAnimator { get { return _legsAimator; } }
 
@@ -37,6 +39,8 @@ public class PlayerAnimatorController : MonoBehaviour
 
     private void Awake()
     {
+        _eventBus = GetComponent<PlayerStateMachine>().EventBus;
+
         TorsoAttackHash = Animator.StringToHash(TorsoAttack);
         TorsoCrouchHash = Animator.StringToHash(TorsoCrouch);
         TorsoIdleHash = Animator.StringToHash(TorsoIdle);
@@ -101,5 +105,14 @@ public class PlayerAnimatorController : MonoBehaviour
         return animator.GetCurrentAnimatorStateInfo(0).shortNameHash;
     }
 
-
+    public void SetPlay()
+    {
+        TorsoAnimator.speed = 1f;
+        LegsAnimator.speed = 1f;
+    }
+    public void SetPause()
+    {
+        TorsoAnimator.speed = 0f;
+        LegsAnimator.speed = 0f;
+    }
 }

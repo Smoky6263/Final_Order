@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5574061362997662208}
   - component: {fileID: 4370850313513062061}
   - component: {fileID: 6507117876814823648}
+  - component: {fileID: 5298877315070652080}
   m_Layer: 5
   m_Name: MainCanvas
   m_TagString: Untagged
@@ -58,7 +59,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -103,6 +104,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5298877315070652080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2562582799355116454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f30aa56c3cd494585743ef13afbbd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _eventBusManager: {fileID: 0}
 --- !u!1 &4552275387149467321
 GameObject:
   m_ObjectHideFlags: 0
