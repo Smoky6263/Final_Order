@@ -3,17 +3,14 @@ using UnityEngine;
 
 public class MedKitsUI : MonoBehaviour
 {
-    [SerializeField] private EventBusManager _eventBusManager;
     [SerializeField] private GameObject _healPrefab;
 
     private EventBus _eventBus;
 
-    private void Awake()
+    private void Start()
     {
-        if (_eventBusManager == null)
-            Debug.LogWarning($"Ты забыл прокинуть ссылки в инспекторе на обьект {gameObject.name}!");
+        _eventBus = GetComponentInParent<MainCanvasManager>().EventBus;
 
-        _eventBus = _eventBusManager.EventBus;
         _eventBus.Subscribe<PickUpMedKitSignal>(OnMedKitPickUp);
         _eventBus.Subscribe<MedKitPerformedSignal>(OnMedkitPerformed);
     }
