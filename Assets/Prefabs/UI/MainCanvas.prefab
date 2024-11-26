@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventBusManager: {fileID: 0}
+  _nextLevel: 2
 --- !u!1 &4552275387149467321
 GameObject:
   m_ObjectHideFlags: 0

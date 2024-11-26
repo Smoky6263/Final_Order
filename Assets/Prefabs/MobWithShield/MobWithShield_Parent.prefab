@@ -120,7 +120,7 @@ Transform:
   m_GameObject: {fileID: 5532072074659055911}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: 0}
+  m_LocalPosition: {x: 2, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -143,7 +143,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: 9a85e00e15ee7fd4abde0ed14cdf57cb, type: 2}
+  m_Material: {fileID: 6200000, guid: 29e5c6b8f1771cb4bb1541da4a52e6e6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -212,8 +212,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventBus: {fileID: 0}
-  _pauseManager: {fileID: 0}
-  _vFXManager: {fileID: 0}
   _animator: {fileID: 1357183335486607548}
   _spriteRenderer: {fileID: 839385377649954317}
   _maxHealth: 100
