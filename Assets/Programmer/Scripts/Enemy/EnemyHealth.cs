@@ -13,7 +13,8 @@ public class EnemyHealth
     public void GetDamage(float value)
     {
         Context.Health -= value;
-        Context.VFXManager.SpawnBloodParticles(Context.GetPosition());
+        Context.VFXManager.SpawnBloodParticles(Context.GetPosition(), Context.VFXManager.EnemyBlood);
+        Context.SoundsController.EnemyShieldGetDamage();
         Context.ChangeMaterial();
 
         if (Context.Health <= 0)

@@ -35,6 +35,8 @@ public class PlayerGroundedState : PlayerBaseState
 
         if (Context.OnCrouch)
             Context.OnCrouch = false;
+
+        Context.SoundsController.PlayerJumpLand();
     }
 
     public override void ExitState()

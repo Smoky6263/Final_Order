@@ -14,11 +14,14 @@ public class SoundsController : MonoBehaviour
     public void PlayerFootStep() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.PlayerFootStep, transform.position);
     
     public void PlayerGuitarSwing() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.PlayerGuitarSwing, transform.position);
+
+    public void PlayerOnStairs() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.PlayerOnStairs, transform.position);
+
     #endregion
 
     #region Enemy Sounds
     public void EnemyShieldFootSteps() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.EnemyShieldFootSteps, transform.position);
-    public void EnemyShieldPunch() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.EnemyShieldPunch, transform.position);
+    public void EnemyShieldGetDamage() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.EnemyShieldGetDamage, transform.position);
     #endregion
 
     #region Fountain Sounds

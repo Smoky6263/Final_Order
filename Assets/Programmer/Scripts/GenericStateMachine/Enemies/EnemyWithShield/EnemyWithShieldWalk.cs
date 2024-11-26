@@ -74,15 +74,18 @@ public class EnemyWithShieldWalk : BaseState<EnemyWithShieldFSM.EnemyWithShieldS
     private void Walk()
     {
         Context.AnimatorController.DoWalk();
-        
+        Vector2 movementVelocity;
+
         switch (_onRoute)
         {
             case OnRoute.A:
-                Context.RigidBody2D.velocity = new Vector2(-Context.PatrollingSpeed, Context.RigidBody2D.velocity.y);
+                movementVelocity = new Vector2(-Context.PatrollingSpeed, Context.RigidBody2D.velocity.y);
+                Context.RigidBody2D.velocity = Vector2.Lerp(Context.RigidBody2D.velocity, movementVelocity, 0.2f);
                 break;
 
             case OnRoute.B:
-                Context.RigidBody2D.velocity = new Vector2(Context.PatrollingSpeed, Context.RigidBody2D.velocity.y);
+                movementVelocity = new Vector2(Context.PatrollingSpeed, Context.RigidBody2D.velocity.y);
+                Context.RigidBody2D.velocity = Vector2.Lerp(Context.RigidBody2D.velocity, movementVelocity, 0.2f);
                 break;
 
             default:

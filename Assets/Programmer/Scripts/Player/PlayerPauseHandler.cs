@@ -9,13 +9,10 @@ public class PlayerPauseHandler : MonoBehaviour, IPauseHandler
 
     private PauseManager _pauseManager;
 
-
     public void Init(PauseManager pauseManager)
     {
-        _pauseManager = pauseManager;
-        _pauseManager.Register(this);
+        
     }
-
 
     private void Start()
     {
@@ -47,4 +44,6 @@ public class PlayerPauseHandler : MonoBehaviour, IPauseHandler
     public void OnDestroy() => Unregister();
 
     public void Unregister() => _pauseManager.Unregister(this);
+
+    
 }

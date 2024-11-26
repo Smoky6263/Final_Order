@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5282596184545010400}
   - component: {fileID: 5353897741105136016}
   m_Layer: 5
-  m_Name: ExitButton
+  m_Name: CloseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,25 +121,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7927125065640622237}
-        m_TargetAssemblyTypeName: LevelCompleteUI, Assembly-CSharp
+      - m_Target: {fileID: 2444276439076172563}
+        m_TargetAssemblyTypeName: PopUpPanel, Assembly-CSharp
         m_MethodName: OnExit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LevelCompleteUI, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -381,7 +369,7 @@ GameObject:
   - component: {fileID: 1904052706424768956}
   - component: {fileID: 5215183500798371169}
   - component: {fileID: 4462199232917313703}
-  - component: {fileID: 7927125065640622237}
+  - component: {fileID: 2444276439076172563}
   m_Layer: 5
   m_Name: PopUpDodgeTutorial
   m_TagString: Untagged
@@ -447,7 +435,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7927125065640622237
+--- !u!114 &2444276439076172563
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -456,7 +444,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6617049775943252724}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49b8d5f65df9a424389f2753c918c7c3, type: 3}
+  m_Script: {fileID: 11500000, guid: b5889eda33e551945a52c8b4b60eb59d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _duration: 1

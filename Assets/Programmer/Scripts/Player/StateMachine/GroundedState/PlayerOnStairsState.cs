@@ -34,7 +34,7 @@ public class PlayerOnStairsState : PlayerBaseState
     {
         InitializeSubState();
 
-        Context.AnimatorController.DoJump();
+        Context.AnimatorController.DoStairs();
         Context.BodyColl.enabled = true;
 
         if (Context.OnCrouch)
@@ -47,7 +47,7 @@ public class PlayerOnStairsState : PlayerBaseState
     public override void ExitState()
     {
         Context.AttackInput = false;
-
+        Context.AnimatorController.LegsAnimator.speed = 1f;
     }
 
     public override void InitializeSubState()
@@ -68,6 +68,8 @@ public class PlayerOnStairsState : PlayerBaseState
 
     private void Move()
     {
+        Context.AnimatorController.OnStairs(Context.MovementInput.magnitude);
+
         Vector2 targetVelocity = Vector2.zero;
         targetVelocity = new Vector2(Context.MovementInput.x, Context.MovementInput.y) * Context.MoveStats.MaxRunSpeed;
 

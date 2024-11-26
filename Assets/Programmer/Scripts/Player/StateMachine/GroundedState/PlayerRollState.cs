@@ -12,18 +12,41 @@ public class PlayerRollState : PlayerBaseState
 
     public override void CheckSwitchStates()
     {
+        if (_elapsedTime <= 0 && (Context.IsGrounded || Context.OnStairs) && Context.BumpedHead == true)
+        {
+            Context.BodyColl.enabled = false;
+            Context.BumpedHead = true;
+            SwitchState(Factory.Crouch());
+        }
 
-        if (_elapsedTime <= 0 && Context.MovementInput.x == 0 && Context.MovementInput.y >= 0 && (Context.IsGrounded || Context.OnStairs))
+
+        if (_elapsedTime <= 0 && Context.MovementInput.x == 0 && Context.MovementInput.y >= 0 && (Context.IsGrounded || Context.OnStairs) && Context.BumpedHead == false) 
+        {
+            Context.BodyColl.enabled = true;
+            Context.BumpedHead = false;
             SwitchState(Factory.Idle());
+        }
 
-        if(_elapsedTime <= 0 &&  Context.MovementInput.x != 0 && (Context.IsGrounded || Context.OnStairs))
+        if (_elapsedTime <= 0 && Context.MovementInput.x != 0 && (Context.IsGrounded || Context.OnStairs) && Context.BumpedHead == false)
+        {
+            Context.BodyColl.enabled = true;
+            Context.BumpedHead = false;
             SwitchState(Factory.Run());
+        }
 
         if (_elapsedTime <= 0 && Context.MovementInput.x == 0 && Context.MovementInput.y < 0 && (Context.IsGrounded || Context.OnStairs))
+        {
+            Context.BodyColl.enabled = true;
+            Context.BumpedHead = false;
             SwitchState(Factory.Crouch());
+        }
 
-        if (_elapsedTime <= 0 &&  Context.IsGrounded == false && Context.OnStairs == false)
+        if (_elapsedTime <= 0 && Context.IsGrounded == false && Context.OnStairs == false)
+        {
+            Context.BodyColl.enabled = true;
+            Context.BumpedHead = false;
             SwitchState(Factory.Fall());
+        }
     }
 
     public override void EnterState()
@@ -37,7 +60,6 @@ public class PlayerRollState : PlayerBaseState
 
     public override void ExitState()
     {
-        Context.BodyColl.enabled = true;
         Context.MovementVelocity = new Vector2(0f, Context.MovementVelocity.y);
         Context.RollInput = false;
     }
@@ -50,6 +72,7 @@ public class PlayerRollState : PlayerBaseState
     public override void UpdateState()
     {
         DoRolll();
+        BumpHead();
         CheckSwitchStates();
     }
 
@@ -79,6 +102,18 @@ public class PlayerRollState : PlayerBaseState
 
         Context.RigidBody.velocity = new Vector2(rollSpeed, Context.MovementVelocity.y);
 
+    }
+    private void BumpHead()
+    {
+        Vector2 boxCastOrigin = new Vector2(Context.FeetColl.bounds.center.x, Context.BodyColl.bounds.max.y);
+        Vector2 boxCastSize = new Vector2(Context.FeetColl.bounds.size.x * Context.MoveStats.HeadWidth, Context.MoveStats.HeadDetectionRayLength);
+
+        Context.HeadHit = Physics2D.BoxCast(boxCastOrigin, boxCastSize, 0f, Vector2.up, Context.MoveStats.HeadDetectionRayLength, Context.MoveStats.HeadBumpSurfaceLayer);
+
+        if (Context.HeadHit.collider != null)
+            Context.BumpedHead = true;
+
+        else { Context.BumpedHead = false; }
     }
 
     public override void PlayerOnAttackAnimationComplete()
