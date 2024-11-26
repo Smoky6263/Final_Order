@@ -27,4 +27,9 @@ public class SoundsController : MonoBehaviour
     #region Fountain Sounds
     public void FountainFlow() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.FountainFlow, transform.position);
     #endregion
+
+    #region MedKit Sounds
+    public void MedkKitPickUp() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.MedKitPickUp, transform.position);
+    public void MedkKitUse() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.MedKitUse, transform.position);
+    #endregion
 }

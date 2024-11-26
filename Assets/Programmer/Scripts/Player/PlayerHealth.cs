@@ -1,5 +1,7 @@
 using Cysharp.Threading.Tasks;
+using FMODUnity;
 using UnityEditor.Rendering.LookDev;
+using static UnityEngine.Rendering.DebugUI;
 public class PlayerHealth : IPlayerHealth
 {
     public PlayerHealth(PlayerStateMachine stateMachine)
@@ -25,6 +27,7 @@ public class PlayerHealth : IPlayerHealth
 
         OnDamageDelay = true;
         _playerData._health -= value;
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Health", _playerData._health);
         _playerData.VFXManager.SpawnBloodParticles(_playerData.transform.position, _playerData.VFXManager.PlayerBlood);
         if(_playerData._health <= 0)
         {
@@ -47,10 +50,16 @@ public class PlayerHealth : IPlayerHealth
         if(_medKitsCount > 0 && _playerData._health < _maxHealth)
         {
             _playerData._health = _maxHealth;
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Health", _playerData._health);
+            RuntimeManager.PlayOneShot("event:/SFX/MedKit Use");
             _eventBus.Invoke(new PlayerHealthChangeSignal(_playerData._health));
             _eventBus.Invoke(new MedKitPerformedSignal());
             _medKitsCount--;
         }
     }
-    public void OnMedKitPickUp() => _medKitsCount++;
+    public void OnMedKitPickUp()
+    {
+        RuntimeManager.PlayOneShot("event:/SFX/MedKit PickUp");
+        _medKitsCount++;
+    }
 }
