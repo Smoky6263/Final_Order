@@ -274,6 +274,8 @@ GameObject:
   - component: {fileID: 2879987066415813741}
   - component: {fileID: 3235927246549236186}
   - component: {fileID: 4060814228750945820}
+  - component: {fileID: 7500453569460833323}
+  - component: {fileID: 2569100896663859361}
   m_Layer: 3
   m_Name: ProgrammerPlayer
   m_TagString: Untagged
@@ -341,6 +343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameManager: {fileID: 0}
   _vfxManager: {fileID: 0}
+  _pauseManager: {fileID: 0}
   _moveStats: {fileID: 11400000, guid: 64e7691f71b06b940a153c0aae956a2f, type: 2}
   _spriteRenderer: {fileID: 7954391848114602075}
   _bodyColl: {fileID: 1305856148158797422}
@@ -390,6 +393,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _torsoAnimator: {fileID: 3966485107059238089}
   _legsAimator: {fileID: 8568428097194674577}
+--- !u!114 &7500453569460833323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5362743383600061665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ea04165edc93a4d9c8dca920d1d73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2569100896663859361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5362743383600061665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64b8e2b107197db498eac00829c7ed9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5862789358829779379
 GameObject:
   m_ObjectHideFlags: 0
