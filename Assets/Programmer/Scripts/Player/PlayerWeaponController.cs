@@ -4,7 +4,9 @@ public class PlayerWeaponController : MonoBehaviour
 {
     [SerializeField] private PlayerStats _playerStats;
     [SerializeField] private LayerMask _enemyLayer, _breakableWallLayer;
-    
+
+    [SerializeField] private Vector2 _damageForce;
+
     [SerializeField] private Vector2 _boxSize;
     [SerializeField] private Vector3 _boxOffset;
 
@@ -14,15 +16,16 @@ public class PlayerWeaponController : MonoBehaviour
     public float Box_X_value {  get; private set; }
     public Vector3 BoxOffset { get { return _boxOffset; } set { _boxOffset = value; } }
 
-    public void Init(EventBus eventBus)
-    {
-        _eventBus = eventBus;
-    }
 
     private void Awake()
     {
         Box_X_value = _boxOffset.x;
         _damageValue = _playerStats._weaponDamage;
+    }
+
+    private void Start()
+    {
+        _eventBus = GetComponentInParent<PlayerStateMachine>().EventBus;
     }
 
     public void DoAttack()
@@ -31,7 +34,11 @@ public class PlayerWeaponController : MonoBehaviour
         Collider2D hitWall = Physics2D.OverlapBox(transform.position + _boxOffset, _boxSize, 0f, _breakableWallLayer);
 
         if (hitEnemy != null)
+        {
             hitEnemy.GetComponent<IEnemy>().HealthManager.GetDamage(_damageValue);
+            float forceDirection = hitEnemy.transform.position.x < transform.position.x ? -1f : 1f;
+            hitEnemy.GetComponent<Rigidbody2D>().AddForce(new Vector2(_damageForce.x * forceDirection, _damageForce.y), ForceMode2D.Impulse);
+        }
 
         if (hitWall != null)
             hitWall.GetComponent<BreakebleWallController>().GetDamage(_damageValue);

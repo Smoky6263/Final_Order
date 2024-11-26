@@ -1,6 +1,6 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class PauseManager : MonoBehaviour
 {
@@ -21,7 +21,20 @@ public class PauseManager : MonoBehaviour
         _inputs.Enable();
     }
 
-    public void OnPauseEvent(OnPauseEventSignal signal) => SetPause();
+    public void OnPauseEvent(OnPauseEventSignal signal)
+    {
+        if (signal.OnPopUpPause)
+        {
+            _inputs.Disable();
+            SetPause();
+        }
+        else
+        {
+            _inputs.Enable();
+            SetPlay();
+        }
+
+    }
 
     private void OnPausePress(InputAction.CallbackContext context)
     {

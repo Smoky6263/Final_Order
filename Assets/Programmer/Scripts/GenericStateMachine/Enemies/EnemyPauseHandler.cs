@@ -1,18 +1,16 @@
 ﻿using UnityEngine;
-public class EnemyPauseHandler: MonoBehaviour, IPauseHandler
+public class EnemyPauseHandler : MonoBehaviour, IPauseHandler
 {
     private Rigidbody2D _rigidbody2D;
     private EnemyDamageTrigger _damageTrigger;
     private Animator _animator;
     private PauseManager _pauseManager;
     private IEnemy _enemy;
-
+    
     public void Init(PauseManager pauseManager)
     {
-        _pauseManager = pauseManager;
-        _pauseManager.Register(this);
+        
     }
-
 
     private void Start()
     {
@@ -47,4 +45,5 @@ public class EnemyPauseHandler: MonoBehaviour, IPauseHandler
     public void OnDestroy() => Unregister();
 
     public void Unregister() => _pauseManager.Unregister(this);
+
 }

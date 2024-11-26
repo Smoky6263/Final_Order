@@ -8,12 +8,14 @@ using UnityEngine;
 public class EnemyWithShieldFSM : StateManager<EnemyWithShieldFSM.EnemyWithShieldStates>, IEnemy
 {
     [SerializeField] private EventBusManager _eventBus;
-    [SerializeField] private PauseManager _pauseManager;
-    [SerializeField] private VFXManager _vFXManager;
     [SerializeField] private EnemyWithShieldAnimatorController _animator;
     [SerializeField] private SpriteRenderer _spriteRenderer;
 
     private EnemyWithShieldFSM Context;
+    private PauseManager _pauseManager;
+    private VFXManager _vFXManager;
+    private SoundsManager _soundsManager;
+    private SoundsController _soundsController;
     private EnemyHealth _healthManager;
     private Rigidbody2D _rigidBody2D;
 
@@ -35,6 +37,8 @@ public class EnemyWithShieldFSM : StateManager<EnemyWithShieldFSM.EnemyWithShiel
     public Rigidbody2D RigidBody2D { get { return _rigidBody2D; } }
     public VFXManager VFXManager { get { return _vFXManager; } }
     public PauseManager PauseManager { get { return _pauseManager; } }
+    public SoundsManager SoundsManager { get { return _soundsManager; } }
+    public SoundsController SoundsController { get { return _soundsController; } }
     public EnemyHealth HealthManager { get { return _healthManager; } }
     public EnemyWithShieldAnimatorController AnimatorController { get { return _animator; } }
     public float IdleTime { get { return _idleTime; } }
@@ -55,8 +59,16 @@ public class EnemyWithShieldFSM : StateManager<EnemyWithShieldFSM.EnemyWithShiel
     private void Awake()
     {
         Context = this;
+
         _healthManager = new EnemyHealth(Context);
+
         _rigidBody2D = GetComponent<Rigidbody2D>();
+        _vFXManager = _eventBus.GetComponent<VFXManager>();
+        _pauseManager = _eventBus.GetComponent<PauseManager>();
+        _soundsManager = _eventBus.GetComponent<SoundsManager>();
+
+        _soundsController = GetComponentInChildren<SoundsController>();
+
 
         States = new Dictionary<EnemyWithShieldStates, BaseState<EnemyWithShieldStates>>
         {

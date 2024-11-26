@@ -7,8 +7,11 @@ using UnityEngine;
 public class PlayerStateMachine : MonoBehaviour, IControlable
 {
     private EventBus _eventBus;
+    private VFXManager _vfxManager;
+    private PauseManager _pauseManager;
     private PlayerHealth _playerHealth;
     private CharacterController _characterController;
+    private SoundsController _soundsController;
     private Rigidbody2D _rigidBody;
 
     private PlayerAnimatorController _animatorController;
@@ -19,8 +22,6 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     public PlayerBaseState CurrentState { get { return _currentState; } set { _currentState = value; } }
 
     [SerializeField] private EventBusManager _gameManager;
-    [SerializeField] private VFXManager _vfxManager;
-    [SerializeField] private PauseManager _pauseManager;
     [SerializeField] private PlayerStats _moveStats;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Collider2D _bodyColl;
@@ -89,6 +90,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     public PauseManager PauseManager { get { return _pauseManager; } }
     public PlayerStats MoveStats { get { return _moveStats; } }
     public CharacterController CharacterController{ get { return _characterController; } }
+    public SoundsController SoundsController { get { return _soundsController; } }
     public PlayerAnimatorController AnimatorController { get { return _animatorController; } }
     public Collider2D BodyColl { get { return _bodyColl; } }
     public Collider2D FeetColl { get { return _feetColl; } }
@@ -154,11 +156,15 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         _eventBus = _gameManager.EventBus;
         _eventBus.Subscribe<PlayerOnDeathSignal>(OnDeath);
         _eventBus.Subscribe<PlayerAttackAnimationCompleteSignal>(OnPlayerAttackAnimationComplete);
-        GetComponentInChildren<PlayerWeaponController>().Init(_eventBus);
+
+        _vfxManager = _gameManager.GetComponent<VFXManager>();
+        _pauseManager = _gameManager.GetComponent<PauseManager>();
+
         _characterController = GetComponent<CharacterController>();
         _playerHealth = new PlayerHealth(this);
         _rigidBody = GetComponent<Rigidbody2D>();
         _animatorController = GetComponent<PlayerAnimatorController>();
+        _soundsController = GetComponentInChildren<SoundsController>();
         _isFacingRight = true;
     }
 
