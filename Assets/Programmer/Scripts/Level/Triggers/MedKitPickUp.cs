@@ -40,7 +40,7 @@ public class MedKitPickUp : MonoBehaviour, IPauseHandler
 
         if (collision.gameObject.tag == _playerTag)
         {
-            collision.transform.GetComponentInParent<PlayerStateMachine>().PayerHealth.OnMedKitPickUp();
+            collision.transform.GetComponentInParent<PlayerStateMachine>().PlayerHealth.OnMedKitPickUp();
             _eventBus.Invoke(new PickUpMedKitSignal());
             Destroy(this.gameObject);
         }

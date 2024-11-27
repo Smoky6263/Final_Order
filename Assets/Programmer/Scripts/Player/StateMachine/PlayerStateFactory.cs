@@ -12,6 +12,7 @@ public enum PlayerStates
     crouch,
     roll,
     onStairs,
+    onDamage,
     onDeath
 }
 
@@ -28,13 +29,14 @@ public class PlayerStateFactory
         _states[PlayerStates.grounded] = new PlayerGroundedState(_context, this);
         _states[PlayerStates.fall] = new PlayerFallState(_context, this);
         _states[PlayerStates.jump] = new PlayerJumpState(_context, this);
+        _states[PlayerStates.onStairs] = new PlayerOnStairsState(_context, this);
         _states[PlayerStates.jumpFromStairs] = new PlayerJumpFromStairsState(_context, this);
         _states[PlayerStates.idle] = new PlayerIdleState(_context, this);
         _states[PlayerStates.run] = new PlayerRunState(_context, this);
         _states[PlayerStates.fallingRun] = new PlayerFallingRunState(_context, this);
         _states[PlayerStates.crouch] = new PlayerCrouchState(_context, this);
         _states[PlayerStates.roll] = new PlayerRollState(_context, this);
-        _states[PlayerStates.onStairs] = new PlayerOnStairsState(_context, this);
+        _states[PlayerStates.onDamage] = new PlayerOnDamageState(_context, this);
         _states[PlayerStates.onDeath] = new PlayerOnDeathState(_context, this);
     }
 
@@ -42,10 +44,13 @@ public class PlayerStateFactory
     {
         return _states[PlayerStates.grounded];
     }
-
     public PlayerBaseState Jump()
     {
         return _states[PlayerStates.jump];
+    }
+    public PlayerBaseState OnStairs()
+    {
+        return _states[PlayerStates.onStairs];
     }
     public PlayerBaseState JumpFromStairs()
     {
@@ -75,9 +80,9 @@ public class PlayerStateFactory
     {
         return _states[PlayerStates.fallingRun];
     }
-    public PlayerBaseState OnStairs()
+    public PlayerBaseState OnDamage()
     {
-        return _states[PlayerStates.onStairs];
+        return _states[PlayerStates.onDamage];
     }
     public PlayerBaseState OnDeath()
     {

@@ -99,7 +99,7 @@ public class EnemyWithShieldFSM : StateManager<EnemyWithShieldFSM.EnemyWithShiel
         _onDestroyToken = new CancellationTokenSource();
 
         Material currentMaterial = _spriteRenderer.material;
-        _spriteRenderer.material = _vFXManager.GetDamageMaterial();
+        _spriteRenderer.material = _vFXManager.EnemyDamageMaterial();
 
         await UniTask.Delay(_damageFlashTime, cancellationToken: _onDestroyToken.Token); // Задержка в 1 секунду
 

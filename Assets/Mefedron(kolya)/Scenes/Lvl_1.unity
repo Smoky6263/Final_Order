@@ -12026,6 +12026,10 @@ PrefabInstance:
       value: 40000000
       objectReference: {fileID: 0}
     - target: {fileID: 9114869042965693026, guid: 75db5c22724fece4e9649ea1e7fdb12d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9114869042965693026, guid: 75db5c22724fece4e9649ea1e7fdb12d, type: 3}
       propertyPath: m_ColliderPaths.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -14775,11 +14779,11 @@ PrefabInstance:
     - target: {fileID: 8010080292317880572, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: dab564e5d96c14d4990931e54b282322, type: 2}
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 8542107105486101164, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: dab564e5d96c14d4990931e54b282322, type: 2}
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 8982720844760361791, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
       propertyPath: _soundsManager
       value: 

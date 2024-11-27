@@ -80,12 +80,12 @@ public class EnemyWithShieldWalk : BaseState<EnemyWithShieldFSM.EnemyWithShieldS
         {
             case OnRoute.A:
                 movementVelocity = new Vector2(-Context.PatrollingSpeed, Context.RigidBody2D.velocity.y);
-                Context.RigidBody2D.velocity = Vector2.Lerp(Context.RigidBody2D.velocity, movementVelocity, 0.2f);
+                Context.RigidBody2D.velocity = Vector2.Lerp(Context.RigidBody2D.velocity, movementVelocity, 0.1f);
                 break;
 
             case OnRoute.B:
                 movementVelocity = new Vector2(Context.PatrollingSpeed, Context.RigidBody2D.velocity.y);
-                Context.RigidBody2D.velocity = Vector2.Lerp(Context.RigidBody2D.velocity, movementVelocity, 0.2f);
+                Context.RigidBody2D.velocity = Vector2.Lerp(Context.RigidBody2D.velocity, movementVelocity, 0.1f);
                 break;
 
             default:

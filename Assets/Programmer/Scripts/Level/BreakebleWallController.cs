@@ -36,7 +36,7 @@ public class BreakebleWallController : MonoBehaviour
             _sprite.transform.position = originalPosition + new Vector3(offsetX, offsetY, 0f);
             elapsedTime += Time.deltaTime;
 
-            GetComponentInChildren<SpriteRenderer>().material = _vFXManager.GetDamageMaterial();
+            GetComponentInChildren<SpriteRenderer>().material = _vFXManager.EnemyDamageMaterial();
 
             yield return new WaitForFixedUpdate();
         }

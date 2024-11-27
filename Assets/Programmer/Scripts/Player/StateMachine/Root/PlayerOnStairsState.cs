@@ -12,6 +12,11 @@ public class PlayerOnStairsState : PlayerBaseState
 
     public override void CheckSwitchStates()
     {
+
+        //IF ON TOP OF STAIRS
+        if (Context.OnStairs == false && Context.MovementInput.y > 0f && Context.JumpInput == false)
+            SwitchState(Factory.JumpFromStairs());
+        
         //IF PLAYER PRESS MOVE INPUT AND EXIT FROM STAIRS
         if (Context.IsGrounded && Context.OnStairs == false)
             SwitchState(Factory.Grounded());
@@ -20,10 +25,6 @@ public class PlayerOnStairsState : PlayerBaseState
         if(Context.JumpInput == true)
             SwitchState(Factory.Jump());
 
-
-        //IF ON TOP OF STAIRS
-        if (Context.OnStairs == false && Context.MovementInput.y > 0f && Context.JumpInput == false)
-            SwitchState(Factory.JumpFromStairs());
 
         //IF PLAYER FALL
         if (Context.OnStairs == false && Context.IsGrounded == false && Context.JumpInput == false && Context.CoyoteTimer <= 0)

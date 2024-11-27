@@ -23,7 +23,8 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
 
     [SerializeField] private EventBusManager _gameManager;
     [SerializeField] private PlayerStats _moveStats;
-    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private SpriteRenderer _torsoSprite;
+    [SerializeField] private SpriteRenderer _legsSprite;
     [SerializeField] private Collider2D _bodyColl;
     [SerializeField] private Collider2D _feetColl;
     #region Player Fields
@@ -31,8 +32,8 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     [Header("Health Variables")]
     [SerializeField, Range(0f, 100f)] public float _maxHealth;
     [SerializeField, Range(0f, 100f)] public float _health;
-    [Header("После получения урона, игрок не может получить\nпока не пройдет мсек:")]
-    [SerializeField, Range(0f, 10000f)] private int _damageDelayTime;
+    [Header("После получения урона, игрок не может получить\nпока не пройдет сек:")]
+    [SerializeField, Range(0f, 2f)] private float _damageDelayTime;
 
     [Header("Weapon Variables")]
     [SerializeField] private PlayerWeaponController _weaponController;
@@ -84,20 +85,22 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     #endregion
 
     #region Player Properties
-    public SpriteRenderer SpriteRenderer { get { return _spriteRenderer; } }
+    public SpriteRenderer SpriteRenderer { get { return _legsSprite; } }
     public EventBus EventBus { get { return _eventBus; } }
     public VFXManager VFXManager { get { return _vfxManager; } }
     public PauseManager PauseManager { get { return _pauseManager; } }
     public PlayerStats MoveStats { get { return _moveStats; } }
+    public SpriteRenderer TorsoSprite {get { return _torsoSprite; } set { _torsoSprite = value;}}
+    public SpriteRenderer LegsSprite { get { return _legsSprite; } set { _legsSprite = value; } }
     public CharacterController CharacterController{ get { return _characterController; } }
     public SoundsController SoundsController { get { return _soundsController; } }
     public PlayerAnimatorController AnimatorController { get { return _animatorController; } }
     public Collider2D BodyColl { get { return _bodyColl; } }
     public Collider2D FeetColl { get { return _feetColl; } }
     public Rigidbody2D RigidBody { get { return _rigidBody; } }
-    public PlayerHealth PayerHealth { get { return _playerHealth; } }
+    public PlayerHealth PlayerHealth { get { return _playerHealth; } }
     public PlayerWeaponController WeaponController { get { return _weaponController; } }
-    public int DamageDelayTime { get { return _damageDelayTime; } }
+    public float DamageDelayTime { get { return _damageDelayTime; } }
 
 
     //player inputs
@@ -155,6 +158,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     {
         _eventBus = _gameManager.EventBus;
         _eventBus.Subscribe<PlayerOnDeathSignal>(OnDeath);
+        _eventBus.Subscribe<PlayerApplyForceSignal>(PlayerOnDamage);
         _eventBus.Subscribe<PlayerAttackAnimationCompleteSignal>(OnPlayerAttackAnimationComplete);
 
         _vfxManager = _gameManager.GetComponent<VFXManager>();
@@ -205,7 +209,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
 
     public void AttackPressed()
     {
-        if(_rollInput == false)
+        if(_rollInput == false && PlayerHealth.OnDamageDelay == false)
             _attackInput = true;
     }
 
@@ -291,17 +295,22 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         float width = 400;
         textSTyle.fontSize = 30;
 
-        if(_currentState.CurrentRootState != null)
-            GUI.Label(new Rect(10, 10, 400, 50), $"Current Super State: {_currentState.CurrentRootState.ToString()}", textSTyle);
+        if(_currentState != null)
+            GUI.Label(new Rect((Screen.width / 2) - (width / 2), 10, width, 31), $"Current Root State: {_currentState.ToString()}", textSTyle);
         
         if (_currentState.CurrentSubState != null)
-            GUI.Label(new Rect((Screen.width / 2) - (width / 2), 10, width, 31), $"Current Sub State: {_currentState.CurrentSubState.ToString()}", textSTyle);
+            GUI.Label(new Rect((Screen.width / 2) - (width / 2), 41, width, 31), $"Current Sub State: {_currentState.CurrentSubState.ToString()}", textSTyle);
     }
 
     private void OnDeath(PlayerOnDeathSignal signal)
     {
         _currentState = _states.OnDeath();
         _currentState.EnterState();
+    }
+
+    private void PlayerOnDamage(PlayerApplyForceSignal signal)
+    {
+        _currentState.PlayerOnDamageEvent();
     }
 
     private void OnPlayerAttackAnimationComplete(PlayerAttackAnimationCompleteSignal signal)
