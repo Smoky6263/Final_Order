@@ -1,7 +1,5 @@
-using Cysharp.Threading.Tasks;
 using FMODUnity;
-using UnityEditor.Rendering.LookDev;
-using static UnityEngine.Rendering.DebugUI;
+using UnityEngine;
 public class PlayerHealth : IPlayerHealth
 {
     public PlayerHealth(PlayerStateMachine stateMachine)
@@ -17,31 +15,39 @@ public class PlayerHealth : IPlayerHealth
 
     private float _maxHealth;
     private int _medKitsCount;
+    
+    public Vector2 ApplyForce {  get; private set; } = Vector2.zero;
     public bool OnDamageDelay { get; private set; } = false;
 
 
-    public async void GetDamage(float value)
+    public void GetDamage(float value, Vector2 applyForce)
     {
-        if (OnDamageDelay == true && _playerData.RollInput == false)
+        if ((OnDamageDelay == true || _playerData.RollInput == true) || _playerData._health <= 0)
             return;
 
         OnDamageDelay = true;
+        ApplyForce = applyForce;
         _playerData._health -= value;
+
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Health", _playerData._health);
+
         _playerData.VFXManager.SpawnBloodParticles(_playerData.transform.position, _playerData.VFXManager.PlayerBlood);
+
+        _eventBus.Invoke(new PlayerHealthChangeSignal(_playerData._health));
+
         if(_playerData._health <= 0)
         {
             _playerData._health = 0;
             _eventBus.Invoke(new PlayerOnDeathSignal());
+            return;
         }
 
-        _eventBus.Invoke(new PlayerHealthChangeSignal(_playerData._health));
-        await DamageDelayTask();
+        _eventBus.Invoke(new PlayerApplyForceSignal());
     }
 
-    private async UniTask DamageDelayTask()
+    public void TurnOffDamageDelay()
     {
-        await UniTask.Delay(_playerData.DamageDelayTime);
+        ApplyForce = Vector2.zero;
         OnDamageDelay = false;
     }
 

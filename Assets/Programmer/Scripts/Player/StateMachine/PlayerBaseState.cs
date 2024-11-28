@@ -1,5 +1,3 @@
-using System;
-
 public abstract class PlayerBaseState
 {
 
@@ -28,6 +26,11 @@ public abstract class PlayerBaseState
     public abstract void InitializeSubState();
 
     public abstract void PlayerOnAttackAnimationComplete();
+
+    public void PlayerOnDamageEvent()
+    {
+        SwitchState(Factory.OnDamage());
+    }
 
     public void UpdateStates() 
     {
@@ -63,6 +66,7 @@ public abstract class PlayerBaseState
         }
 
     }
+
     protected void SetSubState(PlayerBaseState newSubState)
     {
         _currentSubState = newSubState;

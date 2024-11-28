@@ -31,9 +31,14 @@ public class VFXManager : MonoBehaviour
     #endregion
 
     #region Materials
-    public Material GetDamageMaterial()
+    public Material EnemyDamageMaterial()
     {
-        return _vfxPrefabs.m_EnemyGetDamage;
+        return _vfxPrefabs.EnemyDamageMAT;
+    }
+
+    public Material PlayerDamageMaterial()
+    {
+        return _vfxPrefabs.PlayerDamageMAT;
     }
     #endregion
 }

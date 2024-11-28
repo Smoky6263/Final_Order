@@ -4,18 +4,22 @@ public class EnemyDamageTrigger : MonoBehaviour
 {
     [SerializeField] private LayerMask _playerLayer;
     [SerializeField, Range(0f, 100f)] private float _damageValue;
-    
-    [SerializeField] private Vector2 _boxSize;
+
+    [SerializeField] private Vector2 _damageForce;
+
+    [SerializeField] private Vector2 _DamageBoxSize;
     [SerializeField] private Vector3 _offset;
     
 
     private void FixedUpdate()
     {
-        Collider2D hitPlayer = Physics2D.OverlapBox(transform.position + _offset, _boxSize, 0f, _playerLayer);
+        Collider2D hitPlayer = Physics2D.OverlapBox(transform.position + _offset, _DamageBoxSize, 0f, _playerLayer);
 
-        if (hitPlayer != null && hitPlayer.gameObject.GetComponentInParent<PlayerStateMachine>().PayerHealth.OnDamageDelay == false)
+        if (hitPlayer != null && hitPlayer.gameObject.GetComponentInParent<PlayerStateMachine>().PlayerHealth.OnDamageDelay == false)
         {
-            hitPlayer.gameObject.GetComponentInParent<PlayerStateMachine>().PayerHealth.GetDamage(_damageValue);
+            float playerOnRightSide = hitPlayer.transform.position.x > transform.position.x ? 1f : -1f;
+            Vector2 applyForce = new Vector2(_damageForce.x * playerOnRightSide, _damageForce.y);
+            hitPlayer.gameObject.GetComponentInParent<PlayerStateMachine>().PlayerHealth.GetDamage(_damageValue, applyForce);
         }
     }
 
@@ -24,7 +28,7 @@ public class EnemyDamageTrigger : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireCube(transform.position + _offset, _boxSize);
+        Gizmos.DrawWireCube(transform.position + _offset, _DamageBoxSize);
     }
 
     #endregion

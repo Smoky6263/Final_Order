@@ -17,7 +17,7 @@ public class CharacterController : MonoBehaviour
 
     private void Start()
     {
-        _iHealth = GetComponent<PlayerStateMachine>().PayerHealth;
+        _iHealth = GetComponent<PlayerStateMachine>().PlayerHealth;
     }
 
     private void Update() => ReadMovement();
