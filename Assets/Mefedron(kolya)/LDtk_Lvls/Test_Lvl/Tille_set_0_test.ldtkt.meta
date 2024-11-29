@@ -1,0 +1,1639 @@
+fileFormatVersion: 2
+guid: 494ec99ba9c52524db8ccd32d97e98c7
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: f3268c876daf4890b6af6cd462063137, type: 3}
+  _reimportOnDependencyChange: 1
+  _pixelsPerUnit: 32
+  _overrideTexture: {instanceID: 0}
+  _sprites:
+  - name: Tille_set_0_test_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 288
+      width: 32
+      height: 32
+    spriteID: 1d7eeac8d5f6c3c4d802426e9d126e05
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 288
+      width: 32
+      height: 32
+    spriteID: 0c26f53d1b9939242a428f882fd23eec
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 288
+      width: 32
+      height: 32
+    spriteID: 44fcf039240be104daedb19eceb7ce70
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 288
+      width: 32
+      height: 32
+    spriteID: d0f0234e66c75204b9cb7f8e930f51b9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 288
+      width: 32
+      height: 32
+    spriteID: 1e592c146be23c747a2adaf26d08615d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 288
+      width: 32
+      height: 32
+    spriteID: 860f6d69e304c5f48a68051e72fb9ee0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 288
+      width: 32
+      height: 32
+    spriteID: 7e3fe8edadd30194e8bd9bcb6efadd20
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 288
+      width: 32
+      height: 32
+    spriteID: cd50c68d3319c6b46959881781e6b489
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 288
+      width: 32
+      height: 32
+    spriteID: 79b169800c442a14e9e11a4f8edaf71a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 288
+      width: 32
+      height: 32
+    spriteID: 513487706a21bcb46bff884375d0757c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 256
+      width: 32
+      height: 32
+    spriteID: 1fa2a5270fb27744fa0e119efd02bafc
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 256
+      width: 32
+      height: 32
+    spriteID: 98db51df1774a2a4b87fd80e4eff12f9
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 256
+      width: 32
+      height: 32
+    spriteID: 589574f73429766418c70dcc54486438
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_13
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 256
+      width: 32
+      height: 32
+    spriteID: f58256203cd22b04486a0bc6266569db
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_14
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 256
+      width: 32
+      height: 32
+    spriteID: 70316867c6c03464d9e1e3854ca62a22
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 256
+      width: 32
+      height: 32
+    spriteID: 818e9335fb9a70d4fa2a03c9306977dc
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_16
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 256
+      width: 32
+      height: 32
+    spriteID: d8e9b53575b4ab346931ee0d8fcfd147
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_17
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 256
+      width: 32
+      height: 32
+    spriteID: cdc064c46e3abcd4a8e50f9604e0053e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_18
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 256
+      width: 32
+      height: 32
+    spriteID: 3263011d62e2b9e4e87d2c93dd96c5d8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_19
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 256
+      width: 32
+      height: 32
+    spriteID: 6fffdd6013a6817428dfea6bb9c6d4c0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_20
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 224
+      width: 32
+      height: 32
+    spriteID: 6f2ffae5337f8ca4aba6c2e4f67e82ef
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_21
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 224
+      width: 32
+      height: 32
+    spriteID: 61e972cfaee811a4fb47bedb5ee78116
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_22
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 224
+      width: 32
+      height: 32
+    spriteID: 31e3e9735cbbb374489e8a9beb5af140
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_23
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 224
+      width: 32
+      height: 32
+    spriteID: 0b1ad092eca96a042ae2dd27927b7ea5
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_24
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 224
+      width: 32
+      height: 32
+    spriteID: f1943e1675e77d84285fd8402652abf4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_25
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 224
+      width: 32
+      height: 32
+    spriteID: a8133b410dc627743b43525be5f22f99
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_26
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 224
+      width: 32
+      height: 32
+    spriteID: 94ad13e73f156a54d82144054d409aee
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_27
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 224
+      width: 32
+      height: 32
+    spriteID: 75f8e5d942075af49a1560da6e7bac51
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_28
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 224
+      width: 32
+      height: 32
+    spriteID: 5f066cef3ad89344f80fc7f3d45c2825
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_29
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 224
+      width: 32
+      height: 32
+    spriteID: 288944820f0a5f94bbfb387ff9289922
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_30
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 192
+      width: 32
+      height: 32
+    spriteID: 7fdacba8b776aa84da32046b39689919
+    spriteOutline:
+    - shape:
+      - {x: -11, y: 16}
+      - {x: -16, y: 11}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_31
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 192
+      width: 32
+      height: 32
+    spriteID: 8eb6eeb2d168eeb4bb28ba5952dd07d0
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_32
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 192
+      width: 32
+      height: 32
+    spriteID: 9e62a074a5a32a04fb53a02c960c0f2e
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 11}
+      - {x: 11, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_33
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 192
+      width: 32
+      height: 32
+    spriteID: 3989fc47c804ae84fa60dc657bba75c4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_34
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 192
+      width: 32
+      height: 32
+    spriteID: c1bee3c85afff0c41ba64f2472a7d35d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_35
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 192
+      width: 32
+      height: 32
+    spriteID: 050c5b99e4647be44bf311e044c844c3
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_36
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 192
+      width: 32
+      height: 32
+    spriteID: 4c1d2ea81e199b741a6055349cf58991
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_37
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 192
+      width: 32
+      height: 32
+    spriteID: d5af301c7cc8a234d888a72eab9663ed
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_38
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 192
+      width: 32
+      height: 32
+    spriteID: 46278cabded63cc4e804d4a7f7295a4a
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_39
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 192
+      width: 32
+      height: 32
+    spriteID: 42d59777d400b464b94755ac0a3551d4
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_40
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 160
+      width: 32
+      height: 32
+    spriteID: 1dcdf6f7bd8f1d744b632e42d58b06d0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_41
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 160
+      width: 32
+      height: 32
+    spriteID: 3afc45928fee6054cb3de8c9dac2151d
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_42
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 160
+      width: 32
+      height: 32
+    spriteID: c5f540c304f68384289bb349b8f7c80f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_43
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 160
+      width: 32
+      height: 32
+    spriteID: 94660be931d530c418ac2f5e49639f0d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_44
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 160
+      width: 32
+      height: 32
+    spriteID: 72ee81469b43f6e479914d155073d725
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_45
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 160
+      width: 32
+      height: 32
+    spriteID: 2a72452eea771dc4889ff41d44b0af89
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_46
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 160
+      width: 32
+      height: 32
+    spriteID: 8492816cfcf371f458652c82b66850fd
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_47
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 160
+      width: 32
+      height: 32
+    spriteID: 61ea6d23b57b394489fbe7500708dd8d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_48
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 160
+      width: 32
+      height: 32
+    spriteID: e2e8bb1e7eb97104fb8abe1a9ac9259a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_49
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 160
+      width: 32
+      height: 32
+    spriteID: e987b024366d2a54e87406f5260343b7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_50
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 128
+      width: 32
+      height: 32
+    spriteID: c8a423cf03b8d8c41b3c3864a94e8e52
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_51
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 128
+      width: 32
+      height: 32
+    spriteID: 21dad445924cc5348b210a598fc919b6
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_52
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 128
+      width: 32
+      height: 32
+    spriteID: 7b3a9aba61bf0d84b9b9e5a7b4a0bca9
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_53
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 128
+      width: 32
+      height: 32
+    spriteID: 0ebb67554e5f8384384aea3235aec27c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_54
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 128
+      width: 32
+      height: 32
+    spriteID: dbe48ea9ca3cdb846a3da00f81d22d5c
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_55
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 128
+      width: 32
+      height: 32
+    spriteID: f17ceb586be838d489769bae08e08f72
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_56
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 128
+      width: 32
+      height: 32
+    spriteID: 9601cf09c50680844ab080e61ffbb70c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_57
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 128
+      width: 32
+      height: 32
+    spriteID: 552e3570d72a8754a856054dad9473ba
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_58
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 128
+      width: 32
+      height: 32
+    spriteID: 08374e63710066d479f46d06036a055f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_59
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 128
+      width: 32
+      height: 32
+    spriteID: af8cac896149d4349a7c780d2bdc843a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_60
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 96
+      width: 32
+      height: 32
+    spriteID: d117db0b05905564f98f9871e91914f1
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_61
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 96
+      width: 32
+      height: 32
+    spriteID: df9375f7ec5d959469471328067b7de3
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_62
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 96
+      width: 32
+      height: 32
+    spriteID: d5bd46a27f5ab124f9a277641fb30fcd
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_63
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 7d11169fd62503442911c9b880f494d1
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_64
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 31a0e32877f67f7408ade367ef5e0c05
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_65
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 9c3a2367acadf564f8b90f2395f08da9
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_66
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 96
+      width: 32
+      height: 32
+    spriteID: e569360d23595e34b94f2057ce56b8d2
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_67
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 552e17ecdf108fd4ead05a825382b571
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_68
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 96
+      width: 32
+      height: 32
+    spriteID: fdfb55c25769b754881188b6a5ece12f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_69
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 96b94e4f55d7cbc409db6504457ca96c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_70
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 64
+      width: 32
+      height: 32
+    spriteID: f6ed9e2c9bafc1a458d668030e2cc82d
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_71
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 64
+      width: 32
+      height: 32
+    spriteID: e27a6b25d34296946923f24a298686e1
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_72
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 64
+      width: 32
+      height: 32
+    spriteID: f221253a37aff8c42916f443051aecdd
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_73
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 89fc729089689b74c955d3b7c878490c
+    spriteOutline:
+    - shape:
+      - {x: 13, y: 16}
+      - {x: -16, y: -13}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_74
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 2f1dbcc7183862245af430311a5df689
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: -13}
+      - {x: -13, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_75
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 21ff4e89ea80187458dafea274525fbb
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_76
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 64
+      width: 32
+      height: 32
+    spriteID: f9fdfb28577e48f478c19c9166a2942d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_77
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 28fa814e9d7fc7d4e9329b98d2371eaf
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_78
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 646cf0ef5d6d59743ae68232ff657026
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_79
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 64
+      width: 32
+      height: 32
+    spriteID: ba2a5a793ba0ecf4186dc78cb6e21e35
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_80
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 68cb6bdd1b81fd04aa9d1f8a8bbf515c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_81
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 31ae5e18d0f6dcf40a493d13582f4372
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_82
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 32
+      width: 32
+      height: 32
+    spriteID: f7cf2b0aad4a70046b4ae276ad7d48e0
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_83
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 3fb60fc2a3b789340a063cdcebe74658
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_84
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 32
+      width: 32
+      height: 32
+    spriteID: e4cfd67f587f2b64eb1d20ee0731f4e6
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_85
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 312fb57feca532e46900647f3cb9f3fd
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_86
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 64a4df8975ca6f543bd9c7f495dbf8e7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_87
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 1c5a538edb8fc41438cc7dc949cf9977
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_88
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 0487920cd8dd606468e5d8e61ff3a628
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_89
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 48c7003a62aae1a48a64d1504ce07319
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_90
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 0f5fa12e98e45cc42aca47112c93d68f
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_91
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 4ad72bf058ea894459615a77a36d5d6a
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_92
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 0
+      width: 32
+      height: 32
+    spriteID: c4532f76707402a448b289d79b18d717
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_93
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 0
+      width: 32
+      height: 32
+    spriteID: a1e04fddbbbbfec4291921921605d97d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_94
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 521c402edbb8be74ba077ed35d6b2387
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_95
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 901336ae6da29304aa1ced931837a327
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_96
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 0
+      width: 32
+      height: 32
+    spriteID: fd2f5273c9587a746b586c00fdaa1065
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Tille_set_0_test_97
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 0
+      width: 32
+      height: 32
+    spriteID: b52fe3ed45907c546a6cf1acf6c26326
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_98
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 0
+      width: 32
+      height: 32
+    spriteID: c58d437ed058efd46acb2399c4709dbb
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Tille_set_0_test_99
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 42056614e1480d14c9f6684c3090f696
+    spriteOutline: []
+    tessellationDetail: 0
+  _secondaryTextures: []
+  _artifacts: {fileID: -2988177865379244337, guid: 494ec99ba9c52524db8ccd32d97e98c7, type: 3}

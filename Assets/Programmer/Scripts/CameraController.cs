@@ -3,14 +3,18 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField] private float _heightOffsert;
-    [SerializeField, Range(0f,1f)] private float _interpolation;
+    [SerializeField, Range(0f,5f)] private float _interpolation;
     private Transform _player;
 
-    public void Init(Transform player) => _player = player;
+    public void Init(Transform player)
+    {
+        _player = player;
+        transform.position = new Vector3(transform.position.x, transform.position.y, -1);
+    }
 
-    private void FixedUpdate()
+    private void Update()
     {
         Vector3 targetPosition = new Vector3(_player.position.x, _player.position.y + _heightOffsert, -1f);
-        transform.position = Vector3.Lerp(transform.position, targetPosition, _interpolation);
+        transform.position = Vector3.Lerp(transform.position, targetPosition, _interpolation * Time.deltaTime);
     }
 }

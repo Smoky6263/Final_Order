@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 872f636a573dd3a48b9f4d984ca9fc5d, type: 3}
+  m_Name: VFX Prefabs
+  m_EditorClassIdentifier: 
+  p_DustParticlesPrefab: {fileID: 2282438384830233661, guid: 7697a49ea05824642b45a2fab61c81c4, type: 3}
+  DustVerticalOffset: 0.2
+  p_BloodtParticlesPrefab: {fileID: 1606691050927100033, guid: 5f1a9e12c1908ed41ac3843ba4c2c08c, type: 3}
+  EnemyDamageMAT: {fileID: 2100000, guid: dab564e5d96c14d4990931e54b282322, type: 2}
+  PlayerDamageMAT: {fileID: 2100000, guid: aaafdd0ca3a00f744814e88d9bef733e, type: 2}

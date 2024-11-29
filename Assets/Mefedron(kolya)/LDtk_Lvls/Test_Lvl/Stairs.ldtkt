@@ -1,0 +1,33 @@
+{
+  "Rects": null,
+  "Def": {
+    "__cHei": 5,
+    "__cWid": 2,
+    "cachedPixelData": {
+      "opaqueTiles": "0000000011",
+      "averageColors": "44304aaa44304aaa4410497643204a9800000000"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "Stairs",
+    "padding": 0,
+    "pxHei": 159,
+    "pxWid": 64,
+    "relPath": "../Sprites/Stairs.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 32,
+    "uid": 150
+  }
+}

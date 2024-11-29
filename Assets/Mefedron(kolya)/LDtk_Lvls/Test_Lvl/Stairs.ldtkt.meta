@@ -1,0 +1,206 @@
+fileFormatVersion: 2
+guid: 3fab6d7e3ed283842b92f7b670e9f416
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: f3268c876daf4890b6af6cd462063137, type: 3}
+  _reimportOnDependencyChange: 1
+  _pixelsPerUnit: 32
+  _overrideTexture: {instanceID: 0}
+  _sprites:
+  - name: Stairs_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 127
+      width: 32
+      height: 32
+    spriteID: 530cfd4619fa39c4188e7c863fc86877
+    spriteOutline:
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
+    tessellationDetail: 0
+  - name: Stairs_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 127
+      width: 32
+      height: 32
+    spriteID: 77f67fbe7abf08f46945c92b0bcd8346
+    spriteOutline:
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
+    tessellationDetail: 0
+  - name: Stairs_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 95
+      width: 32
+      height: 32
+    spriteID: 73b1395631d34ec458831eb7ec92e851
+    spriteOutline:
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
+    tessellationDetail: 0
+  - name: Stairs_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 95
+      width: 32
+      height: 32
+    spriteID: 6a77bb3999836fc48b92626b3473c9f7
+    spriteOutline:
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
+    tessellationDetail: 0
+  - name: Stairs_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 63
+      width: 32
+      height: 32
+    spriteID: 8620d45b426f69c49a221099a5473161
+    spriteOutline:
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
+    tessellationDetail: 0
+  - name: Stairs_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 63
+      width: 32
+      height: 32
+    spriteID: b45eefe32eab70f4481cd7ce31b661ca
+    spriteOutline:
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
+    tessellationDetail: 0
+  - name: Stairs_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 31
+      width: 32
+      height: 32
+    spriteID: 1a4c8687ffbb07e4c8a5faed571c195b
+    spriteOutline:
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
+    tessellationDetail: 0
+  - name: Stairs_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 31
+      width: 32
+      height: 32
+    spriteID: 743aa3e77f8cc834399c4f702d60083d
+    spriteOutline:
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
+    tessellationDetail: 0
+  - name: Stairs_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 32
+      height: 31
+    spriteID: e73183a4be13af34b9ed9a5b2140cb09
+    spriteOutline:
+    - shape:
+      - {x: -16, y: -15.5}
+      - {x: -16, y: 15.5}
+      - {x: 16, y: 15.5}
+      - {x: 16, y: -15.5}
+    tessellationDetail: 0
+  - name: Stairs_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 0
+      width: 32
+      height: 31
+    spriteID: 035a8a1cdac1af8439fdb05129e63adb
+    spriteOutline:
+    - shape:
+      - {x: -16, y: -15.5}
+      - {x: -16, y: 15.5}
+      - {x: 16, y: 15.5}
+      - {x: 16, y: -15.5}
+    tessellationDetail: 0
+  _secondaryTextures: []
+  _artifacts: {fileID: -2988177865379244337, guid: 3fab6d7e3ed283842b92f7b670e9f416, type: 3}
