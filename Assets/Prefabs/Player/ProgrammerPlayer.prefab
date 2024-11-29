@@ -343,12 +343,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameManager: {fileID: 0}
   _moveStats: {fileID: 11400000, guid: 64e7691f71b06b940a153c0aae956a2f, type: 2}
-  _spriteRenderer: {fileID: 7954391848114602075}
+  _torsoSprite: {fileID: 0}
+  _legsSprite: {fileID: 0}
   _bodyColl: {fileID: 1305856148158797422}
   _feetColl: {fileID: 7388641759800157186}
   _maxHealth: 100
   _health: 100
-  _damageDelayTime: 2500
+  _damageDelayTime: 2
   _weaponController: {fileID: 2774926343881191906}
 --- !u!114 &2879987066415813741
 MonoBehaviour:
