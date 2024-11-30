@@ -468,7 +468,6 @@ MonoBehaviour:
   _popUpWindowStartPosition: {x: 0, y: 800, z: 0}
   _popUpWindowTargetPosition: {x: 0, y: 0, z: 0}
   _button: {fileID: 5353897741105136016}
-  _nextLevel: 2
 --- !u!1 &8652216277830865126
 GameObject:
   m_ObjectHideFlags: 0
