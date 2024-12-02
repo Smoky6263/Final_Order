@@ -38,10 +38,12 @@ public class PlayerHealth : IPlayerHealth
         if(_playerData._health <= 0)
         {
             _playerData._health = 0;
+
             _eventBus.Invoke(new PlayerOnDeathSignal());
+            RuntimeManager.PlayOneShot("event:/SFX/Character Death");
             return;
         }
-
+        RuntimeManager.PlayOneShot("event:/SFX/Character Hit");
         _eventBus.Invoke(new PlayerApplyForceSignal());
     }
 

@@ -289,6 +289,8 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
             _currentPTP = null;
     }
 
+#if UNITY_EDITOR
+
     private void OnGUI()
     {
         GUIStyle textSTyle = new GUIStyle();
@@ -301,6 +303,8 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         if (_currentState.CurrentSubState != null)
             GUI.Label(new Rect((Screen.width / 2) - (width / 2), 41, width, 31), $"Current Sub State: {_currentState.CurrentSubState.ToString()}", textSTyle);
     }
+
+#endif
 
     private void OnDeath(PlayerOnDeathSignal signal)
     {
