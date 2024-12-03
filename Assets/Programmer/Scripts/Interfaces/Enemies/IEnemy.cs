@@ -10,6 +10,7 @@ public interface IEnemy
     public VFXManager VFXManager { get; }
     public EnemyHealth HealthManager { get; }
     public PauseManager PauseManager { get; }
+    public SoundsController SoundsController { get; }
     public Vector3 GetPosition();
     public void Die();
     public UniTask ChangeMaterial();

@@ -51,6 +51,7 @@ public class EnemyWithShieldIdle : BaseState<EnemyWithShieldFSM.EnemyWithShieldS
 
     public override void UpdateState()
     {
-        
+        Vector2 movementVelocity = new Vector2(0f, Context.RigidBody2D.velocity.y);
+        Context.RigidBody2D.velocity = Vector2.Lerp(Context.RigidBody2D.velocity, movementVelocity, 0.1f);
     }
 }

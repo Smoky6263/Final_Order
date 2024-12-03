@@ -10,11 +10,12 @@ public enum FMOD_SoundBanks
     PlayerStartJump,
     PlayerJumpLand,
     PlayerGuitarSwing,
+    PlayerOnStairs,
     #endregion
 
     #region Enemy With Shield
     EnemyShieldFootSteps,
-    EnemyShieldPunch,
+    EnemyShieldGetDamage,
     #endregion
 
     #region Fountain

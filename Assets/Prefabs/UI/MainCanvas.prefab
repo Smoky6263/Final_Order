@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventBusManager: {fileID: 0}
+  _nextLevel: 2
 --- !u!1 &4552275387149467321
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,7 +267,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3d9bcb4386d4f4cb0549242cd32051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _eventBusManager: {fileID: 0}
   _healPrefab: {fileID: 4285973637285908052, guid: 8fa58d08e1dd5dc46af4d429ce42f94b, type: 3}
 --- !u!1 &7528341608750091722
 GameObject:
@@ -370,7 +370,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00bc4e2f93e3676429d4c6e8b5441dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _eventBusManager: {fileID: 0}
 --- !u!1 &8495372146431184391
 GameObject:
   m_ObjectHideFlags: 0

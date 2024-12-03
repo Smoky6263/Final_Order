@@ -4,8 +4,6 @@ public class PlayerAnimatorController : MonoBehaviour
 {
     [SerializeField] private Animator _torsoAnimator, _legsAimator;
 
-    private EventBus _eventBus;
-
     public Animator TorsoAnimator { get { return _torsoAnimator; } }
     public Animator LegsAnimator { get { return _legsAimator; } }
 
@@ -17,6 +15,7 @@ public class PlayerAnimatorController : MonoBehaviour
     public readonly string TorsoRoll = "TorsoRoll";
     public readonly string TorsoJump = "TorsoJump";
     public readonly string TorsoDeath = "TorsoDeath";
+    public readonly string TorsoOnStairs = "TorsoOnStairs";
 
 
     //ANIMATOR LEGS VARS
@@ -27,6 +26,7 @@ public class PlayerAnimatorController : MonoBehaviour
     public readonly string LegsRoll = "LegsRoll";
     public readonly string LegsJump = "LegsJump";
     public readonly string LegsDeath = "LegsDeath";
+    public readonly string LegsOnStairs = "LegsOnStairs";
 
     public int TorsoAttackHash { get; private set; }
     public int TorsoCrouchHash { get; private set; }
@@ -35,12 +35,11 @@ public class PlayerAnimatorController : MonoBehaviour
     public int TorsoRollHash { get; private set; }
     public int TorsoJumpHash { get; private set; }
     public int TorsoDeathHash { get; private set; }
+    public int TorsoOnStairshHash { get; private set; }
 
 
     private void Awake()
     {
-        _eventBus = GetComponent<PlayerStateMachine>().EventBus;
-
         TorsoAttackHash = Animator.StringToHash(TorsoAttack);
         TorsoCrouchHash = Animator.StringToHash(TorsoCrouch);
         TorsoIdleHash = Animator.StringToHash(TorsoIdle);
@@ -48,6 +47,7 @@ public class PlayerAnimatorController : MonoBehaviour
         TorsoRollHash = Animator.StringToHash(TorsoRoll);
         TorsoJumpHash = Animator.StringToHash(TorsoJump);
         TorsoDeathHash = Animator.StringToHash(TorsoDeath);
+        TorsoOnStairshHash = Animator.StringToHash(TorsoOnStairs);
     }
 
     public void OnCrouch()
@@ -75,17 +75,27 @@ public class PlayerAnimatorController : MonoBehaviour
         _torsoAnimator.Play(TorsoRoll);
         _legsAimator.Play(LegsRoll);
     }
-
     public void DoJump()
     {
-        _torsoAnimator.Play(TorsoJump);
+        _torsoAnimator.Play(TorsoJumpHash);
         _legsAimator.Play(LegsJump);
+    }
+
+    public void DoStairs()
+    {
+        _torsoAnimator.Play(TorsoOnStairs);
+        _legsAimator.Play(LegsOnStairs);
     }
 
     public void OnDeath()
     {
         _torsoAnimator.Play(TorsoDeath);
         _legsAimator.Play(LegsDeath);
+    }
+
+    public void OnStairs(float speed)
+    {
+        _legsAimator.speed = speed;
     }
 
     public void ResetCurrentAnimationTime(Animator animator, string animationName)

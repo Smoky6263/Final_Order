@@ -60,6 +60,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _vfxPrefabs: {fileID: 11400000, guid: 1241b26a6005b664dadfeb4d080fa8e4, type: 2}
+  _enemyBlood: {r: 0, g: 1, b: 0.2163105, a: 1}
+  _playerBlood: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &7351733180469609001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,24 +131,24 @@ MonoBehaviour:
     - Key: 5
       Value:
         Guid:
+          Data1: 1606861939
+          Data2: 1305399960
+          Data3: -127861109
+          Data4: 1136595028
+        Path: event:/Ladder Steps
+    - Key: 6
+      Value:
+        Guid:
           Data1: -1459162591
           Data2: 1319705954
           Data3: 1184442046
           Data4: -1031911323
-        Path: event:/Enemy Shield footsteps
-    - Key: 6
+        Path: event:/EnemyFootsteps
+    - Key: 7
       Value:
         Guid:
           Data1: -1089941625
           Data2: 1194086480
           Data3: -728012117
           Data4: 1229415557
-        Path: event:/Eneny Shield Punch
-    - Key: 7
-      Value:
-        Guid:
-          Data1: -1042442876
-          Data2: 1321408721
-          Data3: 1916477085
-          Data4: 1031943506
-        Path: event:/Fountain Flow (looped)
+        Path: event:/EnemyGetDamage
