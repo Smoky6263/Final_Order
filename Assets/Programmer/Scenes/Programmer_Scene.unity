@@ -2926,6 +2926,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1837360932}
     m_Modifications:
+    - target: {fileID: 234124100573188704, guid: 35e6c23c1ee54814ca1a30210ec50af1, type: 3}
+      propertyPath: _damageForce.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 234124100573188704, guid: 35e6c23c1ee54814ca1a30210ec50af1, type: 3}
+      propertyPath: _damageForce.y
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 262673540101758539, guid: 35e6c23c1ee54814ca1a30210ec50af1, type: 3}
       propertyPath: m_Name
       value: Damage_Trigger

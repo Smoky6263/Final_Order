@@ -58,6 +58,9 @@ public class PlayerIdleState : PlayerBaseState
     public override void UpdateState()
     {
 
+        Context.MovementVelocity = Vector2.Lerp(Context.MovementVelocity, Vector2.zero, Context.MoveStats.GroundDeceleration * Time.fixedDeltaTime);
+        Context.RigidBody.velocity = new Vector2(Context.MovementVelocity.x, Context.RigidBody.velocity.y);
+
         CheckAtack();
         CheckSwitchStates();
     }

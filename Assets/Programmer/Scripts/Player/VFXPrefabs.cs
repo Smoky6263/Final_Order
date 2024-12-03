@@ -18,7 +18,8 @@ public class VFXPrefabs : ScriptableObject
     #region Materials
 
     [Header("MATERIALS")]
-    public Material m_EnemyGetDamage;
+    public Material EnemyDamageMAT;
+    public Material PlayerDamageMAT;
 
     #endregion
 }

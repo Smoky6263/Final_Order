@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _vfxPrefabs: {fileID: 11400000, guid: 1241b26a6005b664dadfeb4d080fa8e4, type: 2}
-  _enemyBlood: {r: 0, g: 1, b: 0.2163105, a: 1}
+  _enemyBlood: {r: 0, g: 1, b: 0, a: 1}
   _playerBlood: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &7351733180469609001
 MonoBehaviour:

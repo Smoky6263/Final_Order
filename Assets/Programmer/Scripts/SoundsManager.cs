@@ -19,7 +19,11 @@ public enum FMOD_SoundBanks
     #endregion
 
     #region Fountain
-    FountainFlow,
+    FountainFlow, FountainInteract,
+    #endregion
+
+    #region MedKit
+    MedKitPickUp, MedKitUse,
     #endregion
 
 }

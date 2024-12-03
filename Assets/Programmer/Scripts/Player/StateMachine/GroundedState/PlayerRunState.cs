@@ -118,13 +118,5 @@ public class PlayerRunState : PlayerBaseState
     public override void PlayerOnAttackAnimationComplete()
     {
         Context.AnimatorController.OnRun();
-        //Animator legs = Context.AnimatorController.LegsAnimator;
-        //Animator torso = Context.AnimatorController.TorsoAnimator;
-
-        //string torsoIdle = Context.AnimatorController.TorsoIdle;
-        //string legsRun = Context.AnimatorController.LegsRun;
-
-        //Context.AnimatorController.ResetCurrentAnimationTime(legs, legsRun);
-        //Context.AnimatorController.ResetCurrentAnimationTime(torso, torsoIdle);
     }
 }

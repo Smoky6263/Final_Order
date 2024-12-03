@@ -1,5 +1,5 @@
-using Cysharp.Threading.Tasks;
-using UnityEditor.Rendering.LookDev;
+using FMODUnity;
+using UnityEngine;
 public class PlayerHealth : IPlayerHealth
 {
     public PlayerHealth(PlayerStateMachine stateMachine)
@@ -15,30 +15,39 @@ public class PlayerHealth : IPlayerHealth
 
     private float _maxHealth;
     private int _medKitsCount;
+    
+    public Vector2 ApplyForce {  get; private set; } = Vector2.zero;
     public bool OnDamageDelay { get; private set; } = false;
 
 
-    public async void GetDamage(float value)
+    public void GetDamage(float value, Vector2 applyForce)
     {
-        if (OnDamageDelay == true && _playerData.RollInput == false)
+        if ((OnDamageDelay == true || _playerData.RollInput == true) || _playerData._health <= 0)
             return;
 
         OnDamageDelay = true;
+        ApplyForce = applyForce;
         _playerData._health -= value;
+
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Health", _playerData._health);
+
         _playerData.VFXManager.SpawnBloodParticles(_playerData.transform.position, _playerData.VFXManager.PlayerBlood);
+
+        _eventBus.Invoke(new PlayerHealthChangeSignal(_playerData._health));
+
         if(_playerData._health <= 0)
         {
             _playerData._health = 0;
             _eventBus.Invoke(new PlayerOnDeathSignal());
+            return;
         }
 
-        _eventBus.Invoke(new PlayerHealthChangeSignal(_playerData._health));
-        await DamageDelayTask();
+        _eventBus.Invoke(new PlayerApplyForceSignal());
     }
 
-    private async UniTask DamageDelayTask()
+    public void TurnOffDamageDelay()
     {
-        await UniTask.Delay(_playerData.DamageDelayTime);
+        ApplyForce = Vector2.zero;
         OnDamageDelay = false;
     }
 
@@ -47,10 +56,16 @@ public class PlayerHealth : IPlayerHealth
         if(_medKitsCount > 0 && _playerData._health < _maxHealth)
         {
             _playerData._health = _maxHealth;
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Health", _playerData._health);
+            RuntimeManager.PlayOneShot("event:/SFX/MedKit Use");
             _eventBus.Invoke(new PlayerHealthChangeSignal(_playerData._health));
             _eventBus.Invoke(new MedKitPerformedSignal());
             _medKitsCount--;
         }
     }
-    public void OnMedKitPickUp() => _medKitsCount++;
+    public void OnMedKitPickUp()
+    {
+        RuntimeManager.PlayOneShot("event:/SFX/MedKit PickUp");
+        _medKitsCount++;
+    }
 }
