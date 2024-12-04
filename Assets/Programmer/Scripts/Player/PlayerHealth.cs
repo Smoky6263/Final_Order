@@ -63,6 +63,7 @@ public class PlayerHealth : IPlayerHealth
             _eventBus.Invoke(new PlayerHealthChangeSignal(_playerData._health));
             _eventBus.Invoke(new MedKitPerformedSignal());
             _medKitsCount--;
+            _playerData.VFXManager.SpawnHealParticles(_playerData.transform.position);
         }
     }
     public void OnMedKitPickUp()
