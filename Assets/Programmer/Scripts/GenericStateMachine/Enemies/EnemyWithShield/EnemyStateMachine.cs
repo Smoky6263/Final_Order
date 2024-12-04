@@ -4,20 +4,32 @@ using System.Threading;
 using UnityEngine;
 
 [RequireComponent(typeof(EnemyPauseHandler))]
+[RequireComponent(typeof(EnemyDamageTrigger))]
 
-public class EnemyWithShieldFSM : StateManager<EnemyWithShieldFSM.EnemyWithShieldStates>, IEnemy
+public class EnemyStateMachine : StateManager<EnemyStateMachine.EnemyWithShieldStates>, IEnemy
 {
     [SerializeField] private EventBusManager _eventBus;
     [SerializeField] private EnemyWithShieldAnimatorController _animator;
     [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private LayerMask _playerLayer;
 
-    private EnemyWithShieldFSM Context;
+    #region MyTarget
+    [SerializeField] private MobWithShieldTrigger _pointA;
+    [SerializeField] private MobWithShieldTrigger _pointB;
+
+    public MobWithShieldTrigger PointA { get {return _pointA; } }
+    public MobWithShieldTrigger PointB { get { return _pointB; } }
+    #endregion
+
+    private EnemyStateMachine Context;
     private PauseManager _pauseManager;
     private VFXManager _vFXManager;
     private SoundsManager _soundsManager;
     private SoundsController _soundsController;
     private EnemyHealth _healthManager;
     private Rigidbody2D _rigidBody2D;
+
+    private bool _playerDetected;
 
     [Header("Параметры здоровья")]
     [SerializeField, Range(0f, 500f)] private float _maxHealth = 100f;
@@ -33,6 +45,14 @@ public class EnemyWithShieldFSM : StateManager<EnemyWithShieldFSM.EnemyWithShiel
     [Header("Параметры урона в мсек")]
     [SerializeField, Range(0f, 2000f)] private int _damageFlashTime = 200;
 
+    [Header("размер зоны обнаружения игрока")]
+    [SerializeField] private Vector2 _playerDetectionArea;
+    [SerializeField] private Vector3 _playerDetectionAreaOffset;
+
+    [Header("размер зоны преследования игрока")]
+    [SerializeField] private Vector2 _playerFollowArea;
+    [SerializeField] private Vector3 _playerFollowAreaOffset;
+
 
     public Rigidbody2D RigidBody2D { get { return _rigidBody2D; } }
     public VFXManager VFXManager { get { return _vFXManager; } }
@@ -41,6 +61,15 @@ public class EnemyWithShieldFSM : StateManager<EnemyWithShieldFSM.EnemyWithShiel
     public SoundsController SoundsController { get { return _soundsController; } }
     public EnemyHealth HealthManager { get { return _healthManager; } }
     public EnemyWithShieldAnimatorController AnimatorController { get { return _animator; } }
+    public LayerMask PlayerLayer { get { return _playerLayer; } }
+    public Vector2 PlayerDetectionArea { get { return _playerDetectionArea; } }
+    public Vector3 PlayerDetectionAreaOffset { get { return _playerDetectionAreaOffset; } }
+
+    public Vector2 PlayerFollowArea { get { return _playerFollowArea; } }
+    public Vector3 PlayerFollowAreaOffset { get { return _playerFollowAreaOffset; } }
+
+    public bool PlayerDetected { get { return _playerDetected; } set { _playerDetected = value; } }
+
     public float IdleTime { get { return _idleTime; } }
     public float PatrollingSpeed { get { return _patrollingSpeed; } }
     public float PlayerFollowSpeed { get { return _palyerFollowSpeed; } }
@@ -53,6 +82,7 @@ public class EnemyWithShieldFSM : StateManager<EnemyWithShieldFSM.EnemyWithShiel
         Idle,
         Walk,
         FollowPlayer,
+        Attack,
         Die
     }
 
@@ -72,10 +102,10 @@ public class EnemyWithShieldFSM : StateManager<EnemyWithShieldFSM.EnemyWithShiel
 
         States = new Dictionary<EnemyWithShieldStates, BaseState<EnemyWithShieldStates>>
         {
-            { EnemyWithShieldStates.Idle, new EnemyWithShieldIdle(EnemyWithShieldStates.Idle, Context) },
-            { EnemyWithShieldStates.Walk, new EnemyWithShieldWalk(EnemyWithShieldStates.Walk, Context) },
-            { EnemyWithShieldStates.FollowPlayer, new EnemyWithShieldFollowPlayer(EnemyWithShieldStates.FollowPlayer, Context) },
-            { EnemyWithShieldStates.Die, new EnemyWithShieldDie(EnemyWithShieldStates.Die, Context) },
+            { EnemyWithShieldStates.Idle, new EnemyIdle(EnemyWithShieldStates.Idle, Context) },
+            { EnemyWithShieldStates.Walk, new EnemyPatrolling(EnemyWithShieldStates.Walk, Context) },
+            { EnemyWithShieldStates.FollowPlayer, new EnemyFollowPlayer(EnemyWithShieldStates.FollowPlayer, Context) },
+            { EnemyWithShieldStates.Die, new EnemyDie(EnemyWithShieldStates.Die, Context) },
         };
 
         CurrentState = States[EnemyWithShieldStates.Idle];
@@ -114,4 +144,28 @@ public class EnemyWithShieldFSM : StateManager<EnemyWithShieldFSM.EnemyWithShiel
             _onDestroyToken.Dispose();
         }
     }
+
+#if UNITY_EDITOR
+    [Header("IF IN UNITY EDITOR")]
+    [SerializeField] private bool _debugPlayerDetectionArea;
+    [SerializeField] private bool _debugPlayerFolowArea;
+    [SerializeField] private Color _detectionColor, _followColor;
+
+    private void OnDrawGizmos()
+    {
+        if (_debugPlayerDetectionArea)
+        {
+            Gizmos.color = _detectionColor;
+            Gizmos.DrawWireCube(transform.position + _playerDetectionAreaOffset, _playerDetectionArea);
+        }
+
+        if(_debugPlayerFolowArea)
+        {
+            Gizmos.color = _followColor;
+            Gizmos.DrawWireCube(transform.position + _playerFollowAreaOffset, _playerFollowArea);
+        }
+    }
+
+#endif
+
 }

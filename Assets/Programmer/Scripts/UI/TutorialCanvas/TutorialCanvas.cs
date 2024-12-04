@@ -8,7 +8,7 @@ public class TutorialCanvas : MonoBehaviour
     [SerializeField] private Transform _player;
     [SerializeField] private Vector3 _offset;
 
-    [SerializeField] private GameObject Canvas;
+    [SerializeField] private Canvas Canvas;
 
     [SerializedDictionary("Word", "Start and Target position")]
     public SerializedDictionary<GameObject, Vector3[]> _words;
@@ -22,7 +22,7 @@ public class TutorialCanvas : MonoBehaviour
 
     private void Start()
     {
-        Canvas.SetActive(false);
+        Canvas.gameObject.SetActive(false);
 
         textGO = new GameObject[_words.Count];
         _words.Keys.CopyTo(textGO, 0);
@@ -43,7 +43,7 @@ public class TutorialCanvas : MonoBehaviour
     public void OnEnabled(Transform player)
     {
         _player = player;
-        Canvas.SetActive(true);
+        Canvas.gameObject.SetActive(true);
 
 
         for (int i = 0; i < _words.Count; i++)
@@ -76,7 +76,7 @@ public class TutorialCanvas : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
 
-        Canvas.SetActive(false);
+        Canvas.gameObject.SetActive(false);
 
         yield break;
     }

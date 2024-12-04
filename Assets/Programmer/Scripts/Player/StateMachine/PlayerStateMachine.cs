@@ -229,7 +229,6 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         Vector2 boxCastSize = new Vector2(_feetColl.bounds.size.x, _moveStats.GroundDetectionRayLength);
 
         _groundHit = Physics2D.BoxCast(boxCastOrigin, boxCastSize, 0f, Vector2.down, _moveStats.GroundDetectionRayLength, _moveStats.JumpSurfaceLayer);
-        //_groundHit = Physics2D.OverlapBox()
         if (_groundHit.collider != null)
             _isGrounded = true;
 

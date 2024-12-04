@@ -98,8 +98,6 @@ public class PlayerRollState : PlayerBaseState
         // Вычисляем новое значение с использованием функции EaseOutCubic
         float rollSpeed = EaseOutCubic(_elapsedTime, Context.MoveStats.RollDuration, _speed);
 
-        Debug.Log("Value: " + rollSpeed);
-
         Context.RigidBody.velocity = new Vector2(rollSpeed, Context.MovementVelocity.y);
 
     }

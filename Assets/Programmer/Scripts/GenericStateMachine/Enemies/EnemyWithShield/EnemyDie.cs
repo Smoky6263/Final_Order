@@ -1,8 +1,13 @@
 ﻿using UnityEngine;
 
-internal class EnemyWithShieldFollowPlayer : BaseState<EnemyWithShieldFSM.EnemyWithShieldStates>
+public class EnemyDie : BaseState<EnemyStateMachine.EnemyWithShieldStates>
 {
-    public EnemyWithShieldFollowPlayer(EnemyWithShieldFSM.EnemyWithShieldStates key, StateManager<EnemyWithShieldFSM.EnemyWithShieldStates> context) : base(key, context) { }
+    public EnemyDie(EnemyStateMachine.EnemyWithShieldStates key, EnemyStateMachine context) : base(key, context)
+    {
+        Context = context;
+    }
+
+    private EnemyStateMachine Context;
 
     public override void EnterState()
     {
@@ -10,30 +15,36 @@ internal class EnemyWithShieldFollowPlayer : BaseState<EnemyWithShieldFSM.EnemyW
 
     public override void ExitState()
     {
+        
     }
 
     public override void FixedUpdateState()
     {
+        
     }
 
-    public override EnemyWithShieldFSM.EnemyWithShieldStates GetNextState()
+    public override EnemyStateMachine.EnemyWithShieldStates GetNextState()
     {
-        return EnemyWithShieldFSM.EnemyWithShieldStates.FollowPlayer;
+        return EnemyStateMachine.EnemyWithShieldStates.Die;
     }
 
     public override void OnTriggerEnter(Collider2D collision)
     {
+        
     }
 
     public override void OnTriggerExit(Collider2D collision)
     {
+        
     }
 
     public override void OnTriggerStay(Collider2D collision)
     {
+        
     }
 
     public override void UpdateState()
     {
+        
     }
 }

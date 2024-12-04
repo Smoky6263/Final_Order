@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class EnemyDamageTrigger : MonoBehaviour
 {
-    [SerializeField] private LayerMask _playerLayer;
     [SerializeField, Range(0f, 100f)] private float _damageValue;
 
     [SerializeField] private Vector2 _damageForce;
@@ -10,8 +9,11 @@ public class EnemyDamageTrigger : MonoBehaviour
     [SerializeField] private Vector2 _DamageBoxSize;
     [SerializeField] private Vector3 _offset;
     
+    private LayerMask _playerLayer;
 
-    private void FixedUpdate()
+    private void Awake() => _playerLayer = GetComponent<EnemyStateMachine>().PlayerLayer;
+
+    protected virtual void FixedUpdate()
     {
         Collider2D hitPlayer = Physics2D.OverlapBox(transform.position + _offset, _DamageBoxSize, 0f, _playerLayer);
 
@@ -25,10 +27,16 @@ public class EnemyDamageTrigger : MonoBehaviour
 
 #if UNITY_EDITOR
     #region Debug Vars
+    [Header("IF IN UNITY EDITOR")]
+    [SerializeField] private bool _debugDrawBox = true;
+
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireCube(transform.position + _offset, _DamageBoxSize);
+        if(_debugDrawBox)
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireCube(transform.position + _offset, _DamageBoxSize);
+        }
     }
 
     #endregion

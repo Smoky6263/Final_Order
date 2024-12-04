@@ -1,1 +1,4 @@
-public interface IMobWithShieldTrigger { }
+public interface IMobWithShieldTrigger 
+{
+    public string UniqueID { get; }
+}
