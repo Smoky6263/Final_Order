@@ -8,6 +8,8 @@ public class PlayerHealth : IPlayerHealth
         _eventBus = _playerData.EventBus;
         _maxHealth = _playerData._maxHealth;
         _playerData._health = _maxHealth;
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Health", _playerData._health);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", 0);
     }
 
     private EventBus _eventBus;

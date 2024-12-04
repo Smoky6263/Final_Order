@@ -113,6 +113,7 @@ public class EnemyStateMachine : StateManager<EnemyStateMachine.EnemyStates>, IE
 
     public void Die()
     {
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", 0);
         Destroy(gameObject);
     }
 
