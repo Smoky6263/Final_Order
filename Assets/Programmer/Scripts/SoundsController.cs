@@ -22,6 +22,7 @@ public class SoundsController : MonoBehaviour
     #region Enemy Sounds
     public void EnemyShieldFootSteps() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.EnemyShieldFootSteps, transform.position);
     public void EnemyShieldGetDamage() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.EnemyShieldGetDamage, transform.position);
+    public void EnemySmallFootSteps() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.SmallEnemyFootsteps, transform.position);
     #endregion
 
     #region Fountain Sounds

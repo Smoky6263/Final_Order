@@ -47,6 +47,7 @@ public class PauseManager : MonoBehaviour
     {
         foreach (IPauseHandler handler in _pauseHandlers)
         {
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Pause", 1);
             handler.SetPause();
         }
 
@@ -57,6 +58,7 @@ public class PauseManager : MonoBehaviour
     {
         foreach (IPauseHandler handler in _pauseHandlers)
         {
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Pause", 0);
             handler.SetPlay();
         }
 
