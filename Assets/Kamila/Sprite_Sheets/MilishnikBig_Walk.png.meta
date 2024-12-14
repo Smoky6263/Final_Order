@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fe3a1740d5aa3064f8371c71397072c5
+guid: 765752619de124745879267622e142c4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Milishnik_Attack_0
+      name: "MilishnikBig_Walk_\u0441\u0440\u0430\u0439\u0442\u0448\u0438\u0442_0"
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67d612221e3f7564fb63728503dd3b30
-      internalID: 1646076300
+      spriteID: c9f889069375fd64baea7bf2a1e857b5
+      internalID: 147617960
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Milishnik_Attack_1
+      name: "MilishnikBig_Walk_\u0441\u0440\u0430\u0439\u0442\u0448\u0438\u0442_1"
       rect:
         serializedVersion: 2
         x: 128
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56c023481174ed741a789c725f55226b
-      internalID: 247686248
+      spriteID: d8991badeabcad34ab620e6e6288b74f
+      internalID: -1045244341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Milishnik_Attack_2
+      name: "MilishnikBig_Walk_\u0441\u0440\u0430\u0439\u0442\u0448\u0438\u0442_2"
       rect:
         serializedVersion: 2
         x: 256
@@ -153,35 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9953b787511173141ab0fd83504a88c9
-      internalID: 1000051320
+      spriteID: b38e20180c8a32040b20c958b2616f67
+      internalID: 1730701836
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Milishnik_Attack_3
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 96
-        width: 128
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0cc502bbbaeced74ca92c4f8de58d091
-      internalID: -818531062
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Milishnik_Attack_4
+      name: "MilishnikBig_Walk_\u0441\u0440\u0430\u0439\u0442\u0448\u0438\u0442_3"
       rect:
         serializedVersion: 2
         x: 0
@@ -195,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df7499840af1ee34fb35d455a39d6aa3
-      internalID: 233176808
+      spriteID: 55d7184ab8007184b967cdd498c5ed79
+      internalID: 1146979964
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Milishnik_Attack_5
+      name: "MilishnikBig_Walk_\u0441\u0440\u0430\u0439\u0442\u0448\u0438\u0442_4"
       rect:
         serializedVersion: 2
         x: 128
@@ -216,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0dfe48e1cd1e534ca3c8d961cd5c222
-      internalID: -2077222189
+      spriteID: 26b1f5e5510a1764695dc1f9130a9323
+      internalID: 1401303808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Milishnik_Attack_6
+      name: "MilishnikBig_Walk_\u0441\u0440\u0430\u0439\u0442\u0448\u0438\u0442_5"
       rect:
         serializedVersion: 2
         x: 256
@@ -237,29 +216,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f500cde903a0cce49b0c9da06a0c9252
-      internalID: 94054016
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Milishnik_Attack_7
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 128
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 92583abd2f74d934a9670f27127246d0
-      internalID: 505096204
+      spriteID: 24e0bdbd54401f645b7c6affcdfd9802
+      internalID: 206224306
       vertices: []
       indices: 
       edges: []
@@ -275,14 +233,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Milishnik_Attack_0: 1646076300
-      Milishnik_Attack_1: 247686248
-      Milishnik_Attack_2: 1000051320
-      Milishnik_Attack_3: -818531062
-      Milishnik_Attack_4: 233176808
-      Milishnik_Attack_5: -2077222189
-      Milishnik_Attack_6: 94054016
-      Milishnik_Attack_7: 505096204
+      "MilishnikBig_Walk_\u0441\u0440\u0430\u0439\u0442\u0448\u0438\u0442_0": 147617960
+      "MilishnikBig_Walk_\u0441\u0440\u0430\u0439\u0442\u0448\u0438\u0442_1": -1045244341
+      "MilishnikBig_Walk_\u0441\u0440\u0430\u0439\u0442\u0448\u0438\u0442_2": 1730701836
+      "MilishnikBig_Walk_\u0441\u0440\u0430\u0439\u0442\u0448\u0438\u0442_3": 1146979964
+      "MilishnikBig_Walk_\u0441\u0440\u0430\u0439\u0442\u0448\u0438\u0442_4": 1401303808
+      "MilishnikBig_Walk_\u0441\u0440\u0430\u0439\u0442\u0448\u0438\u0442_5": 206224306
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
