@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 270c18f88b443eb459ff9d81d437be17
+guid: 5ecd82b2c43b39940b8658e3402f0ae9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -93,212 +93,194 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MilishnikBig_Attack_0
+      name: "MilishnikBig_Attack_\u0444\u0438\u043A\u0441_\u043F\u0440\u0430\u0439\u0442\u0448\u0438\u0442_0"
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 192
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 823a0125adaec6e4390b6e86aaddd086
+      internalID: 1738214863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MilishnikBig_Attack_\u0444\u0438\u043A\u0441_\u043F\u0440\u0430\u0439\u0442\u0448\u0438\u0442_1"
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 192
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 127dca90b20d1204585ec0af5133777d
+      internalID: 1093844954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MilishnikBig_Attack_\u0444\u0438\u043A\u0441_\u043F\u0440\u0430\u0439\u0442\u0448\u0438\u0442_2"
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 192
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f3aa08447e651543936e51b73d75442
+      internalID: -601942516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "MilishnikBig_Attack_\u0444\u0438\u043A\u0441_\u043F\u0440\u0430\u0439\u0442\u0448\u0438\u0442_3"
       rect:
         serializedVersion: 2
         x: 0
         y: 128
-        width: 160
+        width: 192
         height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6faa2b7ce8cd0e5469f981087fbd727a
-      internalID: 987213465
+      spriteID: 217f08bf576debe409217c50086629f0
+      internalID: -771502553
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MilishnikBig_Attack_1
+      name: "MilishnikBig_Attack_\u0444\u0438\u043A\u0441_\u043F\u0440\u0430\u0439\u0442\u0448\u0438\u0442_4"
       rect:
         serializedVersion: 2
-        x: 160
+        x: 192
         y: 128
-        width: 160
+        width: 192
         height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8db357d3844c8ca41b16f7c3aa47ecba
-      internalID: 1093667943
+      spriteID: 873d862afb12d9c429f92fe5f7b0c193
+      internalID: 1241235626
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MilishnikBig_Attack_2
+      name: "MilishnikBig_Attack_\u0444\u0438\u043A\u0441_\u043F\u0440\u0430\u0439\u0442\u0448\u0438\u0442_5"
       rect:
         serializedVersion: 2
-        x: 320
+        x: 384
         y: 128
-        width: 160
+        width: 192
         height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d1f10a0a1bc4614fb34ee79a927a4ce
-      internalID: -1325167104
+      spriteID: d9f287486e5bc0e4ca467dd9627ffaf9
+      internalID: -408628843
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MilishnikBig_Attack_3
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 128
-        width: 160
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d88dc6bad08413e448655fcfaa5861be
-      internalID: 1594070330
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MilishnikBig_Attack_4
+      name: "MilishnikBig_Attack_\u0444\u0438\u043A\u0441_\u043F\u0440\u0430\u0439\u0442\u0448\u0438\u0442_6"
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 160
+        width: 192
         height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20ba6a5bae408704793045513d5bc827
-      internalID: 153373224
+      spriteID: e954bb1d58db199489d59d165646f131
+      internalID: 812066646
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MilishnikBig_Attack_5
+      name: "MilishnikBig_Attack_\u0444\u0438\u043A\u0441_\u043F\u0440\u0430\u0439\u0442\u0448\u0438\u0442_7"
       rect:
         serializedVersion: 2
-        x: 160
+        x: 192
         y: 0
-        width: 160
+        width: 192
         height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15eccae541abd1f4cbc34276852b78c4
-      internalID: -301933843
+      spriteID: cae14b980c0cad343a01972c041b8c43
+      internalID: 1373340643
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MilishnikBig_Attack_6
+      name: "MilishnikBig_Attack_\u0444\u0438\u043A\u0441_\u043F\u0440\u0430\u0439\u0442\u0448\u0438\u0442_8"
       rect:
         serializedVersion: 2
-        x: 320
+        x: 384
         y: 0
-        width: 160
+        width: 192
         height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80b4edae3a1e9de40bddd64bb941f1a9
-      internalID: -298969752
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MilishnikBig_Attack_7
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 0
-        width: 160
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0133d4efb84bfb040b7e6d5d7c62e8c5
-      internalID: 377829540
+      spriteID: 5675168f411965d49957e2b04a6cb4be
+      internalID: -856366164
       vertices: []
       indices: 
       edges: []
@@ -314,14 +296,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MilishnikBig_Attack_0: 987213465
-      MilishnikBig_Attack_1: 1093667943
-      MilishnikBig_Attack_2: -1325167104
-      MilishnikBig_Attack_3: 1594070330
-      MilishnikBig_Attack_4: 153373224
-      MilishnikBig_Attack_5: -301933843
-      MilishnikBig_Attack_6: -298969752
-      MilishnikBig_Attack_7: 377829540
+      "MilishnikBig_Attack_\u0444\u0438\u043A\u0441_\u043F\u0440\u0430\u0439\u0442\u0448\u0438\u0442_0": 1738214863
+      "MilishnikBig_Attack_\u0444\u0438\u043A\u0441_\u043F\u0440\u0430\u0439\u0442\u0448\u0438\u0442_1": 1093844954
+      "MilishnikBig_Attack_\u0444\u0438\u043A\u0441_\u043F\u0440\u0430\u0439\u0442\u0448\u0438\u0442_2": -601942516
+      "MilishnikBig_Attack_\u0444\u0438\u043A\u0441_\u043F\u0440\u0430\u0439\u0442\u0448\u0438\u0442_3": -771502553
+      "MilishnikBig_Attack_\u0444\u0438\u043A\u0441_\u043F\u0440\u0430\u0439\u0442\u0448\u0438\u0442_4": 1241235626
+      "MilishnikBig_Attack_\u0444\u0438\u043A\u0441_\u043F\u0440\u0430\u0439\u0442\u0448\u0438\u0442_5": -408628843
+      "MilishnikBig_Attack_\u0444\u0438\u043A\u0441_\u043F\u0440\u0430\u0439\u0442\u0448\u0438\u0442_6": 812066646
+      "MilishnikBig_Attack_\u0444\u0438\u043A\u0441_\u043F\u0440\u0430\u0439\u0442\u0448\u0438\u0442_7": 1373340643
+      "MilishnikBig_Attack_\u0444\u0438\u043A\u0441_\u043F\u0440\u0430\u0439\u0442\u0448\u0438\u0442_8": -856366164
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
