@@ -1,5 +1,5 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 internal class PlayerOnDeathState : PlayerBaseState
 {
@@ -7,6 +7,8 @@ internal class PlayerOnDeathState : PlayerBaseState
     {
         IsRootState = true;
     }
+
+    private float _time;
 
     public override void CheckSwitchStates()
     {
@@ -18,6 +20,8 @@ internal class PlayerOnDeathState : PlayerBaseState
         Context.CharacterController.enabled = false;
         Context.ResetInputs();
         Context.AnimatorController.OnDeath();
+
+        _time = 0f;
     }
 
     public override void ExitState()
@@ -38,6 +42,11 @@ internal class PlayerOnDeathState : PlayerBaseState
     public override void UpdateState()
     {
         DoPhysics();
+
+        _time += Time.deltaTime;
+
+        if (_time > 3f)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void DoPhysics()

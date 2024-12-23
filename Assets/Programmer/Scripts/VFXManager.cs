@@ -21,6 +21,11 @@ public class VFXManager : MonoBehaviour
         GameObject particles = Instantiate(_vfxPrefabs.p_DustParticlesPrefab, position + _offset, Quaternion.identity);
         particles.GetComponent<VFXScript>().Init(_pauseManager);
     }
+    public void SpawnHealParticles(Vector3 position)
+    {
+        GameObject particles = Instantiate(_vfxPrefabs.p_HealingParticlesPrefab, position + _offset, Quaternion.identity);
+        particles.GetComponent<VFXScript>().Init(_pauseManager);
+    }
     public void SpawnBloodParticles(Vector3 position, Color bloodColor)
     {
         GameObject particles = Instantiate(_vfxPrefabs.p_BloodtParticlesPrefab, position + _offset, Quaternion.identity);

@@ -18,6 +18,10 @@ public enum FMOD_SoundBanks
     EnemyShieldGetDamage,
     #endregion
 
+    #region Small Enemy
+    SmallEnemyFootsteps,
+    #endregion
+
     #region Fountain
     FountainFlow, FountainInteract,
     #endregion

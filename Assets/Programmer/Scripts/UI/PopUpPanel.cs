@@ -9,7 +9,7 @@ public abstract class PopUpPanel : MonoBehaviour
 
     [Header("Бэкгроунд поля")]
     [SerializeField] private Image _bg;
-    [SerializeField] private float _bgTargetAlpha = 192f;
+    [SerializeField, Range(0f,255f)] private float _bgTargetAlpha = 192f;
 
     [Header("PopUp поля")]
     [SerializeField] private Image _popUpWindow;
@@ -30,13 +30,20 @@ public abstract class PopUpPanel : MonoBehaviour
         _bgTargetAlpha /= 255f;
 
         _popUpWindow.transform.localPosition = _popUpWindowStartPosition;
-        _button.interactable = false;
+        
+        if( _button != null )
+            _button.interactable = false;
     }
 
     private void OnEnable()
     {
         _bg.DOFade(_bgTargetAlpha, _duration).SetEase(Ease.OutCubic);
-        _popUpWindow.rectTransform.DOLocalMove(_popUpWindowTargetPosition, _duration).SetEase(Ease.OutBack, _overshoot).OnComplete( () => _button.interactable = true);
+        _popUpWindow.rectTransform.DOLocalMove(_popUpWindowTargetPosition, _duration).SetEase(Ease.OutBack, _overshoot).OnComplete( () => 
+            {
+                if (_button != null)
+                    _button.interactable = true; 
+            });
+
         DoSomethingOnEnable();
     }
 

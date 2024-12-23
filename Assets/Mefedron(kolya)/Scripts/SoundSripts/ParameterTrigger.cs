@@ -5,8 +5,6 @@ public class ParameterTrigger : MonoBehaviour
 {
     FMOD.Studio.EventInstance music;
 
-    private string _player = "Player";
-
     private void Start()
     {
         music = FMODUnity.RuntimeManager.CreateInstance("event:/Lvl_Music/Lvl_1");

@@ -229,7 +229,6 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         Vector2 boxCastSize = new Vector2(_feetColl.bounds.size.x, _moveStats.GroundDetectionRayLength);
 
         _groundHit = Physics2D.BoxCast(boxCastOrigin, boxCastSize, 0f, Vector2.down, _moveStats.GroundDetectionRayLength, _moveStats.JumpSurfaceLayer);
-        //_groundHit = Physics2D.OverlapBox()
         if (_groundHit.collider != null)
             _isGrounded = true;
 
@@ -289,6 +288,8 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
             _currentPTP = null;
     }
 
+#if UNITY_EDITOR
+
     private void OnGUI()
     {
         GUIStyle textSTyle = new GUIStyle();
@@ -301,6 +302,8 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         if (_currentState.CurrentSubState != null)
             GUI.Label(new Rect((Screen.width / 2) - (width / 2), 41, width, 31), $"Current Sub State: {_currentState.CurrentSubState.ToString()}", textSTyle);
     }
+
+#endif
 
     private void OnDeath(PlayerOnDeathSignal signal)
     {

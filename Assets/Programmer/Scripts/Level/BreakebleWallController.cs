@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using UnityEngine;
 
@@ -14,6 +15,7 @@ public class BreakebleWallController : MonoBehaviour
 
     public void GetDamage(float value)
     {
+        RuntimeManager.PlayOneShot("event:/SFX/BreakebleWall Hit");
         _health -= value;
 
         StartCoroutine(ShakeWallCoroutine(_duration, _intensity));

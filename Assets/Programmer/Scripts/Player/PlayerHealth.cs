@@ -8,6 +8,8 @@ public class PlayerHealth : IPlayerHealth
         _eventBus = _playerData.EventBus;
         _maxHealth = _playerData._maxHealth;
         _playerData._health = _maxHealth;
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Health", _playerData._health);
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", 0);
     }
 
     private EventBus _eventBus;
@@ -38,10 +40,12 @@ public class PlayerHealth : IPlayerHealth
         if(_playerData._health <= 0)
         {
             _playerData._health = 0;
+
             _eventBus.Invoke(new PlayerOnDeathSignal());
+            RuntimeManager.PlayOneShot("event:/SFX/Character Death");
             return;
         }
-
+        RuntimeManager.PlayOneShot("event:/SFX/Character Hit");
         _eventBus.Invoke(new PlayerApplyForceSignal());
     }
 
@@ -61,6 +65,7 @@ public class PlayerHealth : IPlayerHealth
             _eventBus.Invoke(new PlayerHealthChangeSignal(_playerData._health));
             _eventBus.Invoke(new MedKitPerformedSignal());
             _medKitsCount--;
+            _playerData.VFXManager.SpawnHealParticles(_playerData.transform.position);
         }
     }
     public void OnMedKitPickUp()

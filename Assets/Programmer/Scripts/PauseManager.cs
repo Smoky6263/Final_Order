@@ -47,6 +47,7 @@ public class PauseManager : MonoBehaviour
     {
         foreach (IPauseHandler handler in _pauseHandlers)
         {
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Pause", 1);
             handler.SetPause();
         }
 
@@ -57,6 +58,7 @@ public class PauseManager : MonoBehaviour
     {
         foreach (IPauseHandler handler in _pauseHandlers)
         {
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Pause", 0);
             handler.SetPlay();
         }
 
@@ -68,11 +70,11 @@ public class PauseManager : MonoBehaviour
         if (_pauseHandlers.Contains(pauseHandler) == false)
         {
             _pauseHandlers.Add(pauseHandler);
-            Debug.Log($"Объект: {pauseHandler} зарегистрирован в менджерепаузы");
+            //Debug.Log($"Объект: {pauseHandler} зарегистрирован в менджерепаузы");
         }
         else
         {
-            Debug.LogWarning($"Попытка зарегистрировать объект: {pauseHandler}, который уже есть в пазменеджере!");
+            //Debug.LogWarning($"Попытка зарегистрировать объект: {pauseHandler}, который уже есть в пазменеджере!");
         }
     }
 
@@ -81,11 +83,11 @@ public class PauseManager : MonoBehaviour
         if (_pauseHandlers.Contains(pauseHandler))
         {
             _pauseHandlers.Remove(pauseHandler);
-            Debug.Log($"{pauseHandler} удалён из списка обработчиков.");
+            //Debug.Log($"{pauseHandler} удалён из списка обработчиков.");
         }
         else
         {
-            Debug.LogWarning($"{pauseHandler} не найден в списке.");
+            //Debug.LogWarning($"{pauseHandler} не найден в списке.");
         }
     }
 

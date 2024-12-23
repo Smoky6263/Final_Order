@@ -13,6 +13,9 @@ public class VFXPrefabs : ScriptableObject
     [Header("Blood Particles")]
     public GameObject p_BloodtParticlesPrefab;
 
+    [Header("Player Healing Particles")]
+    public GameObject p_HealingParticlesPrefab;
+
     #endregion
 
     #region Materials
