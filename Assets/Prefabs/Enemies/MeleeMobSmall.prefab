@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8989175745350162894}
   - component: {fileID: 3193599197506280486}
   m_Layer: 9
-  m_Name: MilishnikBig_Graphics
+  m_Name: Milishnik_Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 5456410791048275942}
   - component: {fileID: 5087146348245600799}
   m_Layer: 9
-  m_Name: MilishnikBig
+  m_Name: Milishnik
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

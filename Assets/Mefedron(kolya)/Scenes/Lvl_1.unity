@@ -257,11 +257,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7680494696300978838, guid: bd3d54c3848325547ad28a9329aeafd1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.61
+      value: 4.2549987
       objectReference: {fileID: 0}
     - target: {fileID: 7680494696300978838, guid: bd3d54c3848325547ad28a9329aeafd1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.27
+      value: -5.147998
       objectReference: {fileID: 0}
     - target: {fileID: 7680494696300978838, guid: bd3d54c3848325547ad28a9329aeafd1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2160,6 +2160,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1812900653}
     m_Modifications:
+    - target: {fileID: 4147634842948387934, guid: cbdffd6a6375f4a419009c1d4a508716, type: 3}
+      propertyPath: _eventBus
+      value: 
+      objectReference: {fileID: 773303216}
     - target: {fileID: 5774169385375768408, guid: cbdffd6a6375f4a419009c1d4a508716, type: 3}
       propertyPath: m_LocalPosition.x
       value: 97.44748
@@ -2208,6 +2212,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 4.16
       objectReference: {fileID: 0}
+    - target: {fileID: 8989175745350162894, guid: cbdffd6a6375f4a419009c1d4a508716, type: 3}
+      propertyPath: _soundsManager
+      value: 
+      objectReference: {fileID: 944292508}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3264,6 +3272,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1812900653}
     m_Modifications:
+    - target: {fileID: 4147634842948387934, guid: cbdffd6a6375f4a419009c1d4a508716, type: 3}
+      propertyPath: _eventBus
+      value: 
+      objectReference: {fileID: 773303216}
     - target: {fileID: 5774169385375768408, guid: cbdffd6a6375f4a419009c1d4a508716, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.3274803
@@ -3312,6 +3324,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 4.16
       objectReference: {fileID: 0}
+    - target: {fileID: 8989175745350162894, guid: cbdffd6a6375f4a419009c1d4a508716, type: 3}
+      propertyPath: _soundsManager
+      value: 
+      objectReference: {fileID: 944292508}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16960,6 +16976,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1812900653}
     m_Modifications:
+    - target: {fileID: 4147634842948387934, guid: cbdffd6a6375f4a419009c1d4a508716, type: 3}
+      propertyPath: _eventBus
+      value: 
+      objectReference: {fileID: 773303216}
     - target: {fileID: 5774169385375768408, guid: cbdffd6a6375f4a419009c1d4a508716, type: 3}
       propertyPath: m_LocalPosition.x
       value: 47.477478
@@ -17008,6 +17028,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 4.16
       objectReference: {fileID: 0}
+    - target: {fileID: 8989175745350162894, guid: cbdffd6a6375f4a419009c1d4a508716, type: 3}
+      propertyPath: _soundsManager
+      value: 
+      objectReference: {fileID: 944292508}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17524,27 +17548,7 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4886285779270162210, guid: 9e38f556ac5d9754da761db3644764c1, type: 3}
-      propertyPath: _eventBusManager
-      value: 
-      objectReference: {fileID: 773303216}
     - target: {fileID: 5298877315070652080, guid: 9e38f556ac5d9754da761db3644764c1, type: 3}
-      propertyPath: _eventBusManager
-      value: 
-      objectReference: {fileID: 773303216}
-    - target: {fileID: 5574061362997662208, guid: 9e38f556ac5d9754da761db3644764c1, type: 3}
-      propertyPath: m_PixelPerfect
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5574061362997662208, guid: 9e38f556ac5d9754da761db3644764c1, type: 3}
-      propertyPath: m_VertexColorAlwaysGammaSpace
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5574061362997662208, guid: 9e38f556ac5d9754da761db3644764c1, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7821033934505492211, guid: 9e38f556ac5d9754da761db3644764c1, type: 3}
       propertyPath: _eventBusManager
       value: 
       objectReference: {fileID: 773303216}
@@ -18789,6 +18793,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1812900653}
     m_Modifications:
+    - target: {fileID: 4147634842948387934, guid: cbdffd6a6375f4a419009c1d4a508716, type: 3}
+      propertyPath: _eventBus
+      value: 
+      objectReference: {fileID: 773303216}
     - target: {fileID: 5774169385375768408, guid: cbdffd6a6375f4a419009c1d4a508716, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16.322517
@@ -18837,6 +18845,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 4.16
       objectReference: {fileID: 0}
+    - target: {fileID: 8989175745350162894, guid: cbdffd6a6375f4a419009c1d4a508716, type: 3}
+      propertyPath: _soundsManager
+      value: 
+      objectReference: {fileID: 944292508}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19630,6 +19642,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -3.42
       objectReference: {fileID: 0}
+    - target: {fileID: 4147634842948387934, guid: cbdffd6a6375f4a419009c1d4a508716, type: 3}
+      propertyPath: _eventBus
+      value: 
+      objectReference: {fileID: 773303216}
     - target: {fileID: 5774169385375768408, guid: cbdffd6a6375f4a419009c1d4a508716, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.7925186
@@ -19678,6 +19694,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 4.16
       objectReference: {fileID: 0}
+    - target: {fileID: 8989175745350162894, guid: cbdffd6a6375f4a419009c1d4a508716, type: 3}
+      propertyPath: _soundsManager
+      value: 
+      objectReference: {fileID: 944292508}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19804,11 +19824,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3883553546998956965, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.455
+      value: 5.1
       objectReference: {fileID: 0}
     - target: {fileID: 3883553546998956965, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.872
+      value: -5.75
       objectReference: {fileID: 0}
     - target: {fileID: 3883553546998956965, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
       propertyPath: m_LocalPosition.z
