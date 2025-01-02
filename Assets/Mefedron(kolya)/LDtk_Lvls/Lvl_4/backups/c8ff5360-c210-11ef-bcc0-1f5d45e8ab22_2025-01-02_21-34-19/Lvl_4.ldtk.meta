@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 04f156b262f7b3f44b74502e9f9f6556
+guid: 3111316c38281d04ca6665e187ec4ee5
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -9,24 +9,16 @@ ScriptedImporter:
   assetBundleVariant: 
   script: {fileID: 11500000, guid: aaa16bfc62c086f4fb45da87b6acf9b1, type: 3}
   _reimportOnDependencyChange: 1
-  _jsonFile: {fileID: -164016180542632921, guid: 04f156b262f7b3f44b74502e9f9f6556, type: 3}
+  _jsonFile: {instanceID: 0}
   _pixelsPerUnit: 32
   _customLevelPrefab: {instanceID: 0}
   _intGridValueColorsVisible: 0
   _useCompositeCollider: 1
-  _geometryType: 1
+  _geometryType: 0
   _createBackgroundColor: 1
   _createLevelBoundsTrigger: 0
   _useParallax: 1
-  _intGridValues:
-  - _key: Objects_1
-    _asset: {instanceID: 0}
-  - _key: Stairs_1
-    _asset: {instanceID: 0}
-  - _key: Traps_1
-    _asset: {instanceID: 0}
-  - _key: Ground_1
-    _asset: {instanceID: 0}
+  _intGridValues: []
   _entities: []
   _enumGenerate: 0
   _enumPath: 

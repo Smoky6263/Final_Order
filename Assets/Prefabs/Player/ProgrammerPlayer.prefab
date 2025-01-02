@@ -349,7 +349,7 @@ MonoBehaviour:
   _feetColl: {fileID: 7388641759800157186}
   _maxHealth: 100
   _health: 100
-  _damageDelayTime: 2
+  _damageDelayTime: 0.2
   _weaponController: {fileID: 2774926343881191906}
 --- !u!114 &2879987066415813741
 MonoBehaviour:

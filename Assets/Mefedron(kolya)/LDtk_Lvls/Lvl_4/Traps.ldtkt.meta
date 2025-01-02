@@ -1,0 +1,594 @@
+fileFormatVersion: 2
+guid: b3630ee7723f95d4db2f754e20e1263a
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: f3268c876daf4890b6af6cd462063137, type: 3}
+  _reimportOnDependencyChange: 1
+  _pixelsPerUnit: 32
+  _overrideTexture: {instanceID: 0}
+  _sprites:
+  - name: Traps_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 65dcb28f319bc014191b513dc97c7d32
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 96
+      width: 32
+      height: 32
+    spriteID: fe810c6fd0a74d34d98922abdd931969
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 96
+      width: 32
+      height: 32
+    spriteID: a70ee91a9a8e82247b1e1294389c97c3
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 96
+      width: 32
+      height: 32
+    spriteID: b24c51df5e692494588849fb97b2d51d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 96
+      width: 32
+      height: 32
+    spriteID: c7ed03e6a7e49c74d93a9053150b3ee8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 96
+      width: 32
+      height: 32
+    spriteID: f427a41cc9431544496bbb80b07c9f21
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 96
+      width: 32
+      height: 32
+    spriteID: ca2835c05bb0c5a4dae53498a9a3c677
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 96
+      width: 32
+      height: 32
+    spriteID: cd88ce194fe3fbc478ea5ad22f29986f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 8234c89f9bfd6874da5d57db9c9b418c
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 96
+      width: 32
+      height: 32
+    spriteID: abcce5f6529821a44a66c075d200f536
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 50a9faa5caecc954986df94723be0b53
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 2885e656f7629984191325f0276b8d6b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 4c794e7b7885c424dba21cf22f1f8827
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_13
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 3d51f8a9723eb3d4e9fc20fcf1bf8522
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_14
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 1035a0523df93f04091cf6f68116ac71
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 64
+      width: 32
+      height: 32
+    spriteID: a25978af97aca4d46953121ab6c03d8e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_16
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 64
+      width: 32
+      height: 32
+    spriteID: e51d90486fa6e4543a622a9dc99fa86f
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_17
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 287354b38cbd89b4ca92e0d775132c5a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_18
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 2d2be1f63360beb4e802cadff18ed953
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_19
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 35eec5cefa54fd847871c2356b2e8b0d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_20
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 9a905d71add77ae47b881effa780e6f5
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_21
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 0e5d101746f0bd947bc08c3256ba717d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_22
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 329065152ed4ed54bb269c689c35ea1d
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_23
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 6adc5a3f75a8d2b4fadd80ca9ec83e59
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_24
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 5d715e135bf985843a1c206339c87292
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_25
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 63cf3337e8fc97c48bb1a6be94dac0ec
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_26
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 32
+      width: 32
+      height: 32
+    spriteID: a7055fe9cafa930458ef6e050de522da
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_27
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 32
+      width: 32
+      height: 32
+    spriteID: f40eba73d0bb5a545b7ff27c086238ba
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_28
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 32
+      width: 32
+      height: 32
+    spriteID: d223aae1a5f573640aabc19d02fd1316
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_29
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 2567bcd7203ebfc408f7f910cc5dbab7
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_30
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 32
+      height: 32
+    spriteID: b283c3c2c4c69624b9ebed3b751baf11
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_31
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 5c993601f4254a34ca15bbd0060df8e8
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_32
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 0
+      width: 32
+      height: 32
+    spriteID: ae1290995f062dc4caae6c5402e80412
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_33
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 0
+      width: 32
+      height: 32
+    spriteID: f0eb0d88e2418a64785fee656725d0f6
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_34
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 74f7128b7d4d6e24a8661b83268174bc
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_35
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 0
+      width: 32
+      height: 32
+    spriteID: e7fbfcd9a46415e4690d19699fed3693
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_36
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 0
+      width: 32
+      height: 32
+    spriteID: d53ce189039c6b344aa68fa98b636b68
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_37
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 224
+      y: 0
+      width: 32
+      height: 32
+    spriteID: b40f323c678c2aa4f86720967f8c99b4
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Traps_38
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 256
+      y: 0
+      width: 32
+      height: 32
+    spriteID: db42e43645549e544ae8a6f370974b58
+    spriteOutline:
+    - shape:
+      - {x: 10, y: 15}
+      - {x: -12, y: 15}
+      - {x: -16, y: 0}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 5}
+      - {x: 14, y: 14}
+    tessellationDetail: 0
+  - name: Traps_39
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 288
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 7440bbc5c97edb34bbec04ba019f625d
+    spriteOutline:
+    - shape:
+      - {x: 10, y: 11}
+      - {x: 10, y: 15}
+      - {x: -11, y: 15}
+      - {x: -14, y: 14}
+      - {x: -16, y: 5}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 12}
+      - {x: 13, y: 12}
+    tessellationDetail: 0
+  _secondaryTextures: []
+  _artifacts: {fileID: -2988177865379244337, guid: b3630ee7723f95d4db2f754e20e1263a, type: 3}
