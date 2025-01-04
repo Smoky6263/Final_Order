@@ -18,6 +18,9 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     private PlayerBaseState _currentState;
     private PlayerStateFactory _states;
 
+    public CameraFollowObject _cameraFollowObject;
+    private float _fallSpeedYDampingChangeThreshold;
+
     public bool OnPause { get; set; } = false;
     public PlayerBaseState CurrentState { get { return _currentState; } set { _currentState = value; } }
 
@@ -34,6 +37,8 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     [SerializeField, Range(0f, 100f)] public float _health;
     [Header("После получения урона, игрок не может получить\nпока не пройдет сек:")]
     [SerializeField, Range(0f, 2f)] private float _damageDelayTime;
+    [Header("CameraStuff")]
+    [SerializeField] private GameObject _cameraFollowGo;
 
     [Header("Weapon Variables")]
     [SerializeField] private PlayerWeaponController _weaponController;
@@ -177,13 +182,29 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         _states = new PlayerStateFactory(this);
         _currentState = _states.Fall();
         _currentState.EnterState();
+
+        _cameraFollowObject = _cameraFollowGo.GetComponent<CameraFollowObject>();
+
+        _fallSpeedYDampingChangeThreshold = CameraManager.instance._fallSpeedYDampingChangeThreshold;
     }
 
     private void Update()
     {
         if (OnPause) return;
 
+        if (_rigidBody.velocity.y < _fallSpeedYDampingChangeThreshold && !CameraManager.instance.IsLerpingYDamping && !CameraManager.instance.LerpedFromPlayerFalling)
+        {
+            CameraManager.instance.LerpYDamping(true);
+        }
+
+        if (_rigidBody.velocity.y >= 0f && !CameraManager.instance.IsLerpingYDamping && CameraManager.instance.LerpedFromPlayerFalling)
+        {
+            CameraManager.instance.LerpedFromPlayerFalling = false;
+            CameraManager.instance.LerpYDamping(false);
+        }
+
         IsGroundedCheck();
+
     }
 
     private void FixedUpdate()
