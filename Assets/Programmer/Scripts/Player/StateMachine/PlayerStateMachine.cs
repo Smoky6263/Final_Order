@@ -1,3 +1,4 @@
+using Cinemachine;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -21,15 +22,19 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     public CameraFollowObject _cameraFollowObject;
     private float _fallSpeedYDampingChangeThreshold;
 
+    public CinemachineImpulseSource _impulseSource;
+
     public bool OnPause { get; set; } = false;
     public PlayerBaseState CurrentState { get { return _currentState; } set { _currentState = value; } }
 
     [SerializeField] private EventBusManager _gameManager;
     [SerializeField] private PlayerStats _moveStats;
+    [SerializeField] public ScreenShakeProfile _profile;
     [SerializeField] private SpriteRenderer _torsoSprite;
     [SerializeField] private SpriteRenderer _legsSprite;
     [SerializeField] private Collider2D _bodyColl;
     [SerializeField] private Collider2D _feetColl;
+
     #region Player Fields
 
     [Header("Health Variables")]
@@ -168,6 +173,8 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
 
         _vfxManager = _gameManager.GetComponent<VFXManager>();
         _pauseManager = _gameManager.GetComponent<PauseManager>();
+
+        _impulseSource = GetComponent<CinemachineImpulseSource>();
 
         _characterController = GetComponent<CharacterController>();
         _playerHealth = new PlayerHealth(this);

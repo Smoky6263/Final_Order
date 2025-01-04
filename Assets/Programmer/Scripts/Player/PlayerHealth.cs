@@ -1,3 +1,4 @@
+using Cinemachine;
 using FMODUnity;
 using UnityEngine;
 public class PlayerHealth : IPlayerHealth
@@ -8,6 +9,8 @@ public class PlayerHealth : IPlayerHealth
         _eventBus = _playerData.EventBus;
         _maxHealth = _playerData._maxHealth;
         _playerData._health = _maxHealth;
+        _impulseSource = _playerData._impulseSource;
+        _profile = _playerData._profile;
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Health", _playerData._health);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", 0);
     }
@@ -17,7 +20,9 @@ public class PlayerHealth : IPlayerHealth
 
     private float _maxHealth;
     private int _medKitsCount;
-    
+    private CinemachineImpulseSource _impulseSource;
+    private ScreenShakeProfile _profile;
+
     public Vector2 ApplyForce {  get; private set; } = Vector2.zero;
     public bool OnDamageDelay { get; private set; } = false;
 
@@ -31,6 +36,7 @@ public class PlayerHealth : IPlayerHealth
         ApplyForce = applyForce;
         _playerData._health -= value;
 
+        CameraShakeManager.instance.ScreenShakeFromProfile(_profile, _impulseSource);
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Health", _playerData._health);
 
         _playerData.VFXManager.SpawnBloodParticles(_playerData.transform.position, _playerData.VFXManager.PlayerBlood);
