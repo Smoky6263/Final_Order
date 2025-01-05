@@ -29,7 +29,10 @@ internal class EnemyWithWeaponFollowPlayer : BaseState<EnemyWithWeaponStateMachi
     public override EnemyWithWeaponStateMachine.EnemyWithWeaponStates GetNextState()
     {
         if (Context.PlayerDetected == false)
+        {
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", 0);
             return EnemyWithWeaponStateMachine.EnemyWithWeaponStates.Idle;
+        }
 
         if (Context.OnAttack == true)
             return EnemyWithWeaponStateMachine.EnemyWithWeaponStates.Attack;
@@ -61,6 +64,8 @@ internal class EnemyWithWeaponFollowPlayer : BaseState<EnemyWithWeaponStateMachi
         bool playerOnRightSide = Context.transform.position.x < Context.PlayerPosition.x;
         Context.transform.rotation = playerOnRightSide ? Quaternion.Euler(0f, 180f, 0f) : Quaternion.Euler(0f, 0f, 0f);
         Context.Weapon.WeaponFacingRight(playerOnRightSide);
+
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", 1);
 
         if (distance < Context.AttackDistance) 
         {
