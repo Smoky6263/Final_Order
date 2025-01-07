@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7842243879591011811}
   - component: {fileID: 9036913389921107412}
   - component: {fileID: 9033652127286175498}
-  - component: {fileID: 7351733180469609001}
   - component: {fileID: 8305346620404567466}
+  - component: {fileID: 8680330757246914420}
   m_Layer: 0
   m_Name: ----------GameManager----------
   m_TagString: Untagged
@@ -62,18 +62,6 @@ MonoBehaviour:
   _vfxPrefabs: {fileID: 11400000, guid: 1241b26a6005b664dadfeb4d080fa8e4, type: 2}
   _enemyBlood: {r: 0, g: 1, b: 0, a: 1}
   _playerBlood: {r: 1, g: 0, b: 0, a: 1}
---- !u!114 &7351733180469609001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5346706600760549705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9106583e2bf8e94eb851b090319c3c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8305346620404567466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,6 +76,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soundBanks:
     _serializedList:
+    - Key: 8
+      Value:
+        Guid:
+          Data1: -2003675737
+          Data2: 1247784994
+          Data3: 629207980
+          Data4: 1084768433
+        Path: event:/SFX/Small Enemy Footsteps
     - Key: 0
       Value:
         Guid:
@@ -152,3 +148,16 @@ MonoBehaviour:
           Data3: -728012117
           Data4: 1229415557
         Path: event:/EnemyGetDamage
+--- !u!114 &8680330757246914420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5346706600760549705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9106583e2bf8e94eb851b090319c3c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pauseMenu: {fileID: 0}

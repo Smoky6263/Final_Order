@@ -1,3 +1,4 @@
+using Cinemachine;
 using UnityEngine;
 
 public class Spikes : MonoBehaviour
@@ -5,7 +6,10 @@ public class Spikes : MonoBehaviour
     [SerializeField] private sbyte _damageValue;
     [SerializeField] private Vector2 _damageForce;
 
+
     private const string _playerTag = "Player";
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == _playerTag)

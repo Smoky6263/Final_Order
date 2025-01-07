@@ -10,6 +10,8 @@ public class PauseManager : MonoBehaviour
 
     private List<IPauseHandler> _pauseHandlers = new List<IPauseHandler>();
 
+    [SerializeField] private GameObject _pauseMenu;
+
     public bool OnPause { get; private set; } = false;
 
     private void Awake()
@@ -48,17 +50,19 @@ public class PauseManager : MonoBehaviour
         foreach (IPauseHandler handler in _pauseHandlers)
         {
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Pause", 1);
+            _pauseMenu.gameObject.SetActive(true);
             handler.SetPause();
         }
 
         OnPause = true;
     }
 
-    private void SetPlay()
+    public void SetPlay()
     {
         foreach (IPauseHandler handler in _pauseHandlers)
         {
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Pause", 0);
+            _pauseMenu.gameObject.SetActive(false);
             handler.SetPlay();
         }
 
