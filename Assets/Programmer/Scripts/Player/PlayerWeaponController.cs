@@ -13,13 +13,13 @@ public class PlayerWeaponController : MonoBehaviour
     private EventBus _eventBus;
     private float _damageValue;
 
-    public float Box_X_value {  get; private set; }
+    public float DamageBox_X_value {  get; private set; }
     public Vector3 BoxOffset { get { return _boxOffset; } set { _boxOffset = value; } }
 
 
     private void Awake()
     {
-        Box_X_value = _boxOffset.x;
+        DamageBox_X_value = _boxOffset.x;
         _damageValue = _playerStats._weaponDamage;
     }
 
@@ -35,9 +35,9 @@ public class PlayerWeaponController : MonoBehaviour
 
         if (hitEnemy != null)
         {
-            hitEnemy.GetComponent<IEnemy>().HealthManager.GetDamage(_damageValue);
             float forceDirection = hitEnemy.transform.position.x < transform.position.x ? -1f : 1f;
-            hitEnemy.GetComponent<Rigidbody2D>().AddForce(new Vector2(_damageForce.x * forceDirection, _damageForce.y), ForceMode2D.Impulse);
+            Vector2 applyDamageForce = new Vector2(_damageForce.x * forceDirection, _damageForce.y);
+            hitEnemy.GetComponentInParent<IEnemy>().HealthManager.ApplyDamage(_damageValue, applyDamageForce);
         }
 
         if (hitWall != null)

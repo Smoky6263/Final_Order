@@ -1,25 +1,29 @@
 using UnityEngine;
 
-public class EnemyHealth
+public class EnemyHealth : IEnemyHealth
 {
-    public EnemyHealth(IEnemy context)
+    public EnemyHealth(IStandartEnemy context)
     {
         Context = context;
         Context.Health = Context.MaxHealth;
     }
 
-    private IEnemy Context;
+    private IStandartEnemy Context;
 
-    public void GetDamage(float value)
+    public void ApplyDamage(float value, Vector2 applyDamageForce)
     {
         Context.Health -= value;
         Context.VFXManager.SpawnBloodParticles(Context.GetPosition(), Context.VFXManager.EnemyBlood);
-        Context.SoundsController.EnemyShieldGetDamage();
-        Context.ChangeMaterial();
-
+        Context.SoundsController.EnemyApplyDamage();
+        
         if (Context.Health <= 0)
         {
             Context.Die();
+            return;
         }
+
+        Context.ChangeMaterial();
+        Context.RigidBody2D.AddForce(applyDamageForce, ForceMode2D.Impulse);
+
     }
 }

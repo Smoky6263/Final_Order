@@ -236,6 +236,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6507647410367635860, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _eventBus
+      value: 
+      objectReference: {fileID: 1704338942}
+    - target: {fileID: 8610354360569374220, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _soundsManager
+      value: 
+      objectReference: {fileID: 1704338946}
     - target: {fileID: 9140029826597003274, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
       propertyPath: m_Name
       value: SmallMob_Parent (7)
@@ -485,6 +493,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7249239332126146121, guid: dc1eb0e2a54a04348951b338422aac78, type: 3}
+      propertyPath: _eventBus
+      value: 
+      objectReference: {fileID: 1704338942}
     - target: {fileID: 8460383495903688266, guid: dc1eb0e2a54a04348951b338422aac78, type: 3}
       propertyPath: m_Name
       value: MobWithShield_Parent
@@ -624,6 +636,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6507647410367635860, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _eventBus
+      value: 
+      objectReference: {fileID: 1704338942}
+    - target: {fileID: 8610354360569374220, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _soundsManager
+      value: 
+      objectReference: {fileID: 1704338946}
     - target: {fileID: 9140029826597003274, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
       propertyPath: m_Name
       value: SmallMob_Parent (5)
@@ -1266,6 +1286,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6507647410367635860, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _eventBus
+      value: 
+      objectReference: {fileID: 1704338942}
+    - target: {fileID: 8610354360569374220, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _soundsManager
+      value: 
+      objectReference: {fileID: 1704338946}
     - target: {fileID: 9140029826597003274, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
       propertyPath: m_Name
       value: SmallMob_Parent (8)
@@ -1293,6 +1321,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6423129387968694936, guid: dc1eb0e2a54a04348951b338422aac78, type: 3}
+      propertyPath: _soundsManager
+      value: 
+      objectReference: {fileID: 1704338946}
     - target: {fileID: 6847091963053849185, guid: dc1eb0e2a54a04348951b338422aac78, type: 3}
       propertyPath: m_LocalPosition.x
       value: 243.86
@@ -1333,6 +1365,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7249239332126146121, guid: dc1eb0e2a54a04348951b338422aac78, type: 3}
+      propertyPath: _eventBus
+      value: 
+      objectReference: {fileID: 1704338942}
     - target: {fileID: 8460383495903688266, guid: dc1eb0e2a54a04348951b338422aac78, type: 3}
       propertyPath: m_Name
       value: MobWithShield_Parent
@@ -1390,6 +1426,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6507647410367635860, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _eventBus
+      value: 
+      objectReference: {fileID: 1704338942}
+    - target: {fileID: 8610354360569374220, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _soundsManager
+      value: 
+      objectReference: {fileID: 1704338946}
     - target: {fileID: 9140029826597003274, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
       propertyPath: m_Name
       value: SmallMob_Parent (6)
@@ -1917,6 +1961,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6507647410367635860, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _eventBus
+      value: 
+      objectReference: {fileID: 1704338942}
+    - target: {fileID: 8610354360569374220, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _soundsManager
+      value: 
+      objectReference: {fileID: 1704338946}
     - target: {fileID: 9140029826597003274, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
       propertyPath: m_Name
       value: SmallMob_Parent
@@ -1979,6 +2031,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6507647410367635860, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _eventBus
+      value: 
+      objectReference: {fileID: 1704338942}
+    - target: {fileID: 8610354360569374220, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _soundsManager
+      value: 
+      objectReference: {fileID: 1704338946}
     - target: {fileID: 9140029826597003274, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
       propertyPath: m_Name
       value: SmallMob_Parent (2)
@@ -2208,6 +2268,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MilishnikBig_Parent
       objectReference: {fileID: 0}
+    - target: {fileID: 3004407868663876359, guid: 81603249f4f115b4195a681e6303fb76, type: 3}
+      propertyPath: _eventBus
+      value: 
+      objectReference: {fileID: 1704338942}
     - target: {fileID: 4227829173540290112, guid: 81603249f4f115b4195a681e6303fb76, type: 3}
       propertyPath: m_LocalPosition.x
       value: -252.90704
@@ -2248,6 +2312,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5756403218246523228, guid: 81603249f4f115b4195a681e6303fb76, type: 3}
+      propertyPath: _soundsManager
+      value: 
+      objectReference: {fileID: 1704338946}
     - target: {fileID: 8172837636914567972, guid: 81603249f4f115b4195a681e6303fb76, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.27
@@ -2310,6 +2378,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6507647410367635860, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _eventBus
+      value: 
+      objectReference: {fileID: 1704338942}
+    - target: {fileID: 8610354360569374220, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _soundsManager
+      value: 
+      objectReference: {fileID: 1704338946}
     - target: {fileID: 9140029826597003274, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
       propertyPath: m_Name
       value: SmallMob_Parent (3)
@@ -32153,6 +32229,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MilishnikBig_Parent (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3004407868663876359, guid: 81603249f4f115b4195a681e6303fb76, type: 3}
+      propertyPath: _eventBus
+      value: 
+      objectReference: {fileID: 1704338942}
     - target: {fileID: 4227829173540290112, guid: 81603249f4f115b4195a681e6303fb76, type: 3}
       propertyPath: m_LocalPosition.x
       value: -73.68
@@ -32193,6 +32273,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5756403218246523228, guid: 81603249f4f115b4195a681e6303fb76, type: 3}
+      propertyPath: _soundsManager
+      value: 
+      objectReference: {fileID: 1704338946}
     - target: {fileID: 8172837636914567972, guid: 81603249f4f115b4195a681e6303fb76, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.27
@@ -32392,6 +32476,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6507647410367635860, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _eventBus
+      value: 
+      objectReference: {fileID: 1704338942}
+    - target: {fileID: 8610354360569374220, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _soundsManager
+      value: 
+      objectReference: {fileID: 1704338946}
     - target: {fileID: 9140029826597003274, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
       propertyPath: m_Name
       value: SmallMob_Parent (4)
@@ -32479,6 +32571,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6507647410367635860, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _eventBus
+      value: 
+      objectReference: {fileID: 1704338942}
+    - target: {fileID: 8610354360569374220, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _soundsManager
+      value: 
+      objectReference: {fileID: 1704338946}
     - target: {fileID: 9140029826597003274, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
       propertyPath: m_Name
       value: SmallMob_Parent (1)
@@ -32733,6 +32833,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6507647410367635860, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _eventBus
+      value: 
+      objectReference: {fileID: 1704338942}
+    - target: {fileID: 8610354360569374220, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _soundsManager
+      value: 
+      objectReference: {fileID: 1704338946}
     - target: {fileID: 9140029826597003274, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
       propertyPath: m_Name
       value: SmallMob_Parent (1)
@@ -32795,6 +32903,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6507647410367635860, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _eventBus
+      value: 
+      objectReference: {fileID: 1704338942}
+    - target: {fileID: 8610354360569374220, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _soundsManager
+      value: 
+      objectReference: {fileID: 1704338946}
     - target: {fileID: 9140029826597003274, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
       propertyPath: m_Name
       value: SmallMob_Parent
@@ -33028,6 +33144,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6507647410367635860, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _eventBus
+      value: 
+      objectReference: {fileID: 1704338942}
+    - target: {fileID: 8610354360569374220, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _soundsManager
+      value: 
+      objectReference: {fileID: 1704338946}
     - target: {fileID: 9140029826597003274, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
       propertyPath: m_Name
       value: SmallMob_Parent
@@ -33118,6 +33242,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6507647410367635860, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _eventBus
+      value: 
+      objectReference: {fileID: 1704338942}
+    - target: {fileID: 8610354360569374220, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _soundsManager
+      value: 
+      objectReference: {fileID: 1704338946}
     - target: {fileID: 9140029826597003274, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
       propertyPath: m_Name
       value: SmallMob_Parent (1)
@@ -33565,6 +33697,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6507647410367635860, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _eventBus
+      value: 
+      objectReference: {fileID: 1704338942}
+    - target: {fileID: 8610354360569374220, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
+      propertyPath: _soundsManager
+      value: 
+      objectReference: {fileID: 1704338946}
     - target: {fileID: 9140029826597003274, guid: 6edd62572fc8cdc4bb930806371572be, type: 3}
       propertyPath: m_Name
       value: SmallMob_Parent

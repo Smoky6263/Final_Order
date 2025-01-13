@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
-public class EnemyWithWeaponPauseHandler : MonoBehaviour, IPauseHandler
+public class EnemyPauseHandler : MonoBehaviour, IPauseHandler
 {
     private Rigidbody2D _rigidbody2D;
-    private EnemyWithWeaponDamageTrigger _damageTrigger;
+    private EnemyDamageTrigger _damageTrigger;
     private Animator _animator;
     private PauseManager _pauseManager;
-    private IEnemy _enemy;
+    private IStandartEnemy _enemy;
     
     public void Init(PauseManager pauseManager)
     {
@@ -16,11 +16,11 @@ public class EnemyWithWeaponPauseHandler : MonoBehaviour, IPauseHandler
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
 
-        _damageTrigger = GetComponentInChildren<EnemyWithWeaponDamageTrigger>();
+        _damageTrigger = GetComponent<EnemyDamageTrigger>();
 
         _animator = GetComponentInChildren<Animator>();
 
-        _enemy = GetComponent<IEnemy>();
+        _enemy = GetComponent<IStandartEnemy>();
         _pauseManager = _enemy.PauseManager;
         _pauseManager.Register(this);
     }

@@ -3,7 +3,7 @@ using UnityEngine;
 using Cysharp.Threading.Tasks;
 using System.Threading;
 
-public class EnemyWithWeaponStateMachine : StateManager<EnemyWithWeaponStateMachine.EnemyWithWeaponStates>, IEnemy
+public class EnemyWithWeaponStateMachine : StateManager<EnemyWithWeaponStateMachine.EnemyWithWeaponStates>, IStandartEnemy, IEnemy
 {
     [SerializeField] private EventBusManager _eventBus;
     [SerializeField] private EnemyWithWeaponAnimatorController _animator;
@@ -24,7 +24,7 @@ public class EnemyWithWeaponStateMachine : StateManager<EnemyWithWeaponStateMach
     private VFXManager _vFXManager;
     private SoundsManager _soundsManager;
     private SoundsController _soundsController;
-    private EnemyHealth _healthManager;
+    private IEnemyHealth _healthManager;
     private Rigidbody2D _rigidBody2D;
 
     private Vector3 _playerPosition;
@@ -66,7 +66,7 @@ public class EnemyWithWeaponStateMachine : StateManager<EnemyWithWeaponStateMach
     public EnemyWithWeaponDamageTrigger Weapon {  get { return _weapon; } }
     public SoundsManager SoundsManager { get { return _soundsManager; } }
     public SoundsController SoundsController { get { return _soundsController; } }
-    public EnemyHealth HealthManager { get { return _healthManager; } }
+    public IEnemyHealth HealthManager { get { return _healthManager; } }
     public EnemyWithWeaponAnimatorController AnimatorController { get { return _animator; } }
 
 

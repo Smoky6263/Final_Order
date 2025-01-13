@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using FMODUnity;
 using UnityEngine;
 public class PlayerHealth : IPlayerHealth
@@ -8,30 +9,38 @@ public class PlayerHealth : IPlayerHealth
         _eventBus = _playerData.EventBus;
         _maxHealth = _playerData._maxHealth;
         _playerData._health = _maxHealth;
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Health", _playerData._health);
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", 0);
+        _playerMaterial = _playerData.TorsoSprite.material;
+        RuntimeManager.StudioSystem.setParameterByName("Health", _playerData._health);
+        RuntimeManager.StudioSystem.setParameterByName("Fight", 0);
     }
 
     private EventBus _eventBus;
     private PlayerStateMachine _playerData;
 
+    private Material _playerMaterial;
+
     private float _maxHealth;
     private int _medKitsCount;
     
     public Vector2 ApplyForce {  get; private set; } = Vector2.zero;
+    public float ThrowTime {  get; private set; } = 0.15f;
     public bool OnDamageDelay { get; private set; } = false;
 
 
-    public void GetDamage(float value, Vector2 applyForce)
+    public void ApplyDamage(float value, Vector2 applyForce, float throwTime)
     {
         if ((OnDamageDelay == true || _playerData.RollInput == true) || _playerData._health <= 0)
             return;
 
         OnDamageDelay = true;
         ApplyForce = applyForce;
-        _playerData._health -= value;
+        ThrowTime = throwTime;
+        _playerData._health = _playerData._immortality ? _playerData._health : _playerData._health -= value;
 
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Health", _playerData._health);
+        _playerData.TorsoSprite.material = _playerData.VFXManager.PlayerDamageMaterial();
+        _playerData.LegsSprite.material = _playerData.VFXManager.PlayerDamageMaterial();
+
+        RuntimeManager.StudioSystem.setParameterByName("Health", _playerData._health);
 
         _playerData.VFXManager.SpawnBloodParticles(_playerData.transform.position, _playerData.VFXManager.PlayerBlood);
 
@@ -40,6 +49,9 @@ public class PlayerHealth : IPlayerHealth
         if(_playerData._health <= 0)
         {
             _playerData._health = 0;
+            
+            _playerData.TorsoSprite.material = _playerMaterial;
+            _playerData.LegsSprite.material = _playerMaterial;
 
             _eventBus.Invoke(new PlayerOnDeathSignal());
             RuntimeManager.PlayOneShot("event:/SFX/Character Death");
@@ -49,9 +61,21 @@ public class PlayerHealth : IPlayerHealth
         _eventBus.Invoke(new PlayerApplyForceSignal());
     }
 
-    public void TurnOffDamageDelay()
+    public async void TurnOffThrowDelay()
     {
         ApplyForce = Vector2.zero;
+        ThrowTime = 0.15f;
+
+        await TimeOfImmortality();
+    }
+
+    public async UniTask TimeOfImmortality()
+    {
+        await UniTask.Delay(_playerData.ImmortalityTime); // Задержка в 1 секунду
+
+        _playerData.TorsoSprite.material = _playerMaterial;
+        _playerData.LegsSprite.material = _playerMaterial;
+
         OnDamageDelay = false;
     }
 
@@ -60,7 +84,7 @@ public class PlayerHealth : IPlayerHealth
         if(_medKitsCount > 0 && _playerData._health < _maxHealth)
         {
             _playerData._health = _maxHealth;
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Health", _playerData._health);
+            RuntimeManager.StudioSystem.setParameterByName("Health", _playerData._health);
             RuntimeManager.PlayOneShot("event:/SFX/MedKit Use");
             _eventBus.Invoke(new PlayerHealthChangeSignal(_playerData._health));
             _eventBus.Invoke(new MedKitPerformedSignal());
