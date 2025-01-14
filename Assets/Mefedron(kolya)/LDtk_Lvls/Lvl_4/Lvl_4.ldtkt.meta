@@ -1,0 +1,548 @@
+fileFormatVersion: 2
+guid: 1ca022f29cd04be4da25bb51704d4e19
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: f3268c876daf4890b6af6cd462063137, type: 3}
+  _reimportOnDependencyChange: 1
+  _pixelsPerUnit: 32
+  _overrideTexture: {instanceID: 0}
+  _sprites:
+  - name: Lvl_4_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 96
+      width: 32
+      height: 32
+    spriteID: e300abe3aae78be4d938f4adb81916ae
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 96
+      width: 32
+      height: 32
+    spriteID: e33ee679dacdf094e8126dd7a6493040
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 316fa05671cfabe429e2ea5e464dc5ac
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 96
+      width: 32
+      height: 32
+    spriteID: c2531706fb170014fa6dc983899b558a
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 2f3ca31189fcc1b4388225f75634bdb3
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 6d0fcd8012cdaea48b096c7aaf99be81
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 96
+      width: 32
+      height: 32
+    spriteID: 665d26a46565bed44b43763a1a96646b
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 27671e5613c792d42984b013c71c85c7
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 5579a00c6f4ead94a97b20d4e39226a0
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 015aaee11df1ac04d8be178408dbe1e3
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 64
+      width: 32
+      height: 32
+    spriteID: aa5f4c66ed39ac747918ccf8d6380ca7
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 0dd4f5173dd73244b9f3a587589d2146
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_12
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 64
+      width: 32
+      height: 32
+    spriteID: 91840608278befe43b678f7b8dfb3fca
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_13
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 64
+      width: 32
+      height: 32
+    spriteID: c08cd4763d1a0e2478955ff8e7210b48
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_14
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 32
+      width: 32
+      height: 32
+    spriteID: a4f80a866689d08479a4324ce7906143
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_15
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 48ddcc9b36a6e86428b29f2d5bfda67c
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_16
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 6e06efeff2ac82345940c886e4a203b6
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_17
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 32
+      width: 32
+      height: 32
+    spriteID: ac781ff367f87274282bce094123aef0
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_18
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 32
+      width: 32
+      height: 32
+    spriteID: d8eace7d264ac4949b881062a9e0ccf2
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_19
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 99f3880fd6789bd4fbcde05301be4c7d
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_20
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 32
+      width: 32
+      height: 32
+    spriteID: a5bb6dd9c387c13408e799b07f9805e3
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_21
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 975dd0f784116aa42a9087c3bb52e6d4
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_22
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 0
+      width: 32
+      height: 32
+    spriteID: e78be5814bb5ab74bb6d40e8d6270889
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_23
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 7f77dc880b039d84fb292402e905649f
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_24
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 6a0ae2c21d9104f49932b91a96f56470
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_25
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 9fb1002097f1fc94390a8aa8dd1182cd
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_26
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 0
+      width: 32
+      height: 32
+    spriteID: acf4387610850f4448a11adf588ee132
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  - name: Lvl_4_27
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 192
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 8d681e988d0d9e541b625ff244ef7351
+    spriteOutline:
+    - shape:
+      - {x: -16, y: 16}
+      - {x: -16, y: -16}
+      - {x: 16, y: -16}
+      - {x: 16, y: 16}
+    tessellationDetail: 0
+  _secondaryTextures: []
+  _artifacts: {fileID: -2988177865379244337, guid: 1ca022f29cd04be4da25bb51704d4e19, type: 3}

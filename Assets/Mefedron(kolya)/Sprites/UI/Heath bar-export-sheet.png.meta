@@ -1,0 +1,721 @@
+fileFormatVersion: 2
+guid: c18976618eb57954eaf7c49ce437d30c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 071e05a49aa362a4fa1eb0f294321813
+      internalID: 442416171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_1
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 906e9fe42737cd74ca6f18863339f5d3
+      internalID: 196694328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_2
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1d860f4954c6b4478d32365035d522b
+      internalID: 1202770949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_3
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 836b74758f8b238429a89e95503e3267
+      internalID: 1288137615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e377ea38b44c10145aa7585ab4dd89f1
+      internalID: -1888791049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b40d50ef88f231c44a4aea4e48d93433
+      internalID: 720232759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1549
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7167a690e34ad974e890a6410165516c
+      internalID: 362575235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1805
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfd59e12b4a1b2b43aa8c56fd23c5019
+      internalID: 905630774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2061
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a7548a1586a09544966321e50a81f00
+      internalID: 127798128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_9
+      rect:
+        serializedVersion: 2
+        x: 2317
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc91bb98afb55a044a6f23b0dcad4d0b
+      internalID: -35001408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2573
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b20c0c4bb7d27724fa6cb80b8db95a86
+      internalID: 1287501111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_11
+      rect:
+        serializedVersion: 2
+        x: 2829
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 330e083799cb6e24e861ba73ea46c1ae
+      internalID: 784628470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_12
+      rect:
+        serializedVersion: 2
+        x: 3085
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f8b34e12ef366d4f867a8aeba86094b
+      internalID: 1777601648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_13
+      rect:
+        serializedVersion: 2
+        x: 3341
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5285aa5c0ff5f9449bce83b9827ba4f
+      internalID: 566852439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_14
+      rect:
+        serializedVersion: 2
+        x: 3597
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cddd96ca66e90b44d86167f4c2c80b44
+      internalID: -416304465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_15
+      rect:
+        serializedVersion: 2
+        x: 3853
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f587cc248cf684445964afe962fdf54f
+      internalID: 180857956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_16
+      rect:
+        serializedVersion: 2
+        x: 4109
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54191dee2ad84054f99ad5e92ea1fa61
+      internalID: 58807962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_17
+      rect:
+        serializedVersion: 2
+        x: 4365
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e838306c63efeb40b3a0340a1a64104
+      internalID: -1336929531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_18
+      rect:
+        serializedVersion: 2
+        x: 4621
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc4397e86569b854da8ea33eed367164
+      internalID: -2147387432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_19
+      rect:
+        serializedVersion: 2
+        x: 4877
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e53d0eb17831084294f5dacf4518e51
+      internalID: 1417932342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_20
+      rect:
+        serializedVersion: 2
+        x: 5133
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 256751fffb335424aa77904892a3adda
+      internalID: -1511130666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_21
+      rect:
+        serializedVersion: 2
+        x: 5389
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a29f6ba34617ef46b98d8a1372dc63c
+      internalID: -2773500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_22
+      rect:
+        serializedVersion: 2
+        x: 5645
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2864cc7edd1d8f478a1a945589973aa
+      internalID: 931070886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_23
+      rect:
+        serializedVersion: 2
+        x: 5901
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40860f1690261894a8c2da54ed8dec8c
+      internalID: -1729002583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_24
+      rect:
+        serializedVersion: 2
+        x: 6157
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ba0dd1b39c55e24d837b6ebdf0df6ca
+      internalID: -1093926238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_25
+      rect:
+        serializedVersion: 2
+        x: 6413
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 632b94d03cd51454db80e4772fc0f413
+      internalID: -1402381082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Heath bar-export-sheet_26
+      rect:
+        serializedVersion: 2
+        x: 6669
+        y: 10
+        width: 228
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ff8734960c0d154c8e810aca6ee1e0b
+      internalID: 1090042472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Heath bar-export-sheet_0: 442416171
+      Heath bar-export-sheet_1: 196694328
+      Heath bar-export-sheet_10: 1287501111
+      Heath bar-export-sheet_11: 784628470
+      Heath bar-export-sheet_12: 1777601648
+      Heath bar-export-sheet_13: 566852439
+      Heath bar-export-sheet_14: -416304465
+      Heath bar-export-sheet_15: 180857956
+      Heath bar-export-sheet_16: 58807962
+      Heath bar-export-sheet_17: -1336929531
+      Heath bar-export-sheet_18: -2147387432
+      Heath bar-export-sheet_19: 1417932342
+      Heath bar-export-sheet_2: 1202770949
+      Heath bar-export-sheet_20: -1511130666
+      Heath bar-export-sheet_21: -2773500
+      Heath bar-export-sheet_22: 931070886
+      Heath bar-export-sheet_23: -1729002583
+      Heath bar-export-sheet_24: -1093926238
+      Heath bar-export-sheet_25: -1402381082
+      Heath bar-export-sheet_26: 1090042472
+      Heath bar-export-sheet_3: 1288137615
+      Heath bar-export-sheet_4: -1888791049
+      Heath bar-export-sheet_5: 720232759
+      Heath bar-export-sheet_6: 362575235
+      Heath bar-export-sheet_7: 905630774
+      Heath bar-export-sheet_8: 127798128
+      Heath bar-export-sheet_9: -35001408
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

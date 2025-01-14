@@ -1,4 +1,6 @@
+using Cinemachine;
 using UnityEngine;
+using UnityEngine.Profiling;
 
 public class EnemyDamageTrigger : MonoBehaviour
 {
@@ -9,7 +11,7 @@ public class EnemyDamageTrigger : MonoBehaviour
 
     [SerializeField] private Vector2 _DamageBoxSize;
     [SerializeField] private Vector3 _offset;
-    
+
     private LayerMask _playerLayer;
 
     private void Awake() => _playerLayer = GetComponent<EnemyStateMachine>().PlayerLayer;
