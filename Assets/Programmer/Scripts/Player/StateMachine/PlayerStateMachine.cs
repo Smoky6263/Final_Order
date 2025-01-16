@@ -40,14 +40,14 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     [Header("Health Variables")]
     [SerializeField, Range(0f, 100f)] public float _maxHealth;
     [SerializeField, Range(0f, 100f)] public float _health;
-    [Header("После получения урона, игрок не может получить\nпока не пройдет сек:")]
-    [SerializeField, Range(0f, 2f)] private float _damageDelayTime;
+    [Header("После получения урона, игрок не может получить\nпока не пройдет мсек (1с. = 1000мсек):")]
+    [SerializeField, Range(0f, 10000f)] private int _immortalityTime = 1000;
     [Header("CameraStuff")]
     [SerializeField] private GameObject _cameraFollowGo;
 
     [Header("Weapon Variables")]
     [SerializeField] private PlayerWeaponController _weaponController;
-    #region Collision Fiekds
+    #region Collision Fields
     private bool _onStairs;
     private GameObject _currentPTP; /* PTP = PassTroughPlatform*/
     #endregion
@@ -110,7 +110,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     public Rigidbody2D RigidBody { get { return _rigidBody; } }
     public PlayerHealth PlayerHealth { get { return _playerHealth; } }
     public PlayerWeaponController WeaponController { get { return _weaponController; } }
-    public float DamageDelayTime { get { return _damageDelayTime; } }
+    public int ImmortalityTime { get { return _immortalityTime; } }
 
 
     //player inputs
@@ -237,7 +237,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
 
     public void AttackPressed()
     {
-        if(_rollInput == false && PlayerHealth.OnDamageDelay == false)
+        if(_rollInput == false && _currentState.ToString() != "PlayerOnDamageState")
             _attackInput = true;
     }
 
@@ -257,9 +257,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         Vector2 boxCastSize = new Vector2(_feetColl.bounds.size.x, _moveStats.GroundDetectionRayLength);
 
         _groundHit = Physics2D.BoxCast(boxCastOrigin, boxCastSize, 0f, Vector2.down, _moveStats.GroundDetectionRayLength, _moveStats.JumpSurfaceLayer);
-        if (_groundHit.collider != null)
-            _isGrounded = true;
-
+        if (_groundHit.collider != null) _isGrounded = true;
         else { _isGrounded = false; }
 
         #region DebugVisualization
@@ -267,10 +265,9 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         if (_moveStats.DebugShowIsGroundedBox)
         {
             Color rayColor;
-            if (_isGrounded)
-                rayColor = Color.green;
 
-            else { rayColor = Color.red; }
+            if (_isGrounded) rayColor = Color.green;
+            else rayColor = Color.red;
 
             Debug.DrawRay(new Vector2(boxCastOrigin.x - boxCastSize.x / 2, boxCastOrigin.y), Vector2.down * _moveStats.GroundDetectionRayLength, rayColor);
             Debug.DrawRay(new Vector2(boxCastOrigin.x + boxCastSize.x / 2, boxCastOrigin.y), Vector2.down * _moveStats.GroundDetectionRayLength, rayColor);
@@ -317,7 +314,8 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     }
 
 #if UNITY_EDITOR
-
+    [Header("IF UNITY EDITOR")]
+    public bool _immortality;
     private void OnGUI()
     {
         GUIStyle textSTyle = new GUIStyle();

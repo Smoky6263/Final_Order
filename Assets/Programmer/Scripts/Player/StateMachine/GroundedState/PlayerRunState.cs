@@ -105,7 +105,7 @@ public class PlayerRunState : PlayerBaseState
 
             Context.IsFacingRight = true;
             Context.transform.rotation = Quaternion.Euler(0f,0f,0f);
-            Context.WeaponController.BoxOffset = new Vector3(Context.WeaponController.Box_X_value, Context.WeaponController.BoxOffset.y, Context.WeaponController.BoxOffset.z);
+            Context.WeaponController.BoxOffset = new Vector3(Context.WeaponController.DamageBox_X_value, Context.WeaponController.BoxOffset.y, Context.WeaponController.BoxOffset.z);
             Context.VFXManager.SpawnDustParticles(Context.transform.position);
 
             Context._cameraFollowObject.CallTurn();
@@ -114,7 +114,7 @@ public class PlayerRunState : PlayerBaseState
         {
             Context.IsFacingRight = false;
             Context.transform.rotation = Quaternion.Euler(0f,180f,0f);
-            Context.WeaponController.BoxOffset = new Vector3(-Context.WeaponController.Box_X_value, Context.WeaponController.BoxOffset.y, Context.WeaponController.BoxOffset.z);
+            Context.WeaponController.BoxOffset = new Vector3(-Context.WeaponController.DamageBox_X_value, Context.WeaponController.BoxOffset.y, Context.WeaponController.BoxOffset.z);
             Context.VFXManager.SpawnDustParticles(Context.transform.position);
 
             Context._cameraFollowObject.CallTurn();

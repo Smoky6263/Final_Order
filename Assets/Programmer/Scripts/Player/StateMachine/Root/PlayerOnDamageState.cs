@@ -10,8 +10,6 @@ class PlayerOnDamageState : PlayerBaseState
     private float _elapsedTime;
     private Vector2 _applyForce;
 
-    private Material _material;
-
     public override void CheckSwitchStates()
     {
         if (_elapsedTime <= 0)
@@ -20,23 +18,15 @@ class PlayerOnDamageState : PlayerBaseState
 
     public override void EnterState()
     {
-        _elapsedTime = Context.DamageDelayTime;
+        _elapsedTime = Context.PlayerHealth.ThrowTime;
         _applyForce = Context.PlayerHealth.ApplyForce;
-
-        _material = Context.TorsoSprite.material;
-
-        Context.TorsoSprite.material = Context.VFXManager.PlayerDamageMaterial();
-        Context.LegsSprite.material = Context.VFXManager.PlayerDamageMaterial();
 
         Context.AnimatorController.DoJump();
     }
 
     public override void ExitState()
     {
-        Context.TorsoSprite.material = _material;
-        Context.LegsSprite.material = _material;
-
-        Context.PlayerHealth.TurnOffDamageDelay();
+        Context.PlayerHealth.TurnOffThrowDelay();
     }
 
     public override void InitializeSubState()
@@ -60,7 +50,7 @@ class PlayerOnDamageState : PlayerBaseState
             _elapsedTime = 0; // Обеспечиваем, что значение не выйдет за пределы продолжительности
 
         // Вычисляем новое значение с использованием функции EaseOutCubic
-        Context.MovementVelocity = EaseOutCubic(_elapsedTime, Context.DamageDelayTime, _applyForce);
+        Context.MovementVelocity = EaseOutCubic(_elapsedTime, Context.PlayerHealth.ThrowTime, _applyForce);
         Context.RigidBody.velocity = Context.MovementVelocity;
     }
 

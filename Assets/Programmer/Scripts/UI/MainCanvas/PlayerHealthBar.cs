@@ -15,9 +15,5 @@ public class PlayerHealthBar : MonoBehaviour
         _slider = GetComponent<Slider>();
     }
 
-    private void OnHealthChanged(PlayerHealthChangeSignal signal)
-    {
-        _slider.value = signal.Health;
-        Debug.Log(signal.Health);
-    }
+    private void OnHealthChanged(PlayerHealthChangeSignal signal) => _slider.value = signal.Health;
 }

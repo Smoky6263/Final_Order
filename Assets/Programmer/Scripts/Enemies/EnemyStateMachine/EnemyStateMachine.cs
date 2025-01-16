@@ -7,7 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(EnemyPauseHandler))]
 [RequireComponent(typeof(EnemyDamageTrigger))]
 
-public class EnemyStateMachine : StateManager<EnemyStateMachine.EnemyStates>, IEnemy
+public class EnemyStateMachine : StateManager<EnemyStateMachine.EnemyStates>, IStandartEnemy, IEnemy
 {
     [SerializeField] private EventBusManager _eventBus;
     [SerializeField] private EnemyAnimatorController _animator;
@@ -27,7 +27,7 @@ public class EnemyStateMachine : StateManager<EnemyStateMachine.EnemyStates>, IE
     private VFXManager _vFXManager;
     private SoundsManager _soundsManager;
     private SoundsController _soundsController;
-    private EnemyHealth _healthManager;
+    private IEnemyHealth _healthManager;
     private Rigidbody2D _rigidBody2D;
 
     protected bool _playerDetected;
@@ -60,7 +60,7 @@ public class EnemyStateMachine : StateManager<EnemyStateMachine.EnemyStates>, IE
     public PauseManager PauseManager { get { return _pauseManager; } }
     public SoundsManager SoundsManager { get { return _soundsManager; } }
     public SoundsController SoundsController { get { return _soundsController; } }
-    public EnemyHealth HealthManager { get { return _healthManager; } }
+    public IEnemyHealth HealthManager { get { return _healthManager; } }
     public EnemyAnimatorController AnimatorController { get { return _animator; } }
     public LayerMask PlayerLayer { get { return _playerLayer; } }
     public Vector2 PlayerDetectionArea { get { return _playerDetectionArea; } }

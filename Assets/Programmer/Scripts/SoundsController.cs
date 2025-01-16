@@ -4,6 +4,8 @@ public class SoundsController : MonoBehaviour
 {
     [SerializeField] private SoundsManager _soundsManager;
 
+    public SoundsManager SoundsManager { get { return _soundsManager; } set { _soundsManager = value; } }
+
     #region Player Sounds
     public void PlayerDodge() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.PlayerDodge, transform.position);
     
@@ -21,7 +23,7 @@ public class SoundsController : MonoBehaviour
 
     #region Enemy Sounds
     public void EnemyShieldFootSteps() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.EnemyShieldFootSteps, transform.position);
-    public void EnemyShieldGetDamage() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.EnemyShieldGetDamage, transform.position);
+    public void EnemyApplyDamage() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.EnemyShieldGetDamage, transform.position);
     public void EnemySmallFootSteps() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.SmallEnemyFootsteps, transform.position);
     #endregion
 
