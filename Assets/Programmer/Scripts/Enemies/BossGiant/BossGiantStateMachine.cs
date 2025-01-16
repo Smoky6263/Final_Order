@@ -1,6 +1,5 @@
 using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
 public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGiantStates>, IBoss, IEnemy
@@ -139,17 +138,14 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
         return transform.position;
     }
 
-    private CancellationTokenSource _onDestroyToken;
     public async UniTask ChangeMaterial()
     {
         if (OnPause) return;
 
-        _onDestroyToken = new CancellationTokenSource();
-
         Material currentMaterial = _spriteRenderer.material;
         _spriteRenderer.material = _vFXManager.EnemyDamageMaterial();
 
-        await UniTask.Delay(_damageFlashTime, cancellationToken: _onDestroyToken.Token); // Задержка в 1 секунду
+        await UniTask.Delay(_damageFlashTime); // Задержка в 1 секунду
 
         _spriteRenderer.material = currentMaterial;
     }

@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -28,6 +27,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     [SerializeField] private SpriteRenderer _legsSprite;
     [SerializeField] private Collider2D _bodyColl;
     [SerializeField] private Collider2D _feetColl;
+    [SerializeField] private CameraFollowObject _cameraFollowObject;
     #region Player Fields
 
     [Header("Health Variables")]
@@ -98,6 +98,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     public PlayerAnimatorController AnimatorController { get { return _animatorController; } }
     public Collider2D BodyColl { get { return _bodyColl; } }
     public Collider2D FeetColl { get { return _feetColl; } }
+    public CameraFollowObject CameraFollowObject { get { return _cameraFollowObject; } }
     public Rigidbody2D RigidBody { get { return _rigidBody; } }
     public PlayerHealth PlayerHealth { get { return _playerHealth; } }
     public PlayerWeaponController WeaponController { get { return _weaponController; } }
