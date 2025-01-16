@@ -1,0 +1,33 @@
+{
+  "Rects": null,
+  "Def": {
+    "__cHei": 4,
+    "__cWid": 7,
+    "cachedPixelData": {
+      "opaqueTiles": "0000110011011001001000000000",
+      "averageColors": "f678f667f667f678f445f445f678f667f667f566f667f445f445f556e555f444f455f555f4550000e556e778e66700000000000000000000"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "Lvl_4",
+    "padding": 0,
+    "pxHei": 128,
+    "pxWid": 224,
+    "relPath": "../Sprites/Lvl_4.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 32,
+    "uid": 2
+  }
+}

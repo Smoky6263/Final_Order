@@ -1,0 +1,33 @@
+{
+  "Rects": null,
+  "Def": {
+    "__cHei": 4,
+    "__cWid": 10,
+    "cachedPixelData": {
+      "opaqueTiles": "0000110111011011011001001000000000000000",
+      "averageColors": "f874f773f874f874f553f553f984fa94fa94fa94f874f873f763f874f553f553f663fa83fa830000e663f553f653f663f6530000e763f653f6530000e984e8735a895b9a5aa85ba9589659a75aaa5bbb"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "Traps",
+    "padding": 0,
+    "pxHei": 128,
+    "pxWid": 320,
+    "relPath": "../Sprites/Lvl_2_Tilemap.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 32,
+    "uid": 28
+  }
+}

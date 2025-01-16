@@ -128,7 +128,6 @@ public class EnemyWithWeaponStateMachine : StateManager<EnemyWithWeaponStateMach
 
     public void Die()
     {
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", 0);
         Destroy(gameObject);
     }
 

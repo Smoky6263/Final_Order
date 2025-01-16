@@ -1,18 +1,14 @@
-using Cinemachine;
 using UnityEngine;
 
 public class PlayerWeaponController : MonoBehaviour
 {
     [SerializeField] private PlayerStats _playerStats;
-    [SerializeField] private ScreenShakeProfile _profile;
     [SerializeField] private LayerMask _enemyLayer, _breakableWallLayer;
 
     [SerializeField] private Vector2 _damageForce;
 
     [SerializeField] private Vector2 _boxSize;
     [SerializeField] private Vector3 _boxOffset;
-
-    private CinemachineImpulseSource _impulseSource;
 
     private EventBus _eventBus;
     private float _damageValue;
@@ -30,7 +26,6 @@ public class PlayerWeaponController : MonoBehaviour
     private void Start()
     {
         _eventBus = GetComponentInParent<PlayerStateMachine>().EventBus;
-        _impulseSource = GetComponent<CinemachineImpulseSource>();
     }
 
     public void DoAttack()
@@ -43,7 +38,6 @@ public class PlayerWeaponController : MonoBehaviour
             float forceDirection = hitEnemy.transform.position.x < transform.position.x ? -1f : 1f;
             Vector2 applyDamageForce = new Vector2(_damageForce.x * forceDirection, _damageForce.y);
             hitEnemy.GetComponentInParent<IEnemy>().HealthManager.ApplyDamage(_damageValue, applyDamageForce);
-			CameraShakeManager.instance.ScreenShakeFromProfile(_profile, _impulseSource);
         }
 
         if (hitWall != null)

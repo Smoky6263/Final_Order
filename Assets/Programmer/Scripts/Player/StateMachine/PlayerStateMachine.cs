@@ -1,4 +1,3 @@
-using Cinemachine;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -19,22 +18,16 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     private PlayerBaseState _currentState;
     private PlayerStateFactory _states;
 
-    public CameraFollowObject _cameraFollowObject;
-    private float _fallSpeedYDampingChangeThreshold;
-
-    public CinemachineImpulseSource _impulseSource;
-
     public bool OnPause { get; set; } = false;
     public PlayerBaseState CurrentState { get { return _currentState; } set { _currentState = value; } }
 
     [SerializeField] private EventBusManager _gameManager;
     [SerializeField] private PlayerStats _moveStats;
-    [SerializeField] public ScreenShakeProfile _profile;
     [SerializeField] private SpriteRenderer _torsoSprite;
     [SerializeField] private SpriteRenderer _legsSprite;
     [SerializeField] private Collider2D _bodyColl;
     [SerializeField] private Collider2D _feetColl;
-
+    [SerializeField] private CameraFollowObject _cameraFollowObject;
     #region Player Fields
 
     [Header("Health Variables")]
@@ -42,8 +35,6 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     [SerializeField, Range(0f, 100f)] public float _health;
     [Header("ѕосле получени€ урона, игрок не может получить\nпока не пройдет мсек (1с. = 1000мсек):")]
     [SerializeField, Range(0f, 10000f)] private int _immortalityTime = 1000;
-    [Header("CameraStuff")]
-    [SerializeField] private GameObject _cameraFollowGo;
 
     [Header("Weapon Variables")]
     [SerializeField] private PlayerWeaponController _weaponController;
@@ -107,6 +98,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     public PlayerAnimatorController AnimatorController { get { return _animatorController; } }
     public Collider2D BodyColl { get { return _bodyColl; } }
     public Collider2D FeetColl { get { return _feetColl; } }
+    public CameraFollowObject CameraFollowObject { get { return _cameraFollowObject; } }
     public Rigidbody2D RigidBody { get { return _rigidBody; } }
     public PlayerHealth PlayerHealth { get { return _playerHealth; } }
     public PlayerWeaponController WeaponController { get { return _weaponController; } }
@@ -174,8 +166,6 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         _vfxManager = _gameManager.GetComponent<VFXManager>();
         _pauseManager = _gameManager.GetComponent<PauseManager>();
 
-        _impulseSource = GetComponent<CinemachineImpulseSource>();
-
         _characterController = GetComponent<CharacterController>();
         _playerHealth = new PlayerHealth(this);
         _rigidBody = GetComponent<Rigidbody2D>();
@@ -189,29 +179,13 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         _states = new PlayerStateFactory(this);
         _currentState = _states.Fall();
         _currentState.EnterState();
-
-        _cameraFollowObject = _cameraFollowGo.GetComponent<CameraFollowObject>();
-
-        _fallSpeedYDampingChangeThreshold = CameraManager.instance._fallSpeedYDampingChangeThreshold;
     }
 
     private void Update()
     {
         if (OnPause) return;
 
-        if (_rigidBody.velocity.y < _fallSpeedYDampingChangeThreshold && !CameraManager.instance.IsLerpingYDamping && !CameraManager.instance.LerpedFromPlayerFalling)
-        {
-            CameraManager.instance.LerpYDamping(true);
-        }
-
-        if (_rigidBody.velocity.y >= 0f && !CameraManager.instance.IsLerpingYDamping && CameraManager.instance.LerpedFromPlayerFalling)
-        {
-            CameraManager.instance.LerpedFromPlayerFalling = false;
-            CameraManager.instance.LerpYDamping(false);
-        }
-
         IsGroundedCheck();
-
     }
 
     private void FixedUpdate()
@@ -257,8 +231,11 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         Vector2 boxCastSize = new Vector2(_feetColl.bounds.size.x, _moveStats.GroundDetectionRayLength);
 
         _groundHit = Physics2D.BoxCast(boxCastOrigin, boxCastSize, 0f, Vector2.down, _moveStats.GroundDetectionRayLength, _moveStats.JumpSurfaceLayer);
-        if (_groundHit.collider != null) _isGrounded = true;
-        else { _isGrounded = false; }
+        if (_groundHit.collider != null)
+            _isGrounded = true;
+
+        else
+            _isGrounded = false;
 
         #region DebugVisualization
 
@@ -266,8 +243,10 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         {
             Color rayColor;
 
-            if (_isGrounded) rayColor = Color.green;
-            else rayColor = Color.red;
+            if (_isGrounded)
+                rayColor = Color.green;
+            else
+                rayColor = Color.red;
 
             Debug.DrawRay(new Vector2(boxCastOrigin.x - boxCastSize.x / 2, boxCastOrigin.y), Vector2.down * _moveStats.GroundDetectionRayLength, rayColor);
             Debug.DrawRay(new Vector2(boxCastOrigin.x + boxCastSize.x / 2, boxCastOrigin.y), Vector2.down * _moveStats.GroundDetectionRayLength, rayColor);
