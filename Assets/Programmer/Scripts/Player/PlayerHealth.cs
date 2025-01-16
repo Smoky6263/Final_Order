@@ -44,14 +44,14 @@ public class PlayerHealth : IPlayerHealth
 
         RuntimeManager.StudioSystem.setParameterByName("Health", _playerData._health);
 
-		CameraShakeManager.instance.ScreenShakeFromProfile(_profile, _impulseSource);        _playerData.TorsoSprite.material = _playerData.VFXManager.PlayerDamageMaterial();
+		CameraShakeManager.instance.ScreenShakeFromProfile(_profile, _impulseSource);
+        _playerData.TorsoSprite.material = _playerData.VFXManager.PlayerDamageMaterial();
         _playerData.LegsSprite.material = _playerData.VFXManager.PlayerDamageMaterial();
-
-        RuntimeManager.StudioSystem.setParameterByName("Health", _playerData._health);
 
         _playerData.VFXManager.SpawnBloodParticles(_playerData.transform.position, _playerData.VFXManager.PlayerBlood);
 
         _eventBus.Invoke(new PlayerHealthChangeSignal(_playerData._health));
+        RuntimeManager.PlayOneShot("event:/SFX/Character Hit");
 
         if(_playerData._health <= 0)
         {
@@ -64,7 +64,6 @@ public class PlayerHealth : IPlayerHealth
             RuntimeManager.PlayOneShot("event:/SFX/Character Death");
             return;
         }
-        RuntimeManager.PlayOneShot("event:/SFX/Character Hit");
         _eventBus.Invoke(new PlayerApplyForceSignal());
     }
 
