@@ -18,7 +18,7 @@ public class CameraFollowObject : MonoBehaviour
     {
         _player = _playerTransform.gameObject.GetComponent<PlayerStateMachine>();
 
-        _isFacingRight = false;
+        _isFacingRight = _player.IsFacingRight;
     }
 
     private void Update()
@@ -28,7 +28,7 @@ public class CameraFollowObject : MonoBehaviour
 
     public void CallTurn()
     {
-        LeanTween.rotateY(gameObject, DeterminateEndRotation(), _flipYRotationTime).setEaseInOutSine();
+        _turnCoroutine = StartCoroutine(FlipYLerp());
     }
 
     private IEnumerator FlipYLerp() 
