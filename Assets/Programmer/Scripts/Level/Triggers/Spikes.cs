@@ -1,4 +1,3 @@
-using Cinemachine;
 using UnityEngine;
 
 public class Spikes : MonoBehaviour
@@ -7,10 +6,7 @@ public class Spikes : MonoBehaviour
     [SerializeField, Range(0f, 1f)] private float _throwTime = 0.15f;
     [SerializeField] private Vector2 _damageForce;
 
-
     private const string _playerTag = "Player";
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == _playerTag)
