@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 public class PauseManager : MonoBehaviour
 {
+    [SerializeField] private GameObject _pauseMenu;
+
     private EventBus _eventBus;
-
     private PlayerInputs _inputs;
-
     private List<IPauseHandler> _pauseHandlers = new List<IPauseHandler>();
 
     public bool OnPause { get; private set; } = false;
@@ -48,6 +48,7 @@ public class PauseManager : MonoBehaviour
         foreach (IPauseHandler handler in _pauseHandlers)
         {
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Pause", 1);
+            _pauseMenu.gameObject.SetActive(true);
             handler.SetPause();
         }
 
@@ -59,6 +60,7 @@ public class PauseManager : MonoBehaviour
         foreach (IPauseHandler handler in _pauseHandlers)
         {
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Pause", 0);
+            _pauseMenu.gameObject.SetActive(false);
             handler.SetPlay();
         }
 

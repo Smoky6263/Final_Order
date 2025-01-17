@@ -1,0 +1,33 @@
+{
+  "Rects": null,
+  "Def": {
+    "__cHei": 2,
+    "__cWid": 6,
+    "cachedPixelData": {
+      "opaqueTiles": "000000000000",
+      "averageColors": "298425523763098416531542197769849983298376532553"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "Lvl_2_Objects",
+    "padding": 0,
+    "pxHei": 64,
+    "pxWid": 192,
+    "relPath": "../Sprites/Lvl_2_Objects.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 32,
+    "uid": 72
+  }
+}

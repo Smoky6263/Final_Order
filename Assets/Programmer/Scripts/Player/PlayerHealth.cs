@@ -1,3 +1,4 @@
+using Cinemachine;
 using Cysharp.Threading.Tasks;
 using FMODUnity;
 using UnityEngine;
@@ -10,6 +11,8 @@ public class PlayerHealth : IPlayerHealth
         _maxHealth = _playerData._maxHealth;
         _playerData._health = _maxHealth;
         _playerMaterial = _playerData.TorsoSprite.material;
+        _impulseSource = _playerData._impulseSource;
+        _profile = _playerData._profile;
         RuntimeManager.StudioSystem.setParameterByName("Health", _playerData._health);
         RuntimeManager.StudioSystem.setParameterByName("Fight", 0);
     }
@@ -21,7 +24,10 @@ public class PlayerHealth : IPlayerHealth
 
     private float _maxHealth;
     private int _medKitsCount;
-    
+
+    private CinemachineImpulseSource _impulseSource;
+    private ScreenShakeProfile _profile;
+
     public Vector2 ApplyForce {  get; private set; } = Vector2.zero;
     public float ThrowTime {  get; private set; } = 0.15f;
     public bool OnDamageDelay { get; private set; } = false;
@@ -31,6 +37,8 @@ public class PlayerHealth : IPlayerHealth
     {
         if ((OnDamageDelay == true || _playerData.RollInput == true) || _playerData._health <= 0)
             return;
+
+        CameraShakeManager.instance.ScreenShakeFromProfile(_profile, _impulseSource);
 
         OnDamageDelay = true;
         ApplyForce = applyForce;

@@ -183,7 +183,7 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
             Debug.DrawRay(new Vector2(boxCastOrigin.x - boxCastSize.x / 2, boxCastOrigin.y), Vector2.down * _groundDetectionRayLength, rayColor);
             Debug.DrawRay(new Vector2(boxCastOrigin.x + boxCastSize.x / 2, boxCastOrigin.y), Vector2.down * _groundDetectionRayLength, rayColor);
             Debug.DrawRay(new Vector2(boxCastOrigin.x - boxCastSize.x / 2, boxCastOrigin.y - _groundDetectionRayLength), Vector2.right * boxCastSize.x, rayColor);
-#endif
         }
+#endif
     }
 }

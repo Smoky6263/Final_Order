@@ -320,6 +320,7 @@ MonoBehaviour:
   _maxHealth: 100
   _health: 100
   _immortalityTime: 1000
+  _cameraFollowGo: {fileID: 0}
   _weaponController: {fileID: 2774926343881191906}
   _immortality: 0
 --- !u!114 &2879987066415813741

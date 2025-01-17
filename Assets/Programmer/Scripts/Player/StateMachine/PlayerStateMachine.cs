@@ -1,3 +1,4 @@
+using Cinemachine;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -6,6 +7,10 @@ using UnityEngine;
 [RequireComponent (typeof(PlayerPauseHandler))]
 public class PlayerStateMachine : MonoBehaviour, IControlable
 {
+    [SerializeField] private CameraFollowObject _cameraFollowObject;
+    public ScreenShakeProfile _profile;
+    public CinemachineImpulseSource _impulseSource;
+    
     public bool _immortality;
 
     private EventBus _eventBus;
@@ -29,7 +34,6 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     [SerializeField] private SpriteRenderer _legsSprite;
     [SerializeField] private Collider2D _bodyColl;
     [SerializeField] private Collider2D _feetColl;
-    [SerializeField] private CameraFollowObject _cameraFollowObject;
     #region Player Fields
 
     [Header("Health Variables")]
@@ -174,6 +178,8 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         _animatorController = GetComponent<PlayerAnimatorController>();
         _soundsController = GetComponentInChildren<SoundsController>();
         _isFacingRight = true;
+
+        _impulseSource = GetComponent<CinemachineImpulseSource>();
     }
 
     private void Start()
