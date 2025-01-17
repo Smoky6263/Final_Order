@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+
 public class EnemyPauseHandler : MonoBehaviour, IPauseHandler
 {
     private Rigidbody2D _rigidbody2D;

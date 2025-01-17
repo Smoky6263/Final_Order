@@ -2,6 +2,7 @@ using Cinemachine;
 using UnityEngine;
 using UnityEngine.Profiling;
 
+
 public class EnemyDamageTrigger : MonoBehaviour
 {
     [SerializeField, Range(0f, 100f)] private float _damageValue;

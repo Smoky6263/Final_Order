@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class EnemyWithWeaponDamageTrigger : MonoBehaviour
 {
     [SerializeField, Range(0f, 100f)] private float _damageValue;

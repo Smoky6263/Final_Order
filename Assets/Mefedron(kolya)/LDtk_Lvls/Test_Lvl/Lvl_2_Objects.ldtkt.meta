@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: 7c0acb7365e493b4cbb00d69bbc3711e
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: f3268c876daf4890b6af6cd462063137, type: 3}
+  _reimportOnDependencyChange: 1
+  _pixelsPerUnit: 32
+  _overrideTexture: {instanceID: 0}
+  _sprites:
+  - name: Lvl_2_Objects_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 399f93ae37e5b6d4f9b5d82732130aab
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Objects_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 805c9008ffef10b4dbb7113530c3dadf
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Objects_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 053347e6f717f894a9db2fe33dff0821
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Objects_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 32
+      width: 32
+      height: 32
+    spriteID: 60f6e44b9e6d5c44bbb2a69b8e7b7319
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Objects_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 32
+      width: 32
+      height: 32
+    spriteID: ceaba988f58fd0f4899710ec7c2718ae
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Objects_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 32
+      width: 32
+      height: 32
+    spriteID: f3a989f886891a742be04f2d9b13c15e
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Objects_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 62c31e4a301ed4c42aed7bd27555ad42
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Objects_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 32
+      y: 0
+      width: 32
+      height: 32
+    spriteID: cf82a85458b1d194d8acd1a43e52d49b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Objects_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 64
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 5438eb941a50ee6489291384a4c14a7a
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Objects_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 96
+      y: 0
+      width: 32
+      height: 32
+    spriteID: c40c289e295e94b4397e9276348df06b
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Objects_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 128
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 2b94e8dd515080c4688895c54183b7e1
+    spriteOutline: []
+    tessellationDetail: 0
+  - name: Lvl_2_Objects_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 160
+      y: 0
+      width: 32
+      height: 32
+    spriteID: 0c2f5eec97faeaf47b0a2f86197ee4cd
+    spriteOutline: []
+    tessellationDetail: 0
+  _secondaryTextures: []
+  _artifacts: {instanceID: 0}
