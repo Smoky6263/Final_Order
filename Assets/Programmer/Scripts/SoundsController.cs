@@ -27,6 +27,11 @@ public class SoundsController : MonoBehaviour
     public void EnemySmallFootSteps() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.SmallEnemyFootsteps, transform.position);
     #endregion
 
+    #region GiantBoss Sounds
+    public void GiantBossRoar() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.GiantBossRoar, transform.position);
+    #endregion
+
+
     #region Fountain Sounds
     public void FountainFlow() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.FountainFlow, transform.position);
     #endregion

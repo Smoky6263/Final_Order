@@ -1,7 +1,4 @@
-using System;
-using System.Threading;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class BossGiantIdle : BaseState<BossGiantStateMachine.BossGiantStates>
 {
@@ -21,13 +18,13 @@ public class BossGiantIdle : BaseState<BossGiantStateMachine.BossGiantStates>
 
     public override void ExitState()
     {
+        Rotate();
         _idleTimer = 0f;
     }
 
     public override void FixedUpdateState()
     {
         Timer();
-        Rotate();
     }
 
 

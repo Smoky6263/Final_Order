@@ -55,12 +55,12 @@ public class CameraFollowObject : MonoBehaviour
 
         if (_isFacingRight)
         {
-            return 0f;
+            return 180f;
         }
 
         else
         {
-            return 180f;
+            return 0f;
         }
     }
 }

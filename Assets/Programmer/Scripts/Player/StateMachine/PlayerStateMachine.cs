@@ -6,6 +6,8 @@ using UnityEngine;
 [RequireComponent (typeof(PlayerPauseHandler))]
 public class PlayerStateMachine : MonoBehaviour, IControlable
 {
+    public bool _immortality;
+
     private EventBus _eventBus;
     private VFXManager _vfxManager;
     private PauseManager _pauseManager;
@@ -293,8 +295,6 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     }
 
 #if UNITY_EDITOR
-    [Header("IF UNITY EDITOR")]
-    public bool _immortality;
     private void OnGUI()
     {
         GUIStyle textSTyle = new GUIStyle();

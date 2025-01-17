@@ -42,8 +42,6 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
     [SerializeField] private AnimationCurve _jumpHorizontalAnimationCurve;
 
 
-    public float AttackAnimationLength { get { return _attackAnimationLength; } }
-    public float AttackAnimationSpeed { get { return _attackAnimationSpeed; } }
 
     #region Main Vars
     private EventBus _eventBus;
@@ -78,6 +76,11 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
     public RaycastHit2D GroundHit { get { return _groundHit; } }
     public bool IsGrounded { get { return _isGrounded; } }
     public float IdleTimer { get { return _idleTimer; } }
+
+
+
+    public float AttackAnimationLength { get { return _attackAnimationLength; } }
+    public float AttackAnimationSpeed { get { return _attackAnimationSpeed; } }
     #endregion
 
     

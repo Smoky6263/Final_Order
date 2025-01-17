@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-[RequireComponent(typeof(EnemyHealth))]
 [RequireComponent(typeof(EnemyPauseHandler))]
 [RequireComponent(typeof(EnemyDamageTrigger))]
 
