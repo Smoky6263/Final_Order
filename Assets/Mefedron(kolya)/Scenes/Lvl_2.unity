@@ -37631,10 +37631,6 @@ PrefabInstance:
       propertyPath: _soundsManager
       value: 
       objectReference: {fileID: 1704338946}
-    - target: {fileID: 5099432649542037981, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 5362743383600061665, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
       propertyPath: m_Name
       value: ProgrammerPlayer

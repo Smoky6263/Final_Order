@@ -131,6 +131,7 @@ MonoBehaviour:
   _damageForce: {x: 10, y: 3}
   _boxSize: {x: 1.7, y: 1.4}
   _boxOffset: {x: 1, y: 0.9, z: 0}
+  _profile: {fileID: 11400000, guid: 9944e9a2635f7b84696419807e473a11, type: 2}
   _color: {r: 1, g: 0, b: 0.83895683, a: 1}
 --- !u!114 &8982720844760361791
 MonoBehaviour:
@@ -209,7 +210,7 @@ GameObject:
   - component: {fileID: 8971803066431932425}
   m_Layer: 3
   m_Name: Colliders
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -310,19 +311,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e39e0c7a07e335b4ebe13ab80496adb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cameraFollowObject: {fileID: 0}
+  _profile: {fileID: 11400000, guid: 3c183a28c782f7d49861426a0924dbb5, type: 2}
+  _impulseSource: {fileID: 3970106854468035089}
+  _immortality: 0
   _gameManager: {fileID: 0}
   _moveStats: {fileID: 11400000, guid: 64e7691f71b06b940a153c0aae956a2f, type: 2}
   _torsoSprite: {fileID: 8010080292317880572}
   _legsSprite: {fileID: 8542107105486101164}
   _bodyColl: {fileID: 1305856148158797422}
   _feetColl: {fileID: 5887091160620066355}
-  _cameraFollowObject: {fileID: 0}
   _maxHealth: 100
   _health: 100
   _immortalityTime: 1000
-  _cameraFollowGo: {fileID: 0}
   _weaponController: {fileID: 2774926343881191906}
-  _immortality: 0
 --- !u!114 &2879987066415813741
 MonoBehaviour:
   m_ObjectHideFlags: 0
