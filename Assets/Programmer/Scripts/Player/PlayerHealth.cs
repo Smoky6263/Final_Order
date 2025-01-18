@@ -40,6 +40,9 @@ public class PlayerHealth : IPlayerHealth
 
         CameraShakeManager.instance.ScreenShakeFromProfile(_profile, _impulseSource);
 
+        //KKTS
+        ComboSystem.Instance.TakeDamage();
+
         OnDamageDelay = true;
         ApplyForce = applyForce;
         ThrowTime = throwTime;

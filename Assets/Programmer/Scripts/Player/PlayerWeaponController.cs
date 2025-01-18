@@ -45,6 +45,9 @@ public class PlayerWeaponController : MonoBehaviour
             Vector2 applyDamageForce = new Vector2(_damageForce.x * forceDirection, _damageForce.y);
             hitEnemy.GetComponentInParent<IEnemy>().HealthManager.ApplyDamage(_damageValue, applyDamageForce);
             CameraShakeManager.instance.ScreenShakeFromProfile(_profile, _impulseSource);
+
+            //KKTS
+            ComboSystem.Instance.RegisterAttack();
         }
 
         if (hitWall != null)
