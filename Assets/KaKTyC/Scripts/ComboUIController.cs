@@ -8,6 +8,8 @@ public class ComboUIController : MonoBehaviour
     [SerializeField] private Slider comboTimerSlider;
     [SerializeField] private TMP_Text feedbackText;
 
+    private string[] feedbackLevels = { "Норм...", "Харош!", "Мегахарош!!!", "ШИЗ", "МЕГАШИЗ!!!!!!" };
+
     private void OnEnable()
     {
         if (ComboSystem.Instance != null)
@@ -15,37 +17,47 @@ public class ComboUIController : MonoBehaviour
             ComboSystem.Instance.OnComboUpdated += UpdateUI;
             ComboSystem.Instance.OnComboEnded += ResetUI;
         }
-        else
-        {
-            Debug.LogError("ComboSystem.Instance is null. Ensure ComboSystem exists in the scene.");
-        }
     }
-
 
     private void OnDisable()
     {
-        ComboSystem.Instance.OnComboUpdated -= UpdateUI;
-        ComboSystem.Instance.OnComboEnded -= ResetUI;
+        if (ComboSystem.Instance != null)
+        {
+            ComboSystem.Instance.OnComboUpdated -= UpdateUI;
+            ComboSystem.Instance.OnComboEnded -= ResetUI;
+        }
     }
 
-    private void UpdateUI(int comboCount, int multiplier)
+    private void Update()
     {
+        // Плавное уменьшение значения слайдера
+        if (ComboSystem.Instance != null && comboTimerSlider != null)
+        {
+            float targetValue = ComboSystem.Instance.ComboWindowProgress;
+            comboTimerSlider.value = Mathf.Lerp(comboTimerSlider.value, targetValue, Time.deltaTime * 10f);
+        }
+    }
+
+    private void UpdateUI(int comboCount, int comboMultiplier)
+    {
+        // Combo counter
         comboText.text = $"Combo: x{comboCount}";
 
-        if (multiplier <= 3)
-            feedbackText.text = "Нормас";
-        else if (multiplier <= 6)
-            feedbackText.text = "Харош!";
-        else
-            feedbackText.text = "МегаХарош!!!";
+        // Combo feedback
+        int feedbackIndex = Mathf.Clamp(comboCount - 1, 0, feedbackLevels.Length - 1);
+        feedbackText.text = feedbackLevels[feedbackIndex];
 
-        comboTimerSlider.value = ComboSystem.Instance.ComboWindowProgress;
+        // Combo txt color
+        feedbackText.color = Color.Lerp(feedbackText.color, Color.green, Time.deltaTime * 5f);
+
+        // Slider goes UP
+        comboTimerSlider.value = Mathf.Lerp(comboTimerSlider.value, 1f, Time.deltaTime * 10f);
     }
 
-    private void ResetUI(int finalScore)
+    private void ResetUI(int score)
     {
-        comboText.text = "Combo: x0";
-        comboTimerSlider.value = 0;
-        feedbackText.text = string.Empty;
+        comboText.text = "Combo Ended";
+        feedbackText.text = " ";
+        comboTimerSlider.value = 0f;
     }
 }

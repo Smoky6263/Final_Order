@@ -4260,7 +4260,6 @@ GameObject:
   - component: {fileID: 2774926344966903664}
   - component: {fileID: 8982720845847285165}
   - component: {fileID: 3878285961844348303}
-  - component: {fileID: 8982720845847285166}
   m_Layer: 0
   m_Name: Torso
   m_TagString: Untagged
@@ -4872,6 +4871,7 @@ GameObject:
   - component: {fileID: 4060814229811505294}
   - component: {fileID: 7500453568408677049}
   - component: {fileID: 3970106853406295171}
+  - component: {fileID: 7500453568408677050}
   m_Layer: 3
   m_Name: ProgrammerPlayer
   m_TagString: Untagged
@@ -5138,6 +5138,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1ea04165edc93a4d9c8dca920d1d73a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7500453568408677050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5362743382513269363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3db7f0d9bb3922e49ab25db21a8a169a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comboTimeWindow: 1
 --- !u!4 &7559484087963167487
 Transform:
   m_ObjectHideFlags: 0
@@ -5486,19 +5499,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _soundsManager: {fileID: 999669414}
---- !u!114 &8982720845847285166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1911343769404003192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3db7f0d9bb3922e49ab25db21a8a169a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  comboTimeWindow: 1
 --- !u!1001 &8985640613014143175
 PrefabInstance:
   m_ObjectHideFlags: 0

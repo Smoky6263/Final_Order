@@ -19,7 +19,7 @@ public class ComboSystem : MonoBehaviour
     public event ComboEnded OnComboEnded; // combo ended
 
 
-    public float ComboWindowProgress => comboTimer / comboTimeWindow; // combo progress bar (slider)
+    public float ComboWindowProgress => Mathf.Clamp01(comboTimer / comboTimeWindow); // combo progress bar (slider)
 
     private void Awake()
     {
