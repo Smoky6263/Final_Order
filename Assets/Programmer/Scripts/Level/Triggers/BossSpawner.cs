@@ -1,28 +1,39 @@
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Playables;
 
+[RequireComponent(typeof(CinemachineImpulseSource))]
 public class BossSpawner : MonoBehaviour
 {
-    [SerializeField] private EventBusManager _eventBusManager;
+    [SerializeField] private GameManager _eventBusManager;
     [SerializeField] private PlayableDirector _cutscene;
     [SerializeField] private Transform _spawnPosition;
+    [SerializeField] private ScreenShakeProfile _screenShakeProfile;
 
     public UnityEvent Action;
 
     private Transform _playerPosition;
     private IControlable _controlable;
+    private CinemachineImpulseSource _impulseSource;
 
+    private IBoss _boss;
     private bool _bossSpawned = false;
+
+    private void Awake() => _impulseSource = GetComponent<CinemachineImpulseSource>();
 
     public void SpawnBoss(GameObject bossPrefab)
     {
         if(_bossSpawned) return;
         GameObject boss = Instantiate(bossPrefab, _spawnPosition.position, Quaternion.identity);
-        boss.GetComponent<IBoss>().Init(_eventBusManager, _playerPosition);
+        _boss = boss.GetComponent<IBoss>();
+        _boss.Init(_eventBusManager, _playerPosition);
         _bossSpawned = true;
     }
 
+    public void BossOnRoar() => CameraShakeManager.instance.ScreenShakeFromProfile(_screenShakeProfile, _impulseSource);
+    public void SpawnBossHP(GameObject HPPrefab) => _eventBusManager.EventBus.Invoke(new SpawnBossHPSignal(HPPrefab));
+    public void TurnOffBossPause() => _boss.OnPause = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player")

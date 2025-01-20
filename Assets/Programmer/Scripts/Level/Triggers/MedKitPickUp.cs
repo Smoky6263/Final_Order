@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MedKitPickUp : MonoBehaviour, IPauseHandler
 {
-    [SerializeField] private EventBusManager _gameManager;
+    [SerializeField] private GameManager _gameManager;
 
     private string _playerTag = "Player";
     

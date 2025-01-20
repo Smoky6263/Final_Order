@@ -7,9 +7,6 @@ using UnityEngine;
 [RequireComponent (typeof(PlayerPauseHandler))]
 public class PlayerStateMachine : MonoBehaviour, IControlable
 {
-    [SerializeField] private CameraFollowObject _cameraFollowObject;
-    public ScreenShakeProfile _profile;
-    public CinemachineImpulseSource _impulseSource;
     
     public bool _immortality;
 
@@ -20,6 +17,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     private CharacterController _characterController;
     private SoundsController _soundsController;
     private Rigidbody2D _rigidBody;
+    private CinemachineImpulseSource _cinemachineImpulseSource;
 
     private PlayerAnimatorController _animatorController;
     private PlayerBaseState _currentState;
@@ -28,12 +26,13 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     public bool OnPause { get; set; } = false;
     public PlayerBaseState CurrentState { get { return _currentState; } set { _currentState = value; } }
 
-    [SerializeField] private EventBusManager _gameManager;
+    [SerializeField] private GameManager _gameManager;
     [SerializeField] private PlayerStats _moveStats;
     [SerializeField] private SpriteRenderer _torsoSprite;
     [SerializeField] private SpriteRenderer _legsSprite;
     [SerializeField] private Collider2D _bodyColl;
     [SerializeField] private Collider2D _feetColl;
+    [SerializeField] private ScreenShakeProfile _screenShakeProfile;
     #region Player Fields
 
     [Header("Health Variables")]
@@ -104,10 +103,11 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     public PlayerAnimatorController AnimatorController { get { return _animatorController; } }
     public Collider2D BodyColl { get { return _bodyColl; } }
     public Collider2D FeetColl { get { return _feetColl; } }
-    public CameraFollowObject CameraFollowObject { get { return _cameraFollowObject; } }
     public Rigidbody2D RigidBody { get { return _rigidBody; } }
     public PlayerHealth PlayerHealth { get { return _playerHealth; } }
     public PlayerWeaponController WeaponController { get { return _weaponController; } }
+    public CinemachineImpulseSource CinemachineImpulseSource { get { return _cinemachineImpulseSource; } }
+    public ScreenShakeProfile ScreenShakeProfile { get { return _screenShakeProfile; } }
     public int ImmortalityTime { get { return _immortalityTime; } }
 
 
@@ -171,6 +171,8 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
 
         _vfxManager = _gameManager.GetComponent<VFXManager>();
         _pauseManager = _gameManager.GetComponent<PauseManager>();
+        
+        _cinemachineImpulseSource = GetComponent<CinemachineImpulseSource>();
 
         _characterController = GetComponent<CharacterController>();
         _playerHealth = new PlayerHealth(this);
@@ -178,8 +180,6 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         _animatorController = GetComponent<PlayerAnimatorController>();
         _soundsController = GetComponentInChildren<SoundsController>();
         _isFacingRight = true;
-
-        _impulseSource = GetComponent<CinemachineImpulseSource>();
     }
 
     private void Start()

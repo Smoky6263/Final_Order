@@ -31,7 +31,7 @@ public class PlayerWeaponController : MonoBehaviour
     private void Start()
     {
         _eventBus = GetComponentInParent<PlayerStateMachine>().EventBus;
-        _impulseSource = GetComponent<CinemachineImpulseSource>();
+        _impulseSource = GetComponentInParent<CinemachineImpulseSource>();
     }
 
     public void DoAttack()

@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6a48cd85ae273c4dbdee4c3e158405b, type: 3}
+  m_Name: GiantBossRoar
+  m_EditorClassIdentifier: 
+  impactTime: 2.5
+  impactForce: 1
+  defaultVelocity: {x: -0.1, y: 0.5, z: 0}
+  impulseCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0.014463851
+      outSlope: 0.014463851
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0
+      outWeight: 0.928782
+    - serializedVersion: 3
+      time: 0.29369414
+      value: 1.2898751
+      inSlope: -1.0015577
+      outSlope: -1.0015577
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.12067591
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.35758346
+      value: 0.9394113
+      inSlope: -0.032890666
+      outSlope: -0.032890666
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.17804767
+    - serializedVersion: 3
+      time: 0.46103436
+      value: 1.2689911
+      inSlope: 0.7119816
+      outSlope: 0.7119816
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.18538414
+    - serializedVersion: 3
+      time: 0.6655469
+      value: 1.1519431
+      inSlope: 4.4968367
+      outSlope: 4.4968367
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.48797667
+    - serializedVersion: 3
+      time: 0.74123424
+      value: 1.048965
+      inSlope: -1.3111069
+      outSlope: -1.3111069
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -0.1892251
+      outSlope: -0.1892251
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  listenerAmplitude: 2
+  listenerFrequency: 2
+  listenerDuration: 0.5

@@ -11,7 +11,7 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
     [SerializeField] private Transform _playerPosition;
     [SerializeField] private CapsuleCollider2D _bodyColl;
     [SerializeField] private BoxCollider2D _feetColl;
-    
+
     [Header("Health Variables")]
     [SerializeField] private float _maxHealth;
     [SerializeField] private float _health;
@@ -57,6 +57,7 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
 
     #region Properties
     public VFXManager VFXManager { get { return _vFXManager; } }
+    public EventBus EventBus { get {return _eventBus;} }
     public IEnemyHealth HealthManager { get { return _healthManager; } }
     public BossGiantAnimator Animator { get { return _animator; } }
     public Rigidbody2D Rigidbody { get { return _rigidBody2D; } }
@@ -95,12 +96,12 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
         Die
     }
 
-    public void Init(EventBusManager eventBusManager, Transform player)
+    public void Init(GameManager GameManager, Transform player)
     {
-        _eventBus = eventBusManager.EventBus;
-        _vFXManager = eventBusManager.GetComponent<VFXManager>();
-        _pauseManager = eventBusManager.GetComponent<PauseManager>();
-        _soundsManager = eventBusManager.GetComponent<SoundsManager>();
+        _eventBus = GameManager.EventBus;
+        _vFXManager = GameManager.GetComponent<VFXManager>();
+        _pauseManager = GameManager.GetComponent<PauseManager>();
+        _soundsManager = GameManager.GetComponent<SoundsManager>();
         _soundsController = GetComponentInChildren<SoundsController>();
         _soundsController.SoundsManager = _soundsManager;
         _playerPosition = player;
@@ -133,6 +134,7 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
     public void Die()
     {
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", 0);
+        _eventBus.Invoke(new TurnOfHealthBarSignal());
         Destroy(gameObject);
     }
 

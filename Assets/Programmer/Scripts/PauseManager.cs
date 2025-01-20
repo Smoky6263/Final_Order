@@ -14,7 +14,7 @@ public class PauseManager : MonoBehaviour
 
     private void Awake()
     {
-        _eventBus = GetComponent<EventBusManager>().EventBus;
+        _eventBus = GetComponent<GameManager>().EventBus;
         _eventBus.Subscribe<OnPauseEventSignal>(OnPauseEvent);
 
         _inputs = new PlayerInputs();

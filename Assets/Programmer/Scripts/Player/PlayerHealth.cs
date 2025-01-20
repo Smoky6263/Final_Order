@@ -11,8 +11,8 @@ public class PlayerHealth : IPlayerHealth
         _maxHealth = _playerData._maxHealth;
         _playerData._health = _maxHealth;
         _playerMaterial = _playerData.TorsoSprite.material;
-        _impulseSource = _playerData._impulseSource;
-        _profile = _playerData._profile;
+        _profile = _playerData.ScreenShakeProfile;
+        _impulseSource = _playerData.CinemachineImpulseSource;
         RuntimeManager.StudioSystem.setParameterByName("Health", _playerData._health);
         RuntimeManager.StudioSystem.setParameterByName("Fight", 0);
     }
@@ -50,7 +50,7 @@ public class PlayerHealth : IPlayerHealth
 
         RuntimeManager.StudioSystem.setParameterByName("Health", _playerData._health);
 
-        _playerData.VFXManager.SpawnBloodParticles(_playerData.transform.position, _playerData.VFXManager.PlayerBlood);
+        _playerData.EventBus.Invoke(new SpawnParticlesSignal(ParticleBanks.p_PlayerBlood, _playerData.transform.position));
 
         _eventBus.Invoke(new PlayerHealthChangeSignal(_playerData._health));
 
@@ -97,7 +97,7 @@ public class PlayerHealth : IPlayerHealth
             _eventBus.Invoke(new PlayerHealthChangeSignal(_playerData._health));
             _eventBus.Invoke(new MedKitPerformedSignal());
             _medKitsCount--;
-            _playerData.VFXManager.SpawnHealParticles(_playerData.transform.position);
+            _playerData.EventBus.Invoke(new SpawnParticlesSignal(ParticleBanks.p_Healing, _playerData.transform.position));
         }
     }
     public void OnMedKitPickUp()
