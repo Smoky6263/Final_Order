@@ -8,9 +8,10 @@ public interface IBoss
     public bool OnPause { get; set; }
     public VFXManager VFXManager { get; }
     public PauseManager PauseManager { get; }
+    public EventBus EventBus { get; }
     public SoundsController SoundsController { get; }
     public LayerMask PlayerLayer { get; }
-    public void Init(EventBusManager eventBus, Transform player);
+    public void Init(GameManager eventBus, Transform player);
     public Vector3 GetPosition();
     public UniTask ChangeMaterial();
     public void Die();

@@ -12,6 +12,7 @@ public interface IStandartEnemy
     public PauseManager PauseManager { get; }
     public SoundsController SoundsController { get; }
     public LayerMask PlayerLayer { get; }
+    public EventBus EventBus { get; }
 
 
     public Vector2 PlayerDetectionArea { get; }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3395111035563497735}
   - component: {fileID: 7337174637077867067}
   m_Layer: 0
-  m_Name: EnemyDamage
+  m_Name: EnemyBlood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1376,8 +1376,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 0, b: 0, a: 1}
-        key1: {r: 0.5176471, g: 0.26666668, b: 0.32156864, a: 1}
+        key0: {r: 0.3537736, g: 1, b: 0.7406302, a: 1}
+        key1: {r: 0.08908863, g: 0.24528301, b: 0.18280524, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}

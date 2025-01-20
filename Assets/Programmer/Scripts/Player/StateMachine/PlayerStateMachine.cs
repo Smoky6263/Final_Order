@@ -7,6 +7,9 @@ using UnityEngine;
 [RequireComponent (typeof(PlayerPauseHandler))]
 public class PlayerStateMachine : MonoBehaviour, IControlable
 {
+    
+    public bool _immortality;
+
     private EventBus _eventBus;
     private VFXManager _vfxManager;
     private PauseManager _pauseManager;
@@ -14,27 +17,22 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     private CharacterController _characterController;
     private SoundsController _soundsController;
     private Rigidbody2D _rigidBody;
+    private CinemachineImpulseSource _cinemachineImpulseSource;
 
     private PlayerAnimatorController _animatorController;
     private PlayerBaseState _currentState;
     private PlayerStateFactory _states;
 
-    public CameraFollowObject _cameraFollowObject;
-    private float _fallSpeedYDampingChangeThreshold;
-
-    public CinemachineImpulseSource _impulseSource;
-
     public bool OnPause { get; set; } = false;
     public PlayerBaseState CurrentState { get { return _currentState; } set { _currentState = value; } }
 
-    [SerializeField] private EventBusManager _gameManager;
+    [SerializeField] private GameManager _gameManager;
     [SerializeField] private PlayerStats _moveStats;
-    [SerializeField] public ScreenShakeProfile _profile;
     [SerializeField] private SpriteRenderer _torsoSprite;
     [SerializeField] private SpriteRenderer _legsSprite;
     [SerializeField] private Collider2D _bodyColl;
     [SerializeField] private Collider2D _feetColl;
-
+    [SerializeField] private ScreenShakeProfile _screenShakeProfile;
     #region Player Fields
 
     [Header("Health Variables")]
@@ -42,8 +40,6 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     [SerializeField, Range(0f, 100f)] public float _health;
     [Header("ѕосле получени€ урона, игрок не может получить\nпока не пройдет мсек (1с. = 1000мсек):")]
     [SerializeField, Range(0f, 10000f)] private int _immortalityTime = 1000;
-    [Header("CameraStuff")]
-    [SerializeField] private GameObject _cameraFollowGo;
 
     [Header("Weapon Variables")]
     [SerializeField] private PlayerWeaponController _weaponController;
@@ -110,6 +106,8 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     public Rigidbody2D RigidBody { get { return _rigidBody; } }
     public PlayerHealth PlayerHealth { get { return _playerHealth; } }
     public PlayerWeaponController WeaponController { get { return _weaponController; } }
+    public CinemachineImpulseSource CinemachineImpulseSource { get { return _cinemachineImpulseSource; } }
+    public ScreenShakeProfile ScreenShakeProfile { get { return _screenShakeProfile; } }
     public int ImmortalityTime { get { return _immortalityTime; } }
 
 
@@ -173,8 +171,8 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
 
         _vfxManager = _gameManager.GetComponent<VFXManager>();
         _pauseManager = _gameManager.GetComponent<PauseManager>();
-
-        _impulseSource = GetComponent<CinemachineImpulseSource>();
+        
+        _cinemachineImpulseSource = GetComponent<CinemachineImpulseSource>();
 
         _characterController = GetComponent<CharacterController>();
         _playerHealth = new PlayerHealth(this);
@@ -189,29 +187,13 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         _states = new PlayerStateFactory(this);
         _currentState = _states.Fall();
         _currentState.EnterState();
-
-        _cameraFollowObject = _cameraFollowGo.GetComponent<CameraFollowObject>();
-
-        _fallSpeedYDampingChangeThreshold = CameraManager.instance._fallSpeedYDampingChangeThreshold;
     }
 
     private void Update()
     {
         if (OnPause) return;
 
-        if (_rigidBody.velocity.y < _fallSpeedYDampingChangeThreshold && !CameraManager.instance.IsLerpingYDamping && !CameraManager.instance.LerpedFromPlayerFalling)
-        {
-            CameraManager.instance.LerpYDamping(true);
-        }
-
-        if (_rigidBody.velocity.y >= 0f && !CameraManager.instance.IsLerpingYDamping && CameraManager.instance.LerpedFromPlayerFalling)
-        {
-            CameraManager.instance.LerpedFromPlayerFalling = false;
-            CameraManager.instance.LerpYDamping(false);
-        }
-
         IsGroundedCheck();
-
     }
 
     private void FixedUpdate()
@@ -257,8 +239,11 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         Vector2 boxCastSize = new Vector2(_feetColl.bounds.size.x, _moveStats.GroundDetectionRayLength);
 
         _groundHit = Physics2D.BoxCast(boxCastOrigin, boxCastSize, 0f, Vector2.down, _moveStats.GroundDetectionRayLength, _moveStats.JumpSurfaceLayer);
-        if (_groundHit.collider != null) _isGrounded = true;
-        else { _isGrounded = false; }
+        if (_groundHit.collider != null)
+            _isGrounded = true;
+
+        else
+            _isGrounded = false;
 
         #region DebugVisualization
 
@@ -266,8 +251,10 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         {
             Color rayColor;
 
-            if (_isGrounded) rayColor = Color.green;
-            else rayColor = Color.red;
+            if (_isGrounded)
+                rayColor = Color.green;
+            else
+                rayColor = Color.red;
 
             Debug.DrawRay(new Vector2(boxCastOrigin.x - boxCastSize.x / 2, boxCastOrigin.y), Vector2.down * _moveStats.GroundDetectionRayLength, rayColor);
             Debug.DrawRay(new Vector2(boxCastOrigin.x + boxCastSize.x / 2, boxCastOrigin.y), Vector2.down * _moveStats.GroundDetectionRayLength, rayColor);
@@ -314,8 +301,6 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     }
 
 #if UNITY_EDITOR
-    [Header("IF UNITY EDITOR")]
-    public bool _immortality;
     private void OnGUI()
     {
         GUIStyle textSTyle = new GUIStyle();

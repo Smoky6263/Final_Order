@@ -1,5 +1,5 @@
-using Cysharp.Threading.Tasks;
 using Cinemachine;
+using Cysharp.Threading.Tasks;
 using FMODUnity;
 using UnityEngine;
 public class PlayerHealth : IPlayerHealth
@@ -11,8 +11,8 @@ public class PlayerHealth : IPlayerHealth
         _maxHealth = _playerData._maxHealth;
         _playerData._health = _maxHealth;
         _playerMaterial = _playerData.TorsoSprite.material;
-		_impulseSource = _playerData._impulseSource;
-        _profile = _playerData._profile;
+        _profile = _playerData.ScreenShakeProfile;
+        _impulseSource = _playerData.CinemachineImpulseSource;
         RuntimeManager.StudioSystem.setParameterByName("Health", _playerData._health);
         RuntimeManager.StudioSystem.setParameterByName("Fight", 0);
     }
@@ -24,6 +24,7 @@ public class PlayerHealth : IPlayerHealth
 
     private float _maxHealth;
     private int _medKitsCount;
+
     private CinemachineImpulseSource _impulseSource;
     private ScreenShakeProfile _profile;
 
@@ -37,21 +38,21 @@ public class PlayerHealth : IPlayerHealth
         if ((OnDamageDelay == true || _playerData.RollInput == true) || _playerData._health <= 0)
             return;
 
+        CameraShakeManager.instance.ScreenShakeFromProfile(_profile, _impulseSource);
+
         OnDamageDelay = true;
         ApplyForce = applyForce;
         ThrowTime = throwTime;
         _playerData._health = _playerData._immortality ? _playerData._health : _playerData._health -= value;
 
-        RuntimeManager.StudioSystem.setParameterByName("Health", _playerData._health);
-
-		CameraShakeManager.instance.ScreenShakeFromProfile(_profile, _impulseSource);
         _playerData.TorsoSprite.material = _playerData.VFXManager.PlayerDamageMaterial();
         _playerData.LegsSprite.material = _playerData.VFXManager.PlayerDamageMaterial();
 
-        _playerData.VFXManager.SpawnBloodParticles(_playerData.transform.position, _playerData.VFXManager.PlayerBlood);
+        RuntimeManager.StudioSystem.setParameterByName("Health", _playerData._health);
+
+        _playerData.EventBus.Invoke(new SpawnParticlesSignal(ParticleBanks.p_PlayerBlood, _playerData.transform.position));
 
         _eventBus.Invoke(new PlayerHealthChangeSignal(_playerData._health));
-        RuntimeManager.PlayOneShot("event:/SFX/Character Hit");
 
         if(_playerData._health <= 0)
         {
@@ -64,6 +65,7 @@ public class PlayerHealth : IPlayerHealth
             RuntimeManager.PlayOneShot("event:/SFX/Character Death");
             return;
         }
+        RuntimeManager.PlayOneShot("event:/SFX/Character Hit");
         _eventBus.Invoke(new PlayerApplyForceSignal());
     }
 
@@ -91,12 +93,11 @@ public class PlayerHealth : IPlayerHealth
         {
             _playerData._health = _maxHealth;
             RuntimeManager.StudioSystem.setParameterByName("Health", _playerData._health);
-            RuntimeManager.StudioSystem.setParameterByName("Health", _playerData._health);
             RuntimeManager.PlayOneShot("event:/SFX/MedKit Use");
             _eventBus.Invoke(new PlayerHealthChangeSignal(_playerData._health));
             _eventBus.Invoke(new MedKitPerformedSignal());
             _medKitsCount--;
-            _playerData.VFXManager.SpawnHealParticles(_playerData.transform.position);
+            _playerData.EventBus.Invoke(new SpawnParticlesSignal(ParticleBanks.p_Healing, _playerData.transform.position));
         }
     }
     public void OnMedKitPickUp()

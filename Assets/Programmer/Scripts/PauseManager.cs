@@ -4,19 +4,17 @@ using System.Collections.Generic;
 
 public class PauseManager : MonoBehaviour
 {
-    private EventBus _eventBus;
-
-    private PlayerInputs _inputs;
-
-    private List<IPauseHandler> _pauseHandlers = new List<IPauseHandler>();
-
     [SerializeField] private GameObject _pauseMenu;
+
+    private EventBus _eventBus;
+    private PlayerInputs _inputs;
+    private List<IPauseHandler> _pauseHandlers = new List<IPauseHandler>();
 
     public bool OnPause { get; private set; } = false;
 
     private void Awake()
     {
-        _eventBus = GetComponent<EventBusManager>().EventBus;
+        _eventBus = GetComponent<GameManager>().EventBus;
         _eventBus.Subscribe<OnPauseEventSignal>(OnPauseEvent);
 
         _inputs = new PlayerInputs();
@@ -57,7 +55,7 @@ public class PauseManager : MonoBehaviour
         OnPause = true;
     }
 
-    public void SetPlay()
+    private void SetPlay()
     {
         foreach (IPauseHandler handler in _pauseHandlers)
         {

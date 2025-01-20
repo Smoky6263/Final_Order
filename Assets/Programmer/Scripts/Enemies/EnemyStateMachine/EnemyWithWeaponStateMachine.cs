@@ -5,7 +5,7 @@ using System.Threading;
 
 public class EnemyWithWeaponStateMachine : StateManager<EnemyWithWeaponStateMachine.EnemyWithWeaponStates>, IStandartEnemy, IEnemy
 {
-    [SerializeField] private EventBusManager _eventBus;
+    [SerializeField] private GameManager _gameManager;
     [SerializeField] private EnemyWithWeaponAnimatorController _animator;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private LayerMask _playerLayer;
@@ -21,6 +21,7 @@ public class EnemyWithWeaponStateMachine : StateManager<EnemyWithWeaponStateMach
     private EnemyWithWeaponStateMachine Context;
     private EnemyWithWeaponDamageTrigger _weapon;
     private PauseManager _pauseManager;
+    private EventBus _eventBus;
     private VFXManager _vFXManager;
     private SoundsManager _soundsManager;
     private SoundsController _soundsController;
@@ -67,6 +68,7 @@ public class EnemyWithWeaponStateMachine : StateManager<EnemyWithWeaponStateMach
     public SoundsManager SoundsManager { get { return _soundsManager; } }
     public SoundsController SoundsController { get { return _soundsController; } }
     public IEnemyHealth HealthManager { get { return _healthManager; } }
+    public EventBus EventBus { get { return _eventBus; } }
     public EnemyWithWeaponAnimatorController AnimatorController { get { return _animator; } }
 
 
@@ -103,15 +105,16 @@ public class EnemyWithWeaponStateMachine : StateManager<EnemyWithWeaponStateMach
     {
         Context = this;
 
-        _healthManager = new EnemyHealth(Context);
-
+        _eventBus = _gameManager.EventBus;
         _rigidBody2D = GetComponent<Rigidbody2D>();
-        _vFXManager = _eventBus.GetComponent<VFXManager>();
-        _pauseManager = _eventBus.GetComponent<PauseManager>();
+        _vFXManager = _gameManager.GetComponent<VFXManager>();
+        _pauseManager = _gameManager.GetComponent<PauseManager>();
         _weapon = GetComponentInChildren<EnemyWithWeaponDamageTrigger>();
-        _soundsManager = _eventBus.GetComponent<SoundsManager>();
-
+        _soundsManager = _gameManager.GetComponent<SoundsManager>();
         _soundsController = GetComponentInChildren<SoundsController>();
+
+
+        _healthManager = new EnemyHealth(Context);
 
 
         States = new Dictionary<EnemyWithWeaponStates, BaseState<EnemyWithWeaponStates>>
@@ -128,7 +131,6 @@ public class EnemyWithWeaponStateMachine : StateManager<EnemyWithWeaponStateMach
 
     public void Die()
     {
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", 0);
         Destroy(gameObject);
     }
 

@@ -27,7 +27,7 @@ public class PlayerJumpState : PlayerBaseState
         Context.RollInput = false;
 
         if (Context.OnStairs == false)
-            Context.VFXManager.SpawnDustParticles(Context.transform.position);
+            Context.EventBus.Invoke(new SpawnParticlesSignal(ParticleBanks.p_Dust, Context.transform.position));
 
         InitiateJump();
 

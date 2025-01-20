@@ -22,6 +22,13 @@ public enum FMOD_SoundBanks
     SmallEnemyFootsteps,
     #endregion
 
+    #region GiantBoss
+    GiantBossAttack,
+    GiantBossJumpStart,
+    GiantBossJumpLand,
+    GiantBossRoar,
+    #endregion
+
     #region Fountain
     FountainFlow, FountainInteract,
     #endregion

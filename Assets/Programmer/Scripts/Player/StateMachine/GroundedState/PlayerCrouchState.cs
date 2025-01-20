@@ -88,7 +88,7 @@ public class PlayerCrouchState : PlayerBaseState
             Context.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             Context.WeaponController.BoxOffset = new Vector3(Context.WeaponController.DamageBox_X_value, Context.WeaponController.BoxOffset.y, Context.WeaponController.BoxOffset.z);
 
-            Context._cameraFollowObject.CallTurn();
+            Context.EventBus.Invoke(new CinemachineCallTurnSignal());
         }
         else
         {
@@ -96,7 +96,7 @@ public class PlayerCrouchState : PlayerBaseState
             Context.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
             Context.WeaponController.BoxOffset = new Vector3(-Context.WeaponController.DamageBox_X_value, Context.WeaponController.BoxOffset.y, Context.WeaponController.BoxOffset.z);
 
-            Context._cameraFollowObject.CallTurn();
+            Context.EventBus.Invoke(new CinemachineCallTurnSignal());
         }
     }
 }

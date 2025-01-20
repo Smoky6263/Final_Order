@@ -27,6 +27,11 @@ public class SoundsController : MonoBehaviour
     public void EnemySmallFootSteps() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.SmallEnemyFootsteps, transform.position);
     #endregion
 
+    #region GiantBoss Sounds
+    public void GiantBossRoar() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.GiantBossRoar, transform.position);
+    #endregion
+
+
     #region Fountain Sounds
     public void FountainFlow() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.FountainFlow, transform.position);
     #endregion
@@ -35,4 +40,6 @@ public class SoundsController : MonoBehaviour
     public void MedkKitPickUp() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.MedKitPickUp, transform.position);
     public void MedkKitUse() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.MedKitUse, transform.position);
     #endregion
+
+    public void PlaySound(FMOD_SoundBanks soundBank) => _soundsManager.PlaySoundOneShot(soundBank, transform.position);
 }

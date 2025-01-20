@@ -13,15 +13,17 @@ public class BossGiantHealth : IEnemyHealth
     public void ApplyDamage(float value, Vector2 applyDamageForce)
     {
         Context.Health -= value;
-        Context.VFXManager.SpawnBloodParticles(Context.GetPosition(), Context.VFXManager.EnemyBlood);
+        Context.EventBus.Invoke(new SpawnParticlesSignal(ParticleBanks.p_EnemyBlood, Context.GetPosition()));
         Context.SoundsController.EnemyApplyDamage();
 
         if (Context.Health <= 0)
         {
+            Context.Health = 0f;
+            Context.EventBus.Invoke(new BossOnHealthChangeSignal(Context.Health / Context.MaxHealth));
             Context.Die();
             return;
         }
-
+        Context.EventBus.Invoke(new BossOnHealthChangeSignal(Context.Health / Context.MaxHealth));
         Context.ChangeMaterial();
     }
 }

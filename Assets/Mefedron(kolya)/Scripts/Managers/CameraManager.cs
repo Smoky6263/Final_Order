@@ -17,9 +17,6 @@ public class CameraManager : MonoBehaviour
 
     public bool LerpedFromPlayerFalling { get; set; }
 
-    private Coroutine _lerpYPanCoroutine;
-    private Coroutine _panCameraCoroutine;
-
     private CinemachineVirtualCamera _currentCamera;
     private CinemachineFramingTransposer _framingTransposer;
 
@@ -51,10 +48,7 @@ public class CameraManager : MonoBehaviour
 
     #region Lerp the Y Damping
 
-    public void LerpYDamping(bool isPlayerFalling)
-    {
-        _lerpYPanCoroutine = StartCoroutine(LerpYAction(isPlayerFalling));
-    }
+    public void LerpYDamping(bool isPlayerFalling) => StartCoroutine(LerpYAction(isPlayerFalling));
     
     private IEnumerator LerpYAction(bool isPlayerFalling)
     {
@@ -92,11 +86,7 @@ public class CameraManager : MonoBehaviour
 
     #region Pan Camera
 
-    public void PanCameraOnContact(float panDistance, float panTime, PanDirection panDirection, bool panToStartingPos)
-    {
-        _panCameraCoroutine = StartCoroutine(PanCamera(panDistance, panTime, panDirection, panToStartingPos));
-    }
-
+    public void PanCameraOnContact(float panDistance, float panTime, PanDirection panDirection, bool panToStartingPos) => StartCoroutine(PanCamera(panDistance, panTime, panDirection, panToStartingPos));
     private IEnumerator PanCamera(float panDistance, float panTime, PanDirection panDirection, bool panToStartingPos)
     {
         Vector2 endPos = Vector2.zero;

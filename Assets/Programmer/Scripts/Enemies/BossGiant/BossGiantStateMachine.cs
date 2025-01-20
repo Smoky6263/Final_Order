@@ -1,6 +1,5 @@
 using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
 public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGiantStates>, IBoss, IEnemy
@@ -12,7 +11,7 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
     [SerializeField] private Transform _playerPosition;
     [SerializeField] private CapsuleCollider2D _bodyColl;
     [SerializeField] private BoxCollider2D _feetColl;
-    
+
     [Header("Health Variables")]
     [SerializeField] private float _maxHealth;
     [SerializeField] private float _health;
@@ -43,8 +42,6 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
     [SerializeField] private AnimationCurve _jumpHorizontalAnimationCurve;
 
 
-    public float AttackAnimationLength { get { return _attackAnimationLength; } }
-    public float AttackAnimationSpeed { get { return _attackAnimationSpeed; } }
 
     #region Main Vars
     private EventBus _eventBus;
@@ -60,6 +57,7 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
 
     #region Properties
     public VFXManager VFXManager { get { return _vFXManager; } }
+    public EventBus EventBus { get {return _eventBus;} }
     public IEnemyHealth HealthManager { get { return _healthManager; } }
     public BossGiantAnimator Animator { get { return _animator; } }
     public Rigidbody2D Rigidbody { get { return _rigidBody2D; } }
@@ -79,6 +77,11 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
     public RaycastHit2D GroundHit { get { return _groundHit; } }
     public bool IsGrounded { get { return _isGrounded; } }
     public float IdleTimer { get { return _idleTimer; } }
+
+
+
+    public float AttackAnimationLength { get { return _attackAnimationLength; } }
+    public float AttackAnimationSpeed { get { return _attackAnimationSpeed; } }
     #endregion
 
     
@@ -93,12 +96,12 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
         Die
     }
 
-    public void Init(EventBusManager eventBusManager, Transform player)
+    public void Init(GameManager GameManager, Transform player)
     {
-        _eventBus = eventBusManager.EventBus;
-        _vFXManager = eventBusManager.GetComponent<VFXManager>();
-        _pauseManager = eventBusManager.GetComponent<PauseManager>();
-        _soundsManager = eventBusManager.GetComponent<SoundsManager>();
+        _eventBus = GameManager.EventBus;
+        _vFXManager = GameManager.GetComponent<VFXManager>();
+        _pauseManager = GameManager.GetComponent<PauseManager>();
+        _soundsManager = GameManager.GetComponent<SoundsManager>();
         _soundsController = GetComponentInChildren<SoundsController>();
         _soundsController.SoundsManager = _soundsManager;
         _playerPosition = player;
@@ -131,6 +134,7 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
     public void Die()
     {
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", 0);
+        _eventBus.Invoke(new TurnOfHealthBarSignal());
         Destroy(gameObject);
     }
 
@@ -139,17 +143,14 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
         return transform.position;
     }
 
-    private CancellationTokenSource _onDestroyToken;
     public async UniTask ChangeMaterial()
     {
         if (OnPause) return;
 
-        _onDestroyToken = new CancellationTokenSource();
-
         Material currentMaterial = _spriteRenderer.material;
         _spriteRenderer.material = _vFXManager.EnemyDamageMaterial();
 
-        await UniTask.Delay(_damageFlashTime, cancellationToken: _onDestroyToken.Token); // Задержка в 1 секунду
+        await UniTask.Delay(_damageFlashTime); // Задержка в 1 секунду
 
         _spriteRenderer.material = currentMaterial;
     }
@@ -184,7 +185,7 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
             Debug.DrawRay(new Vector2(boxCastOrigin.x - boxCastSize.x / 2, boxCastOrigin.y), Vector2.down * _groundDetectionRayLength, rayColor);
             Debug.DrawRay(new Vector2(boxCastOrigin.x + boxCastSize.x / 2, boxCastOrigin.y), Vector2.down * _groundDetectionRayLength, rayColor);
             Debug.DrawRay(new Vector2(boxCastOrigin.x - boxCastSize.x / 2, boxCastOrigin.y - _groundDetectionRayLength), Vector2.right * boxCastSize.x, rayColor);
-#endif
         }
+#endif
     }
 }

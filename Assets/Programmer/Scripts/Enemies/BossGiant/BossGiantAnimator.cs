@@ -21,4 +21,6 @@ public class BossGiantAnimator : MonoBehaviour
     }
 
     public void PlayAnimation(int AnimationHash) => _animator.Play(AnimationHash);
+
+
 }
