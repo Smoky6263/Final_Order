@@ -1804,11 +1804,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6847091963053849185, guid: dc1eb0e2a54a04348951b338422aac78, type: 3}
   m_PrefabInstance: {fileID: 387778461}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &391019639 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5346706600760549705, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-  m_PrefabInstance: {fileID: 1793133417}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &440862155
 GameObject:
   m_ObjectHideFlags: 0
@@ -36472,7 +36467,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9036913389921107412, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
   m_PrefabInstance: {fileID: 1793133417}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 391019639}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d491e723f776b6b478836bf93ec8a462, type: 3}
@@ -36483,7 +36478,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9033652127286175498, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
   m_PrefabInstance: {fileID: 1793133417}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 391019639}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7d96901fa14e644bb34733f6b7ec8e4, type: 3}
@@ -36494,7 +36489,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
   m_PrefabInstance: {fileID: 1793133417}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 391019639}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7aa3d2c313efc3e428a7936d0c129eb9, type: 3}
@@ -36740,434 +36735,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.size
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[0].Key
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[1].Key
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[2].Key
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[3].Key
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[4].Key
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[5].Key
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[6].Key
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[7].Key
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[8].Key
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[9].Key
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[10].Key
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[11].Key
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[12].Key
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[1].Value.Path
-      value: event:/SFX/Character footsteps
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[2].Value.Path
-      value: event:/SFX/Dodge
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[3].Value.Path
-      value: event:/SFX/Start jump
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[4].Value.Path
-      value: event:/SFX/Jump land
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[5].Value.Path
-      value: event:/SFX/Guitar swing
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[6].Value.Path
-      value: event:/SFX/Ladder Steps
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[7].Value.Path
-      value: event:/SFX/EnemyFootsteps
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[8].Value.Path
-      value: event:/SFX/EnemyGetDamage
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[9].Value.Path
-      value: event:/SFX/Boss attack
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[10].Value.Path
-      value: event:/SFX/Boss jump start
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[11].Value.Path
-      value: event:/SFX/Boss jump land
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[12].Value.Path
-      value: event:/SFX/BossRoar
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[1].Value.Guid.Data1
-      value: 833138281
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[1].Value.Guid.Data2
-      value: 1206922166
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[1].Value.Guid.Data3
-      value: 1272112052
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[1].Value.Guid.Data4
-      value: -541546017
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[2].Value.Guid.Data1
-      value: -2069479591
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[2].Value.Guid.Data2
-      value: 1291331129
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[2].Value.Guid.Data3
-      value: 1806938811
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[2].Value.Guid.Data4
-      value: -109175814
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[3].Value.Guid.Data1
-      value: -390758522
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[3].Value.Guid.Data2
-      value: 1311461077
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[3].Value.Guid.Data3
-      value: -392239425
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[3].Value.Guid.Data4
-      value: -1868137683
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[4].Value.Guid.Data1
-      value: -2011154935
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[4].Value.Guid.Data2
-      value: 1145596973
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[4].Value.Guid.Data3
-      value: 487042448
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[4].Value.Guid.Data4
-      value: 1191938772
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[5].Value.Guid.Data1
-      value: 2094708815
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[5].Value.Guid.Data2
-      value: 1105173372
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[5].Value.Guid.Data3
-      value: 1335280295
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[5].Value.Guid.Data4
-      value: -1047359426
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[6].Value.Guid.Data1
-      value: 1606861939
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[6].Value.Guid.Data2
-      value: 1305399960
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[6].Value.Guid.Data3
-      value: -127861109
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[6].Value.Guid.Data4
-      value: 1136595028
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[7].Value.Guid.Data1
-      value: -1459162591
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[7].Value.Guid.Data2
-      value: 1319705954
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[7].Value.Guid.Data3
-      value: 1184442046
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[7].Value.Guid.Data4
-      value: -1031911323
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[8].Value.Guid.Data1
-      value: -1089941625
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[8].Value.Guid.Data2
-      value: 1194086480
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[8].Value.Guid.Data3
-      value: -728012117
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[8].Value.Guid.Data4
-      value: 1229415557
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[9].Value.Guid.Data1
-      value: 455801244
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[9].Value.Guid.Data2
-      value: 1339788283
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[9].Value.Guid.Data3
-      value: 2030509193
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[9].Value.Guid.Data4
-      value: -1806941923
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[10].Value.Guid.Data1
-      value: 1469896036
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[10].Value.Guid.Data2
-      value: 1226397125
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[10].Value.Guid.Data3
-      value: 599333037
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[10].Value.Guid.Data4
-      value: -940158695
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[11].Value.Guid.Data1
-      value: 653851835
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[11].Value.Guid.Data2
-      value: 1158247229
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[11].Value.Guid.Data3
-      value: 906309011
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[11].Value.Guid.Data4
-      value: -2063721439
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[12].Value.Guid.Data1
-      value: 1476692673
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[12].Value.Guid.Data2
-      value: 1260063877
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[12].Value.Guid.Data3
-      value: 1667801236
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[12].Value.Guid.Data4
-      value: -958825093
-      objectReference: {fileID: 0}
+    - target: {fileID: 8463947496776697181, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
+      propertyPath: _impulseListener
+      value: 
+      objectReference: {fileID: 612804077}
     - target: {fileID: 8680330757246914420, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
       propertyPath: _pauseMenu
       value: 
       objectReference: {fileID: 127092365}
-    - target: {fileID: 9033652127286175498, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: EnemyDamageMAT
-      value: 
-      objectReference: {fileID: 2100000, guid: aaafdd0ca3a00f744814e88d9bef733e, type: 2}
-    - target: {fileID: 9033652127286175498, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: PlayerDamageMAT
-      value: 
-      objectReference: {fileID: 2100000, guid: aaafdd0ca3a00f744814e88d9bef733e, type: 2}
-    - target: {fileID: 9033652127286175498, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _particleBanks._serializedList.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033652127286175498, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _particleBanks._serializedList.Array.data[1].Key
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033652127286175498, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _particleBanks._serializedList.Array.data[2].Key
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033652127286175498, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _particleBanks._serializedList.Array.data[3].Key
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9033652127286175498, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _particleBanks._serializedList.Array.data[0].Value
-      value: 
-      objectReference: {fileID: 2282438384830233661, guid: 7697a49ea05824642b45a2fab61c81c4, type: 3}
-    - target: {fileID: 9033652127286175498, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _particleBanks._serializedList.Array.data[1].Value
-      value: 
-      objectReference: {fileID: 1606691050927100033, guid: 5f1a9e12c1908ed41ac3843ba4c2c08c, type: 3}
-    - target: {fileID: 9033652127286175498, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _particleBanks._serializedList.Array.data[2].Value
-      value: 
-      objectReference: {fileID: 1606691050927100033, guid: 48a67c5203583e241b8f3594b54fec45, type: 3}
-    - target: {fileID: 9033652127286175498, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _particleBanks._serializedList.Array.data[3].Value
-      value: 
-      objectReference: {fileID: 2293952992491863757, guid: d3a5acb2099c67c4fbf5933a969c8699, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5346706600760549705, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1793133422}
-    - targetCorrespondingSourceObject: {fileID: 5346706600760549705, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1793133421}
-    - targetCorrespondingSourceObject: {fileID: 5346706600760549705, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1793133420}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
 --- !u!114 &1793133418 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8680330757246914420, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
   m_PrefabInstance: {fileID: 1793133417}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 391019639}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9106583e2bf8e94eb851b090319c3c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1793133420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 391019639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 244671622
-      Data2: 1143347543
-      Data3: -1958768497
-      Data4: -1910330365
-    Path: event:/Lvl_Music/Lvl_2
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
---- !u!114 &1793133421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 391019639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9468c5f457ace64f8d4df6d642b107f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LoadEvent: 1
-  UnloadEvent: 2
-  Banks:
-  - Master
-  CollisionTag: 
-  PreloadSamples: 0
---- !u!114 &1793133422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 391019639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aab799e4e6084ee46bbbdc4d02adb47f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  globalShakeForce: 1
-  _impulseListener: {fileID: 612804077}
 --- !u!1 &1818140932
 GameObject:
   m_ObjectHideFlags: 0

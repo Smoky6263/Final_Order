@@ -53,6 +53,8 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
     private PauseManager _pauseManager;
     private SoundsManager _soundsManager;
     private SoundsController _soundsController;
+
+    private bool _isFacingRight = false;
     #endregion
 
     #region Properties
@@ -76,6 +78,7 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
 
     public RaycastHit2D GroundHit { get { return _groundHit; } }
     public bool IsGrounded { get { return _isGrounded; } }
+    public bool IsFacingRight { get { return _isFacingRight; } set { _isFacingRight = value; } }
     public float IdleTimer { get { return _idleTimer; } }
 
 
