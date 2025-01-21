@@ -13,12 +13,11 @@ public class BossGiantIdle : BaseState<BossGiantStateMachine.BossGiantStates>
 
     public override void EnterState()
     {
-        
+
     }
 
     public override void ExitState()
     {
-        Rotate();
         _idleTimer = 0f;
     }
 
@@ -30,12 +29,19 @@ public class BossGiantIdle : BaseState<BossGiantStateMachine.BossGiantStates>
 
     public override BossGiantStateMachine.BossGiantStates GetNextState()
     {
-        if (_idleTimer >= Data.IdleTimer && Vector3.Distance(Data.transform.position, Data.Player.position) < Data.AttackDistance)
+        if(_idleTimer <= Data.IdleTimer) 
+            return BossGiantStateMachine.BossGiantStates.Idle;
+
+        bool doLeftAttack = Data.IsFacingRight == false && Data.transform.position.x > Data.Player.position.x;
+        bool doRightAttack = Data.IsFacingRight == true && Data.transform.position.x < Data.Player.position.x;
+        bool enoughDistanceToAttack = Vector3.Distance(Data.transform.position, Data.Player.position) < Data.AttackDistance;
+
+        if(doLeftAttack && enoughDistanceToAttack || doRightAttack && enoughDistanceToAttack && enoughDistanceToAttack)
             return BossGiantStateMachine.BossGiantStates.Attack;
-        else if(_idleTimer >= Data.IdleTimer && Vector3.Distance(Data.transform.position, Data.Player.position) > Data.AttackDistance)
+        
+        else
             return BossGiantStateMachine.BossGiantStates.Jump;
 
-        return BossGiantStateMachine.BossGiantStates.Idle;
     }
 
     public override void OnTriggerEnter(Collider2D collision)
@@ -61,11 +67,18 @@ public class BossGiantIdle : BaseState<BossGiantStateMachine.BossGiantStates>
     {
         _idleTimer += Time.fixedDeltaTime;
     }
+
     private void Rotate()
     {
         if (Data.transform.position.x < Data.Player.position.x)
+        {
             Data.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+            Data.IsFacingRight = true;
+        }
         else
+        {
             Data.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            Data.IsFacingRight = false;
+        }
     }
 }

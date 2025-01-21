@@ -14,7 +14,7 @@ public class SoundsController : MonoBehaviour
     public void PlayerJumpStart() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.PlayerStartJump, transform.position);
 
     public void PlayerFootStep() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.PlayerFootStep, transform.position);
-    
+
     public void PlayerGuitarSwing() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.PlayerGuitarSwing, transform.position);
 
     public void PlayerOnStairs() => _soundsManager.PlaySoundOneShot(FMOD_SoundBanks.PlayerOnStairs, transform.position);

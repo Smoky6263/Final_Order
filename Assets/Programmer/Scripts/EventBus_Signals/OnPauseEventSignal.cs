@@ -1,6 +1,6 @@
 ﻿public class OnPauseEventSignal 
 {
-    public readonly bool OnPopUpPause;
+    public readonly bool OnPause;
 
-    public OnPauseEventSignal(bool onPause) => OnPopUpPause = onPause;
+    public OnPauseEventSignal(bool onPause) => OnPause = onPause;
 }
