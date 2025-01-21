@@ -11,10 +11,6 @@ public class PlayerWeaponController : MonoBehaviour
     [SerializeField] private Vector2 _boxSize;
     [SerializeField] private Vector3 _boxOffset;
 
-    [SerializeField] private ScreenShakeProfile _profile;
-    
-    private CinemachineImpulseSource _impulseSource;
-
     private EventBus _eventBus;
     private float _damageValue;
 
@@ -31,7 +27,6 @@ public class PlayerWeaponController : MonoBehaviour
     private void Start()
     {
         _eventBus = GetComponentInParent<PlayerStateMachine>().EventBus;
-        _impulseSource = GetComponentInParent<CinemachineImpulseSource>();
     }
 
     public void DoAttack()
@@ -44,7 +39,7 @@ public class PlayerWeaponController : MonoBehaviour
             float forceDirection = hitEnemy.transform.position.x < transform.position.x ? -1f : 1f;
             Vector2 applyDamageForce = new Vector2(_damageForce.x * forceDirection, _damageForce.y);
             hitEnemy.GetComponentInParent<IEnemy>().HealthManager.ApplyDamage(_damageValue, applyDamageForce);
-            CameraShakeManager.instance.ScreenShakeFromProfile(_profile, _impulseSource);
+            _eventBus.Invoke(new ScreenShakeSignal(ScreenShakeBanks.PlayerHit));
         }
 
         if (hitWall != null)

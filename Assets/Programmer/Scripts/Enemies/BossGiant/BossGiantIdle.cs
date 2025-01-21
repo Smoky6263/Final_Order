@@ -13,7 +13,7 @@ public class BossGiantIdle : BaseState<BossGiantStateMachine.BossGiantStates>
 
     public override void EnterState()
     {
-        Rotate();
+
     }
 
     public override void ExitState()
@@ -34,8 +34,9 @@ public class BossGiantIdle : BaseState<BossGiantStateMachine.BossGiantStates>
 
         bool doLeftAttack = Data.IsFacingRight == false && Data.transform.position.x > Data.Player.position.x;
         bool doRightAttack = Data.IsFacingRight == true && Data.transform.position.x < Data.Player.position.x;
+        bool enoughDistanceToAttack = Vector3.Distance(Data.transform.position, Data.Player.position) < Data.AttackDistance;
 
-        if(doLeftAttack || doRightAttack)
+        if(doLeftAttack && enoughDistanceToAttack || doRightAttack && enoughDistanceToAttack && enoughDistanceToAttack)
             return BossGiantStateMachine.BossGiantStates.Attack;
         
         else

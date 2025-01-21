@@ -12,6 +12,7 @@ public class BossGiantHealth : IEnemyHealth
 
     public void ApplyDamage(float value, Vector2 applyDamageForce)
     {
+
         Context.Health -= value;
         Context.EventBus.Invoke(new SpawnParticlesSignal(ParticleBanks.p_EnemyBlood, Context.GetPosition()));
         Context.SoundsController.EnemyApplyDamage();

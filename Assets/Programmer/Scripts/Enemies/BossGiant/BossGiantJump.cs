@@ -24,6 +24,8 @@ public class BossGiantJump : BaseState<BossGiantStateMachine.BossGiantStates>
     public override void ExitState()
     {
         Data.Animator.PlayAnimation(Data.Animator.LandingHash);
+        Rotate();
+
     }
 
     public override void FixedUpdateState()

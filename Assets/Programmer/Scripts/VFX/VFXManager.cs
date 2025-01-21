@@ -1,19 +1,11 @@
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
 
-public enum ParticleBanks
-    {
-        p_Dust, 
-        p_EnemyBlood,
-        p_PlayerBlood,
-        p_Healing
-    }
 public class VFXManager : MonoBehaviour
 {
     #region Particle System
     [SerializedDictionary("Particle Names", "Particle GameObjects"), SerializeField]
     private SerializedDictionary<ParticleBanks, GameObject> _particleBanks;
-
     #endregion
 
     #region Materials

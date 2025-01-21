@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MainCanvasManager : MonoBehaviour
 {
-    [SerializeField] private GameManager _eventBusManager;
+    [SerializeField] private GameManager _gameManager;
     [SerializeField] private int _nextLevel;
 
     public EventBus EventBus { get; private set; }
@@ -10,7 +10,7 @@ public class MainCanvasManager : MonoBehaviour
 
     private void Awake()
     {
-        EventBus = _eventBusManager.EventBus;
+        EventBus = _gameManager.EventBus;
         EventBus.Subscribe<SpawnBossHPSignal>(SpawnUIElement);
     }
 

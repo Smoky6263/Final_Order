@@ -1158,3 +1158,10 @@ AnimationClip:
     floatParameter: 0
     intParameter: 9
     messageOptions: 0
+  - time: 1.25
+    functionName: CallParticles
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 1
+    messageOptions: 0

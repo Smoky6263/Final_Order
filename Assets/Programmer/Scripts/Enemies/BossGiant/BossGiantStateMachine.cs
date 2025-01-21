@@ -55,6 +55,7 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
     private SoundsController _soundsController;
 
     private bool _isFacingRight = false;
+    private bool _onCutScene = false;
     #endregion
 
     #region Properties
@@ -79,6 +80,7 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
     public RaycastHit2D GroundHit { get { return _groundHit; } }
     public bool IsGrounded { get { return _isGrounded; } }
     public bool IsFacingRight { get { return _isFacingRight; } set { _isFacingRight = value; } }
+    public bool OnCutScene{ get { return _onCutScene; } set { _onCutScene  = value; } }
     public float IdleTimer { get { return _idleTimer; } }
 
 
@@ -101,12 +103,15 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
 
     public void Init(GameManager GameManager, Transform player)
     {
+        _onCutScene = true;
+
         _eventBus = GameManager.EventBus;
         _vFXManager = GameManager.GetComponent<VFXManager>();
         _pauseManager = GameManager.GetComponent<PauseManager>();
         _soundsManager = GameManager.GetComponent<SoundsManager>();
         _soundsController = GetComponentInChildren<SoundsController>();
         _soundsController.SoundsManager = _soundsManager;
+        
         _playerPosition = player;
     }
 
@@ -136,8 +141,10 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
 
     public void Die()
     {
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", 0);
         _eventBus.Invoke(new TurnOfHealthBarSignal());
+        _eventBus.Invoke(new FMODParameterChangeSignal(FMODParameters.Boss, 2f));
+        _eventBus.Invoke(new CloseDoorSignal());
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", 0);
         Destroy(gameObject);
     }
 

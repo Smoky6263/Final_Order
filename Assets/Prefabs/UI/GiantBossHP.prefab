@@ -333,6 +333,7 @@ GameObject:
   - component: {fileID: 3504542002018861754}
   - component: {fileID: 7632277208667173676}
   - component: {fileID: 7933254107336040902}
+  - component: {fileID: 6900582707887328821}
   m_Layer: 5
   m_Name: GiantBossHP
   m_TagString: Untagged
@@ -456,5 +457,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2acf42d104d36b049b026f4fea3e5912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6900582707887328821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2816561809063366462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd2fe1c405841a4e96ff53df8e1fa38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
