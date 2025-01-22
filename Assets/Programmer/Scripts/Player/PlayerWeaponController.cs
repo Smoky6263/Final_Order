@@ -39,6 +39,8 @@ public class PlayerWeaponController : MonoBehaviour
             float forceDirection = hitEnemy.transform.position.x < transform.position.x ? -1f : 1f;
             Vector2 applyDamageForce = new Vector2(_damageForce.x * forceDirection, _damageForce.y);
             hitEnemy.GetComponentInParent<IEnemy>().HealthManager.ApplyDamage(_damageValue, applyDamageForce);
+            //KKTS
+            ComboSystem.Instance.RegisterAttack();
             _eventBus.Invoke(new ScreenShakeSignal(ScreenShakeBanks.PlayerHit));
         }
 

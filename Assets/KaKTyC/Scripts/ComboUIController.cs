@@ -8,34 +8,30 @@ public class ComboUIController : MonoBehaviour
     [SerializeField] private Slider comboTimerSlider;
     [SerializeField] private TMP_Text feedbackText;
 
+    [SerializeField] private ComboSystem _comboSystem;
+
     private string[] feedbackLevels = { "Норм...", "Харош!", "Мегахарош!!!", "ШИЗ", "МЕГАШИЗ!!!!!!" };
 
     private void OnEnable()
     {
-        if (ComboSystem.Instance != null)
-        {
             ComboSystem.Instance.OnComboUpdated += UpdateUI;
             ComboSystem.Instance.OnComboEnded += ResetUI;
-        }
+        
     }
 
     private void OnDisable()
-    {
-        if (ComboSystem.Instance != null)
-        {
+    { 
             ComboSystem.Instance.OnComboUpdated -= UpdateUI;
-            ComboSystem.Instance.OnComboEnded -= ResetUI;
-        }
+            ComboSystem.Instance.OnComboEnded -= ResetUI;       
     }
 
     private void Update()
     {
         // Плавное уменьшение значения слайдера
-        if (ComboSystem.Instance != null && comboTimerSlider != null)
-        {
+        
             float targetValue = ComboSystem.Instance.ComboWindowProgress;
             comboTimerSlider.value = Mathf.Lerp(comboTimerSlider.value, targetValue, Time.deltaTime * 10f);
-        }
+        
     }
 
     private void UpdateUI(int comboCount, int comboMultiplier)

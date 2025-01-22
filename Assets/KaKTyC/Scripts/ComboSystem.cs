@@ -6,6 +6,8 @@ public class ComboSystem : MonoBehaviour
     public static ComboSystem Instance;
 
     [SerializeField] private float comboTimeWindow = 1f;
+
+
     private int comboCount = 0; // current hit combo counter
     private int comboMultiplyer = 0;
     private float comboTimer = 0f;
