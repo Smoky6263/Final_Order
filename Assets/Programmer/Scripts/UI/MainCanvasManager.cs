@@ -3,6 +3,7 @@ using UnityEngine;
 public class MainCanvasManager : MonoBehaviour
 {
     [SerializeField] private int _nextLevel;
+    [SerializeField] private GameManager _gameManager;
     
 
     public EventBus EventBus { get; private set; }
@@ -10,7 +11,7 @@ public class MainCanvasManager : MonoBehaviour
 
     private void Awake()
     {
-        EventBus = GameManager.Instance.EventBus;
+        EventBus = _gameManager.EventBus;
         EventBus.Subscribe<SpawnBossHPSignal>(SpawnUIElement);
     }
 

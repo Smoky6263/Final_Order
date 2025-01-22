@@ -1341,7 +1341,7 @@
 			"enumTags": [],
 			"customData": [],
 			"savedSelections": [],
-			"cachedPixelData": { "opaqueTiles": "0000000011", "averageColors": "44304aaa44304aaa4410497643204a9800000000" }
+			"cachedPixelData": null
 		},
 		{
 			"__cWid": 10,
@@ -1382,10 +1382,7 @@
 			"enumTags": [],
 			"customData": [],
 			"savedSelections": [],
-			"cachedPixelData": {
-				"opaqueTiles": "0000000100000001000000010000000111111111",
-				"averageColors": "2793289424623b981cba676367630000185419641c8506a305930744397600006663666355749583a5734773766300005854475400000000000000000000000000000000000000000000000000000000"
-			}
+			"cachedPixelData": null
 		}
 	], "enums": [], "externalEnums": [], "levelFields": [] },
 	"levels": [
