@@ -21,4 +21,7 @@ public class BossGiantAnimator : MonoBehaviour
     }
 
     public void PlayAnimation(int AnimationHash) => _animator.Play(AnimationHash);
+    public void SetPlay() => _animator.speed = 1f;
+    public void SetPause() => _animator.speed = 0f;
+
 }

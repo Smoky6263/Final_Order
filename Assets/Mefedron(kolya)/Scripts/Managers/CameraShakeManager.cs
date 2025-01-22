@@ -1,44 +1,42 @@
 using UnityEngine;
 using Cinemachine;
+using AYellowpaper.SerializedCollections;
 
 public class CameraShakeManager : MonoBehaviour
 {
-    public static CameraShakeManager instance;
-
     [SerializeField] private float globalShakeForce = 1f;
     [SerializeField] private CinemachineImpulseListener _impulseListener;
 
+    [SerializedDictionary("Particle Names", "Particle GameObjects"), SerializeField]
+    private SerializedDictionary<ScreenShakeBanks, ScreenShakeProfile> _ScreenShakeBanks;
+
+    private CinemachineImpulseSource _impulseSource;
     private CinemachineImpulseDefinition _impulseDefinition;
 
-    private void Awake()
+    private EventBus _eventBus;
+
+    private void Awake() => _impulseSource = GetComponent<CinemachineImpulseSource>();
+    private void Start()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
+        _eventBus = GetComponent<GameManager>().EventBus;
+        _eventBus.Subscribe<ScreenShakeSignal>(ScreenShakeFromProfile);
     }
 
-    public void CameraShake(CinemachineImpulseSource impulseSource)
+    public void ScreenShakeFromProfile(ScreenShakeSignal signal)
     {
-        impulseSource.GenerateImpulseWithForce(globalShakeForce);
+        SetupScreenShakeSettings(_ScreenShakeBanks[signal.Profile]);
+        _impulseSource.GenerateImpulseWithForce(_ScreenShakeBanks[signal.Profile].impactForce);
     }
 
-    public void ScreenShakeFromProfile(ScreenShakeProfile profile, CinemachineImpulseSource impulseSource)
+    private void SetupScreenShakeSettings(ScreenShakeProfile profile)
     {
-        SetupScreenShakeSettings(profile, impulseSource);
-
-        impulseSource.GenerateImpulseWithForce(profile.impactForce);
-    }
-
-    private void SetupScreenShakeSettings(ScreenShakeProfile profile, CinemachineImpulseSource impulseSource)
-    {
-        _impulseDefinition = impulseSource.m_ImpulseDefinition;
+        _impulseDefinition = _impulseSource.m_ImpulseDefinition;
 
 
         //impulseSource
         _impulseDefinition.m_ImpulseDuration = profile.impactTime;
         _impulseDefinition.m_CustomImpulseShape = profile.impulseCurve;
-        impulseSource.m_DefaultVelocity = profile.defaultVelocity;
+        _impulseSource.m_DefaultVelocity = profile.defaultVelocity;
 
         //impulseListener
         _impulseListener.m_ReactionSettings.m_AmplitudeGain = profile.listenerAmplitude;

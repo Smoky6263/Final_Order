@@ -11,7 +11,7 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
     [SerializeField] private Transform _playerPosition;
     [SerializeField] private CapsuleCollider2D _bodyColl;
     [SerializeField] private BoxCollider2D _feetColl;
-    
+
     [Header("Health Variables")]
     [SerializeField] private float _maxHealth;
     [SerializeField] private float _health;
@@ -53,10 +53,14 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
     private PauseManager _pauseManager;
     private SoundsManager _soundsManager;
     private SoundsController _soundsController;
+
+    private bool _isFacingRight = false;
+    private bool _onCutScene = false;
     #endregion
 
     #region Properties
     public VFXManager VFXManager { get { return _vFXManager; } }
+    public EventBus EventBus { get {return _eventBus;} }
     public IEnemyHealth HealthManager { get { return _healthManager; } }
     public BossGiantAnimator Animator { get { return _animator; } }
     public Rigidbody2D Rigidbody { get { return _rigidBody2D; } }
@@ -75,6 +79,8 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
 
     public RaycastHit2D GroundHit { get { return _groundHit; } }
     public bool IsGrounded { get { return _isGrounded; } }
+    public bool IsFacingRight { get { return _isFacingRight; } set { _isFacingRight = value; } }
+    public bool OnCutScene{ get { return _onCutScene; } set { _onCutScene  = value; } }
     public float IdleTimer { get { return _idleTimer; } }
 
 
@@ -95,14 +101,17 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
         Die
     }
 
-    public void Init(EventBusManager eventBusManager, Transform player)
+    public void Init(GameManager GameManager, Transform player)
     {
-        _eventBus = eventBusManager.EventBus;
-        _vFXManager = eventBusManager.GetComponent<VFXManager>();
-        _pauseManager = eventBusManager.GetComponent<PauseManager>();
-        _soundsManager = eventBusManager.GetComponent<SoundsManager>();
+        _onCutScene = true;
+
+        _eventBus = GameManager.EventBus;
+        _vFXManager = GameManager.GetComponent<VFXManager>();
+        _pauseManager = GameManager.GetComponent<PauseManager>();
+        _soundsManager = GameManager.GetComponent<SoundsManager>();
         _soundsController = GetComponentInChildren<SoundsController>();
         _soundsController.SoundsManager = _soundsManager;
+        
         _playerPosition = player;
     }
 
@@ -132,6 +141,9 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
 
     public void Die()
     {
+        _eventBus.Invoke(new TurnOfHealthBarSignal());
+        _eventBus.Invoke(new FMODParameterChangeSignal(FMODParameters.Boss, 2f));
+        _eventBus.Invoke(new CloseDoorSignal());
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", 0);
         Destroy(gameObject);
     }

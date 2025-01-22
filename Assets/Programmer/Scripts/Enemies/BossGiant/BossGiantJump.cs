@@ -18,11 +18,14 @@ public class BossGiantJump : BaseState<BossGiantStateMachine.BossGiantStates>
         _playerPosition = Data.Player.position;
         _totalTime = Data.JumpVerticalAnimationCurve.keys[Data.JumpVerticalAnimationCurve.keys.Length - 1].time;
         _currentTime = 0f;
+        Rotate();
     }
 
     public override void ExitState()
     {
         Data.Animator.PlayAnimation(Data.Animator.LandingHash);
+        Rotate();
+
     }
 
     public override void FixedUpdateState()
@@ -68,5 +71,19 @@ public class BossGiantJump : BaseState<BossGiantStateMachine.BossGiantStates>
         Data.transform.position = new Vector3(jumpLength, jumpHeight, Data.transform.position.z);
 
         _currentTime += Time.fixedDeltaTime;
+    }
+
+    private void Rotate()
+    {
+        if (Data.transform.position.x < Data.Player.position.x)
+        {
+            Data.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+            Data.IsFacingRight = true;
+        }
+        else 
+        {
+            Data.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            Data.IsFacingRight = false;
+        }
     }
 }

@@ -30,6 +30,8 @@ public class PlayerPauseHandler : MonoBehaviour, IPauseHandler
         _playerStateMachine.OnPause = false;
         _rigidbody2D.simulated = true;
         _playerAnimatorController.SetPlay();
+
+        if (_playerStateMachine.OnCutScene) return;
         _characterController.enabled = true;
     }
 
@@ -38,6 +40,8 @@ public class PlayerPauseHandler : MonoBehaviour, IPauseHandler
         _playerStateMachine.OnPause = true;
         _rigidbody2D.simulated = false;
         _playerAnimatorController.SetPause();
+
+        if (_playerStateMachine.OnCutScene) return;
         _characterController.enabled = false;
     }
 

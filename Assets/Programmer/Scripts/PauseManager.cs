@@ -14,7 +14,7 @@ public class PauseManager : MonoBehaviour
 
     private void Awake()
     {
-        _eventBus = GetComponent<EventBusManager>().EventBus;
+        _eventBus = GetComponent<GameManager>().EventBus;
         _eventBus.Subscribe<OnPauseEventSignal>(OnPauseEvent);
 
         _inputs = new PlayerInputs();
@@ -23,7 +23,7 @@ public class PauseManager : MonoBehaviour
 
     public void OnPauseEvent(OnPauseEventSignal signal)
     {
-        if (signal.OnPopUpPause)
+        if (signal.OnPause)
         {
             _inputs.Disable();
             SetPause();
@@ -85,11 +85,11 @@ public class PauseManager : MonoBehaviour
         if (_pauseHandlers.Contains(pauseHandler))
         {
             _pauseHandlers.Remove(pauseHandler);
-            //Debug.Log($"{pauseHandler} удалён из списка обработчиков.");
+            Debug.Log($"{pauseHandler} удалён из списка обработчиков.");
         }
         else
         {
-            //Debug.LogWarning($"{pauseHandler} не найден в списке.");
+            Debug.LogWarning($"{pauseHandler} не найден в списке.");
         }
     }
 

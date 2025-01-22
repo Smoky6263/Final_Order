@@ -2,36 +2,31 @@ using System.Collections;
 using UnityEngine;
 public class CameraFollowObject : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private Transform _playerTransform;
+    [Header("Start Reference")]
+    [SerializeField] private Transform _referenceTransform;
 
     [Header("Flip Rotation Stats")]
     [SerializeField] private float _flipYRotationTime = 0.5f;
-
-    private Coroutine _turnCoroutine;
-
-    private PlayerStateMachine _player;
+    
+    private GameManager _gameManager;
+    private EventBus _eventBus;
 
     private bool _isFacingRight;
 
-    private void Awake()
+    private void Start()
     {
-        _player = _playerTransform.gameObject.GetComponent<PlayerStateMachine>();
+        _gameManager = GameManager.Instance;
+
+        _eventBus = _gameManager.EventBus;
+        _eventBus.Subscribe<CinemachineSetReferenceSignal>(SetNewTransformReference);
+        _eventBus.Subscribe<CinemachineCallTurnSignal>(CallTurn);
 
         _isFacingRight = true;
     }
+    private void Update() => transform.position = _referenceTransform.position;
+    public void CallTurn(CinemachineCallTurnSignal signal) => StartCoroutine(FlipYLerp());
 
-    private void Update()
-    {
-        transform.position = _playerTransform.position;
-    }
-
-    public void CallTurn()
-    {
-        _turnCoroutine = StartCoroutine(FlipYLerp());
-    }
-
-    private IEnumerator FlipYLerp() 
+    private IEnumerator FlipYLerp()
     {
         float startRotation = transform.localEulerAngles.y;
         float endRotation = DeterminateEndRotation();
@@ -53,14 +48,20 @@ public class CameraFollowObject : MonoBehaviour
     {
         _isFacingRight = !_isFacingRight;
 
-        if (_isFacingRight)
-        {
-            return 0f;
-        }
-
-        else
-        {
-            return 180f;
-        }
+        if (_isFacingRight) return 0f;
+        else return 180f;
     }
+
+    /// <summary>
+    /// указать новый объект для Cinemachine камеры, за которым она будет следовать.
+    /// </summary>
+    /// <param name="newReferenceTransform">ссылка на новый объект преследования камерой.</param>
+    /// <param name="isFacingRight">здесь надо указать в какую сторону смотрит спрайт в данный момент.</param>
+    private void SetNewTransformReference(CinemachineSetReferenceSignal signal)
+    {
+        _referenceTransform = signal.NewReferenceTransform;
+        _isFacingRight = signal.IsFacingRight;
+    }
+
+
 }
