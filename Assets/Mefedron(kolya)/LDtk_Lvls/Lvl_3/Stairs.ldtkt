@@ -3,7 +3,10 @@
   "Def": {
     "__cHei": 5,
     "__cWid": 2,
-    "cachedPixelData": null,
+    "cachedPixelData": {
+      "opaqueTiles": "0000000011",
+      "averageColors": "44304aaa44304aaa4410497643204a9800000000"
+    },
     "customData": [
 
     ],
@@ -15,7 +18,7 @@
     "padding": 0,
     "pxHei": 159,
     "pxWid": 64,
-    "relPath": "../Sprites/Stairs.png",
+    "relPath": "../Sprites/Propses/Stairs.png",
     "savedSelections": [
 
     ],
