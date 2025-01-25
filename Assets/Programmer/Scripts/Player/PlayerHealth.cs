@@ -32,6 +32,9 @@ public class PlayerHealth : IPlayerHealth
 
         _playerData.EventBus.Invoke(new ScreenShakeSignal(ScreenShakeBanks.PlayerGetDamage));
 
+        //KKTS
+        ComboSystem.Instance.TakeDamage();
+
         OnDamageDelay = true;
         ApplyForce = applyForce;
         ThrowTime = throwTime;
