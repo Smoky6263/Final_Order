@@ -1,9 +1,8 @@
 using FMOD.Studio;
 using FMODUnity;
-using UnityEngine;
 
 
-public class SoundBusManager : MonoBehaviour
+public class SoundBusManager
 {
     private const string _busPathMaster = "bus:/";
     private const string _busPathMusic = "bus:/Music";
@@ -21,11 +20,13 @@ public class SoundBusManager : MonoBehaviour
         _busSFX = RuntimeManager.GetBus(_busPathSFX);
     }
 
+
     public float GetMasterVolume ()
     {
         _busMaster.getVolume(out float volume);
         return volume;
     }
+
 
     public void SetMasterVolume (float newValue)
     {
@@ -33,11 +34,13 @@ public class SoundBusManager : MonoBehaviour
         _busMaster.setVolume(volume);
     }
 
+
     public float GetMusicVolume () 
     {
         _busMusic.getVolume(out float volume);
         return volume;
     }
+
 
     public void SetMusicVolume (float newValue) 
     {
@@ -45,11 +48,13 @@ public class SoundBusManager : MonoBehaviour
         _busMusic.setVolume(volume);
     }
 
+
     public float GetSFXVolume ()
     {
         _busSFX.getVolume(out float volume);
         return volume;
     }
+
 
     public void SetSFXVolume (float newValue)
     {

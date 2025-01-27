@@ -5,74 +5,48 @@ using UnityEngine.UI;
 
 public class SoundSlider : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _persentText;
     private Slider _slider;
-    [SerializeField] private SoundSaveSystemController _soundSaveSystemController;
     [SerializeField] private SoundType _volumeType;
+    [SerializeField] private TextMeshProUGUI _persentText;
+    private EventBus _eventBus;
 
-    private float _startMasterVolume;
-    private float _startMusicVolume;
-    private float _startSfxVolume;
 
-    private SoundBusManager _soundBusManager;
-
-    public void OnEnable ()
+    private void Awake ()
     {
-        _soundBusManager = _soundSaveSystemController.SoundBusManager;
+        _eventBus = GameManager.Instance.EventBus;
+        _eventBus.Subscribe<SliderValueSetSignal>(OnSliderValueSet);
+
         _slider = GetComponent<Slider>();
-
-        if (_soundBusManager != null) {
-            switch (_volumeType) {
-                case SoundType.Master:
-                    float masterValue = _soundBusManager.GetMasterVolume();
-                    _slider.value = masterValue;
-                    _startMasterVolume = masterValue;
-                    OnSliderValueChanged(masterValue);
-                    break;
-                case SoundType.Music:
-                    float musicValue = _soundBusManager.GetMusicVolume();
-                    _slider.value = musicValue;
-                    _startMusicVolume = musicValue;
-                    OnSliderValueChanged(musicValue);
-                    break;
-                case SoundType.SFX:
-                    float sfxValue = _soundBusManager.GetSFXVolume();
-                    _slider.value = sfxValue;
-                    _startSfxVolume = sfxValue;
-                    OnSliderValueChanged(sfxValue);
-                    break;
-            }
-        }
-
         _slider.onValueChanged.AddListener(OnSliderValueChanged);
     }
 
-    private void OnSliderValueChanged (float value)
-    {
-        float percentage = value * 100.0f;
-        if (_persentText != null) {
-            _persentText.text = $"{percentage:0}%";
-        }
 
-        if (_soundBusManager != null) {
-            switch (_volumeType) {
-                case SoundType.Master:
-                    _soundBusManager.SetMasterVolume(value);
-                    break;
-                case SoundType.Music:
-                    _soundBusManager.SetMusicVolume(value);
-                    break;
-                case SoundType.SFX:
-                    _soundBusManager.SetSFXVolume(value);
-                    break;
-            }
-        }
+    public void OnEnable ()
+    {
+        _eventBus.Invoke(new SliderEnableSignal(_volumeType));
     }
 
 
-    public float GetSliderValue ()
+    private void OnSliderValueChanged (float value)
     {
-        float value = _slider.value / _slider.maxValue;
-        return Mathf.Round(value * 100f);
+        if (_persentText != null) {
+            float percentage = value * 100.0f;
+            _persentText.text = $"{percentage:0}%";
+        }
+
+        _eventBus.Invoke(new SliderValueChangeSignal(_volumeType, value));
+    }
+
+
+    private void OnSliderValueSet (SliderValueSetSignal signal)
+    {
+        if (signal.SliderType == _volumeType) {
+            _slider.value = signal.Value;
+
+            if (_persentText != null) {
+                float percentage = signal.Value * 100.0f;
+                _persentText.text = $"{percentage:0}%";
+            }
+        }
     }
 }
