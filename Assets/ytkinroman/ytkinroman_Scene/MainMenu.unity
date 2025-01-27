@@ -1692,7 +1692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _soudSaveSystemController: {fileID: 1917594375}
-  _gameManager: {fileID: 0}
+  _gameManager: {fileID: 833501139}
 --- !u!4 &561419767
 Transform:
   m_ObjectHideFlags: 0
