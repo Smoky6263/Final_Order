@@ -9,6 +9,8 @@ public class SoundSaveSystemController : MonoBehaviour
     [SerializeField] private SoundSlider _sliderMusic;
     [SerializeField] private SoundSlider _sliderSFX;
 
+    public SoundBusManager SoundBusManager { get; private set; }
+
     public void Initialization () {
         if (_soudSaveSystem != null && _soundBusManager != null) {
             _soundBusManager.Initialization();

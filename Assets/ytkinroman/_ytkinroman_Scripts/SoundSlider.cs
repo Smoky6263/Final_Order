@@ -7,15 +7,18 @@ public class SoundSlider : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _persentText;
     private Slider _slider;
-    [SerializeField] private SoundBusManager _soundBusManager;
+    [SerializeField] private SoundSaveSystemController _soundSaveSystemController;
     [SerializeField] private SoundType _volumeType;
 
     private float _startMasterVolume;
     private float _startMusicVolume;
     private float _startSfxVolume;
 
+    private SoundBusManager _soundBusManager;
+
     public void OnEnable ()
     {
+        _soundBusManager = _soundSaveSystemController.SoundBusManager;
         _slider = GetComponent<Slider>();
 
         if (_soundBusManager != null) {
