@@ -176,7 +176,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 100
-  _vFXManager: {fileID: 0}
-  _sprite: {fileID: 7112921896842645107}
+  _spriteTransform: {fileID: 7112921896842645107}
+  _spriteRenderer: {fileID: 4486170056055314025}
+  _spriteMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   _duration: 0.1
   _intensity: 0.1

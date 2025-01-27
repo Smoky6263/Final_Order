@@ -3,9 +3,32 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(PlayerAnimatorController))]
 [RequireComponent(typeof(CharacterController))]
-[RequireComponent (typeof(PlayerPauseHandler))]
+[RequireComponent (typeof(PlayerPauseHandler))] 
+
 public class PlayerStateMachine : MonoBehaviour, IControlable
 {
+    public bool _immortality;
+    public bool OnCutScene { get; set; } = false;
+    public bool OnPause { get; set; } = false;
+    public PlayerBaseState CurrentState { get { return _currentState; } set { _currentState = value; } }
+    
+    [SerializeField] private GameManager _gameManager;
+    [SerializeField] private PlayerStats _moveStats;
+    [SerializeField] private SpriteRenderer _torsoSprite;
+    [SerializeField] private SpriteRenderer _legsSprite;
+    [SerializeField] private Collider2D _bodyColl;
+    [SerializeField] private Collider2D _feetColl;
+    
+    #region Player Fields
+    [Header("Health Variables")]
+    [SerializeField, Range(0f, 100f)] public float _maxHealth;
+    [SerializeField, Range(0f, 100f)] public float _health;
+    [Header("ѕосле получени€ урона, игрок не может получить урон\nпока не пройдет мсек (1с. = 1000мсек):")]
+    [SerializeField, Range(0f, 10000f)] private int _immortalityTime = 1000;
+
+    [Header("Weapon Variables")]
+    [SerializeField] private PlayerWeaponController _weaponController;
+
     private EventBus _eventBus;
     private VFXManager _vfxManager;
     private PauseManager _pauseManager;
@@ -17,32 +40,12 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     private PlayerAnimatorController _animatorController;
     private PlayerBaseState _currentState;
     private PlayerStateFactory _states;
+    
 
-    public bool OnPause { get; set; } = false;
-    public PlayerBaseState CurrentState { get { return _currentState; } set { _currentState = value; } }
-
-    [SerializeField] private EventBusManager _gameManager;
-    [SerializeField] private PlayerStats _moveStats;
-    [SerializeField] private SpriteRenderer _torsoSprite;
-    [SerializeField] private SpriteRenderer _legsSprite;
-    [SerializeField] private Collider2D _bodyColl;
-    [SerializeField] private Collider2D _feetColl;
-    [SerializeField] private CameraFollowObject _cameraFollowObject;
-    #region Player Fields
-
-    [Header("Health Variables")]
-    [SerializeField, Range(0f, 100f)] public float _maxHealth;
-    [SerializeField, Range(0f, 100f)] public float _health;
-    [Header("ѕосле получени€ урона, игрок не может получить\nпока не пройдет мсек (1с. = 1000мсек):")]
-    [SerializeField, Range(0f, 10000f)] private int _immortalityTime = 1000;
-
-    [Header("Weapon Variables")]
-    [SerializeField] private PlayerWeaponController _weaponController;
     #region Collision Fields
     private bool _onStairs;
-    private GameObject _currentPTP; /* PTP = PassTroughPlatform*/
+    private GameObject _currentPTP; /* PTP = PassThroughPlatform*/
     #endregion
-
     #endregion
 
     #region Input Fields
@@ -80,7 +83,6 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     private float _jumpBufferTimer;
     private bool _jumpReleasedDuringBuffer;
 
-
     //coyote time
     private float _coyoteTimer;
     #endregion
@@ -98,7 +100,6 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     public PlayerAnimatorController AnimatorController { get { return _animatorController; } }
     public Collider2D BodyColl { get { return _bodyColl; } }
     public Collider2D FeetColl { get { return _feetColl; } }
-    public CameraFollowObject CameraFollowObject { get { return _cameraFollowObject; } }
     public Rigidbody2D RigidBody { get { return _rigidBody; } }
     public PlayerHealth PlayerHealth { get { return _playerHealth; } }
     public PlayerWeaponController WeaponController { get { return _weaponController; } }
@@ -115,7 +116,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     #region Ccollision check vars
     public RaycastHit2D GroundHit { get { return _groundHit; } set { _groundHit = value; } }
     public RaycastHit2D HeadHit { get { return _headHit; } set { _headHit = value; } }
-    public GameObject CurrentPTP { get { return _currentPTP; } set { _currentPTP = value; } }
+    public GameObject CurrentPTP { get { return _currentPTP; } set { _currentPTP = value; } } /* PTP = PassThroughPlatform*/
     public bool IsGrounded { get { return _isGrounded; } set { _isGrounded = value; } }
     public bool BumpedHead { get { return _bumpedHead; } set { _bumpedHead = value; } }
     public bool OnStairs { get { return _onStairs; } set { _onStairs = value; } }
@@ -165,6 +166,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
 
         _vfxManager = _gameManager.GetComponent<VFXManager>();
         _pauseManager = _gameManager.GetComponent<PauseManager>();
+        
 
         _characterController = GetComponent<CharacterController>();
         _playerHealth = new PlayerHealth(this);
@@ -293,8 +295,6 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     }
 
 #if UNITY_EDITOR
-    [Header("IF UNITY EDITOR")]
-    public bool _immortality;
     private void OnGUI()
     {
         GUIStyle textSTyle = new GUIStyle();

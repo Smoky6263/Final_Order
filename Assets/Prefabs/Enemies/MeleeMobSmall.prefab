@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageValue: 15
+  _throwTime: 0.15
   _damageForce: {x: 10, y: 10}
   _DamageBoxSize: {x: 1.58, y: 2}
   _offset: {x: -1.25, y: 1.5, z: 0}
@@ -349,7 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f187640d443ecc344a3c73d7029d61d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _eventBus: {fileID: 0}
+  _gameManager: {fileID: 0}
   _animator: {fileID: 5456410791048275942}
   _spriteRenderer: {fileID: 4182194645743241247}
   _playerLayer:
@@ -420,7 +421,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7091456947272226757}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 22.06, y: 0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -457,7 +458,7 @@ Transform:
   m_GameObject: {fileID: 8251068801895795414}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.44, y: 1, z: 0}
+  m_LocalPosition: {x: 4.16, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

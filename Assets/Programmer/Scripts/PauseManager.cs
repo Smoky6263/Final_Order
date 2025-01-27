@@ -4,17 +4,18 @@ using System.Collections.Generic;
 
 public class PauseManager : MonoBehaviour
 {
+    [SerializeField] private GameObject _pauseMenu;
+
     private EventBus _eventBus;
-
     private PlayerInputs _inputs;
-
     private List<IPauseHandler> _pauseHandlers = new List<IPauseHandler>();
+    [SerializeField] private SoundSaveSystemController _soundSaveSystemController;
 
     public bool OnPause { get; private set; } = false;
 
     private void Awake()
     {
-        _eventBus = GetComponent<EventBusManager>().EventBus;
+        _eventBus = GetComponent<GameManager>().EventBus;
         _eventBus.Subscribe<OnPauseEventSignal>(OnPauseEvent);
 
         _inputs = new PlayerInputs();
@@ -23,7 +24,7 @@ public class PauseManager : MonoBehaviour
 
     public void OnPauseEvent(OnPauseEventSignal signal)
     {
-        if (signal.OnPopUpPause)
+        if (signal.OnPause)
         {
             _inputs.Disable();
             SetPause();
@@ -48,6 +49,7 @@ public class PauseManager : MonoBehaviour
         foreach (IPauseHandler handler in _pauseHandlers)
         {
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Pause", 1);
+            _pauseMenu.gameObject.SetActive(true);
             handler.SetPause();
         }
 
@@ -59,6 +61,8 @@ public class PauseManager : MonoBehaviour
         foreach (IPauseHandler handler in _pauseHandlers)
         {
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Pause", 0);
+            //_soundSaveSystemController.UpdateSoundData();
+            _pauseMenu.gameObject.SetActive(false);
             handler.SetPlay();
         }
 
@@ -83,11 +87,11 @@ public class PauseManager : MonoBehaviour
         if (_pauseHandlers.Contains(pauseHandler))
         {
             _pauseHandlers.Remove(pauseHandler);
-            //Debug.Log($"{pauseHandler} удалён из списка обработчиков.");
+            Debug.Log($"{pauseHandler} удалён из списка обработчиков.");
         }
         else
         {
-            //Debug.LogWarning($"{pauseHandler} не найден в списке.");
+            Debug.LogWarning($"{pauseHandler} не найден в списке.");
         }
     }
 

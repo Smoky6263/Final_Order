@@ -9,9 +9,11 @@ public class LevelCompletePanel : PopUpPanel
 
     public override void DoSomethingOnDisable()
     {
-
         LoadLevel(_canvasManager.NextLevel);
     }
 
-    private void LoadLevel(int nextLevel) => SceneManager.LoadScene(nextLevel);
+    private void LoadLevel(string nextLevel)
+    {
+        SceneManager.LoadScene(nextLevel);
+    }
 }

@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 
-[RequireComponent(typeof(EnemyHealth))]
 [RequireComponent(typeof(EnemyPauseHandler))]
 [RequireComponent(typeof(EnemyDamageTrigger))]
 
 public class EnemyStateMachine : StateManager<EnemyStateMachine.EnemyStates>, IStandartEnemy, IEnemy
 {
-    [SerializeField] private EventBusManager _eventBus;
+    private EnemyStateMachine Context;
+
+    [SerializeField] private GameManager _gameManager;
     [SerializeField] private EnemyAnimatorController _animator;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private LayerMask _playerLayer;
@@ -22,8 +23,8 @@ public class EnemyStateMachine : StateManager<EnemyStateMachine.EnemyStates>, IS
     public EnemyPatrolTrigger PointB { get { return _pointB; } }
     #endregion
 
-    private EnemyStateMachine Context;
     private PauseManager _pauseManager;
+    private EventBus _eventBus;
     private VFXManager _vFXManager;
     private SoundsManager _soundsManager;
     private SoundsController _soundsController;
@@ -63,6 +64,7 @@ public class EnemyStateMachine : StateManager<EnemyStateMachine.EnemyStates>, IS
     public IEnemyHealth HealthManager { get { return _healthManager; } }
     public EnemyAnimatorController AnimatorController { get { return _animator; } }
     public LayerMask PlayerLayer { get { return _playerLayer; } }
+    public EventBus EventBus { get { return _eventBus; } }
     public Vector2 PlayerDetectionArea { get { return _playerDetectionArea; } }
     public Vector3 PlayerDetectionAreaOffset { get { return _playerDetectionAreaOffset; } }
 
@@ -89,14 +91,14 @@ public class EnemyStateMachine : StateManager<EnemyStateMachine.EnemyStates>, IS
     private void Awake()
     {
         Context = this;
+        _eventBus = _gameManager.EventBus;
 
         _healthManager = new EnemyHealth(Context);
 
         _rigidBody2D = GetComponent<Rigidbody2D>();
-        _vFXManager = _eventBus.GetComponent<VFXManager>();
-        _pauseManager = _eventBus.GetComponent<PauseManager>();
-        _soundsManager = _eventBus.GetComponent<SoundsManager>();
-
+        _vFXManager = _gameManager.GetComponent<VFXManager>();
+        _pauseManager = _gameManager.GetComponent<PauseManager>();
+        _soundsManager = _gameManager.GetComponent<SoundsManager>();
         _soundsController = GetComponentInChildren<SoundsController>();
 
 

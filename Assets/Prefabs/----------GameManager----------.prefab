@@ -13,6 +13,11 @@ GameObject:
   - component: {fileID: 9033652127286175498}
   - component: {fileID: 8305346620404567466}
   - component: {fileID: 8680330757246914420}
+  - component: {fileID: 8463947496776697181}
+  - component: {fileID: 2080776184985826209}
+  - component: {fileID: 3015248327461502059}
+  - component: {fileID: 3161363580591931054}
+  - component: {fileID: 600082775455568759}
   m_Layer: 0
   m_Name: ----------GameManager----------
   m_TagString: Untagged
@@ -59,9 +64,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d96901fa14e644bb34733f6b7ec8e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _vfxPrefabs: {fileID: 11400000, guid: 1241b26a6005b664dadfeb4d080fa8e4, type: 2}
-  _enemyBlood: {r: 0, g: 1, b: 0, a: 1}
-  _playerBlood: {r: 1, g: 0, b: 0, a: 1}
+  _particleBanks:
+    _serializedList:
+    - Key: 0
+      Value: {fileID: 2282438384830233661, guid: 7697a49ea05824642b45a2fab61c81c4, type: 3}
+    - Key: 1
+      Value: {fileID: 2282438384830233661, guid: f7d7f25090c1fd849b8ea5c4d873be28, type: 3}
+    - Key: 3
+      Value: {fileID: 1606691050927100033, guid: 5f1a9e12c1908ed41ac3843ba4c2c08c, type: 3}
+    - Key: 2
+      Value: {fileID: 1606691050927100033, guid: 48a67c5203583e241b8f3594b54fec45, type: 3}
+    - Key: 4
+      Value: {fileID: 2293952992491863757, guid: d3a5acb2099c67c4fbf5933a969c8699, type: 3}
+  EnemyDamageMAT: {fileID: 2100000, guid: aaafdd0ca3a00f744814e88d9bef733e, type: 2}
+  PlayerDamageMAT: {fileID: 2100000, guid: aaafdd0ca3a00f744814e88d9bef733e, type: 2}
 --- !u!114 &8305346620404567466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,7 +107,7 @@ MonoBehaviour:
           Data2: 1206922166
           Data3: 1272112052
           Data4: -541546017
-        Path: event:/Character footsteps
+        Path: event:/SFX/Character footsteps
     - Key: 1
       Value:
         Guid:
@@ -99,7 +115,7 @@ MonoBehaviour:
           Data2: 1291331129
           Data3: 1806938811
           Data4: -109175814
-        Path: event:/Dodge
+        Path: event:/SFX/Dodge
     - Key: 2
       Value:
         Guid:
@@ -107,7 +123,7 @@ MonoBehaviour:
           Data2: 1311461077
           Data3: -392239425
           Data4: -1868137683
-        Path: event:/Start jump
+        Path: event:/SFX/Start jump
     - Key: 3
       Value:
         Guid:
@@ -115,7 +131,7 @@ MonoBehaviour:
           Data2: 1145596973
           Data3: 487042448
           Data4: 1191938772
-        Path: event:/Jump land
+        Path: event:/SFX/Jump land
     - Key: 4
       Value:
         Guid:
@@ -123,7 +139,7 @@ MonoBehaviour:
           Data2: 1105173372
           Data3: 1335280295
           Data4: -1047359426
-        Path: event:/Guitar swing
+        Path: event:/SFX/Guitar swing
     - Key: 5
       Value:
         Guid:
@@ -131,7 +147,7 @@ MonoBehaviour:
           Data2: 1305399960
           Data3: -127861109
           Data4: 1136595028
-        Path: event:/Ladder Steps
+        Path: event:/SFX/Ladder Steps
     - Key: 6
       Value:
         Guid:
@@ -139,7 +155,7 @@ MonoBehaviour:
           Data2: 1319705954
           Data3: 1184442046
           Data4: -1031911323
-        Path: event:/EnemyFootsteps
+        Path: event:/SFX/EnemyFootsteps
     - Key: 7
       Value:
         Guid:
@@ -147,7 +163,39 @@ MonoBehaviour:
           Data2: 1194086480
           Data3: -728012117
           Data4: 1229415557
-        Path: event:/EnemyGetDamage
+        Path: event:/SFX/EnemyGetDamage
+    - Key: 9
+      Value:
+        Guid:
+          Data1: 455801244
+          Data2: 1339788283
+          Data3: 2030509193
+          Data4: -1806941923
+        Path: event:/SFX/Boss attack
+    - Key: 10
+      Value:
+        Guid:
+          Data1: 1469896036
+          Data2: 1226397125
+          Data3: 599333037
+          Data4: -940158695
+        Path: event:/SFX/Boss jump start
+    - Key: 11
+      Value:
+        Guid:
+          Data1: 653851835
+          Data2: 1158247229
+          Data3: 906309011
+          Data4: -2063721439
+        Path: event:/SFX/Boss jump land
+    - Key: 12
+      Value:
+        Guid:
+          Data1: 1476692673
+          Data2: 1260063877
+          Data3: 1667801236
+          Data4: -958825093
+        Path: event:/SFX/BossRoar
 --- !u!114 &8680330757246914420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,3 +209,139 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pauseMenu: {fileID: 0}
+--- !u!114 &8463947496776697181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5346706600760549705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aab799e4e6084ee46bbbdc4d02adb47f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalShakeForce: 1
+  _impulseListener: {fileID: 0}
+  _ScreenShakeBanks:
+    _serializedList:
+    - Key: 1
+      Value: {fileID: 11400000, guid: 3c183a28c782f7d49861426a0924dbb5, type: 2}
+    - Key: 2
+      Value: {fileID: 11400000, guid: 9944e9a2635f7b84696419807e473a11, type: 2}
+    - Key: 0
+      Value: {fileID: 11400000, guid: 3a36dab6e730ed04397f3979e85710cb, type: 2}
+--- !u!114 &2080776184985826209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5346706600760549705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9468c5f457ace64f8d4df6d642b107f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoadEvent: 1
+  UnloadEvent: 2
+  Banks:
+  - Master
+  CollisionTag: 
+  PreloadSamples: 0
+--- !u!114 &3015248327461502059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5346706600760549705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 244671622
+      Data2: 1143347543
+      Data3: -1958768497
+      Data4: -1910330365
+    Path: event:/Lvl_Music/Lvl_2
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &3161363580591931054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5346706600760549705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04803a8775114714fb36a60e28be0e10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &600082775455568759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5346706600760549705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 2
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.2
+    m_ImpulseType: 0
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}

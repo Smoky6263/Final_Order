@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+
 public class EnemyWithWeaponPauseHandler : MonoBehaviour, IPauseHandler
 {
     private Rigidbody2D _rigidbody2D;

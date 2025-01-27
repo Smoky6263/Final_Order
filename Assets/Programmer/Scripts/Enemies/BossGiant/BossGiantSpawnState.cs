@@ -18,6 +18,7 @@ public class BossGiantSpawnState : BaseState<BossGiantStateMachine.BossGiantStat
     public override void ExitState()
     {
         Data.Animator.PlayAnimation(Data.Animator.LandingHash);
+        Data.OnPause = true;
     }
 
     public override void FixedUpdateState()
