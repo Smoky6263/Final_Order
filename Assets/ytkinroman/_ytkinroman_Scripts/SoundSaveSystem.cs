@@ -7,7 +7,7 @@ public class SoundSaveSystem : MonoBehaviour, ISaveable
     private const string _fileName = "SaveData/soundData.json";
     private string _filePath;
 
-    public SoundData _soundData = new SoundData();
+    public SoundData _soundData { get; private set; } = new SoundData();
 
 
     public void Initialization ()

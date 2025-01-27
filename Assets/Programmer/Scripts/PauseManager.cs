@@ -61,7 +61,7 @@ public class PauseManager : MonoBehaviour
         foreach (IPauseHandler handler in _pauseHandlers)
         {
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Pause", 0);
-            _soundSaveSystemController.UpdateSoundData();
+            //_soundSaveSystemController.UpdateSoundData();
             _pauseMenu.gameObject.SetActive(false);
             handler.SetPlay();
         }
