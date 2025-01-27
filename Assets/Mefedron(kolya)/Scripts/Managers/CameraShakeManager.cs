@@ -4,7 +4,6 @@ using AYellowpaper.SerializedCollections;
 
 public class CameraShakeManager : MonoBehaviour
 {
-    [SerializeField] private float globalShakeForce = 1f;
     [SerializeField] private CinemachineImpulseListener _impulseListener;
 
     [SerializedDictionary("Particle Names", "Particle GameObjects"), SerializeField]

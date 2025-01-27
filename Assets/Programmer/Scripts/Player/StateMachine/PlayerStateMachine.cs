@@ -3,7 +3,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(PlayerAnimatorController))]
 [RequireComponent(typeof(CharacterController))]
-[RequireComponent (typeof(PlayerPauseHandler))]
+[RequireComponent (typeof(PlayerPauseHandler))] 
+
 public class PlayerStateMachine : MonoBehaviour, IControlable
 {
     public bool _immortality;
