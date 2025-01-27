@@ -247,10 +247,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageValue: 10
+  _throwTime: 0.15
   _damageForce: {x: 10, y: 10}
   _DamageBoxSize: {x: 0.8, y: 1.5}
   _offset: {x: -0.2, y: 1, z: 0}
-  _profile: {fileID: 11400000, guid: e036b79ed56d8ee4ca5485b46219e7ab, type: 2}
   _debugDrawBox: 1
 --- !u!114 &3173746504147454418
 MonoBehaviour:
