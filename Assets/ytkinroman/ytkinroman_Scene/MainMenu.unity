@@ -1692,6 +1692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _soudSaveSystemController: {fileID: 1917594375}
+  _gameManager: {fileID: 0}
 --- !u!4 &561419767
 Transform:
   m_ObjectHideFlags: 0
@@ -3200,50 +3201,6 @@ MonoBehaviour:
   _volumeType: 2
   _persentText: {fileID: 293049435}
   _gameManager: {fileID: 833501139}
---- !u!1 &1257990622
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1257990623}
-  - component: {fileID: 1257990624}
-  m_Layer: 0
-  m_Name: SoundSaveSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1257990623
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1257990622}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1917594376}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1257990624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1257990622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09cc865418d65414892c69040429ab71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1264848504
 GameObject:
   m_ObjectHideFlags: 0
@@ -4242,7 +4199,7 @@ GameObject:
   - component: {fileID: 1917594376}
   - component: {fileID: 1917594375}
   m_Layer: 0
-  m_Name: SoundSaveSystemController
+  m_Name: SoundSaveSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4260,8 +4217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32f0216133595b744b20d94d8b81f344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameManager: {fileID: 833501139}
-  _soudSaveSystem: {fileID: 1257990624}
 --- !u!4 &1917594376
 Transform:
   m_ObjectHideFlags: 0
@@ -4274,8 +4229,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1257990623}
+  m_Children: []
   m_Father: {fileID: 561419767}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1936622890

@@ -2,7 +2,7 @@ using UnityEngine;
 using System.IO;
 
 
-public class SoundSaveSystem : MonoBehaviour, ISaveable
+public class SoundSaveSystem : ISaveable
 {
     private const string _fileName = "SaveData/soundData.json";
     private string _filePath;

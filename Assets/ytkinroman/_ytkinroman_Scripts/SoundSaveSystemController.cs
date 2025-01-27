@@ -1,19 +1,20 @@
-using UnityEditor.Rendering;
 using UnityEngine;
 
 
 public class SoundSaveSystemController : MonoBehaviour
 {
-    [SerializeField] private GameManager _gameManager;
+    private GameManager _gameManager;
     private EventBus _eventBus;
 
-    [SerializeField] private SoundSaveSystem _soudSaveSystem;
-
+    private SoundSaveSystem _soudSaveSystem;
     public SoundBusManager _soundBusManager;
 
 
-    public void Initialization ()
+    public void Initialization (GameManager gameManager)
     {
+        _gameManager = gameManager;
+
+        _soudSaveSystem = new SoundSaveSystem();
         _soudSaveSystem.Initialization();
 
         _soundBusManager = new SoundBusManager();
@@ -34,23 +35,17 @@ public class SoundSaveSystemController : MonoBehaviour
             case SoundType.Master:
                 _soundBusManager.SetMasterVolume(signal.Value);
                 _soudSaveSystem._soundData.masterVolume = Mathf.Round(signal.Value * 100.0f);
-                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11
-                _soudSaveSystem.SaveData();
-                // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                _soudSaveSystem.SaveData(); // !!!!!!!!!! [IT TESTING] !!!!!!!!!!
                 break;
             case SoundType.Music:
                 _soundBusManager.SetMusicVolume(signal.Value);
                 _soudSaveSystem._soundData.musicVolume = Mathf.Round(signal.Value * 100.0f);
-                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11
-                _soudSaveSystem.SaveData();
-                // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                _soudSaveSystem.SaveData(); // !!!!!!!!!! [IT TESTING] !!!!!!!!!!
                 break;
             case SoundType.SFX:
                 _soundBusManager.SetSFXVolume(signal.Value);
                 _soudSaveSystem._soundData.sfxVolume = Mathf.Round(signal.Value * 100.0f);
-                //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11
-                _soudSaveSystem.SaveData();
-                // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                _soudSaveSystem.SaveData(); // !!!!!!!!!! [IT TESTING] !!!!!!!!!!
                 break;
         }
     }
