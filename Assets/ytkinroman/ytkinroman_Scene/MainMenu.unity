@@ -513,7 +513,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _volumeType: 1
   _persentText: {fileID: 881129612}
-  _gameManager: {fileID: 833501139}
 --- !u!1 &97779797
 GameObject:
   m_ObjectHideFlags: 0
@@ -1430,7 +1429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff441ca8f52a7714582a06daf5c261d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelIndex: 2
+  _levelStringName: LoadingScene_Lvl_1
 --- !u!114 &341339895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1868,7 +1867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff441ca8f52a7714582a06daf5c261d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelIndex: 0
+  _levelStringName: 
 --- !u!114 &632646981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2597,7 +2596,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _volumeType: 0
   _persentText: {fileID: 25753026}
-  _gameManager: {fileID: 833501139}
 --- !u!1 &1036862153
 GameObject:
   m_ObjectHideFlags: 0
@@ -3200,7 +3198,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _volumeType: 2
   _persentText: {fileID: 293049435}
-  _gameManager: {fileID: 833501139}
 --- !u!1 &1264848504
 GameObject:
   m_ObjectHideFlags: 0

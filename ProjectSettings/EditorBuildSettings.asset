@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Programmer/Scenes/Programmer_Scene.unity
-    guid: 86aca81f82e63a4468a2b4521774f733
-  - enabled: 0
     path: Assets/ytkinroman/ytkinroman_Scene/LoadingScene_Gameplay_1.unity
     guid: a1fce203b28433543a522ae6db8ce3b4
   - enabled: 0
@@ -20,27 +17,27 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ytkinroman/ytkinroman_Scene/MainMenu.unity
     guid: 31ad382f358a0a8458ef15a7058c0659
-  - enabled: 0
-    path: Assets/ytkinroman/ytkinroman_Scene/LoadingScene_MainMenu.unity
-    guid: a2a594ec9fd15584098505a1b5a68543
-  - enabled: 1
-    path: Assets/Mefedron(kolya)/Scenes/Lvl_1.unity
-    guid: ab385f27ee81e354586c6fc7cf93ec46
   - enabled: 1
     path: Assets/Mefedron(kolya)/Scenes/LoadingScenes/LoadingScene_Lvl_1.unity
     guid: 9cb9c219a15198c439995a804b10892e
   - enabled: 1
-    path: Assets/Mefedron(kolya)/Scenes/Lvl_2.unity
-    guid: efd185ab3ac21bc45a17350178d752e5
+    path: Assets/Mefedron(kolya)/Scenes/Lvl_1.unity
+    guid: ab385f27ee81e354586c6fc7cf93ec46
   - enabled: 1
     path: Assets/Mefedron(kolya)/Scenes/LoadingScenes/LoadingScene_Lvl_2.unity
     guid: dc17f21bec054d549b54078ce5deddb2
   - enabled: 1
-    path: Assets/Mefedron(kolya)/Scenes/Lvl_3.unity
-    guid: ba5fe0e655ea3bc41828b0ba5c1fa59f
+    path: Assets/Mefedron(kolya)/Scenes/Lvl_2.unity
+    guid: efd185ab3ac21bc45a17350178d752e5
   - enabled: 1
     path: Assets/Mefedron(kolya)/Scenes/LoadingScenes/LoadingScene_Lvl_3.unity
     guid: 03c7127913d20744d8032d06c6137654
+  - enabled: 1
+    path: Assets/Mefedron(kolya)/Scenes/Lvl_3.unity
+    guid: ba5fe0e655ea3bc41828b0ba5c1fa59f
+  - enabled: 1
+    path: Assets/Mefedron(kolya)/Scenes/LoadingScenes/LoadingScene_Lvl_4.unity
+    guid: a582b1bb59415c544a166b6fbc699fcc
   - enabled: 1
     path: Assets/Mefedron(kolya)/Scenes/Lvl_4.unity
     guid: cd29a92589184b34c86d7bf1b223affc

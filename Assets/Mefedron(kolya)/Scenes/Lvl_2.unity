@@ -506,7 +506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5298877315070652080, guid: 9e38f556ac5d9754da761db3644764c1, type: 3}
       propertyPath: _nextLevel
-      value: LoadingScene_Lvl_2
+      value: LoadingScene_Lvl_3
       objectReference: {fileID: 0}
     - target: {fileID: 5298877315070652080, guid: 9e38f556ac5d9754da761db3644764c1, type: 3}
       propertyPath: _gameManager
@@ -596,7 +596,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8353139248435479947, guid: 9e38f556ac5d9754da761db3644764c1, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -824,6 +825,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f10ef7ebab886e4aabaf799e1f46eff, type: 3}
+--- !u!114 &214652041 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3316485120906748564, guid: 0f10ef7ebab886e4aabaf799e1f46eff, type: 3}
+  m_PrefabInstance: {fileID: 214652040}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32f0216133595b744b20d94d8b81f344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!19719996 &214838017 stripped
 TilemapCollider2D:
   m_CorrespondingSourceObject: {fileID: -4996689906732301653, guid: 54125966bfaafe64db405dd1ee736eac, type: 3}
@@ -42472,11 +42484,11 @@ PrefabInstance:
     - target: {fileID: 8680330757246914420, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
       propertyPath: _pauseMenu
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1843461466}
     - target: {fileID: 8680330757246914420, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
       propertyPath: _soundSaveSystemController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 214652041}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -42612,6 +42624,11 @@ GameObject:
 --- !u!95 &1840450281 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4008559552438475999, guid: 9e38f556ac5d9754da761db3644764c1, type: 3}
+  m_PrefabInstance: {fileID: 127092364}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1843461466 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5392075859003254325, guid: 9e38f556ac5d9754da761db3644764c1, type: 3}
   m_PrefabInstance: {fileID: 127092364}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1858443711 stripped
