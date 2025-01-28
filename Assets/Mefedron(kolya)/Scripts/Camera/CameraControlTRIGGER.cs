@@ -15,7 +15,7 @@ public class CameraControlTRIGGER : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("PlayerTriggersCollider"))
         {
             if (customInspectorObjects.panCameraOnContact)
             {
@@ -27,7 +27,7 @@ public class CameraControlTRIGGER : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("PlayerTriggersCollider"))
         {
 
             Vector2 exitDirection = (collision.transform.position - _coll.bounds.center).normalized;
