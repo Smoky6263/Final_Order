@@ -143,7 +143,7 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
     {
         _eventBus.Invoke(new TurnOfHealthBarSignal());
         _eventBus.Invoke(new FMODParameterChangeSignal(FMODParameters.Boss, 2f));
-        _eventBus.Invoke(new CloseDoorSignal());
+        _eventBus.Invoke(new OpenDoorSignal());
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", 0);
         Destroy(gameObject);
     }

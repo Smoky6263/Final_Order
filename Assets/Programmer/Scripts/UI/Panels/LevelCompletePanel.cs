@@ -12,7 +12,7 @@ public class LevelCompletePanel : PopUpPanel
         LoadLevel(_canvasManager.NextLevel);
     }
 
-    private void LoadLevel(int nextLevel)
+    private void LoadLevel(string nextLevel)
     {
         SceneManager.LoadScene(nextLevel);
     }

@@ -16,7 +16,7 @@ public class ComboSystem : MonoBehaviour
 
     public delegate void ComboUpdated(int comboCount, int comboMultiplier);
     public event ComboUpdated OnComboUpdated; // update combo info
-
+    
     public delegate void ComboEnded(int score);
     public event ComboEnded OnComboEnded; // combo ended
 
@@ -25,14 +25,7 @@ public class ComboSystem : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Instance = this;
     }
 
 

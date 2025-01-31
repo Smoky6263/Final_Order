@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.cammin.ldtkunity": "6.4.5",
+    "com.cammin.ldtkunity": "6.6.2",
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
     "com.unity.cinemachine": "2.10.2",
     "com.unity.collab-proxy": "2.4.4",

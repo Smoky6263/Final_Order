@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &129146032759198280
+--- !u!1 &3284083430870919014
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,100 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8761191893467628928}
-  - component: {fileID: 7834869847742628432}
-  m_Layer: 0
-  m_Name: SoundBusManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8761191893467628928
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129146032759198280}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3450538078396712651}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7834869847742628432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129146032759198280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1743e30ec65b0814eb4e5a5757a940fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &745101246918558717
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5024271413378276645}
-  - component: {fileID: 2478867137005427933}
-  m_Layer: 0
-  m_Name: SoundSaveSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5024271413378276645
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 745101246918558717}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3450538078396712651}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2478867137005427933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 745101246918558717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09cc865418d65414892c69040429ab71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _soundData:
-    masterVolume: 100
-    musicVolume: 100
-    sfxVolume: 100
---- !u!1 &1220164913093136112
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3450538078396712651}
-  - component: {fileID: 6444235733551868882}
+  - component: {fileID: 6904989832383096434}
+  - component: {fileID: 3316485120906748564}
   m_Layer: 0
   m_Name: SoundSaveSystemController
   m_TagString: Untagged
@@ -109,41 +17,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3450538078396712651
+--- !u!4 &6904989832383096434
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220164913093136112}
+  m_GameObject: {fileID: 3284083430870919014}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5024271413378276645}
-  - {fileID: 8761191893467628928}
-  m_Father: {fileID: 6906735092211823847}
+  m_Children: []
+  m_Father: {fileID: 396121264081153920}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6444235733551868882
+--- !u!114 &3316485120906748564
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220164913093136112}
+  m_GameObject: {fileID: 3284083430870919014}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32f0216133595b744b20d94d8b81f344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _soudSaveSystem: {fileID: 2478867137005427933}
-  _soundBusManager: {fileID: 7834869847742628432}
-  _sliderMaster: {fileID: 0}
-  _sliderMusic: {fileID: 0}
-  _sliderSFX: {fileID: 0}
---- !u!1 &1221214386600256219
+--- !u!1 &5554766970804284768
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,8 +52,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6906735092211823847}
-  - component: {fileID: 1510390861749450051}
+  - component: {fileID: 396121264081153920}
+  - component: {fileID: 2240729824624812745}
   m_Layer: 0
   m_Name: ==== SaveSystemController ====
   m_TagString: Untagged
@@ -160,32 +61,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6906735092211823847
+--- !u!4 &396121264081153920
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1221214386600256219}
+  m_GameObject: {fileID: 5554766970804284768}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3450538078396712651}
+  - {fileID: 6904989832383096434}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1510390861749450051
+--- !u!114 &2240729824624812745
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1221214386600256219}
+  m_GameObject: {fileID: 5554766970804284768}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3bc18f1a530bf33489f4d2f25ee6e2a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _soudSaveSystemController: {fileID: 6444235733551868882}
+  _soudSaveSystemController: {fileID: 3316485120906748564}
+  _gameManager: {fileID: 0}
