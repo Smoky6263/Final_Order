@@ -28,7 +28,7 @@ public class ComboSystem : MonoBehaviour
         Instance = this;
     }
 
-
+    
     private void Update()
     {
         // reset if time is out
@@ -67,6 +67,7 @@ public class ComboSystem : MonoBehaviour
         {
             int comboScore = comboCount * (comboCount + 1) / 2;
             scoreList.Add(comboScore);
+            CalculateFinalScore();
 
             OnComboEnded?.Invoke(comboScore);
         }
@@ -75,15 +76,24 @@ public class ComboSystem : MonoBehaviour
         comboTimer = 0;
     }
 
-    public float ShowComboWindowProgressSlider()
+    public List<int> GetScoreList()
     {
-        return ComboWindowProgress;
+        return scoreList;
     }
+
+    public void ResetComboData()
+    {
+        scoreList.Clear();
+        totalPoints = 0;
+    }
+
+    
     public int CalculateFinalScore()
     {
         int finalScore = 0;
         foreach (var score in scoreList)
             finalScore += score;
+        Debug.Log("Final score is " +  finalScore);
         return finalScore;
     }
 }
