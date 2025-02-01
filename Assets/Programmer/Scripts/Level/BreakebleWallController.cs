@@ -1,53 +1,36 @@
 using FMODUnity;
-using System.Collections;
 using UnityEngine;
-
+[RequireComponent(typeof(ShakerScript))]
 public class BreakebleWallController : MonoBehaviour
 {
     [SerializeField] private float _health = 100f;
-    [SerializeField] private VFXManager _vFXManager;
     
-    [SerializeField] private Transform _sprite;
+    [SerializeField] private Transform _spriteTransform;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private Material _spriteMaterial;
 
     [Header("Статы для тряски стены")]
-    [SerializeField] private float _duration = 0.5f;
+    [SerializeField, Range(0f, 2f)] private float _duration = 0.5f;
     [SerializeField, Range(0f, 1f)] float _intensity = 0.5f;
+    
+    private ShakerScript _shaker;
+
+    private void Awake()
+    {
+        _shaker = GetComponent<ShakerScript>();
+
+    }
 
     public void GetDamage(float value)
     {
         RuntimeManager.PlayOneShot("event:/SFX/BreakebleWall Hit");
         _health -= value;
 
-        StartCoroutine(ShakeWallCoroutine(_duration, _intensity));
+        StartCoroutine(_shaker.ShakeSpriteRendererCoroutine(_spriteTransform, _spriteRenderer, _spriteMaterial, _duration, _intensity));
 
         if (_health < 0)
             Destroy(gameObject);
     }
 
-    private IEnumerator ShakeWallCoroutine(float duration, float intensity)
-    {
-        Material currentMaterial = GetComponentInChildren<SpriteRenderer>().material;
-        Vector3 originalPosition = _sprite.transform.position;
-        float elapsedTime = 0f;
-
-        while (elapsedTime < duration)
-        {
-            float offsetX = Random.Range(-1f, 1f) * intensity;
-            float offsetY = Random.Range(-1f, 1f) * intensity;
-
-            _sprite.transform.position = originalPosition + new Vector3(offsetX, offsetY, 0f);
-            elapsedTime += Time.deltaTime;
-
-            GetComponentInChildren<SpriteRenderer>().material = _vFXManager.EnemyDamageMaterial();
-
-            yield return new WaitForFixedUpdate();
-        }
-        
-        _sprite.transform.position = originalPosition;
-        GetComponentInChildren<SpriteRenderer>().material = currentMaterial;
-
-        yield break;
-    }
-
-    private void OnDestroy() => StopAllCoroutines();
+    
 }

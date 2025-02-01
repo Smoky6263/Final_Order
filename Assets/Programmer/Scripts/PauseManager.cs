@@ -9,6 +9,7 @@ public class PauseManager : MonoBehaviour
     private EventBus _eventBus;
     private PlayerInputs _inputs;
     private List<IPauseHandler> _pauseHandlers = new List<IPauseHandler>();
+    [SerializeField] private SoundSaveSystemController _soundSaveSystemController;
 
     public bool OnPause { get; private set; } = false;
 
@@ -60,6 +61,7 @@ public class PauseManager : MonoBehaviour
         foreach (IPauseHandler handler in _pauseHandlers)
         {
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Pause", 0);
+            //_soundSaveSystemController.UpdateSoundData();
             _pauseMenu.gameObject.SetActive(false);
             handler.SetPlay();
         }
