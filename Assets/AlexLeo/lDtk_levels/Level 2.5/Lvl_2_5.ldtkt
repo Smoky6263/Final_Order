@@ -1,0 +1,33 @@
+{
+  "Rects": null,
+  "Def": {
+    "__cHei": 4,
+    "__cWid": 7,
+    "cachedPixelData": {
+      "opaqueTiles": "0001000111111111011110000000",
+      "averageColors": "f562f452f452f331000000000000f452f452f452f452f452f331f331f331f331f562f331f342f331f331f341f3310000f341f34200000000"
+    },
+    "customData": [
+
+    ],
+    "embedAtlas": null,
+    "enumTags": [
+
+    ],
+    "identifier": "Lvl_2_5",
+    "padding": 0,
+    "pxHei": 128,
+    "pxWid": 224,
+    "relPath": "../../Mefedron(kolya)/Sprites/Lvl_2.5.png",
+    "savedSelections": [
+
+    ],
+    "spacing": 0,
+    "tags": [
+
+    ],
+    "tagsSourceEnumUid": null,
+    "tileGridSize": 32,
+    "uid": 1
+  }
+}

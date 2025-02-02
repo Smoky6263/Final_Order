@@ -29089,6 +29089,10 @@ PrefabInstance:
       propertyPath: _screenShakeProfile
       value: 
       objectReference: {fileID: 11400000, guid: 9944e9a2635f7b84696419807e473a11, type: 2}
+    - target: {fileID: 1695820979278517409, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2774926343881191906, guid: 48c5b301b6d172e45992aa2d65485075, type: 3}
       propertyPath: _profile
       value: 
