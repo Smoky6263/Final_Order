@@ -1,11 +1,14 @@
 using System.Collections;
 using UnityEngine;
+using VContainer;
 
 public class ShakerScript : MonoBehaviour
 {
+    [Inject] private GameManager _gameManager;
+
     public IEnumerator ShakeSpriteRendererCoroutine(Transform transform, SpriteRenderer sprite, Material currentMaterial, float duration, float intensity)
     {
-        sprite.material = GameManager.Instance.GetComponent<VFXManager>().EnemyDamageMaterial();
+        sprite.material = _gameManager.GetComponent<VFXManager>().EnemyDamageMaterial();
         Vector3 originalPosition = transform.position;
         float elapsedTime = 0f;
 

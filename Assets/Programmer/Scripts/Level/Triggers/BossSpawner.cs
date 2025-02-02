@@ -2,6 +2,7 @@ using Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Playables;
+using VContainer;
 
 [RequireComponent(typeof(CinemachineImpulseSource))]
 public class BossSpawner : MonoBehaviour
@@ -11,7 +12,7 @@ public class BossSpawner : MonoBehaviour
 
     public UnityEvent Action;
 
-    private GameManager _gameManager;
+    [Inject] private GameManager _gameManager;
     private Transform _playerPosition;
     private IControlable _controlable;
     private CharacterController _characterController;
@@ -19,7 +20,6 @@ public class BossSpawner : MonoBehaviour
     private IBoss _boss;
     private bool _bossSpawned = false;
 
-    private void Start() => _gameManager = GameManager.Instance;
 
     public void SpawnBoss(GameObject bossPrefab)
     {

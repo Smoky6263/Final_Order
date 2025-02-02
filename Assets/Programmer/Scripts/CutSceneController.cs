@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.Playables;
+using VContainer;
 
 public class CutSceneController : MonoBehaviour, IPauseHandler
 {
+    [Inject] GameManager _gameManager;
+    [Inject] private PauseManager _pauseManager;
     private PlayableDirector _cutscene;
-    private PauseManager _pauseManager;
 
     public void Init(PauseManager pauseManager)
     {
@@ -13,7 +15,6 @@ public class CutSceneController : MonoBehaviour, IPauseHandler
     private void Start()
     {
         _cutscene = GetComponent<PlayableDirector>();
-        _pauseManager = GameManager.Instance.GetComponent<PauseManager>();
         _pauseManager.Register(this);
     }
 

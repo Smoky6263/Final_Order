@@ -1,19 +1,22 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using VContainer;
 
 
 public class SoundSlider : MonoBehaviour
 {
-    private Slider _slider;
     [SerializeField] private SoundType _volumeType;
     [SerializeField] private TextMeshProUGUI _persentText;
+
+    [Inject] private GameManager _gameManager;
     private EventBus _eventBus;
+    private Slider _slider;
 
 
     private void Awake ()
     {
-        _eventBus = GameManager.Instance.EventBus;
+        _eventBus = _gameManager.EventBus;
         _eventBus.Subscribe<SliderValueSetSignal>(OnSliderValueSet);
 
         _slider = GetComponent<Slider>();

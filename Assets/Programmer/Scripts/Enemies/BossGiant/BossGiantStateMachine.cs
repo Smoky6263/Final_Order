@@ -58,6 +58,7 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
     #endregion
 
     #region Properties
+    public GameManager GameManager { get { return _gameManager; } }
     public VFXManager VFXManager { get { return _vFXManager; } }
     public EventBus EventBus { get {return _eventBus;} }
     public IEnemyHealth HealthManager { get { return _healthManager; } }
@@ -88,7 +89,6 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
     public float AttackAnimationSpeed { get { return _attackAnimationSpeed; } }
     #endregion
 
-    
 
     public enum BossGiantStates
     {
@@ -99,15 +99,12 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
         Attack,
         Die
     }
-    public void Init(GameManager gameManager)
-    {
-        _gameManager = gameManager;
-    }
 
     public void Init(GameManager GameManager, Transform player)
     {
         _onCutScene = true;
 
+        _gameManager = GameManager;
         _eventBus = GameManager.EventBus;
         _vFXManager = GameManager.GetComponent<VFXManager>();
         _pauseManager = GameManager.GetComponent<PauseManager>();
