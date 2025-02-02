@@ -45,10 +45,10 @@ ScriptedImporter:
     spriteID: 813822fcc077411419f32ba70fdaf7a4
     spriteOutline:
     - shape:
-      - {x: -16, y: -16}
-      - {x: -16, y: 16}
-      - {x: 16, y: 16}
-      - {x: 16, y: -16}
+      - {x: -12, y: -16}
+      - {x: -12, y: 16}
+      - {x: 12, y: 16}
+      - {x: 12, y: -16}
     tessellationDetail: 0
   - name: Stairs_2
     originalName: 
@@ -83,10 +83,10 @@ ScriptedImporter:
     spriteID: 3f01ee4327d0c90479ea8494c444f811
     spriteOutline:
     - shape:
-      - {x: -16, y: -16}
-      - {x: -16, y: 16}
-      - {x: 16, y: 16}
-      - {x: 16, y: -16}
+      - {x: -12, y: -16}
+      - {x: -12, y: 16}
+      - {x: 12, y: 16}
+      - {x: 12, y: -16}
     tessellationDetail: 0
   - name: Stairs_4
     originalName: 
@@ -121,10 +121,10 @@ ScriptedImporter:
     spriteID: caf34f4196093f148886ed73ed6684db
     spriteOutline:
     - shape:
-      - {x: -16, y: -16}
-      - {x: -16, y: 16}
-      - {x: 16, y: 16}
-      - {x: 16, y: -16}
+      - {x: -12, y: -16}
+      - {x: -12, y: 16}
+      - {x: 12, y: 16}
+      - {x: 12, y: -16}
     tessellationDetail: 0
   - name: Stairs_6
     originalName: 
@@ -159,10 +159,10 @@ ScriptedImporter:
     spriteID: 0ba23233fb4b92c4a9fae80b5de50c73
     spriteOutline:
     - shape:
-      - {x: -16, y: -16}
-      - {x: -16, y: 16}
-      - {x: 16, y: 16}
-      - {x: 16, y: -16}
+      - {x: -12, y: -16}
+      - {x: -12, y: 16}
+      - {x: 12, y: 16}
+      - {x: 12, y: -16}
     tessellationDetail: 0
   - name: Stairs_8
     originalName: 
@@ -197,10 +197,10 @@ ScriptedImporter:
     spriteID: 868c9b5c0af3a574c82c31e58544afb6
     spriteOutline:
     - shape:
-      - {x: -16, y: -15.5}
-      - {x: -16, y: 15.5}
-      - {x: 16, y: 15.5}
-      - {x: 16, y: -15.5}
+      - {x: -12, y: -15.5}
+      - {x: -12, y: 15.5}
+      - {x: 12, y: 15.5}
+      - {x: 12, y: -15.5}
     tessellationDetail: 0
   _secondaryTextures: []
   _artifacts: {fileID: -2988177865379244337, guid: 32831c83bf19f444ab702108309f011b, type: 3}

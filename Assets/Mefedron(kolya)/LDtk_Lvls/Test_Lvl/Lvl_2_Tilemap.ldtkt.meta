@@ -672,10 +672,10 @@ ScriptedImporter:
     spriteID: e3b00621b94eded4ea94ad310c539634
     spriteOutline:
     - shape:
-      - {x: -16, y: 16}
+      - {x: -16, y: 3}
       - {x: -16, y: -16}
       - {x: 16, y: -16}
-      - {x: 16, y: 16}
+      - {x: 16, y: 3}
     tessellationDetail: 0
   - name: Lvl_2_Tilemap_35
     originalName: 
@@ -691,10 +691,10 @@ ScriptedImporter:
     spriteID: b979286128d98fe4faa7023e7e959d7b
     spriteOutline:
     - shape:
-      - {x: -16, y: 16}
+      - {x: -16, y: 3}
       - {x: -16, y: -16}
       - {x: 16, y: -16}
-      - {x: 16, y: 16}
+      - {x: 16, y: 3}
     tessellationDetail: 0
   - name: Lvl_2_Tilemap_36
     originalName: 

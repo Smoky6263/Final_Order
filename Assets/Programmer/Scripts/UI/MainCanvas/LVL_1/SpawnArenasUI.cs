@@ -26,6 +26,7 @@ public class SpawnArenasUI : MonoBehaviour
 
     public void SpawnArenaText()
     {
+        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", 1);
         _mainCanvasManager.SpawnUIElement(_welcomeToArenaText);
     }
 }

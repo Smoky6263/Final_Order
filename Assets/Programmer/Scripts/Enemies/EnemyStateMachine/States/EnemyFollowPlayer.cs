@@ -32,7 +32,6 @@ internal class EnemyFollowPlayer : BaseState<EnemyStateMachine.EnemyStates>
     {
         if (Context.PlayerDetected == false)
         {
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", 0);
             return EnemyStateMachine.EnemyStates.Idle;
         }
 
@@ -65,8 +64,6 @@ internal class EnemyFollowPlayer : BaseState<EnemyStateMachine.EnemyStates>
         else movementVelocity = new Vector2(-Context.PlayerFollowSpeed, Context.RigidBody2D.velocity.y);
 
         Context.RigidBody2D.velocity = Vector2.Lerp(Context.RigidBody2D.velocity, movementVelocity, 0.1f);
-
-        FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", 1);
     }
 
     private void CheckPlayer()
