@@ -19883,6 +19883,7 @@ GameObject:
   m_Component:
   - component: {fileID: 816475499}
   - component: {fileID: 816475498}
+  - component: {fileID: 816475500}
   m_Layer: 0
   m_Name: UserSaveSystem
   m_TagString: Untagged
@@ -19917,6 +19918,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1862984264}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &816475500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816475497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8d597957c0b78845b9fb03c78f4a725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _userSaveSystemController: {fileID: 816475498}
 --- !u!19719996 &829556566 stripped
 TilemapCollider2D:
   m_CorrespondingSourceObject: {fileID: -2608697396031220176, guid: 75db5c22724fece4e9649ea1e7fdb12d, type: 3}

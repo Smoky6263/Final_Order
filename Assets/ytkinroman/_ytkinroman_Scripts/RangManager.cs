@@ -48,7 +48,7 @@ public class RangManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         string _totalScoreText = levelData.totalScore.ToString();
         string _totalRangText = levelData.totalRang;
 
-        _textTotal.text = $"Combo score: : {_totalScoreText}";
+        _textTotal.text = $"Combo score: {_totalScoreText}";
         _textRang.text = $"YOU RANG: {_totalRangText}";
     }
 }
