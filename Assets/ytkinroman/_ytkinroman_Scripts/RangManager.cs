@@ -13,7 +13,6 @@ public class RangManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     [SerializeField] private LevelIndex _levelIndex;
     private EventBus _eventBus;
 
-
     private void Awake ()
     {
         _eventBus = GameManager.Instance.EventBus;

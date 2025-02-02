@@ -19885,7 +19885,7 @@ GameObject:
   - component: {fileID: 816475498}
   - component: {fileID: 816475500}
   m_Layer: 0
-  m_Name: UserSaveSystem
+  m_Name: UserSaveSystemController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
