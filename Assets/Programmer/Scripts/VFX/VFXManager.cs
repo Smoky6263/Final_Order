@@ -32,7 +32,7 @@ public class VFXManager : MonoBehaviour
     public void SpawnParticles(SpawnParticlesSignal signal)
     {
         GameObject particles = Instantiate(_particleBanks[signal.ParticleBanks], signal.Position + _offset, Quaternion.identity);
-        particles.GetComponent<VFXScript>().Init(_pauseManager);
+        particles.GetComponent<DestroyableVFXScript>().Init(_pauseManager);
     }
     #endregion
 

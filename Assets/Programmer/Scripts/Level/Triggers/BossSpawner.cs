@@ -31,7 +31,7 @@ public class BossSpawner : MonoBehaviour
     }
     public void PlayerOnCutScene() => _playerPosition.GetComponentInParent<PlayerStateMachine>().OnCutScene = true;
     public void BossOnRoar() => _gameManager.EventBus.Invoke(new ScreenShakeSignal(ScreenShakeBanks.GiantBossRoar));
-    public void SpawnBossHP(GameObject HPPrefab) => _gameManager.EventBus.Invoke(new SpawnBossHPSignal(HPPrefab));
+    public void SpawnBossHP(GameObject HPPrefab) => _gameManager.EventBus.Invoke(new SpawnUIElementSignal(HPPrefab));
     public void FightBegin()
     {
         _playerPosition.GetComponentInParent<PlayerStateMachine>().OnCutScene = false;

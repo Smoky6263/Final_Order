@@ -63,10 +63,6 @@ public class TutorialCanvas : MonoBehaviour
             TutorialText text = textGO[i].GetComponent<TutorialText>();
             text.DoFadeIn(_alphaDuration);
 
-            //textGO[i].transform.DOLocalMove((Vector3)_words[textGO[i].gameObject].GetValue(0), _moveDuration / 2f).SetEase(Ease.OutBack, _overshoot).OnComplete(() =>
-            //{
-            //});
-
         }
         StartCoroutine(TurnOffCanvas(_alphaDuration));
 

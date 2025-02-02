@@ -277,6 +277,34 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""UseInteractable"",
+            ""id"": ""d2e67a62-54ba-4f1f-8405-823a26dc94de"",
+            ""actions"": [
+                {
+                    ""name"": ""Use"",
+                    ""type"": ""Button"",
+                    ""id"": ""17fadc15-58ea-415d-8333-9abcdff627f5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""0c377f96-bec8-41cf-a71d-aa73e8bca8ed"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Use"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -292,6 +320,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         // UIActions
         m_UIActions = asset.FindActionMap("UIActions", throwIfNotFound: true);
         m_UIActions_CallPauseMenu = m_UIActions.FindAction("CallPauseMenu", throwIfNotFound: true);
+        // UseInteractable
+        m_UseInteractable = asset.FindActionMap("UseInteractable", throwIfNotFound: true);
+        m_UseInteractable_Use = m_UseInteractable.FindAction("Use", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -481,6 +512,52 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         }
     }
     public UIActionsActions @UIActions => new UIActionsActions(this);
+
+    // UseInteractable
+    private readonly InputActionMap m_UseInteractable;
+    private List<IUseInteractableActions> m_UseInteractableActionsCallbackInterfaces = new List<IUseInteractableActions>();
+    private readonly InputAction m_UseInteractable_Use;
+    public struct UseInteractableActions
+    {
+        private @PlayerInputs m_Wrapper;
+        public UseInteractableActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Use => m_Wrapper.m_UseInteractable_Use;
+        public InputActionMap Get() { return m_Wrapper.m_UseInteractable; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(UseInteractableActions set) { return set.Get(); }
+        public void AddCallbacks(IUseInteractableActions instance)
+        {
+            if (instance == null || m_Wrapper.m_UseInteractableActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_UseInteractableActionsCallbackInterfaces.Add(instance);
+            @Use.started += instance.OnUse;
+            @Use.performed += instance.OnUse;
+            @Use.canceled += instance.OnUse;
+        }
+
+        private void UnregisterCallbacks(IUseInteractableActions instance)
+        {
+            @Use.started -= instance.OnUse;
+            @Use.performed -= instance.OnUse;
+            @Use.canceled -= instance.OnUse;
+        }
+
+        public void RemoveCallbacks(IUseInteractableActions instance)
+        {
+            if (m_Wrapper.m_UseInteractableActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IUseInteractableActions instance)
+        {
+            foreach (var item in m_Wrapper.m_UseInteractableActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_UseInteractableActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public UseInteractableActions @UseInteractable => new UseInteractableActions(this);
     public interface IPlayerActionsActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -493,5 +570,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     public interface IUIActionsActions
     {
         void OnCallPauseMenu(InputAction.CallbackContext context);
+    }
+    public interface IUseInteractableActions
+    {
+        void OnUse(InputAction.CallbackContext context);
     }
 }

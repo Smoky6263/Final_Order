@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 4597662505230624863}
   - component: {fileID: 9209729763146736218}
   - component: {fileID: 6901020833272093303}
+  - component: {fileID: 5874347104230274773}
   m_Layer: 0
   m_Name: MedKit_Trigger
   m_TagString: Untagged
@@ -197,4 +198,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d065b45fba72aba429719f65cc8c8f1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameManager: {fileID: 0}
+--- !u!114 &5874347104230274773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5400423833095365320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d83828c44187b34e9d95dd5a2a79fc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

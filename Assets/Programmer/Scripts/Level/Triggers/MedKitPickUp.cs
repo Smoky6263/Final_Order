@@ -1,8 +1,9 @@
 using UnityEngine;
+using VContainer;
 
 public class MedKitPickUp : MonoBehaviour, IPauseHandler
 {
-    [SerializeField] private GameManager _gameManager;
+    [Inject] private GameManager _gameManager;
 
     private string _playerTag = "Player";
     

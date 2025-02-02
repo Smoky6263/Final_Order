@@ -1,9 +1,12 @@
 using UnityEngine;
+using VContainer;
+using VContainer.Unity;
 
 public class MainCanvasManager : MonoBehaviour
 {
     [SerializeField] private string _nextLevel;
-    [SerializeField] private GameManager _gameManager;
+    [Inject] private GameManager _gameManager;
+    [Inject] private IObjectResolver _container;
 
 
     public EventBus EventBus { get; private set; }
@@ -12,16 +15,18 @@ public class MainCanvasManager : MonoBehaviour
     private void Awake()
     {
         EventBus = _gameManager.EventBus;
-        EventBus.Subscribe<SpawnBossHPSignal>(SpawnUIElement);
+        EventBus.Subscribe<SpawnUIElementSignal>(SpawnUIElement);
     }
 
     public void SpawnUIElement(GameObject uiElement)
     {
-        Instantiate(uiElement, transform);
+        GameObject go = _container.Instantiate(uiElement, transform);
+        go.transform.SetAsFirstSibling();
     }
 
-    public void SpawnUIElement(SpawnBossHPSignal signal)
+    public void SpawnUIElement(SpawnUIElementSignal signal)
     {
-        Instantiate(signal.HPPrefab, transform);
+        GameObject go = _container.Instantiate(signal.Prefab, transform);
+        go.transform.SetAsFirstSibling();
     }
 }

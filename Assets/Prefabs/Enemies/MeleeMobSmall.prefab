@@ -120,7 +120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8b0bb4f6914c14cae976b088e0e91d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _soundsManager: {fileID: 0}
 --- !u!114 &3193599197506280486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,7 +238,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7488043932072916814}
   - component: {fileID: 3160304592250452444}
-  - component: {fileID: 7730422538313933750}
   - component: {fileID: 4147634842948387934}
   - component: {fileID: 5456410791048275942}
   - component: {fileID: 5087146348245600799}
@@ -264,6 +262,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4987117835210075572}
+  - {fileID: 7314789171352171617}
   m_Father: {fileID: 5774169385375768408}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &3160304592250452444
@@ -293,13 +292,103 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &7730422538313933750
-BoxCollider2D:
+--- !u!114 &4147634842948387934
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4859430193635711055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f187640d443ecc344a3c73d7029d61d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 5456410791048275942}
+  _spriteRenderer: {fileID: 4182194645743241247}
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  _pointA: {fileID: 1783923839850594207}
+  _pointB: {fileID: 1753938015051251309}
+  _maxHealth: 50
+  _health: 0
+  _idleTime: 1
+  _patrollingSpeed: 1
+  _palyerFollowSpeed: 2
+  _attackDistance: 2
+  _damageFlashTime: 200
+  _playerDetectionArea: {x: 6, y: 2.5}
+  _playerDetectionAreaOffset: {x: 0, y: 1.25, z: 0}
+  _playerFollowArea: {x: 15, y: 2.5}
+  _playerFollowAreaOffset: {x: 0, y: 1.25, z: 0}
+  _debugPlayerDetectionArea: 1
+  _debugPlayerFolowArea: 1
+  _detectionColor: {r: 1, g: 0, b: 0, a: 1}
+  _followColor: {r: 0, g: 0.5058824, b: 0.5647059, a: 1}
+--- !u!114 &5456410791048275942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4859430193635711055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8d52f0d58b9a2498916fbea7b4a841, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5087146348245600799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4859430193635711055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d28c8cedd266590459b1d28d61a07063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &6283117052471732524
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7314789171352171617}
+  - component: {fileID: 55388092407205674}
+  m_Layer: 9
+  m_Name: Collider
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7314789171352171617
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6283117052471732524}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7488043932072916814}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &55388092407205674
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6283117052471732524}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -338,65 +427,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.66, y: 2.39984}
   m_EdgeRadius: 0
---- !u!114 &4147634842948387934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4859430193635711055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f187640d443ecc344a3c73d7029d61d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _gameManager: {fileID: 0}
-  _animator: {fileID: 5456410791048275942}
-  _spriteRenderer: {fileID: 4182194645743241247}
-  _playerLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  _pointA: {fileID: 1783923839850594207}
-  _pointB: {fileID: 1753938015051251309}
-  _maxHealth: 50
-  _health: 0
-  _idleTime: 1
-  _patrollingSpeed: 1
-  _palyerFollowSpeed: 2
-  _attackDistance: 2
-  _damageFlashTime: 200
-  _playerDetectionArea: {x: 6, y: 5}
-  _playerDetectionAreaOffset: {x: 0, y: 1.5, z: 0}
-  _playerFollowArea: {x: 15, y: 5}
-  _playerFollowAreaOffset: {x: 0, y: 1.5, z: 0}
-  _debugPlayerDetectionArea: 1
-  _debugPlayerFolowArea: 1
-  _detectionColor: {r: 1, g: 0, b: 0, a: 1}
-  _followColor: {r: 0, g: 0.5058824, b: 0.5647059, a: 1}
---- !u!114 &5456410791048275942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4859430193635711055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf8d52f0d58b9a2498916fbea7b4a841, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5087146348245600799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4859430193635711055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d28c8cedd266590459b1d28d61a07063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7091456947272226757
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,6 +436,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5774169385375768408}
+  - component: {fileID: 906700986669106680}
   m_Layer: 0
   m_Name: MeleeMobSmall
   m_TagString: Untagged
@@ -431,6 +462,18 @@ Transform:
   - {fileID: 7488043932072916814}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &906700986669106680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7091456947272226757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d83828c44187b34e9d95dd5a2a79fc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8251068801895795414
 GameObject:
   m_ObjectHideFlags: 0

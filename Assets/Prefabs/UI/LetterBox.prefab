@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 3390639586840135297}
   - component: {fileID: 8158682542565961197}
   - component: {fileID: 8497976391532681375}
+  - component: {fileID: 7012860803061450843}
   m_Layer: 5
   m_Name: LetterBox
   m_TagString: Untagged
@@ -251,5 +252,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fd2fe1c405841a4e96ff53df8e1fa38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7012860803061450843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5932639561369603161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d83828c44187b34e9d95dd5a2a79fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
