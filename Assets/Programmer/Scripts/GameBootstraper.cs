@@ -2,7 +2,7 @@ using VContainer;
 using VContainer.Unity;
 using UnityEngine;
 
-public class LevelOneBootStraper : LifetimeScope
+public class GameBootstraper : LifetimeScope
 {
     [SerializeField] private GameManager _gameManager;
     [SerializeField] private MainCanvasManager _mainCanvasManager;
