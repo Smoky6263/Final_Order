@@ -1,10 +1,12 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
+using VContainer;
 
 
 public class RangManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    [Inject] private GameManager _gameManager;
     public StringListDescruption _description;
     public int _inxDescription;
     [SerializeField] private TextMeshProUGUI _textStory;
@@ -16,7 +18,7 @@ public class RangManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     private void Awake ()
     {
-        _eventBus = GameManager.Instance.EventBus;
+        _eventBus = _gameManager.EventBus;
         _eventBus.Subscribe<RangValueChangeSignal>(OnRangValueSet);
     }
 

@@ -121,10 +121,6 @@ MonoBehaviour:
     m_Bits: 64
   _groundDetectionRayLength: 0.1
   _idleTimer: 1
-  _damageValue: 0
-  _damageRadius: 0
-  _throwTime: 0.15
-  _damageForce: {x: 0, y: 0}
   _attackDistance: 5
   _attackAnimationLength: 1.833
   _attackAnimationSpeed: 1
@@ -536,7 +532,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8b0bb4f6914c14cae976b088e0e91d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _soundsManager: {fileID: 0}
 --- !u!114 &6675332197092953441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,7 +613,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3523324645218269734
 Transform:
   m_ObjectHideFlags: 0
@@ -642,7 +637,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6311178920546441477}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e103e5e5035eba342b8cb850cfffacc9, type: 3}
   m_Name: 
