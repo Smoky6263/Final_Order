@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using VContainer;
 
 [RequireComponent(typeof(EnemyPauseHandler))]
 [RequireComponent(typeof(EnemyDamageTrigger))]
@@ -10,7 +11,7 @@ public class EnemyStateMachine : StateManager<EnemyStateMachine.EnemyStates>, IS
 {
     private EnemyStateMachine Context;
 
-    [SerializeField] private GameManager _gameManager;
+    [Inject] private GameManager _gameManager;
     [SerializeField] private EnemyAnimatorController _animator;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private LayerMask _playerLayer;
@@ -100,6 +101,7 @@ public class EnemyStateMachine : StateManager<EnemyStateMachine.EnemyStates>, IS
         _pauseManager = _gameManager.GetComponent<PauseManager>();
         _soundsManager = _gameManager.GetComponent<SoundsManager>();
         _soundsController = GetComponentInChildren<SoundsController>();
+        _soundsController.SoundsManager = _soundsManager;
 
 
         States = new Dictionary<EnemyStates, BaseState<EnemyStates>>

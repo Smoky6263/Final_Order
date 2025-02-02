@@ -1,10 +1,11 @@
 using UnityEngine;
+using VContainer;
 
-public class VFXScript : MonoBehaviour, IPauseHandler
+public class DestroyableVFXScript : MonoBehaviour, IPauseHandler
 {
     [SerializeField] private float _lifeTime = 2f;
 
-    private PauseManager _pauseManager;
+    [Inject] private PauseManager _pauseManager;
     private ParticleSystem _particleSystem;
     private bool _onPause;
     public void Init(PauseManager pauseManager)

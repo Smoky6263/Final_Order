@@ -19,7 +19,7 @@ public class BossHPBar : MonoBehaviour
     {
         _eventBus = GameManager.Instance.EventBus;
         _eventBus.Subscribe<BossOnHealthChangeSignal>(BossOnHealthChange);
-        _eventBus.Subscribe<TurnOfHealthBarSignal>(TurnOffBar);
+        _eventBus.Subscribe<TurnOffBossHealthBarSignal>(TurnOffBar);
     }
 
     private void BossOnHealthChange(BossOnHealthChangeSignal signal)
@@ -27,7 +27,7 @@ public class BossHPBar : MonoBehaviour
         _hpBar.value = signal.Value;
     }
 
-    private void TurnOffBar(TurnOfHealthBarSignal signal)
+    private void TurnOffBar(TurnOffBossHealthBarSignal signal)
     {
         GetComponent<Animator>().Play(_fadeOutAnimationHash);
     }

@@ -2,10 +2,11 @@
 using UnityEngine;
 using Cysharp.Threading.Tasks;
 using System.Threading;
+using VContainer;
 
 public class EnemyWithWeaponStateMachine : StateManager<EnemyWithWeaponStateMachine.EnemyWithWeaponStates>, IStandartEnemy, IEnemy
 {
-    [SerializeField] private GameManager _gameManager;
+    [Inject] private GameManager _gameManager;
     [SerializeField] private EnemyWithWeaponAnimatorController _animator;
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private LayerMask _playerLayer;
@@ -112,6 +113,8 @@ public class EnemyWithWeaponStateMachine : StateManager<EnemyWithWeaponStateMach
         _weapon = GetComponentInChildren<EnemyWithWeaponDamageTrigger>();
         _soundsManager = _gameManager.GetComponent<SoundsManager>();
         _soundsController = GetComponentInChildren<SoundsController>();
+        _soundsController.SoundsManager = _soundsManager;
+        _soundsController.SoundsManager = _soundsManager;
 
 
         _healthManager = new EnemyHealth(Context);

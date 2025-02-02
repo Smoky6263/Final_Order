@@ -255,6 +255,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "UseInteractable",
+            "id": "d2e67a62-54ba-4f1f-8405-823a26dc94de",
+            "actions": [
+                {
+                    "name": "Use",
+                    "type": "Button",
+                    "id": "17fadc15-58ea-415d-8333-9abcdff627f5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=2)",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "0c377f96-bec8-41cf-a71d-aa73e8bca8ed",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Use",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

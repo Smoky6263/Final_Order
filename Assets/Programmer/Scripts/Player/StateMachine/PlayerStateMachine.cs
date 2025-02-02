@@ -1,4 +1,5 @@
 using UnityEngine;
+using VContainer;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(PlayerAnimatorController))]
@@ -12,10 +13,12 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     public bool OnPause { get; set; } = false;
     public PlayerBaseState CurrentState { get { return _currentState; } set { _currentState = value; } }
     
-    [SerializeField] private GameManager _gameManager;
+    [Inject] private GameManager _gameManager;
     [SerializeField] private PlayerStats _moveStats;
     [SerializeField] private SpriteRenderer _torsoSprite;
     [SerializeField] private SpriteRenderer _legsSprite;
+    [SerializeField] private SoundsController _torsoSoundsController;
+    [SerializeField] private SoundsController _legsSoundsController;
     [SerializeField] private Collider2D _bodyColl;
     [SerializeField] private Collider2D _feetColl;
     
@@ -33,8 +36,8 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     private VFXManager _vfxManager;
     private PauseManager _pauseManager;
     private PlayerHealth _playerHealth;
+    private SoundsManager _soundsManager;
     private CharacterController _characterController;
-    private SoundsController _soundsController;
     private Rigidbody2D _rigidBody;
 
     private PlayerAnimatorController _animatorController;
@@ -96,7 +99,7 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
     public SpriteRenderer TorsoSprite {get { return _torsoSprite; } set { _torsoSprite = value;}}
     public SpriteRenderer LegsSprite { get { return _legsSprite; } set { _legsSprite = value; } }
     public CharacterController CharacterController{ get { return _characterController; } }
-    public SoundsController SoundsController { get { return _soundsController; } }
+    public SoundsController SoundsController { get { return _torsoSoundsController; } }
     public PlayerAnimatorController AnimatorController { get { return _animatorController; } }
     public Collider2D BodyColl { get { return _bodyColl; } }
     public Collider2D FeetColl { get { return _feetColl; } }
@@ -172,7 +175,9 @@ public class PlayerStateMachine : MonoBehaviour, IControlable
         _playerHealth = new PlayerHealth(this);
         _rigidBody = GetComponent<Rigidbody2D>();
         _animatorController = GetComponent<PlayerAnimatorController>();
-        _soundsController = GetComponentInChildren<SoundsController>();
+        _soundsManager = _gameManager.GetComponent<SoundsManager>();
+        _torsoSoundsController.SoundsManager = _soundsManager;
+        _legsSoundsController.SoundsManager = _soundsManager;
         _isFacingRight = true;
     }
 

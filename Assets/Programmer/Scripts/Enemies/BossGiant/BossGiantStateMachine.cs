@@ -41,9 +41,8 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
     [SerializeField] private AnimationCurve _jumpVerticalAnimationCurve;
     [SerializeField] private AnimationCurve _jumpHorizontalAnimationCurve;
 
-
-
     #region Main Vars
+    private GameManager _gameManager;
     private EventBus _eventBus;
     private IEnemyHealth _healthManager;
     private Rigidbody2D _rigidBody2D;
@@ -100,6 +99,10 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
         Attack,
         Die
     }
+    public void Init(GameManager gameManager)
+    {
+        _gameManager = gameManager;
+    }
 
     public void Init(GameManager GameManager, Transform player)
     {
@@ -141,7 +144,7 @@ public class BossGiantStateMachine : StateManager<BossGiantStateMachine.BossGian
 
     public void Die()
     {
-        _eventBus.Invoke(new TurnOfHealthBarSignal());
+        _eventBus.Invoke(new TurnOffBossHealthBarSignal());
         _eventBus.Invoke(new FMODParameterChangeSignal(FMODParameters.Boss, 2f));
         _eventBus.Invoke(new OpenDoorSignal());
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", 0);

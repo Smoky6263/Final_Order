@@ -167,7 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60a6e7756a3203449868656cbc9e1889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _eventBus: {fileID: 0}
   _animator: {fileID: 2737314854432022433}
   _spriteRenderer: {fileID: 5571273806541067600}
   _playerLayer:
@@ -181,10 +180,10 @@ MonoBehaviour:
   _patrollingSpeed: 0.7
   _palyerFollowSpeed: 2
   _damageFlashTime: 200
-  _playerDetectionArea: {x: 6, y: 5}
-  _playerDetectionAreaOffset: {x: 0, y: 1, z: 0}
-  _playerFollowArea: {x: 15, y: 5}
-  _playerFollowAreaOffset: {x: 0, y: 1, z: 0}
+  _playerDetectionArea: {x: 6, y: 3}
+  _playerDetectionAreaOffset: {x: 0, y: 1.5, z: 0}
+  _playerFollowArea: {x: 15, y: 3}
+  _playerFollowAreaOffset: {x: 0, y: 1.5, z: 0}
   _debugPlayerDetectionArea: 1
   _debugPlayerFolowArea: 1
   _detectionColor: {r: 1, g: 0, b: 0, a: 1}
@@ -206,7 +205,6 @@ MonoBehaviour:
   _damageForce: {x: 10, y: 10}
   _DamageBoxSize: {x: 1.1, y: 0.66}
   _offset: {x: 0.025, y: 0.33, z: 0}
-  _profile: {fileID: 11400000, guid: e036b79ed56d8ee4ca5485b46219e7ab, type: 2}
   _debugDrawBox: 1
 --- !u!114 &3969905647598968784
 MonoBehaviour:
@@ -405,7 +403,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8b0bb4f6914c14cae976b088e0e91d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _soundsManager: {fileID: 0}
 --- !u!1 &6042421185461562327
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,7 +415,7 @@ GameObject:
   - component: {fileID: 8421130535962129733}
   m_Layer: 9
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -582,6 +579,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2633548769695292416}
+  - component: {fileID: 1810706454549078647}
   m_Layer: 0
   m_Name: SmallMob_Parent
   m_TagString: Untagged
@@ -607,3 +605,15 @@ Transform:
   - {fileID: 2633014137423930432}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1810706454549078647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9140029826597003274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d83828c44187b34e9d95dd5a2a79fc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
