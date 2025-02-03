@@ -26,8 +26,17 @@ public class LevelEndScreen : MonoBehaviour
         levelStartTime = Time.time;
     }
 
+    private void OnEnable()
+    {
+        EndLevel();
+    }
+
     public void EndLevel()
     {
+        finalScoreText.text = "";
+        timeText.text = "";
+        rankText.text = "";
+
         levelEndPanel.SetActive(true);
 
         float levelTime = Time.time - levelStartTime;
@@ -38,11 +47,15 @@ public class LevelEndScreen : MonoBehaviour
         string finalRank = GetRank(finalScore);
         string avgRank = GetAverageRank(scoreList);
 
+        finalScoreText.ForceMeshUpdate();
+        timeText.ForceMeshUpdate();
+        rankText.ForceMeshUpdate();
+
         timeText.text = $"Время: {timeFormatted}";
         finalScoreText.text = $"Очки стиля: {finalScore}";
         rankText.text = $"Финальная оценка: {avgRank}";
 
-        Debug.Log($"Level finished in {timeFormatted}, Style Points: {finalScore}, Rank: {finalRank}");
+        Debug.Log($"Level finished in {timeFormatted}, Style Points: {finalScore}, Rank: {finalRank}");       
     }
 
     private string GetRank(int score)

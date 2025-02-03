@@ -26,6 +26,7 @@ public class ComboSystem : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        ResetComboData();
     }
 
     
