@@ -9,12 +9,12 @@ using VContainer;
 
 public class EnemyStateMachine : StateManager<EnemyStateMachine.EnemyStates>, IStandartEnemy, IEnemy
 {
-    private EnemyStateMachine Context;
+    protected EnemyStateMachine Context;
 
-    [Inject] private GameManager _gameManager;
-    [SerializeField] private EnemyAnimatorController _animator;
-    [SerializeField] private SpriteRenderer _spriteRenderer;
-    [SerializeField] private LayerMask _playerLayer;
+    [Inject] protected GameManager _gameManager;
+    [SerializeField] protected EnemyAnimatorController _animator;
+    [SerializeField] protected SpriteRenderer _spriteRenderer;
+    [SerializeField] protected LayerMask _playerLayer;
 
     #region MyTarget
     [SerializeField] private EnemyPatrolTrigger _pointA;
@@ -24,37 +24,37 @@ public class EnemyStateMachine : StateManager<EnemyStateMachine.EnemyStates>, IS
     public EnemyPatrolTrigger PointB { get { return _pointB; } }
     #endregion
 
-    private PauseManager _pauseManager;
-    private EventBus _eventBus;
-    private VFXManager _vFXManager;
-    private SoundsManager _soundsManager;
-    private SoundsController _soundsController;
-    private IEnemyHealth _healthManager;
-    private Rigidbody2D _rigidBody2D;
+    protected PauseManager _pauseManager;
+    protected EventBus _eventBus;
+    protected VFXManager _vFXManager;
+    protected SoundsManager _soundsManager;
+    protected SoundsController _soundsController;
+    protected IEnemyHealth _healthManager;
+    protected Rigidbody2D _rigidBody2D;
 
     protected bool _playerDetected;
 
     [Header("Параметры здоровья")]
-    [SerializeField, Range(0f, 500f)] private float _maxHealth = 100f;
-    [SerializeField, Range(0f, 500f)] private float _health = 0f;
+    [SerializeField, Range(0f, 500f)] protected float _maxHealth = 100f;
+    [SerializeField, Range(0f, 500f)] protected float _health = 0f;
 
     [Header("Время, которое моб проводит в состоянии Idle\n(например когда игрок убежал от него)")]
-    [SerializeField, Range(0f, 10f)] private float _idleTime = 3f;
+    [SerializeField, Range(0f, 10f)] protected float _idleTime = 3f;
 
     [Header("Параметры скорости моба:\n- скорость при патрулировании\n- скорость при преследовании игрока")]
-    [SerializeField, Range(0f, 10f)] private float _patrollingSpeed = 2f;
-    [SerializeField, Range(0f, 10f)] private float _palyerFollowSpeed = 4f;
+    [SerializeField, Range(0f, 10f)] protected float _patrollingSpeed = 2f;
+    [SerializeField, Range(0f, 10f)] protected float _palyerFollowSpeed = 4f;
 
     [Header("Параметры урона в мсек")]
-    [SerializeField, Range(0f, 2000f)] private int _damageFlashTime = 200;
+    [SerializeField, Range(0f, 2000f)] protected int _damageFlashTime = 200;
 
     [Header("размер зоны обнаружения игрока")]
-    [SerializeField] private Vector2 _playerDetectionArea;
-    [SerializeField] private Vector3 _playerDetectionAreaOffset;
+    [SerializeField] protected Vector2 _playerDetectionArea;
+    [SerializeField] protected Vector3 _playerDetectionAreaOffset;
 
     [Header("размер зоны преследования игрока")]
-    [SerializeField] private Vector2 _playerFollowArea;
-    [SerializeField] private Vector3 _playerFollowAreaOffset;
+    [SerializeField] protected Vector2 _playerFollowArea;
+    [SerializeField] protected Vector3 _playerFollowAreaOffset;
 
 
     public Rigidbody2D RigidBody2D { get { return _rigidBody2D; } }
@@ -89,7 +89,7 @@ public class EnemyStateMachine : StateManager<EnemyStateMachine.EnemyStates>, IS
         Die
     }
 
-    private void Awake()
+    protected void Awake()
     {
         Context = this;
         _eventBus = _gameManager.EventBus;
@@ -115,9 +115,9 @@ public class EnemyStateMachine : StateManager<EnemyStateMachine.EnemyStates>, IS
         CurrentState = States[EnemyStates.Idle];
     }
 
-    public void Die()
+    public virtual void Die()
     {
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
 
     public Vector3 GetPosition() 
@@ -125,7 +125,7 @@ public class EnemyStateMachine : StateManager<EnemyStateMachine.EnemyStates>, IS
         return transform.position;
     }
 
-    private CancellationTokenSource _onDestroyToken;
+    protected CancellationTokenSource _onDestroyToken;
     public async UniTask ChangeMaterial()
     {
         if (OnPause) return;
@@ -140,7 +140,7 @@ public class EnemyStateMachine : StateManager<EnemyStateMachine.EnemyStates>, IS
         _spriteRenderer.material = currentMaterial;
     }
 
-    private void OnDestroy()
+    protected void OnDestroy()
     {
         if (_onDestroyToken != null)
         {
@@ -155,7 +155,7 @@ public class EnemyStateMachine : StateManager<EnemyStateMachine.EnemyStates>, IS
     [SerializeField] private bool _debugPlayerFolowArea;
     [SerializeField] private Color _detectionColor, _followColor;
 
-    private void OnDrawGizmos()
+    protected void OnDrawGizmos()
     {
         if (_debugPlayerDetectionArea)
         {

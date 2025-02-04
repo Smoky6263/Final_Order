@@ -64,6 +64,7 @@ public class PlayerOnStairsState : PlayerBaseState
     public override void UpdateState()
     {
         Move();
+        TurnCheck(Context.MovementInput);
         CheckSwitchStates();
     }
 
@@ -82,6 +83,37 @@ public class PlayerOnStairsState : PlayerBaseState
         {
             Context.MovementVelocity = Vector2.Lerp(Context.MovementVelocity, Vector2.zero, _decelerationSpeed * Time.fixedDeltaTime);
             Context.RigidBody.velocity = Context.MovementVelocity;
+        }
+    }
+
+    private void TurnCheck(Vector2 moveInput)
+    {
+        if (Context.IsFacingRight && moveInput.x < 0)
+            Turn(false);
+
+        else if (Context.IsFacingRight == false && moveInput.x > 0)
+            Turn(true);
+    }
+
+    private void Turn(bool turnRight)
+    {
+        if (turnRight)
+        {
+            Context.IsFacingRight = true;
+            Context.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            Context.WeaponController.BoxOffset = new Vector3(Context.WeaponController.DamageBox_X_value, Context.WeaponController.BoxOffset.y, Context.WeaponController.BoxOffset.z);
+            Context.EventBus.Invoke(new SpawnParticlesSignal(ParticleBanks.p_Dust, Context.transform.position));
+
+            Context.EventBus.Invoke(new CinemachineCallTurnSignal());
+        }
+        else
+        {
+            Context.IsFacingRight = false;
+            Context.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+            Context.WeaponController.BoxOffset = new Vector3(-Context.WeaponController.DamageBox_X_value, Context.WeaponController.BoxOffset.y, Context.WeaponController.BoxOffset.z);
+            Context.EventBus.Invoke(new SpawnParticlesSignal(ParticleBanks.p_Dust, Context.transform.position));
+
+            Context.EventBus.Invoke(new CinemachineCallTurnSignal());
         }
     }
 }

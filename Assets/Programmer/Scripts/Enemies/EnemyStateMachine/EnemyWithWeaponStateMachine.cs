@@ -134,7 +134,7 @@ public class EnemyWithWeaponStateMachine : StateManager<EnemyWithWeaponStateMach
 
     public void Die()
     {
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
 
     public Vector3 GetPosition()

@@ -18,6 +18,9 @@ GameObject:
   - component: {fileID: 3015248327461502059}
   - component: {fileID: 3161363580591931054}
   - component: {fileID: 600082775455568759}
+  - component: {fileID: 563001663127022001}
+  - component: {fileID: 385734978396454192}
+  - component: {fileID: 5399195520755719477}
   m_Layer: 0
   m_Name: ----------GameManager----------
   m_TagString: Untagged
@@ -92,14 +95,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soundBanks:
     _serializedList:
-    - Key: 8
+    - Key: 16
       Value:
         Guid:
-          Data1: -2003675737
-          Data2: 1247784994
-          Data3: 629207980
-          Data4: 1084768433
-        Path: event:/SFX/Small Enemy Footsteps
+          Data1: -1163859808
+          Data2: 1097487930
+          Data3: -312701052
+          Data4: 1133108228
+        Path: event:/SFX/MedKit Use
     - Key: 15
       Value:
         Guid:
@@ -108,7 +111,23 @@ MonoBehaviour:
           Data3: 1292499331
           Data4: 1525888648
         Path: event:/SFX/MedKit PickUp
-    - Key: 16
+    - Key: 8
+      Value:
+        Guid:
+          Data1: -2003675737
+          Data2: 1247784994
+          Data3: 629207980
+          Data4: 1084768433
+        Path: event:/SFX/Small Enemy Footsteps
+    - Key: 10
+      Value:
+        Guid:
+          Data1: -107776380
+          Data2: 1262395226
+          Data3: 1292499331
+          Data4: 1525888648
+        Path: event:/SFX/MedKit PickUp
+    - Key: 11
       Value:
         Guid:
           Data1: -1163859808
@@ -180,38 +199,6 @@ MonoBehaviour:
           Data3: -728012117
           Data4: 1229415557
         Path: event:/SFX/EnemyGetDamage
-    - Key: 9
-      Value:
-        Guid:
-          Data1: 455801244
-          Data2: 1339788283
-          Data3: 2030509193
-          Data4: -1806941923
-        Path: event:/SFX/Boss attack
-    - Key: 10
-      Value:
-        Guid:
-          Data1: 1469896036
-          Data2: 1226397125
-          Data3: 599333037
-          Data4: -940158695
-        Path: event:/SFX/Boss jump start
-    - Key: 11
-      Value:
-        Guid:
-          Data1: 653851835
-          Data2: 1158247229
-          Data3: 906309011
-          Data4: -2063721439
-        Path: event:/SFX/Boss jump land
-    - Key: 12
-      Value:
-        Guid:
-          Data1: 1476692673
-          Data2: 1260063877
-          Data3: 1667801236
-          Data4: -958825093
-        Path: event:/SFX/BossRoar
 --- !u!114 &8680330757246914420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,7 +212,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pauseMenu: {fileID: 0}
-  _soundSaveSystemController: {fileID: 0}
 --- !u!114 &8463947496776697181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,11 +266,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 244671622
-      Data2: 1143347543
-      Data3: -1958768497
-      Data4: -1910330365
-    Path: event:/Lvl_Music/Lvl_2
+      Data1: -333731215
+      Data2: 1214828408
+      Data3: -2083858526
+      Data4: 584032502
+    Path: event:/Lvl_Music/Lvl_1
   Event: 
   EventPlayTrigger: 1
   EventStopTrigger: 2
@@ -361,3 +347,58 @@ MonoBehaviour:
     m_DissipationDistance: 100
     m_PropagationSpeed: 343
   m_DefaultVelocity: {x: 0, y: -1, z: 0}
+--- !u!114 &563001663127022001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5346706600760549705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 129617591
+      Data2: 1160144504
+      Data3: 144500405
+      Data4: -1928167891
+    Path: event:/SFX/WindSFX
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &385734978396454192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5346706600760549705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648c55e27f2f1e443a57fc8bbb2ed40c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5399195520755719477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5346706600760549705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d83828c44187b34e9d95dd5a2a79fc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
