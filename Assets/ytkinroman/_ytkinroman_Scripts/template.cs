@@ -2,17 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class template : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] UserSaveSystemController _userSaveSystemController;
 
-    // Update is called once per frame
-    void Update()
+
+    private void Update ()
     {
-        
+        if (Input.GetKeyDown(KeyCode.K)) 
+        {
+            int activeLevel = 1;
+
+            LevelData newLevelData = new LevelData
+            {
+                totalScore = 9999,  
+                totalRang = "DungeonMaster",
+                isCompleted = true
+            };
+            
+            _userSaveSystemController.SetLevelData(activeLevel, newLevelData);
+        }
+
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            int activeLevel = 1;
+            LevelData _levelData = _userSaveSystemController.GetLevelData(activeLevel);
+            Debug.Log(_levelData.totalScore);  // 9999
+            Debug.Log(_levelData.totalRang);   // DungeonMaster
+        }
     }
 }

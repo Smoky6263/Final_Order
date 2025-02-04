@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: PlayMenuSceneDescription
   m_EditorClassIdentifier: 
   stringList:
-  - Description level one. It's dune.
-  - Description level one. It's hzzz.
-  - Description level one. It's forest.
-  - Description level one. industrial.
+  - Radioactive ruins, dusty slums, and mutants clinging to the last remnants of
+    a dead world.
+  - A ruined highway, cracked asphalt, and a beast that has claimed these lands as
+    its hunting ground.
+  - Rotting swamps, toxic mist, and biomass that consumes all who dare step into
+    its domain.
+  - A twisted forest, toxic sludge, and creatures lurking in the shadows, hunting
+    anything that moves.
+  - Giant rusted factories, toxic air, decayed industrial ruins, and one final chance
+    at survival.
