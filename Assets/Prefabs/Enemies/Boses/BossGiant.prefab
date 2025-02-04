@@ -637,7 +637,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6311178920546441477}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e103e5e5035eba342b8cb850cfffacc9, type: 3}
   m_Name: 
@@ -647,4 +647,4 @@ MonoBehaviour:
   _throwTime: 0.15
   _damageForce: {x: 10, y: 10}
   _damageDebugRays: 1
-  _sphereColor: {r: 1, g: 0, b: 0, a: 1}
+  _sphereColor: {r: 0.8777957, g: 0, b: 1, a: 1}

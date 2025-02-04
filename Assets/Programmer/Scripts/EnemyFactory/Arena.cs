@@ -52,6 +52,7 @@ public class Arena : MonoBehaviour
             GameObject key = _container.Instantiate(_keyPrefab.gameObject, enemy.transform.position + new Vector3(0f,0.5f,0f), Quaternion.identity);
             _container.InjectGameObject(key);
             _gameManager.EventBus.Invoke(new OnArenaPassedSignal());
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Fight", 0);
 
         }
     }

@@ -45,10 +45,10 @@ ScriptedImporter:
     spriteID: 77f67fbe7abf08f46945c92b0bcd8346
     spriteOutline:
     - shape:
-      - {x: -16, y: -16}
-      - {x: -16, y: 16}
-      - {x: 16, y: 16}
-      - {x: 16, y: -16}
+      - {x: -12, y: -16}
+      - {x: -12, y: 16}
+      - {x: 12, y: 16}
+      - {x: 12, y: -16}
     tessellationDetail: 0
   - name: Stairs_2
     originalName: 
@@ -83,10 +83,10 @@ ScriptedImporter:
     spriteID: 6a77bb3999836fc48b92626b3473c9f7
     spriteOutline:
     - shape:
-      - {x: -16, y: -16}
-      - {x: -16, y: 16}
-      - {x: 16, y: 16}
-      - {x: 16, y: -16}
+      - {x: -12, y: -16}
+      - {x: -12, y: 16}
+      - {x: 12, y: 16}
+      - {x: 12, y: -16}
     tessellationDetail: 0
   - name: Stairs_4
     originalName: 
@@ -121,10 +121,10 @@ ScriptedImporter:
     spriteID: b45eefe32eab70f4481cd7ce31b661ca
     spriteOutline:
     - shape:
-      - {x: -16, y: -16}
-      - {x: -16, y: 16}
-      - {x: 16, y: 16}
-      - {x: 16, y: -16}
+      - {x: -12, y: -16}
+      - {x: -12, y: 16}
+      - {x: 12, y: 16}
+      - {x: 12, y: -16}
     tessellationDetail: 0
   - name: Stairs_6
     originalName: 
@@ -159,10 +159,10 @@ ScriptedImporter:
     spriteID: 743aa3e77f8cc834399c4f702d60083d
     spriteOutline:
     - shape:
-      - {x: -16, y: -16}
-      - {x: -16, y: 16}
-      - {x: 16, y: 16}
-      - {x: 16, y: -16}
+      - {x: -12, y: -16}
+      - {x: -12, y: 16}
+      - {x: 12, y: 16}
+      - {x: 12, y: -16}
     tessellationDetail: 0
   - name: Stairs_8
     originalName: 
@@ -197,10 +197,15 @@ ScriptedImporter:
     spriteID: 035a8a1cdac1af8439fdb05129e63adb
     spriteOutline:
     - shape:
-      - {x: -16, y: -15.5}
-      - {x: -16, y: 15.5}
-      - {x: 16, y: 15.5}
-      - {x: 16, y: -15.5}
+      - {x: -12, y: -15.5}
+      - {x: -12, y: 15.5}
+      - {x: 12, y: 15.5}
+      - {x: 12, y: -15.5}
+    - shape:
+      - {x: 3, y: 9.5}
+      - {x: 3, y: 9.5}
+      - {x: 3, y: 9.5}
+      - {x: 3, y: 9.5}
     tessellationDetail: 0
   _secondaryTextures: []
   _artifacts: {fileID: -2988177865379244337, guid: 3fab6d7e3ed283842b92f7b670e9f416, type: 3}

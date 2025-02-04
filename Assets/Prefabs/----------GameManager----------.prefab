@@ -100,6 +100,22 @@ MonoBehaviour:
           Data3: 629207980
           Data4: 1084768433
         Path: event:/SFX/Small Enemy Footsteps
+    - Key: 15
+      Value:
+        Guid:
+          Data1: -107776380
+          Data2: 1262395226
+          Data3: 1292499331
+          Data4: 1525888648
+        Path: event:/SFX/MedKit PickUp
+    - Key: 16
+      Value:
+        Guid:
+          Data1: -1163859808
+          Data2: 1097487930
+          Data3: -312701052
+          Data4: 1133108228
+        Path: event:/SFX/MedKit Use
     - Key: 0
       Value:
         Guid:
@@ -209,6 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pauseMenu: {fileID: 0}
+  _soundSaveSystemController: {fileID: 0}
 --- !u!114 &8463947496776697181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +238,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aab799e4e6084ee46bbbdc4d02adb47f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  globalShakeForce: 1
   _impulseListener: {fileID: 0}
   _ScreenShakeBanks:
     _serializedList:
