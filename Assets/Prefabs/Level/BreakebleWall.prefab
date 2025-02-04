@@ -95,6 +95,8 @@ GameObject:
   - component: {fileID: 397774953008038065}
   - component: {fileID: 8464332036340964659}
   - component: {fileID: 1363101852561882605}
+  - component: {fileID: 5461965363483655553}
+  - component: {fileID: 6279435675376725958}
   m_Layer: 10
   m_Name: BreakebleWall
   m_TagString: Untagged
@@ -181,3 +183,27 @@ MonoBehaviour:
   _spriteMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   _duration: 0.1
   _intensity: 0.1
+--- !u!114 &5461965363483655553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5406380594738854820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cab803c8dc016024c99f438c4f298f19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6279435675376725958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5406380594738854820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d83828c44187b34e9d95dd5a2a79fc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -18,7 +18,6 @@ public class BreakebleWallController : MonoBehaviour
     private void Awake()
     {
         _shaker = GetComponent<ShakerScript>();
-
     }
 
     public void GetDamage(float value)

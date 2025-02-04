@@ -1,8 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
+using VContainer;
 
 public class BossHPBar : MonoBehaviour
 {
+    [Inject] GameManager _gameManager;
+
     private EventBus _eventBus;
     private Animator _animator;
     private Slider _hpBar;
@@ -17,7 +20,7 @@ public class BossHPBar : MonoBehaviour
 
     private void Start()
     {
-        _eventBus = GameManager.Instance.EventBus;
+        _eventBus = _gameManager.EventBus;
         _eventBus.Subscribe<BossOnHealthChangeSignal>(BossOnHealthChange);
         _eventBus.Subscribe<TurnOffBossHealthBarSignal>(TurnOffBar);
     }

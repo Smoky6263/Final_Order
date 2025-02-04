@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
+using UnityEngine.Windows;
 
 public class PauseManager : MonoBehaviour
 {
@@ -50,6 +51,7 @@ public class PauseManager : MonoBehaviour
         {
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Pause", 1);
             _pauseMenu.gameObject.SetActive(true);
+            _inputs.Disable();
             handler.SetPause();
         }
 
@@ -63,6 +65,7 @@ public class PauseManager : MonoBehaviour
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Pause", 0);
             //_soundSaveSystemController.UpdateSoundData();
             _pauseMenu.gameObject.SetActive(false);
+            _inputs.Enable();
             handler.SetPlay();
         }
 

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using VContainer;
 public class CameraFollowObject : MonoBehaviour
 {
     [Header("Start Reference")]
@@ -8,14 +9,13 @@ public class CameraFollowObject : MonoBehaviour
     [Header("Flip Rotation Stats")]
     [SerializeField] private float _flipYRotationTime = 0.5f;
     
-    private GameManager _gameManager;
+    [Inject] private GameManager _gameManager;
     private EventBus _eventBus;
 
     private bool _isFacingRight;
 
     private void Start()
     {
-        _gameManager = GameManager.Instance;
 
         _eventBus = _gameManager.EventBus;
         _eventBus.Subscribe<CinemachineSetReferenceSignal>(SetNewTransformReference);

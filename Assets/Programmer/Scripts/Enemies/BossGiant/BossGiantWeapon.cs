@@ -22,6 +22,7 @@ public class BossGiantWeapon : MonoBehaviour
             Vector2 applyForce = new Vector2(_damageForce.x * playerOnRightSide, _damageForce.y);
             hitPlayer.gameObject.GetComponentInParent<PlayerStateMachine>().PlayerHealth.ApplyDamage(_damageValue, applyForce, _throwTime);
         }
+        
     }
 
 #if UNITY_EDITOR

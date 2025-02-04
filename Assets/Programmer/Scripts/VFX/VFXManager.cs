@@ -23,7 +23,7 @@ public class VFXManager : MonoBehaviour
 
     private void Start() 
     {
-        _eventBus = GameManager.Instance.EventBus;
+        _eventBus = GetComponent<GameManager>().EventBus;
         _eventBus.Subscribe<SpawnParticlesSignal>(SpawnParticles);
         _pauseManager = GetComponent<PauseManager>();
     }
