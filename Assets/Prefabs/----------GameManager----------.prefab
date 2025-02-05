@@ -207,11 +207,11 @@ MonoBehaviour:
     - Key: 12
       Value:
         Guid:
-          Data1: 1469896036
-          Data2: 1226397125
-          Data3: 599333037
-          Data4: -940158695
-        Path: event:/SFX/BossSFX/Boss jump start
+          Data1: 1476692673
+          Data2: 1260063877
+          Data3: 1667801236
+          Data4: -958825093
+        Path: event:/SFX/BossSFX/BossRoar
 --- !u!114 &8680330757246914420
 MonoBehaviour:
   m_ObjectHideFlags: 0

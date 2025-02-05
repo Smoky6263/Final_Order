@@ -88,7 +88,7 @@ public class PlayerHealth : IPlayerHealth
         {
             _playerData._health = _maxHealth;
             RuntimeManager.StudioSystem.setParameterByName("Health", _playerData._health);
-            RuntimeManager.PlayOneShot("event:/SFX/MedKit Use");
+            RuntimeManager.PlayOneShot("event:/SFX/LvlSFX/MedKit Use");
             _playerData.EventBus.Invoke(new PlayerHealthChangeSignal(_playerData._health));
             _playerData.EventBus.Invoke(new MedKitPerformedSignal());
             _medKitsCount--;
@@ -97,7 +97,7 @@ public class PlayerHealth : IPlayerHealth
     }
     public void OnMedKitPickUp()
     {
-        RuntimeManager.PlayOneShot("event:/SFX/MedKit PickUp");
+        RuntimeManager.PlayOneShot("event:/SFX/LvlSFX/MedKit PickUp");
         _medKitsCount++;
     }
 }
