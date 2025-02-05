@@ -92,7 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soundBanks:
     _serializedList:
-    - Key: 15
+    - Key: 17
       Value:
         Guid:
           Data1: -107776380
@@ -100,7 +100,7 @@ MonoBehaviour:
           Data3: 1292499331
           Data4: 1525888648
         Path: event:/SFX/LvlSFX/MedKit PickUp
-    - Key: 16
+    - Key: 18
       Value:
         Guid:
           Data1: -1163859808
@@ -159,12 +159,20 @@ MonoBehaviour:
     - Key: 6
       Value:
         Guid:
-          Data1: -1628570935
-          Data2: 1128394491
-          Data3: -1136079171
-          Data4: 1080956192
-        Path: event:/SFX/MobsSFX/MobWithShieldFootsteps
+          Data1: -1089941625
+          Data2: 1194086480
+          Data3: -728012117
+          Data4: 1229415557
+        Path: event:/SFX/MobsSFX/EnemyGetDamage
     - Key: 8
+      Value:
+        Guid:
+          Data1: -1028639806
+          Data2: 1176320779
+          Data3: -579662199
+          Data4: -175178961
+        Path: event:/SFX/MobsSFX/MeleeMobAttack
+    - Key: 7
       Value:
         Guid:
           Data1: -2003675737
@@ -172,15 +180,23 @@ MonoBehaviour:
           Data3: 629207980
           Data4: 1084768433
         Path: event:/SFX/MobsSFX/SmallMobFootsteps
-    - Key: 7
+    - Key: 9
       Value:
         Guid:
-          Data1: -1089941625
-          Data2: 1194086480
-          Data3: -728012117
-          Data4: 1229415557
-        Path: event:/SFX/MobsSFX/EnemyGetDamage
-    - Key: 9
+          Data1: -1628570935
+          Data2: 1128394491
+          Data3: -1136079171
+          Data4: 1080956192
+        Path: event:/SFX/MobsSFX/MobWithShieldFootsteps
+    - Key: 10
+      Value:
+        Guid:
+          Data1: -2003675737
+          Data2: 1247784994
+          Data3: 629207980
+          Data4: 1084768433
+        Path: event:/SFX/MobsSFX/SmallMobFootsteps
+    - Key: 11
       Value:
         Guid:
           Data1: 455801244
@@ -188,7 +204,7 @@ MonoBehaviour:
           Data3: 2030509193
           Data4: -1806941923
         Path: event:/SFX/BossSFX/Boss attack
-    - Key: 10
+    - Key: 12
       Value:
         Guid:
           Data1: 1469896036
@@ -196,7 +212,7 @@ MonoBehaviour:
           Data3: 599333037
           Data4: -940158695
         Path: event:/SFX/BossSFX/Boss jump start
-    - Key: 11
+    - Key: 13
       Value:
         Guid:
           Data1: 653851835
@@ -204,7 +220,7 @@ MonoBehaviour:
           Data3: 906309011
           Data4: -2063721439
         Path: event:/SFX/BossSFX/Boss jump land
-    - Key: 12
+    - Key: 14
       Value:
         Guid:
           Data1: 1476692673
@@ -212,6 +228,22 @@ MonoBehaviour:
           Data3: 1667801236
           Data4: -958825093
         Path: event:/SFX/BossSFX/BossRoar
+    - Key: 15
+      Value:
+        Guid:
+          Data1: -1042442876
+          Data2: 1321408721
+          Data3: 1916477085
+          Data4: 1031943506
+        Path: event:/SFX/LvlSFX/Fountain Flow (looped)
+    - Key: 16
+      Value:
+        Guid:
+          Data1: -383101749
+          Data2: 1299186769
+          Data3: -1986680388
+          Data4: -21607955
+        Path: event:/SFX/LvlSFX/Fountain Interact
 --- !u!114 &8680330757246914420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,7 +257,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pauseMenu: {fileID: 0}
-  _soundSaveSystemController: {fileID: 0}
 --- !u!114 &8463947496776697181
 MonoBehaviour:
   m_ObjectHideFlags: 0

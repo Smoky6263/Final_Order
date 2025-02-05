@@ -859,7 +859,7 @@ PrefabInstance:
     - target: {fileID: 1778392499187179424, guid: a233861d155b3fc4c9fddc46f008de58, type: 3}
       propertyPath: OnEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 578309254}
     - target: {fileID: 1778392499187179424, guid: a233861d155b3fc4c9fddc46f008de58, type: 3}
       propertyPath: OnEnterEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -42284,26 +42284,6 @@ PrefabInstance:
     - target: {fileID: 7842243879591011811, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[14].Value.Path
-      value: event:/SFX/BossSFX/BossRoar
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[14].Value.Guid.Data1
-      value: 1476692673
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[14].Value.Guid.Data2
-      value: 1260063877
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[14].Value.Guid.Data3
-      value: 1667801236
-      objectReference: {fileID: 0}
-    - target: {fileID: 8305346620404567466, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
-      propertyPath: _soundBanks._serializedList.Array.data[14].Value.Guid.Data4
-      value: -958825093
       objectReference: {fileID: 0}
     - target: {fileID: 8463947496776697181, guid: df7cb563f06ef38428d5962bdd9beda3, type: 3}
       propertyPath: _impulseListener

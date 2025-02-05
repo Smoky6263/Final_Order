@@ -3,6 +3,7 @@ using UnityEngine;
 using Cysharp.Threading.Tasks;
 using System.Threading;
 using VContainer;
+using FMODUnity;
 
 public class EnemyWithWeaponStateMachine : StateManager<EnemyWithWeaponStateMachine.EnemyWithWeaponStates>, IStandartEnemy, IEnemy
 {
@@ -134,6 +135,7 @@ public class EnemyWithWeaponStateMachine : StateManager<EnemyWithWeaponStateMach
 
     public void Die()
     {
+        RuntimeManager.PlayOneShot("event:/SFX/MobsSFX/MobDeath");
         Destroy(transform.parent.gameObject);
     }
 

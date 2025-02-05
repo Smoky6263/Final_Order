@@ -1,9 +1,11 @@
 
+using FMODUnity;
+
 public class SmallMobEnemyStateMachine : EnemyStateMachine
 {
     public override void Die()
     {
-        //DO SOMETHING
+        RuntimeManager.PlayOneShot("event:/SFX/MobsSFX/SmallMobDeath");
         Destroy(transform.parent.gameObject);
     }
 }

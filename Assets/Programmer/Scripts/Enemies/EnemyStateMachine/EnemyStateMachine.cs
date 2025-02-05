@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using FMODUnity;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
@@ -117,6 +118,7 @@ public class EnemyStateMachine : StateManager<EnemyStateMachine.EnemyStates>, IS
 
     public virtual void Die()
     {
+        RuntimeManager.PlayOneShot("event:/SFX/MobsSFX/MobDeath");
         Destroy(transform.parent.gameObject);
     }
 
