@@ -222,7 +222,7 @@ MonoBehaviour:
   _pointB: {fileID: 4151516213498982252}
   _maxHealth: 100
   _health: 0
-  _idleTime: 1
+  _idleTime: 0.24
   _patrollingSpeed: 1
   _palyerFollowSpeed: 2
   _attackDistance: 2

@@ -22,7 +22,7 @@ public class BreakebleWallController : MonoBehaviour
 
     public void GetDamage(float value)
     {
-        RuntimeManager.PlayOneShot("event:/SFX/BreakebleWall Hit");
+        RuntimeManager.PlayOneShot("event:/SFX/LvlSFX/BreakebleWall Hit");
         _health -= value;
 
         StartCoroutine(_shaker.ShakeSpriteRendererCoroutine(_spriteTransform, _spriteRenderer, _spriteMaterial, _duration, _intensity));
