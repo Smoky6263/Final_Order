@@ -27342,6 +27342,10 @@ PrefabInstance:
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 773303216}
+    - target: {fileID: 2240729824624812745, guid: 0f10ef7ebab886e4aabaf799e1f46eff, type: 3}
+      propertyPath: _userSaveSystemController
+      value: 
+      objectReference: {fileID: 1341802837}
     - target: {fileID: 6444235733551868882, guid: 0f10ef7ebab886e4aabaf799e1f46eff, type: 3}
       propertyPath: _sliderSFX
       value: 
@@ -27396,9 +27400,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 396121264081153920, guid: 0f10ef7ebab886e4aabaf799e1f46eff, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 1341802836}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f10ef7ebab886e4aabaf799e1f46eff, type: 3}
+--- !u!4 &1316014842 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 396121264081153920, guid: 0f10ef7ebab886e4aabaf799e1f46eff, type: 3}
+  m_PrefabInstance: {fileID: 1316014841}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1328579270
 GameObject:
   m_ObjectHideFlags: 0
@@ -27518,6 +27530,50 @@ Transform:
   - {fileID: 802873648}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1341802835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1341802836}
+  - component: {fileID: 1341802837}
+  m_Layer: 0
+  m_Name: UserSaveSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1341802836
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341802835}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1316014842}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1341802837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341802835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f4509d9fa7e9bd4ca6c5c7e9d522633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1357425460
 GameObject:
   m_ObjectHideFlags: 0
@@ -29085,6 +29141,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3147806650144078157, guid: 4177e7c0f0b27a04b809b8f026ab3580, type: 3}
+      propertyPath: _userSaveSystemController
+      value: 
+      objectReference: {fileID: 1341802837}
     - target: {fileID: 6617049775943252724, guid: 4177e7c0f0b27a04b809b8f026ab3580, type: 3}
       propertyPath: m_Name
       value: PopUpLevelComplete

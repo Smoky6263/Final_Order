@@ -18,6 +18,14 @@ public class LevelEndScreen : MonoBehaviour
     [SerializeField] private int rankA = 1500;
     [SerializeField] private int rankS = 2000;
 
+    //NEED TO SOLVE IN FUTURE
+    
+    [Space]
+    [Space]
+    [Space]
+    public int activeLevel = 1; // WARNING !!!!!!! ACTIVE LVL == ACTIVE GAME SCENE;
+    [SerializeField] private UserSaveSystemController _userSaveSystemController;
+
     private float levelStartTime;
     private List<int> scoreList;
 
@@ -55,7 +63,20 @@ public class LevelEndScreen : MonoBehaviour
         finalScoreText.text = $"ќчки стил€: {finalScore}";
         rankText.text = $"‘инальна€ оценка: {avgRank}";
 
-        Debug.Log($"Level finished in {timeFormatted}, Style Points: {finalScore}, Rank: {finalRank}");       
+        Debug.Log($"Level finished in {timeFormatted}, Style Points: {finalScore}, Rank: {finalRank}");
+
+        /////////////////////// [ ј  —ќ’–јЌя“№ –≈«”Ћ№“ј“џ ”–ќ¬Ќя?] ////////////////////////////////
+
+        LevelData newLevelData = new LevelData
+        {
+            totalScore = finalScore,      // —колько очков.  
+            totalRang = finalRank,  //  акой ранг ему. 
+            isCompleted = true     // ‘лаг что уровень пройден.
+        };
+
+        _userSaveSystemController.SetLevelData(activeLevel, newLevelData);
+
+        ///////////////////////////////////////////////////////////////////////////////////////////
     }
 
     private string GetRank(int score)
