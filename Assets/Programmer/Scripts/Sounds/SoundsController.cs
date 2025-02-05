@@ -21,8 +21,8 @@ public class SoundsController : MonoBehaviour
 
     #region Enemy Sounds
     public void EnemyShieldFootSteps() => SoundsManager.PlaySoundOneShot(FMOD_SoundBanks.EnemyShieldFootSteps, transform.position);
-    public void EnemyApplyDamage() => SoundsManager.PlaySoundOneShot(FMOD_SoundBanks.EnemyShieldGetDamage, transform.position);
-    public void EnemySmallFootSteps() => SoundsManager.PlaySoundOneShot(FMOD_SoundBanks.SmallEnemyFootsteps, transform.position);
+    public void EnemyApplyDamage() => SoundsManager.PlaySoundOneShot(FMOD_SoundBanks.EnemyGetDamage, transform.position);
+    public void EnemySmallFootSteps() => SoundsManager.PlaySoundOneShot(FMOD_SoundBanks.EnemySmallFootsteps, transform.position);
     #endregion
 
     #region GiantBoss Sounds

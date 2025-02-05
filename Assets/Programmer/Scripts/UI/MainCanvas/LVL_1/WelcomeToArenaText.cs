@@ -9,7 +9,7 @@ public class WelcomeToArenaText : MonoBehaviour
 
     public void OnAnimationComplete()
     {
-        _eventBus.Invoke(new OnArenaFightBeginSignal());
         _eventBus.Invoke(new SpawnUIElementSignal(_vaweCounter));
+        _eventBus.Invoke(new OnArenaFightBeginSignal());
     }
 }

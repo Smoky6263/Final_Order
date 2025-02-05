@@ -8,16 +8,24 @@ public enum FMOD_SoundBanks
     PlayerGuitarSwing,
     PlayerOnStairs,
     #endregion
+    #region Enemies
 
-    #region Enemy With Shield
-    EnemyShieldFootSteps,
-    EnemyShieldGetDamage,
+    EnemyGetDamage,
+
+        #region MeleeMob
+        EnemyMeleeFootsteps,
+        EnemyMeleeAttack,
+        #endregion
+
+        #region Enemy With Shield
+        EnemyShieldFootSteps,
+        #endregion
+
+        #region Small Enemy
+        EnemySmallFootsteps,
+        #endregion
+
     #endregion
-
-    #region Small Enemy
-    SmallEnemyFootsteps,
-    #endregion
-
     #region GiantBoss
     GiantBossAttack,
     GiantBossJumpStart,

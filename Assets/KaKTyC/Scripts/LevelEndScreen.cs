@@ -51,9 +51,9 @@ public class LevelEndScreen : MonoBehaviour
         timeText.ForceMeshUpdate();
         rankText.ForceMeshUpdate();
 
-        timeText.text = $"Время: {timeFormatted}";
-        finalScoreText.text = $"Очки стиля: {finalScore}";
-        rankText.text = $"Финальная оценка: {avgRank}";
+        timeText.text = $"Time: {timeFormatted}";
+        finalScoreText.text = $"Style Points: {finalScore}";
+        rankText.text = $"Rank: {avgRank}";
 
         Debug.Log($"Level finished in {timeFormatted}, Style Points: {finalScore}, Rank: {finalRank}");       
     }

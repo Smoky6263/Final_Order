@@ -10,7 +10,6 @@ public class PauseManager : MonoBehaviour
     private EventBus _eventBus;
     private PlayerInputs _inputs;
     private List<IPauseHandler> _pauseHandlers = new List<IPauseHandler>();
-    [SerializeField] private SoundSaveSystemController _soundSaveSystemController;
 
     public bool OnPause { get; private set; } = false;
 
@@ -54,6 +53,7 @@ public class PauseManager : MonoBehaviour
             _inputs.Disable();
             handler.SetPause();
         }
+        _eventBus.Invoke(new ChangeCursorVisibilitySignal(true));
 
         OnPause = true;
     }
@@ -68,6 +68,8 @@ public class PauseManager : MonoBehaviour
             _inputs.Enable();
             handler.SetPlay();
         }
+
+        _eventBus.Invoke(new ChangeCursorVisibilitySignal(false));
 
         OnPause = false;
     }
@@ -90,11 +92,11 @@ public class PauseManager : MonoBehaviour
         if (_pauseHandlers.Contains(pauseHandler))
         {
             _pauseHandlers.Remove(pauseHandler);
-            Debug.Log($"{pauseHandler} удалён из списка обработчиков.");
+            //Debug.Log($"{pauseHandler} удалён из списка обработчиков.");
         }
         else
         {
-            Debug.LogWarning($"{pauseHandler} не найден в списке.");
+            //Debug.LogWarning($"{pauseHandler} не найден в списке.");
         }
     }
 
