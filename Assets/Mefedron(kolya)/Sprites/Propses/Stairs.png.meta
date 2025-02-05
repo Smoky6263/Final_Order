@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -147,7 +147,207 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Stairs_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 127
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 0, y: -16}
+        - {x: 0, y: 16}
+        - {x: 2, y: 16}
+        - {x: 2, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76ef16b6fc3043743848ccb7dda9494d
+      internalID: -1261176218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stairs_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 127
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 2, y: -16}
+        - {x: 2, y: 16}
+        - {x: 0, y: 16}
+        - {x: 0, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65b530d6a51de3241b537f680ff53fff
+      internalID: 1943304113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stairs_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 95
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 0, y: -16}
+        - {x: 0, y: 16}
+        - {x: 2, y: 16}
+        - {x: 2, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1314609831ac99449677fabf19c9761
+      internalID: -88363366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stairs_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 95
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 0, y: -16}
+        - {x: 0, y: 16}
+        - {x: 2, y: 16}
+        - {x: 2, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fbcaef5a6d3c3b42a4d4ddb6e6f4570
+      internalID: -21487736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stairs_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 63
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 0, y: -16}
+        - {x: 0, y: 16}
+        - {x: 2, y: 16}
+        - {x: 2, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f8f917a25bb22a47b5b5b8a1f3ef589
+      internalID: -623130993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stairs_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 63
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 0, y: -16}
+        - {x: 0, y: 16}
+        - {x: 2, y: 16}
+        - {x: 2, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f68644b11351fa34492e453757c75c60
+      internalID: -2029004525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stairs_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 31
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 0, y: -16}
+        - {x: 0, y: 16}
+        - {x: 2, y: 16}
+        - {x: 2, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8c0cbcf590cf6747b0c6b7d9cee13e3
+      internalID: -1655709831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stairs_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 31
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 0, y: -16}
+        - {x: 0, y: 16}
+        - {x: 2, y: 16}
+        - {x: 2, y: -16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c1a0ca78840c6842b9d24f56b0120af
+      internalID: -1644204883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -158,7 +358,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Stairs_0: -1261176218
+      Stairs_1: 1943304113
+      Stairs_2: -88363366
+      Stairs_3: -21487736
+      Stairs_4: -623130993
+      Stairs_5: -2029004525
+      Stairs_6: -1655709831
+      Stairs_7: -1644204883
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

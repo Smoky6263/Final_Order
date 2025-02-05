@@ -92,14 +92,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soundBanks:
     _serializedList:
-    - Key: 8
-      Value:
-        Guid:
-          Data1: -2003675737
-          Data2: 1247784994
-          Data3: 629207980
-          Data4: 1084768433
-        Path: event:/SFX/Small Enemy Footsteps
     - Key: 15
       Value:
         Guid:
@@ -107,7 +99,7 @@ MonoBehaviour:
           Data2: 1262395226
           Data3: 1292499331
           Data4: 1525888648
-        Path: event:/SFX/MedKit PickUp
+        Path: event:/SFX/LvlSFX/MedKit PickUp
     - Key: 16
       Value:
         Guid:
@@ -115,7 +107,7 @@ MonoBehaviour:
           Data2: 1097487930
           Data3: -312701052
           Data4: 1133108228
-        Path: event:/SFX/MedKit Use
+        Path: event:/SFX/LvlSFX/MedKit Use
     - Key: 0
       Value:
         Guid:
@@ -123,7 +115,7 @@ MonoBehaviour:
           Data2: 1206922166
           Data3: 1272112052
           Data4: -541546017
-        Path: event:/SFX/Character footsteps
+        Path: event:/SFX/PlayerSFX/Character footsteps
     - Key: 1
       Value:
         Guid:
@@ -131,7 +123,7 @@ MonoBehaviour:
           Data2: 1291331129
           Data3: 1806938811
           Data4: -109175814
-        Path: event:/SFX/Dodge
+        Path: event:/SFX/PlayerSFX/Dodge
     - Key: 2
       Value:
         Guid:
@@ -139,7 +131,7 @@ MonoBehaviour:
           Data2: 1311461077
           Data3: -392239425
           Data4: -1868137683
-        Path: event:/SFX/Start jump
+        Path: event:/SFX/PlayerSFX/Start jump
     - Key: 3
       Value:
         Guid:
@@ -147,7 +139,7 @@ MonoBehaviour:
           Data2: 1145596973
           Data3: 487042448
           Data4: 1191938772
-        Path: event:/SFX/Jump land
+        Path: event:/SFX/PlayerSFX/Jump land
     - Key: 4
       Value:
         Guid:
@@ -155,7 +147,7 @@ MonoBehaviour:
           Data2: 1105173372
           Data3: 1335280295
           Data4: -1047359426
-        Path: event:/SFX/Guitar swing
+        Path: event:/SFX/PlayerSFX/Guitar swing
     - Key: 5
       Value:
         Guid:
@@ -163,15 +155,23 @@ MonoBehaviour:
           Data2: 1305399960
           Data3: -127861109
           Data4: 1136595028
-        Path: event:/SFX/Ladder Steps
+        Path: event:/SFX/PlayerSFX/Ladder Steps
     - Key: 6
       Value:
         Guid:
-          Data1: -1459162591
-          Data2: 1319705954
-          Data3: 1184442046
-          Data4: -1031911323
-        Path: event:/SFX/EnemyFootsteps
+          Data1: -1628570935
+          Data2: 1128394491
+          Data3: -1136079171
+          Data4: 1080956192
+        Path: event:/SFX/MobsSFX/MobWithShieldFootsteps
+    - Key: 8
+      Value:
+        Guid:
+          Data1: -2003675737
+          Data2: 1247784994
+          Data3: 629207980
+          Data4: 1084768433
+        Path: event:/SFX/MobsSFX/SmallMobFootsteps
     - Key: 7
       Value:
         Guid:
@@ -179,7 +179,7 @@ MonoBehaviour:
           Data2: 1194086480
           Data3: -728012117
           Data4: 1229415557
-        Path: event:/SFX/EnemyGetDamage
+        Path: event:/SFX/MobsSFX/EnemyGetDamage
     - Key: 9
       Value:
         Guid:
@@ -187,7 +187,7 @@ MonoBehaviour:
           Data2: 1339788283
           Data3: 2030509193
           Data4: -1806941923
-        Path: event:/SFX/Boss attack
+        Path: event:/SFX/BossSFX/Boss attack
     - Key: 10
       Value:
         Guid:
@@ -195,7 +195,7 @@ MonoBehaviour:
           Data2: 1226397125
           Data3: 599333037
           Data4: -940158695
-        Path: event:/SFX/Boss jump start
+        Path: event:/SFX/BossSFX/Boss jump start
     - Key: 11
       Value:
         Guid:
@@ -203,15 +203,15 @@ MonoBehaviour:
           Data2: 1158247229
           Data3: 906309011
           Data4: -2063721439
-        Path: event:/SFX/Boss jump land
+        Path: event:/SFX/BossSFX/Boss jump land
     - Key: 12
       Value:
         Guid:
-          Data1: 1476692673
-          Data2: 1260063877
-          Data3: 1667801236
-          Data4: -958825093
-        Path: event:/SFX/BossRoar
+          Data1: 1469896036
+          Data2: 1226397125
+          Data3: 599333037
+          Data4: -940158695
+        Path: event:/SFX/BossSFX/Boss jump start
 --- !u!114 &8680330757246914420
 MonoBehaviour:
   m_ObjectHideFlags: 0

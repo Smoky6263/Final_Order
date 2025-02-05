@@ -57,10 +57,10 @@ public class PlayerHealth : IPlayerHealth
             _playerData.LegsSprite.material = _playerMaterial;
 
             _playerData.EventBus.Invoke(new PlayerOnDeathSignal());
-            RuntimeManager.PlayOneShot("event:/SFX/Character Death");
+            RuntimeManager.PlayOneShot("event:/SFX/PlayerSFX/Character Death");
             return;
         }
-        RuntimeManager.PlayOneShot("event:/SFX/Character Hit");
+        RuntimeManager.PlayOneShot("event:/SFX/PlayerSFX/Character Hit");
         _playerData.EventBus.Invoke(new PlayerApplyForceSignal());
     }
 
