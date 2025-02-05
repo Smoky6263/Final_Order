@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class SaveSystemController : MonoBehaviour
 {
-    [SerializeField] private SoundSaveSystemController _soudSaveSystemController;
     [SerializeField] private GameManager _gameManager;
+
+    [SerializeField] private SoundSaveSystemController _soudSaveSystemController;
+    [SerializeField] private UserSaveSystemController _userSaveSystemController;
 
 
     private void Awake ()
@@ -12,8 +14,8 @@ public class SaveSystemController : MonoBehaviour
         if (_soudSaveSystemController != null) {
             _soudSaveSystemController.Initialization(_gameManager);
         }
-        /// vjycnhf
-        /// buhjrf
-        ///
+        if (_userSaveSystemController != null) {
+            _userSaveSystemController.Initialization(_gameManager);
+        }
     }
 }
