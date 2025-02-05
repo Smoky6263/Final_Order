@@ -23,8 +23,13 @@ ScriptedImporter:
       y: 127
       width: 32
       height: 32
-    spriteID: be4e60880f3dd464f94a44f67a215aa9
-    spriteOutline: []
+    spriteID: 02c913606599a4a4eb8bada781bcbc6c
+    spriteOutline:
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 15.7919235}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
     tessellationDetail: 0
   - name: Stairs_1
     originalName: 
@@ -37,8 +42,13 @@ ScriptedImporter:
       y: 127
       width: 32
       height: 32
-    spriteID: b0cfc1fabc4e80342b75115631cdb61a
-    spriteOutline: []
+    spriteID: 378330137c85c084aa6401e8e06fb55c
+    spriteOutline:
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 15.7919235}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
     tessellationDetail: 0
   - name: Stairs_2
     originalName: 
@@ -51,8 +61,13 @@ ScriptedImporter:
       y: 95
       width: 32
       height: 32
-    spriteID: e5d522a36bf4e7647af539fa40823d44
-    spriteOutline: []
+    spriteID: b6041231c6a4ad54bb1f46bc16353904
+    spriteOutline:
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 15.7919235}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
     tessellationDetail: 0
   - name: Stairs_3
     originalName: 
@@ -65,8 +80,13 @@ ScriptedImporter:
       y: 95
       width: 32
       height: 32
-    spriteID: f77856c891f0f78429978e59f2bb6c40
-    spriteOutline: []
+    spriteID: 62561e3007521e34d8e81a001313dbf8
+    spriteOutline:
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 15.7919235}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
     tessellationDetail: 0
   - name: Stairs_4
     originalName: 
@@ -79,8 +99,13 @@ ScriptedImporter:
       y: 63
       width: 32
       height: 32
-    spriteID: da4449bf52798a040a873861d2b912e2
-    spriteOutline: []
+    spriteID: ad1c1503fe4bd364a86f4b51ad39fd61
+    spriteOutline:
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 15.7919235}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
     tessellationDetail: 0
   - name: Stairs_5
     originalName: 
@@ -93,8 +118,13 @@ ScriptedImporter:
       y: 63
       width: 32
       height: 32
-    spriteID: 67ca922b99486354bbc2c659f64ffe46
-    spriteOutline: []
+    spriteID: 7b98e4c85a87b02478d8b959e8a383cd
+    spriteOutline:
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 15.7919235}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
     tessellationDetail: 0
   - name: Stairs_6
     originalName: 
@@ -107,8 +137,13 @@ ScriptedImporter:
       y: 31
       width: 32
       height: 32
-    spriteID: 8230a6acad4044e478c2c3047f884e28
-    spriteOutline: []
+    spriteID: 8126dcbda22831b4a887d9bd095e14cb
+    spriteOutline:
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 15.7919235}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
     tessellationDetail: 0
   - name: Stairs_7
     originalName: 
@@ -121,8 +156,13 @@ ScriptedImporter:
       y: 31
       width: 32
       height: 32
-    spriteID: e5908135079dd194b9ff64b1299d1ff5
-    spriteOutline: []
+    spriteID: 8005618aebfe246419cb70ca25cf6f85
+    spriteOutline:
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 15.7919235}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
     tessellationDetail: 0
   - name: Stairs_8
     originalName: 
@@ -135,8 +175,13 @@ ScriptedImporter:
       y: 0
       width: 32
       height: 31
-    spriteID: 26afdcf198dd582448dd028a2ee5b7c2
-    spriteOutline: []
+    spriteID: 3e49eea5c1bb6a1418516e56e6bd982a
+    spriteOutline:
+    - shape:
+      - {x: -16, y: -15.5}
+      - {x: -16, y: 15.5}
+      - {x: 16, y: 15.5}
+      - {x: 16, y: -15.5}
     tessellationDetail: 0
   - name: Stairs_9
     originalName: 
@@ -149,8 +194,13 @@ ScriptedImporter:
       y: 0
       width: 32
       height: 31
-    spriteID: ec4bd0dacbe06784ba5386b1935c0fe7
-    spriteOutline: []
+    spriteID: 1689e3da63f51b94e9706daee7eb855b
+    spriteOutline:
+    - shape:
+      - {x: -16, y: -15.5}
+      - {x: -16, y: 15.5}
+      - {x: 16, y: 15.5}
+      - {x: 16, y: -15.5}
     tessellationDetail: 0
   _secondaryTextures: []
   _artifacts: {fileID: -2988177865379244337, guid: 087530fdbba6e494ca78e4bc6f5c741b, type: 3}
