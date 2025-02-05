@@ -33,12 +33,12 @@ EditorBuildSettings:
     path: Assets/Mefedron(kolya)/Scenes/LoadingScenes/LoadingScene_Lvl_3.unity
     guid: 03c7127913d20744d8032d06c6137654
   - enabled: 1
-    path: Assets/Mefedron(kolya)/Scenes/Lvl_3.unity
+    path: Assets/Mefedron(kolya)/Scenes/Lvl_4.unity
     guid: ba5fe0e655ea3bc41828b0ba5c1fa59f
   - enabled: 1
     path: Assets/Mefedron(kolya)/Scenes/LoadingScenes/LoadingScene_Lvl_4.unity
     guid: a582b1bb59415c544a166b6fbc699fcc
   - enabled: 1
-    path: Assets/Mefedron(kolya)/Scenes/Lvl_4.unity
+    path: Assets/Mefedron(kolya)/Scenes/Lvl_5.unity
     guid: cd29a92589184b34c86d7bf1b223affc
   m_configObjects: {}

@@ -387,7 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cad09fba3d2b9346b9792699ef1abc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nextSceneName: Lvl_1
+  _nextSceneName: MainMenu
   _delayValue: 4
 --- !u!4 &1124803987
 Transform:

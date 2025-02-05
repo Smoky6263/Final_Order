@@ -3118,6 +3118,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8931907871080331949, guid: e575f73b714a3714d923b80bce990f1b, type: 3}
+      propertyPath: _nextLevel
+      value: LoadingScene_Lvl_3
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 100135501762014635, guid: e575f73b714a3714d923b80bce990f1b, type: 3}
     m_RemovedGameObjects: []
