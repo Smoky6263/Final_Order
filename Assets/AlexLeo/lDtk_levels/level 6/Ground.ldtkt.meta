@@ -30,6 +30,11 @@ ScriptedImporter:
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
     tessellationDetail: 0
   - name: Ground_1
     originalName: 
@@ -46,6 +51,11 @@ ScriptedImporter:
     spriteOutline:
     - shape:
       - {x: -16, y: -15}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
@@ -68,6 +78,11 @@ ScriptedImporter:
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
     tessellationDetail: 0
   - name: Ground_3
     originalName: 
@@ -84,6 +99,11 @@ ScriptedImporter:
     spriteOutline:
     - shape:
       - {x: -16, y: -15}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
@@ -106,6 +126,11 @@ ScriptedImporter:
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
     tessellationDetail: 0
   - name: Ground_5
     originalName: 
@@ -122,6 +147,11 @@ ScriptedImporter:
     spriteOutline:
     - shape:
       - {x: -16, y: -15}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
@@ -144,6 +174,11 @@ ScriptedImporter:
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
     tessellationDetail: 0
   - name: Ground_7
     originalName: 
@@ -160,6 +195,11 @@ ScriptedImporter:
     spriteOutline:
     - shape:
       - {x: -16, y: -15}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
@@ -182,6 +222,11 @@ ScriptedImporter:
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
     tessellationDetail: 0
   - name: Ground_9
     originalName: 
@@ -198,6 +243,11 @@ ScriptedImporter:
     spriteOutline:
     - shape:
       - {x: -16, y: -15}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
@@ -220,6 +270,11 @@ ScriptedImporter:
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
     tessellationDetail: 0
   - name: Ground_11
     originalName: 
@@ -236,6 +291,11 @@ ScriptedImporter:
     spriteOutline:
     - shape:
       - {x: -16, y: -15}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
@@ -258,6 +318,11 @@ ScriptedImporter:
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
     tessellationDetail: 0
   - name: Ground_13
     originalName: 
@@ -274,6 +339,11 @@ ScriptedImporter:
     spriteOutline:
     - shape:
       - {x: -16, y: -15}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
@@ -296,6 +366,11 @@ ScriptedImporter:
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
     tessellationDetail: 0
   - name: Ground_15
     originalName: 
@@ -312,6 +387,11 @@ ScriptedImporter:
     spriteOutline:
     - shape:
       - {x: -16, y: -15}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
@@ -334,6 +414,11 @@ ScriptedImporter:
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
     tessellationDetail: 0
   - name: Ground_17
     originalName: 
@@ -350,6 +435,11 @@ ScriptedImporter:
     spriteOutline:
     - shape:
       - {x: -16, y: -15}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
@@ -372,6 +462,11 @@ ScriptedImporter:
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
     tessellationDetail: 0
   - name: Ground_19
     originalName: 
@@ -388,6 +483,11 @@ ScriptedImporter:
     spriteOutline:
     - shape:
       - {x: -16, y: -15}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
@@ -410,6 +510,11 @@ ScriptedImporter:
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
     tessellationDetail: 0
   - name: Ground_21
     originalName: 
@@ -426,6 +531,11 @@ ScriptedImporter:
     spriteOutline:
     - shape:
       - {x: -16, y: -15}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
@@ -448,6 +558,11 @@ ScriptedImporter:
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
     tessellationDetail: 0
   - name: Ground_23
     originalName: 
@@ -464,6 +579,11 @@ ScriptedImporter:
     spriteOutline:
     - shape:
       - {x: -16, y: -15}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
@@ -486,6 +606,11 @@ ScriptedImporter:
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
     tessellationDetail: 0
   - name: Ground_25
     originalName: 
@@ -502,6 +627,11 @@ ScriptedImporter:
     spriteOutline:
     - shape:
       - {x: -16, y: -15}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
@@ -524,6 +654,11 @@ ScriptedImporter:
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
     tessellationDetail: 0
   - name: Ground_27
     originalName: 
@@ -540,6 +675,11 @@ ScriptedImporter:
     spriteOutline:
     - shape:
       - {x: -16, y: -15}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
       - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
