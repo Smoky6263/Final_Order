@@ -30,6 +30,11 @@ ScriptedImporter:
       - {x: -16, y: 15.7919235}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
     tessellationDetail: 0
   - name: Stairs_1
     originalName: 
@@ -47,6 +52,11 @@ ScriptedImporter:
     - shape:
       - {x: -16, y: -16}
       - {x: -16, y: 15.7919235}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
     tessellationDetail: 0
@@ -68,6 +78,11 @@ ScriptedImporter:
       - {x: -16, y: 15.7919235}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
     tessellationDetail: 0
   - name: Stairs_3
     originalName: 
@@ -85,6 +100,11 @@ ScriptedImporter:
     - shape:
       - {x: -16, y: -16}
       - {x: -16, y: 15.7919235}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
     tessellationDetail: 0
@@ -106,6 +126,11 @@ ScriptedImporter:
       - {x: -16, y: 15.7919235}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
     tessellationDetail: 0
   - name: Stairs_5
     originalName: 
@@ -123,6 +148,11 @@ ScriptedImporter:
     - shape:
       - {x: -16, y: -16}
       - {x: -16, y: 15.7919235}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
     tessellationDetail: 0
@@ -144,6 +174,11 @@ ScriptedImporter:
       - {x: -16, y: 15.7919235}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
     tessellationDetail: 0
   - name: Stairs_7
     originalName: 
@@ -161,6 +196,11 @@ ScriptedImporter:
     - shape:
       - {x: -16, y: -16}
       - {x: -16, y: 15.7919235}
+      - {x: 16, y: 16}
+      - {x: 16, y: -16}
+    - shape:
+      - {x: -16, y: -16}
+      - {x: -16, y: 16}
       - {x: 16, y: 16}
       - {x: 16, y: -16}
     tessellationDetail: 0
@@ -182,6 +222,11 @@ ScriptedImporter:
       - {x: -16, y: 15.5}
       - {x: 16, y: 15.5}
       - {x: 16, y: -15.5}
+    - shape:
+      - {x: -16, y: -15.5}
+      - {x: -16, y: 15.5}
+      - {x: 16, y: 15.5}
+      - {x: 16, y: -15.5}
     tessellationDetail: 0
   - name: Stairs_9
     originalName: 
@@ -196,6 +241,11 @@ ScriptedImporter:
       height: 31
     spriteID: 1689e3da63f51b94e9706daee7eb855b
     spriteOutline:
+    - shape:
+      - {x: -16, y: -15.5}
+      - {x: -16, y: 15.5}
+      - {x: 16, y: 15.5}
+      - {x: 16, y: -15.5}
     - shape:
       - {x: -16, y: -15.5}
       - {x: -16, y: 15.5}
