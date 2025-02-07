@@ -2731,7 +2731,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1843853551085655960}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: LoadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2772,7 +2772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff441ca8f52a7714582a06daf5c261d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelStringName: 
+  _levelStringName: MainMenu
 --- !u!1 &6562020078993894548
 GameObject:
   m_ObjectHideFlags: 0
@@ -3611,7 +3611,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 5883313637109850161}
   m_FillRect: {fileID: 7314929340615064179}
   m_HandleRect: {fileID: 0}

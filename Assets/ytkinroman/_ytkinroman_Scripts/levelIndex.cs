@@ -4,5 +4,6 @@ public enum LevelIndex
     level2,
     level3,
     level4,
-    level5
+    level5,
+    level6,
 }

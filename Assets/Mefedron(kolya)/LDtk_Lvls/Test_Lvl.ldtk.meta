@@ -25,9 +25,9 @@ ScriptedImporter:
     _asset: {instanceID: 0}
   - _key: Objects_3
     _asset: {instanceID: 0}
-  - _key: Stairs_1
-    _asset: {instanceID: 0}
   - _key: Traps_1
+    _asset: {instanceID: 0}
+  - _key: Stairs_1
     _asset: {instanceID: 0}
   - _key: Ground_1
     _asset: {instanceID: 0}
