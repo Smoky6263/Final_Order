@@ -2772,7 +2772,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff441ca8f52a7714582a06daf5c261d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelStringName: MainMenu
+  _levelStringName: MainMenu1
+  _linkURL: 
 --- !u!1 &6562020078993894548
 GameObject:
   m_ObjectHideFlags: 0

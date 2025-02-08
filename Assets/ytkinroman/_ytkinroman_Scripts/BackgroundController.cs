@@ -198,10 +198,10 @@ public class BackgroundController : MonoBehaviour
             level3Background.SetActive(false);
         }
         if (level4Background != null) {
-            level4Background.SetActive(false);
+            level4Background.SetActive(true);
         }
         if (level5Background != null) {
-            level5Background.SetActive(true);
+            level5Background.SetActive(false);
         }
         if (level6Background != null) {
             level6Background.SetActive(false);

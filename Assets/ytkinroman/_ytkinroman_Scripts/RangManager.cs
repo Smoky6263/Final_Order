@@ -6,9 +6,9 @@ using VContainer;
 
 public class RangManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    [Inject] private GameManager _gameManager;
     public StringListDescruption _description;
     public int _inxDescription;
+    [SerializeField] private GameManager _gameManager;
     [SerializeField] private TextMeshProUGUI _textStory;
     [SerializeField] private TextMeshProUGUI _textTotal;
     [SerializeField] private TextMeshProUGUI _textRang;

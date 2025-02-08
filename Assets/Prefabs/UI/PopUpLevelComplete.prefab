@@ -663,10 +663,10 @@ MonoBehaviour:
   timeText: {fileID: 5217102925650776646}
   rankText: {fileID: 5648495362182555575}
   rankF: 0
-  rankC: 20
-  rankB: 50
-  rankA: 70
-  rankS: 150
+  rankC: 1
+  rankB: 2
+  rankA: 3
+  rankS: 4
 --- !u!1 &6674051144619436375
 GameObject:
   m_ObjectHideFlags: 0
