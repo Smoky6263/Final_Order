@@ -567,7 +567,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1904052706424768956
 RectTransform:
   m_ObjectHideFlags: 0
@@ -667,6 +667,8 @@ MonoBehaviour:
   rankB: 2
   rankA: 3
   rankS: 4
+  activeLevel: 1
+  _userSaveSystemController: {fileID: 0}
 --- !u!1 &6674051144619436375
 GameObject:
   m_ObjectHideFlags: 0
