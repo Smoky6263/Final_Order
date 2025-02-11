@@ -1,9 +1,10 @@
 using UnityEngine;
+using VContainer;
 
 
 public class BackgroundController : MonoBehaviour
 {
-    [SerializeField] private GameManager _gameManager;
+    [Inject] private GameManager _gameManager;
     private EventBus _eventBus;
 
     [SerializeField] private GameObject defaultBackground;
