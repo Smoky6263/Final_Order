@@ -283,6 +283,134 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "FpsCounter",
+            "id": "35338228-cb45-414f-b8c2-3d5cc6895e34",
+            "actions": [
+                {
+                    "name": "ShowFps",
+                    "type": "Button",
+                    "id": "120c315e-4c03-47c5-9253-2a3160b80aa7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "20fps",
+                    "type": "Button",
+                    "id": "24cf9e55-2a3e-45fc-9026-00a570e86de9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "30fps",
+                    "type": "Button",
+                    "id": "4782e589-6e75-4549-9b39-a17c7e370e91",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "40fps",
+                    "type": "Button",
+                    "id": "34d2a813-de9e-4357-862d-41b46def6a14",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "60fps",
+                    "type": "Button",
+                    "id": "29379e7a-7179-45f6-bbab-247d42429d4a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "UnlimitedFps",
+                    "type": "Button",
+                    "id": "0a4aed67-eebf-4b8e-a23c-b21a1b6d90da",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c4b2a422-59c6-4956-98e3-34e5e760b233",
+                    "path": "<Keyboard>/f1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShowFps",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0909d04c-e493-4f0c-bf92-ee92ba15066e",
+                    "path": "<Keyboard>/f2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "20fps",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5adad039-f188-4cbe-9bba-131ede81810b",
+                    "path": "<Keyboard>/f3",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "30fps",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "55d710f3-ecef-4f76-beb8-a11b5a72c45b",
+                    "path": "<Keyboard>/f4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "40fps",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "532201ac-03d6-433b-9299-d198ea7a64a7",
+                    "path": "<Keyboard>/f6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "60fps",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dce6c88a-c17b-4f60-bada-2981a61d645b",
+                    "path": "<Keyboard>/f7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UnlimitedFps",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
