@@ -8,7 +8,7 @@ public class FMODParameterChanger : MonoBehaviour
 
     private EventBus _eventBus;
 
-    private void Start()
+    private void Awake()
     {
         _eventBus = GetComponent<GameManager>().EventBus;
         _eventBus.Subscribe<FMODParameterChangeSignal>(ChangeParametrValue);
