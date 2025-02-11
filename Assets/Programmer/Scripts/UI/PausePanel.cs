@@ -36,6 +36,7 @@ public class PausePanel : MonoBehaviour
         }
 
         _eventBus.Invoke(new OnPauseEventSignal(false));
+        _eventBus.Invoke(new ChangeCursorVisibilitySignal(false));
         gameObject.SetActive(false);
     }
     public void EscapePressed()
