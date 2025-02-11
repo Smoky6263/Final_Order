@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 [RequireComponent (typeof(FpsCounter))]
 public class FpsDisplay : MonoBehaviour
 {
+    private static FpsDisplay instance;
+
     [SerializeField] private TextMeshProUGUI _text;
     private FpsCounter _fpsCounter;
     private PlayerInputs _playerInputs;
@@ -47,12 +49,21 @@ public class FpsDisplay : MonoBehaviour
 
     private void Awake()
     {
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         _fpsCounter = GetComponent<FpsCounter>();
         _playerInputs = new PlayerInputs();
         _playerInputs.Enable();
-        _fpsCounter.enabled = false;
         _text.enabled = false;
-        DontDestroyOnLoad(this);
     }
 
     private void Update() => _text.text = $"FPS: {_stringFrom00To300[Mathf.Clamp(_fpsCounter.AverageFPS, 0, _stringFrom00To300.Length - 1)]}";
@@ -67,7 +78,6 @@ public class FpsDisplay : MonoBehaviour
     {
         _turnOn = !_turnOn;
         _text.enabled = _turnOn ? true : false;
-        _fpsCounter.enabled = _turnOn ? true : false;
     }
 
     private void OnEnable()
@@ -82,11 +92,19 @@ public class FpsDisplay : MonoBehaviour
 
     private void OnDisable()
     {
-        _playerInputs.FpsCounter.ShowFps.performed -= ShowFps;
-        _playerInputs.FpsCounter._20fps.performed -= TwentyFps;
-        _playerInputs.FpsCounter._30fps.performed -= ThirtyFps;
-        _playerInputs.FpsCounter._40fps.performed -= ForthyFps;
-        _playerInputs.FpsCounter._60fps.performed -= SixstyFps;
-        _playerInputs.FpsCounter.UnlimitedFps.performed -= UnlimitedFps;
+        if(_playerInputs != null)
+        {
+            _playerInputs.FpsCounter.ShowFps.performed -= ShowFps;
+            _playerInputs.FpsCounter._20fps.performed -= TwentyFps;
+            _playerInputs.FpsCounter._30fps.performed -= ThirtyFps;
+            _playerInputs.FpsCounter._40fps.performed -= ForthyFps;
+            _playerInputs.FpsCounter._60fps.performed -= SixstyFps;
+            _playerInputs.FpsCounter.UnlimitedFps.performed -= UnlimitedFps;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        _playerInputs?.Dispose();
     }
 }
