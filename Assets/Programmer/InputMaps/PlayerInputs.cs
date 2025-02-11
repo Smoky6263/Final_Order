@@ -305,6 +305,134 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""FpsCounter"",
+            ""id"": ""35338228-cb45-414f-b8c2-3d5cc6895e34"",
+            ""actions"": [
+                {
+                    ""name"": ""ShowFps"",
+                    ""type"": ""Button"",
+                    ""id"": ""120c315e-4c03-47c5-9253-2a3160b80aa7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""20fps"",
+                    ""type"": ""Button"",
+                    ""id"": ""24cf9e55-2a3e-45fc-9026-00a570e86de9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press"",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""30fps"",
+                    ""type"": ""Button"",
+                    ""id"": ""4782e589-6e75-4549-9b39-a17c7e370e91"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""40fps"",
+                    ""type"": ""Button"",
+                    ""id"": ""34d2a813-de9e-4357-862d-41b46def6a14"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""60fps"",
+                    ""type"": ""Button"",
+                    ""id"": ""29379e7a-7179-45f6-bbab-247d42429d4a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""UnlimitedFps"",
+                    ""type"": ""Button"",
+                    ""id"": ""0a4aed67-eebf-4b8e-a23c-b21a1b6d90da"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""c4b2a422-59c6-4956-98e3-34e5e760b233"",
+                    ""path"": ""<Keyboard>/f1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShowFps"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0909d04c-e493-4f0c-bf92-ee92ba15066e"",
+                    ""path"": ""<Keyboard>/f2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""20fps"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5adad039-f188-4cbe-9bba-131ede81810b"",
+                    ""path"": ""<Keyboard>/f3"",
+                    ""interactions"": ""Press"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""30fps"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""55d710f3-ecef-4f76-beb8-a11b5a72c45b"",
+                    ""path"": ""<Keyboard>/f4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""40fps"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""532201ac-03d6-433b-9299-d198ea7a64a7"",
+                    ""path"": ""<Keyboard>/f6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""60fps"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dce6c88a-c17b-4f60-bada-2981a61d645b"",
+                    ""path"": ""<Keyboard>/f7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UnlimitedFps"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -323,6 +451,14 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         // UseInteractable
         m_UseInteractable = asset.FindActionMap("UseInteractable", throwIfNotFound: true);
         m_UseInteractable_Use = m_UseInteractable.FindAction("Use", throwIfNotFound: true);
+        // FpsCounter
+        m_FpsCounter = asset.FindActionMap("FpsCounter", throwIfNotFound: true);
+        m_FpsCounter_ShowFps = m_FpsCounter.FindAction("ShowFps", throwIfNotFound: true);
+        m_FpsCounter__20fps = m_FpsCounter.FindAction("20fps", throwIfNotFound: true);
+        m_FpsCounter__30fps = m_FpsCounter.FindAction("30fps", throwIfNotFound: true);
+        m_FpsCounter__40fps = m_FpsCounter.FindAction("40fps", throwIfNotFound: true);
+        m_FpsCounter__60fps = m_FpsCounter.FindAction("60fps", throwIfNotFound: true);
+        m_FpsCounter_UnlimitedFps = m_FpsCounter.FindAction("UnlimitedFps", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -558,6 +694,92 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         }
     }
     public UseInteractableActions @UseInteractable => new UseInteractableActions(this);
+
+    // FpsCounter
+    private readonly InputActionMap m_FpsCounter;
+    private List<IFpsCounterActions> m_FpsCounterActionsCallbackInterfaces = new List<IFpsCounterActions>();
+    private readonly InputAction m_FpsCounter_ShowFps;
+    private readonly InputAction m_FpsCounter__20fps;
+    private readonly InputAction m_FpsCounter__30fps;
+    private readonly InputAction m_FpsCounter__40fps;
+    private readonly InputAction m_FpsCounter__60fps;
+    private readonly InputAction m_FpsCounter_UnlimitedFps;
+    public struct FpsCounterActions
+    {
+        private @PlayerInputs m_Wrapper;
+        public FpsCounterActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @ShowFps => m_Wrapper.m_FpsCounter_ShowFps;
+        public InputAction @_20fps => m_Wrapper.m_FpsCounter__20fps;
+        public InputAction @_30fps => m_Wrapper.m_FpsCounter__30fps;
+        public InputAction @_40fps => m_Wrapper.m_FpsCounter__40fps;
+        public InputAction @_60fps => m_Wrapper.m_FpsCounter__60fps;
+        public InputAction @UnlimitedFps => m_Wrapper.m_FpsCounter_UnlimitedFps;
+        public InputActionMap Get() { return m_Wrapper.m_FpsCounter; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(FpsCounterActions set) { return set.Get(); }
+        public void AddCallbacks(IFpsCounterActions instance)
+        {
+            if (instance == null || m_Wrapper.m_FpsCounterActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_FpsCounterActionsCallbackInterfaces.Add(instance);
+            @ShowFps.started += instance.OnShowFps;
+            @ShowFps.performed += instance.OnShowFps;
+            @ShowFps.canceled += instance.OnShowFps;
+            @_20fps.started += instance.On_20fps;
+            @_20fps.performed += instance.On_20fps;
+            @_20fps.canceled += instance.On_20fps;
+            @_30fps.started += instance.On_30fps;
+            @_30fps.performed += instance.On_30fps;
+            @_30fps.canceled += instance.On_30fps;
+            @_40fps.started += instance.On_40fps;
+            @_40fps.performed += instance.On_40fps;
+            @_40fps.canceled += instance.On_40fps;
+            @_60fps.started += instance.On_60fps;
+            @_60fps.performed += instance.On_60fps;
+            @_60fps.canceled += instance.On_60fps;
+            @UnlimitedFps.started += instance.OnUnlimitedFps;
+            @UnlimitedFps.performed += instance.OnUnlimitedFps;
+            @UnlimitedFps.canceled += instance.OnUnlimitedFps;
+        }
+
+        private void UnregisterCallbacks(IFpsCounterActions instance)
+        {
+            @ShowFps.started -= instance.OnShowFps;
+            @ShowFps.performed -= instance.OnShowFps;
+            @ShowFps.canceled -= instance.OnShowFps;
+            @_20fps.started -= instance.On_20fps;
+            @_20fps.performed -= instance.On_20fps;
+            @_20fps.canceled -= instance.On_20fps;
+            @_30fps.started -= instance.On_30fps;
+            @_30fps.performed -= instance.On_30fps;
+            @_30fps.canceled -= instance.On_30fps;
+            @_40fps.started -= instance.On_40fps;
+            @_40fps.performed -= instance.On_40fps;
+            @_40fps.canceled -= instance.On_40fps;
+            @_60fps.started -= instance.On_60fps;
+            @_60fps.performed -= instance.On_60fps;
+            @_60fps.canceled -= instance.On_60fps;
+            @UnlimitedFps.started -= instance.OnUnlimitedFps;
+            @UnlimitedFps.performed -= instance.OnUnlimitedFps;
+            @UnlimitedFps.canceled -= instance.OnUnlimitedFps;
+        }
+
+        public void RemoveCallbacks(IFpsCounterActions instance)
+        {
+            if (m_Wrapper.m_FpsCounterActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IFpsCounterActions instance)
+        {
+            foreach (var item in m_Wrapper.m_FpsCounterActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_FpsCounterActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public FpsCounterActions @FpsCounter => new FpsCounterActions(this);
     public interface IPlayerActionsActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -574,5 +796,14 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     public interface IUseInteractableActions
     {
         void OnUse(InputAction.CallbackContext context);
+    }
+    public interface IFpsCounterActions
+    {
+        void OnShowFps(InputAction.CallbackContext context);
+        void On_20fps(InputAction.CallbackContext context);
+        void On_30fps(InputAction.CallbackContext context);
+        void On_40fps(InputAction.CallbackContext context);
+        void On_60fps(InputAction.CallbackContext context);
+        void OnUnlimitedFps(InputAction.CallbackContext context);
     }
 }

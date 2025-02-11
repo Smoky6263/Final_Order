@@ -1,13 +1,14 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent (typeof(FpsCounter))]
 public class FpsDisplay : MonoBehaviour
 {
-    [SerializeField]
-    private TextMeshProUGUI _text;
-
+    [SerializeField] private TextMeshProUGUI _text;
     private FpsCounter _fpsCounter;
+    private PlayerInputs _playerInputs;
+
 
     private string[] _stringFrom00To300 = {
     "00", "01", "02", "03", "04", "05", "06", "07", "08", "09",
@@ -42,15 +43,50 @@ public class FpsDisplay : MonoBehaviour
     "290", "291", "292", "293", "294", "295", "296", "297", "298", "299",
     "300", "301"
 };
-
+    private bool _turnOn;
 
     private void Awake()
     {
         _fpsCounter = GetComponent<FpsCounter>();
+        _playerInputs = new PlayerInputs();
+        _playerInputs.Enable();
+        _fpsCounter.enabled = false;
+        _text.enabled = false;
+        DontDestroyOnLoad(this);
     }
 
-    private void Update()
+    private void Update() => _text.text = $"FPS: {_stringFrom00To300[Mathf.Clamp(_fpsCounter.AverageFPS, 0, _stringFrom00To300.Length - 1)]}";
+
+    private void UnlimitedFps(InputAction.CallbackContext context) => Application.targetFrameRate = -1;
+    private void SixstyFps(InputAction.CallbackContext context) => Application.targetFrameRate = 60;
+    private void ForthyFps(InputAction.CallbackContext context) => Application.targetFrameRate = 40;
+    private void ThirtyFps(InputAction.CallbackContext context) => Application.targetFrameRate = 30;
+    private void TwentyFps(InputAction.CallbackContext context) => Application.targetFrameRate = 20;
+
+    private void ShowFps(InputAction.CallbackContext context)
     {
-        _text.text = $"FPS: {_stringFrom00To300[Mathf.Clamp(_fpsCounter.AverageFPS, 0, _stringFrom00To300.Length - 1)]}";
+        _turnOn = !_turnOn;
+        _text.enabled = _turnOn ? true : false;
+        _fpsCounter.enabled = _turnOn ? true : false;
+    }
+
+    private void OnEnable()
+    {
+        _playerInputs.FpsCounter.ShowFps.performed += ShowFps;
+        _playerInputs.FpsCounter._20fps.performed += TwentyFps;
+        _playerInputs.FpsCounter._30fps.performed += ThirtyFps;
+        _playerInputs.FpsCounter._40fps.performed += ForthyFps;
+        _playerInputs.FpsCounter._60fps.performed += SixstyFps;
+        _playerInputs.FpsCounter.UnlimitedFps.performed += UnlimitedFps;
+    }
+
+    private void OnDisable()
+    {
+        _playerInputs.FpsCounter.ShowFps.performed -= ShowFps;
+        _playerInputs.FpsCounter._20fps.performed -= TwentyFps;
+        _playerInputs.FpsCounter._30fps.performed -= ThirtyFps;
+        _playerInputs.FpsCounter._40fps.performed -= ForthyFps;
+        _playerInputs.FpsCounter._60fps.performed -= SixstyFps;
+        _playerInputs.FpsCounter.UnlimitedFps.performed -= UnlimitedFps;
     }
 }
