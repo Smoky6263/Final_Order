@@ -892,6 +892,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8741408371033634041, guid: e575f73b714a3714d923b80bce990f1b, type: 3}
+      propertyPath: activeLevel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8741408371033634041, guid: e575f73b714a3714d923b80bce990f1b, type: 3}
       propertyPath: _userSaveSystemController
       value: 
       objectReference: {fileID: 2147464932}

@@ -40,7 +40,7 @@ public class UserSaveSystemController : MonoBehaviour
             case 2: _userSaveSystem._userData.level2 = newData; break;
             case 3: _userSaveSystem._userData.level3 = newData; break;
             case 4: _userSaveSystem._userData.level4 = newData; break;
-            case 5: _userSaveSystem._userData.level4 = newData; break;
+            case 5: _userSaveSystem._userData.level5 = newData; break;
             case 6: _userSaveSystem._userData.level6 = newData; break;
             default:
                 break;
@@ -83,10 +83,10 @@ public class UserSaveSystemController : MonoBehaviour
                 _eventBus.Invoke(new RangValueChangeSignal(GetLevelData(4)));
                 break;
             case LevelIndex.level5:
-                _eventBus.Invoke(new RangValueChangeSignal(GetLevelData(4)));
+                _eventBus.Invoke(new RangValueChangeSignal(GetLevelData(5)));
                 break;
             case LevelIndex.level6:
-                _eventBus.Invoke(new RangValueChangeSignal(GetLevelData(5)));
+                _eventBus.Invoke(new RangValueChangeSignal(GetLevelData(6)));
                 break;
             default:
                 break;

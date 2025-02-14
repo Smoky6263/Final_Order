@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4577570945875466722}
   - component: {fileID: 7378406518801647372}
-  - component: {fileID: 6949718734343948539}
+  - component: {fileID: 688548620460702817}
   m_Layer: 0
   m_Name: MusicSlider
   m_TagString: Untagged
@@ -90,8 +90,20 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &6949718734343948539
+      m_Calls:
+      - m_Target: {fileID: 688548620460702817}
+        m_TargetAssemblyTypeName: WebSliderController, Assembly-CSharp
+        m_MethodName: UpdateSliderOutput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &688548620460702817
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,11 +112,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 259736039832902919}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64bc799d09b87f044a7d46ea8e6240be, type: 3}
+  m_Script: {fileID: 11500000, guid: 40bf8ff8c1a1a484c9b10133377162f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _volumeType: 1
-  _persentText: {fileID: 7084449036751904257}
+  slider: {fileID: 7378406518801647372}
+  text: {fileID: 7084449036751904257}
+  busPath: bus:/Music
 --- !u!1 &398512281300705671
 GameObject:
   m_ObjectHideFlags: 0
@@ -2935,7 +2948,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4190319369941615116}
   - component: {fileID: 6782830976502250826}
-  - component: {fileID: 1135382724121594884}
+  - component: {fileID: 7701359556976282526}
   m_Layer: 0
   m_Name: MasterSlider
   m_TagString: Untagged
@@ -3015,8 +3028,20 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1135382724121594884
+      m_Calls:
+      - m_Target: {fileID: 7701359556976282526}
+        m_TargetAssemblyTypeName: WebSliderController, Assembly-CSharp
+        m_MethodName: UpdateSliderOutput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7701359556976282526
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3025,11 +3050,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6692571702492950022}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64bc799d09b87f044a7d46ea8e6240be, type: 3}
+  m_Script: {fileID: 11500000, guid: 40bf8ff8c1a1a484c9b10133377162f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _volumeType: 0
-  _persentText: {fileID: 4199062356682089182}
+  slider: {fileID: 6782830976502250826}
+  text: {fileID: 4199062356682089182}
+  busPath: bus:/
 --- !u!1 &6712226419674800662
 GameObject:
   m_ObjectHideFlags: 0
@@ -4266,7 +4292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8627507128043286568}
   - component: {fileID: 365000178368172803}
-  - component: {fileID: 6449962724841852676}
+  - component: {fileID: 1326054431120102355}
   m_Layer: 0
   m_Name: SFXSlider
   m_TagString: Untagged
@@ -4346,8 +4372,20 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &6449962724841852676
+      m_Calls:
+      - m_Target: {fileID: 1326054431120102355}
+        m_TargetAssemblyTypeName: WebSliderController, Assembly-CSharp
+        m_MethodName: UpdateSliderOutput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1326054431120102355
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4356,11 +4394,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7900733749554944896}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64bc799d09b87f044a7d46ea8e6240be, type: 3}
+  m_Script: {fileID: 11500000, guid: 40bf8ff8c1a1a484c9b10133377162f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _volumeType: 2
-  _persentText: {fileID: 3706293952361071043}
+  slider: {fileID: 365000178368172803}
+  text: {fileID: 3706293952361071043}
+  busPath: bus:/SFX
 --- !u!1 &7905516341920301735
 GameObject:
   m_ObjectHideFlags: 0

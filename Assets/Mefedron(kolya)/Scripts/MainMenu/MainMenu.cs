@@ -9,6 +9,12 @@ public class MainMenu : MonoBehaviour
     public void LoadScene()
     {
         SceneManager.LoadScene(_levelStringName);
+
+        if (_levelStringName == "MainMenu1")
+        {
+            SceneManager.LoadScene(_levelStringName);
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Pause", 0);
+        }
     }
 
     public void QuitGame()
